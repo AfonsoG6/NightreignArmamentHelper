@@ -1,0 +1,7 @@
+pillow
+pytesseract
+opencv-python
+numpy
+textdistance
+ImageHash
+pyinstaller

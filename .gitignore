@@ -1,0 +1,17 @@
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Project specific
+temp/
+.venv/
+
+# Tesseract-OCR
+Tesseract-OCR/*
+!Tesseract-OCR/tessdata
