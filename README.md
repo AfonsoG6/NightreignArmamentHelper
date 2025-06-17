@@ -6,8 +6,7 @@
 
 ## Description
 
-Nightreign Armament Helper is an Overlay mod for Elden Ring: Nightreign that aims to help players choose the best armaments for the character they are using.
-It does this in a very simple manner, by displaying three separate icons directly on top of the armament's image:
+Nightreign Armament Helper is an Overlay mod for Elden Ring: Nightreign that is safe to use ONLINE and with EAC ENABLED. It aims to help players choose the best armaments for the character they are using. It does this in a very simple manner, by displaying three separate icons directly on top of the armament's image.
 
 - ✔️: The weapon's stats are a decent match for the character's stats.
 - ⭐: The weapon's stats are a great match for the character's stats.
@@ -26,6 +25,8 @@ It does this in a very simple manner, by displaying three separate icons directl
 The mod does not require any installation. Simply download the latest version of the `NightreignArmamentHelper.exe` file from the [Releases](https://github.com/AfonsoG6/NightreignArmamentHelper/releases) page and execute it while Elden Ring: Nightreign is running.
 
 The mod will immediately start working, attempting to detect the character being chosen and the armament being viewed.
+
+**IMPORTANT**: The overlay requires the game to be running in **BORDERLESS WINDOWED** mode to work correctly.
 
 Additionally, you may verify and/or manually change the currently selected character through the very discreet dropdown menu in the top left corner of the screen.
 
@@ -59,10 +60,11 @@ It is also important to note that the mod defines the categories "great" and "de
 
 ## Limitations
 
-1. **Ground items**: Items found in the ground show their details in varying locations, making it difficult to detect them in a both efficient and accurate way. Therefore, the mod does not support the detection of items found on the ground. To circumvent this, you can simply pick up the item and then open the inventory to view its details.
-2. **Language**: The mod is designed to work with the English version of Elden Ring: Nightreign. It may not work correctly with other languages, as the OCR is trained on English text. If you are using a different language and the mod is not working correctly, please open an issue on GitHub.
-3. **Responsiveness**: The mod is designed to be as efficient and responsive as possible, through the usage of *ImageHash* comparisons to detect screen area changes and thus avoid unnecessary OCR calls, as well as the OCR configuration being optimized for speed. However, it may sometimes take half a second to detect the armament and show the corresponding icons. This is due to the nature of OCR and the fact that it needs to analyze the screen in real-time. If you notice that the mod is not responding quickly enough, please open an issue on GitHub.
-4. **Accuracy**: The mod uses OCR to detect text on the screen, which is not always 100% accurate. This means that it may sometimes fail to detect the armament or the character correctly. To mitigate this, we use the *Jaccard* similarity algorithm to account for small innacuracies in the OCR results. During our testing, we found that the mod seems to always be able to detect the armament and character correctly, but there may be some edge cases where this fails.
+1. **Display Mode**: For the overlay to be correctly shown on top of the game window, the game must be running in borderless windowed mode.
+2. **Ground items**: Items found in the ground show their details in varying locations, making it difficult to detect them in a both efficient and accurate way. Therefore, the mod does not support the detection of items found on the ground. To circumvent this, you can simply pick up the item and then open the inventory to view its details.
+3. **Language**: The mod is designed to work with the English version of Elden Ring: Nightreign. It may not work correctly with other languages, as the OCR is trained on English text. If you are using a different language and the mod is not working correctly, please open an issue on GitHub.
+4. **Responsiveness**: The mod is designed to be as efficient and responsive as possible, through the usage of *ImageHash* comparisons to detect screen area changes and thus avoid unnecessary OCR calls, as well as the OCR configuration being optimized for speed. However, it may sometimes take half a second to detect the armament and show the corresponding icons. This is due to the nature of OCR and the fact that it needs to analyze the screen in real-time. If you notice that the mod is not responding quickly enough, please open an issue on GitHub.
+5. **Accuracy**: The mod uses OCR to detect text on the screen, which is not always 100% accurate. This means that it may sometimes fail to detect the armament or the character correctly. To mitigate this, we use the *Jaccard* similarity algorithm to account for small innacuracies in the OCR results. During our testing, we found that the mod seems to always be able to detect the armament and character correctly, but there may be some edge cases where this fails.
 
 ## Optional: Manual Compilation
 
