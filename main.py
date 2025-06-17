@@ -11,6 +11,7 @@ from pytesseract import pytesseract
 from cv2 import cvtColor, threshold, imwrite, COLOR_BGR2GRAY, THRESH_BINARY_INV
 from os import getenv
 import sys
+
 # ---------------------- Project Imports -----------------------#
 from lib.debug import DebugWindow
 from lib.constants import *
@@ -58,17 +59,17 @@ character_detection_button: Button
 advanced_mode_button: Button
 hide_show_button: Button
 
-previous_menu_img: ndarray|None = None
+previous_menu_img: ndarray | None = None
 previous_menu_state: int = DEFAULT_STATE
 current_menu_state: int = DEFAULT_STATE
 current_menu_state_lock: Lock = Lock()
 
-previous_character_img: ndarray|None = None
+previous_character_img: ndarray | None = None
 previous_character_name: str = ""
 current_character_name: str = ""
 current_character_name_lock: Lock = Lock()
 
-previous_armament_img: ndarray|None = None
+previous_armament_img: ndarray | None = None
 previous_armament_name: str = ""
 
 root: Tk
@@ -90,19 +91,24 @@ def log_error(e: Exception, fatal: bool = False) -> None:
     """
     type: str = "FATAL" if fatal else "ERROR"
     makedirs(path.dirname(ERROR_LOG_PATH), exist_ok=True)
-    
+
     if not path.exists(ERROR_LOG_PATH):
         open(ERROR_LOG_PATH, "w").close()
-    
+
     with open(ERROR_LOG_PATH, "a") as f:
         f.write(f"[{type}] {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {str(e)}\n")
 
 
 def on_character_selected(e) -> None:
-    global current_character_var
+    global current_character_var, current_character_name, current_character_name_lock
     selected_character = current_character_var.get()
     if selected_character != NO_CHARACTER:
+        with current_character_name_lock:
+            current_character_name = selected_character
         update_current_character_dropdown(selected_character)
+    else:
+        with current_character_name_lock:
+            current_character_name = ""
 
 
 def quit_app() -> None:
@@ -123,17 +129,18 @@ def update_basic_armament_feedback_label(character_spec: CharacterSpec, armament
     if armament_spec in character_spec.type_matches:
         icons.append(TYPE_MATCH_TEXT)
     text = "\n".join(icons) if len(icons) > 0 else ""
-    
+
     armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
     armament_feedback_label.config(text=text)
 
+
 def update_advanced_armament_feedback_label(armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
     global advanced_armament_feedback_label, advanced_mode_enabled, advanced_mode_enabled_lock
-    STR: str = armament_spec.get_stat_letter('STR')
-    DEX: str = armament_spec.get_stat_letter('DEX')
-    INT: str = armament_spec.get_stat_letter('INT')
-    FAI: str = armament_spec.get_stat_letter('FAI')
-    ARC: str = armament_spec.get_stat_letter('ARC')
+    STR: str = armament_spec.get_stat_letter("STR")
+    DEX: str = armament_spec.get_stat_letter("DEX")
+    INT: str = armament_spec.get_stat_letter("INT")
+    FAI: str = armament_spec.get_stat_letter("FAI")
+    ARC: str = armament_spec.get_stat_letter("ARC")
     text = f"{armament_spec.type} [{STR}|{DEX}|{INT}|{FAI}|{ARC}]"
     with advanced_mode_enabled_lock:
         if advanced_mode_enabled:
@@ -144,7 +151,7 @@ def update_advanced_armament_feedback_label(armament_spec: ArmamentSpec, relx: f
             advanced_armament_feedback_label.place_forget()
 
 
-def update_armament_feedback_labels(character_spec: CharacterSpec|None = None, armament_spec: ArmamentSpec|None = None) -> None:
+def update_armament_feedback_labels(character_spec: CharacterSpec | None = None, armament_spec: ArmamentSpec | None = None) -> None:
     global armament_feedback_label, advanced_armament_feedback_label, screen_width, screen_height, current_menu_state, current_menu_state_lock
     if character_spec is None or armament_spec is None:
         armament_feedback_label.config(text="")
@@ -162,14 +169,13 @@ def update_armament_feedback_labels(character_spec: CharacterSpec|None = None, a
         else:
             basic_relx, basic_rely = get_ui_element_rel_positions("default_armament", screen_width, screen_height)
             advanced_rely, _, advanced_relx, _ = get_detection_box_rel("default_armament", screen_width, screen_height)
-    
+
     update_basic_armament_feedback_label(character_spec, armament_spec, basic_relx, basic_rely)
     update_advanced_armament_feedback_label(armament_spec, advanced_relx, advanced_rely)
     root.update_idletasks()
 
 
 def update_current_character_dropdown(character_name: str) -> None:
-    global current_character_name
     if character_name == "":
         current_character_var.set(NO_CHARACTER)
     else:
@@ -250,7 +256,6 @@ def create_control_window() -> Toplevel:
     control_window.iconphoto(True, icon_image)
     control_window.protocol("WM_DELETE_WINDOW", quit_app)
 
-    
     top_button_frame = Frame(control_window)
     top_button_frame.pack(pady=BUTTON_PADDING)
 
@@ -462,8 +467,7 @@ class ArmamentDetectionLoopThread(Thread):
             t0 = time()
             try:
                 with current_character_name_lock:
-                    character_spec: CharacterSpec|None = CHARACTER_SPECS.get(current_character_name, None)
-                
+                    character_spec: CharacterSpec | None = CHARACTER_SPECS.get(current_character_name, None)
                 if character_spec is not None:
                     detected_armament_name = ocr_get_armament_name()
                     with advanced_mode_enabled_lock:
@@ -549,10 +553,8 @@ if __name__ == "__main__":
     armament_feedback_label.pack()
     relx, rely = get_ui_element_rel_positions("default_armament", screen_width, screen_height)
     armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
-    
-    advanced_armament_feedback_label = Label(
-        root, text="", fg="white", bg="black", font=("Consolas", advanced_armament_feedback_label_font_size)
-    )
+
+    advanced_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Consolas", advanced_armament_feedback_label_font_size))
     advanced_armament_feedback_label.pack()
     rely, _, relx, _ = get_detection_box("default_armament", screen_width, screen_height)
     advanced_armament_feedback_label.place(relx=relx, rely=rely + ADVANCED_FEEDBACK_RELPOSTONAME, anchor="nw")
@@ -573,7 +575,7 @@ if __name__ == "__main__":
 
     calculate_all_armaments()
     update_armament_feedback_labels()
-    update_current_character_dropdown("")
+    update_current_character_dropdown(current_character_name)
     control_window = create_control_window()
     try:
         root.deiconify()
