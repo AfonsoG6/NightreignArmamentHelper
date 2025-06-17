@@ -80,7 +80,8 @@ def quit_app() -> None:
     armament_detection_thread.stop()
 
 
-def update_armament_feedback_label(text: str) -> None:
+def update_armament_feedback_label(icons: list[str] = []) -> None:
+    text = "\n".join(icons) if len(icons) > 0 else ""
     if current_menu_state == SHOP_STATE:
         relx, rely = get_ui_element_rel_positions("shop_armament", screen_width, screen_height)
     elif current_menu_state == BOSS_DROP_STATE:
@@ -352,16 +353,15 @@ class ArmamentDetectionLoopThread(Thread):
                 icons = []
                 for armament_spec in all_matches:
                     if text_matches(detected_armament_name, armament_spec.name):
+                        if DEBUG:
+                            print(f"Armament match found: {armament_spec.name} ({detected_armament_name})")
                         if armament_spec in great_matches:
                             icons.append(GREAT_MATCH_TEXT)
-                        if armament_spec in decent_matches:
+                        elif armament_spec in decent_matches:
                             icons.append(DECENT_MATCH_TEXT)
                         if armament_spec in type_matches:
                             icons.append(TYPE_MATCH_TEXT)
-                if len(icons) == 0:
-                    update_armament_feedback_label("")
-                else:
-                    update_armament_feedback_label("\n".join(icons))
+                update_armament_feedback_label(icons)
             t1 = time()
             sleep_time = max(0, ARMAMENT_DETECTION_LOOP_PERIOD - (t1 - t0))
             sleep(sleep_time)
@@ -438,7 +438,7 @@ if __name__ == "__main__":
         debug_window = DebugWindow(root)
 
     calculate_all_armaments()
-    update_armament_feedback_label("")
+    update_armament_feedback_label()
     update_current_character_dropdown("")
     control_window = create_control_window()
     try:

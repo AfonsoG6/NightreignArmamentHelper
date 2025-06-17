@@ -23,36 +23,30 @@ class DebugWindow:
             self.debug_canvas.delete(self.armament_rect)
         top, bottom, left, right = get_detection_box(box_identifier, self.screen_width, self.screen_height)
         self.armament_rect = self.debug_canvas.create_rectangle(left, top, right, bottom, outline="red", width=2)
-        print(f"Armament rect drawn at: left={left}, top={top}, right={right}, bottom={bottom}")
 
     def hide_armament_rect(self) -> None:
         if self.armament_rect:
             self.debug_canvas.delete(self.armament_rect)
             self.armament_rect = None
-            print("Armament rect hidden")
 
     def show_menu_title_rect(self) -> None:
         if self.menu_title_rect:
             self.debug_canvas.delete(self.menu_title_rect)
         top, bottom, left, right = get_detection_box("menu_title", self.screen_width, self.screen_height)
         self.menu_title_rect = self.debug_canvas.create_rectangle(left, top, right, bottom, outline="yellow", width=2)
-        print(f"Menu title rect drawn at: left={left}, top={top}, right={right}, bottom={bottom}")
 
     def hide_menu_title_rect(self) -> None:
         if self.menu_title_rect:
             self.debug_canvas.delete(self.menu_title_rect)
             self.menu_title_rect = None
-            print("Menu title rect hidden")
 
     def show_character_rect(self) -> None:
         if self.character_rect:
             self.debug_canvas.delete(self.character_rect)
         top, bottom, left, right = get_detection_box("character", self.screen_width, self.screen_height)
         self.character_rect = self.debug_canvas.create_rectangle(left, top, right, bottom, outline="blue", width=2)
-        print(f"Character rect drawn at: left={left}, top={top}, right={right}, bottom={bottom}")
 
     def hide_character_rect(self) -> None:
         if self.character_rect:
             self.debug_canvas.delete(self.character_rect)
             self.character_rect = None
-            print("Character rect hidden")
