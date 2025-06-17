@@ -9,6 +9,7 @@ from datetime import datetime
 from PIL import ImageGrab
 from pytesseract import pytesseract
 from cv2 import cvtColor, threshold, imwrite, COLOR_BGR2GRAY, THRESH_BINARY_INV
+from os import getenv
 import sys
 # ---------------------- Project Imports -----------------------#
 from lib.debug import DebugWindow
@@ -18,17 +19,24 @@ from lib.misc import text_matches, image_changed
 
 # ------------------------ Constants ---------------------------#
 
+PROGRAM_START_TIME: str = datetime.now().strftime("%Y%m%d_%H%M%S")
 if getattr(sys, "frozen", False):
+    PROGRAM_DATA_PATH: str = path.join(getenv("LOCALAPPDATA", path.expanduser("~\\AppData\\Local")), PROGRAM_NAME)
+    makedirs(PROGRAM_DATA_PATH, exist_ok=True)
     BASE_PATH = sys._MEIPASS
+    TEMP_PATH: str = path.join(PROGRAM_DATA_PATH, "temp")
+    makedirs(TEMP_PATH, exist_ok=True)
+    ERROR_LOG_PATH: str = path.join(PROGRAM_DATA_PATH, f"error_log_{PROGRAM_START_TIME}.txt")
 else:
     BASE_PATH = path.dirname(__file__)
+    TEMP_PATH: str = path.join(BASE_PATH, "temp")
+    makedirs(TEMP_PATH, exist_ok=True)
+    ERROR_LOG_PATH: str = path.join(TEMP_PATH, f"error_log_{PROGRAM_START_TIME}.txt")
 
-TESSERACT_PATH = path.join(BASE_PATH, "Tesseract-OCR", "tesseract.exe")
+TESSERACT_PATH: str = path.join(BASE_PATH, "Tesseract-OCR", "tesseract.exe")
 pytesseract.tesseract_cmd = TESSERACT_PATH
-
-TEMP_PATH = path.join(BASE_PATH, "temp")
-ICON_PATH = path.join(BASE_PATH, "images", "icon.png")
-DEBUG = False
+ICON_PATH: str = path.join(BASE_PATH, "images", "icon.png")
+DEBUG: bool = False
 
 if __name__ == "__main__":
     parser = ArgumentParser(description="Run the Elden Ring Armament Detection Tool.")
@@ -65,6 +73,21 @@ current_character_var: StringVar
 current_character_dropdown: OptionMenu
 
 # ---------------------- Functions -----------------------------#
+
+
+def log_error(e: Exception, fatal: bool = False) -> None:
+    """
+    Logs an error message to an error log file, that is named as the timestamp of the start of the program.
+    :param e: Exception to log.
+    """
+    type: str = "FATAL" if fatal else "ERROR"
+    makedirs(path.dirname(ERROR_LOG_PATH), exist_ok=True)
+    
+    if not path.exists(ERROR_LOG_PATH):
+        open(ERROR_LOG_PATH, "w").close()
+    
+    with open(ERROR_LOG_PATH, "a") as f:
+        f.write(f"[{type}] {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {str(e)}\n")
 
 
 def on_character_selected(e) -> None:
@@ -146,21 +169,25 @@ def toggle_threads() -> None:
 
 
 def create_control_window() -> Toplevel:
-    global enable_disable_button, character_detection_button
+    global enable_disable_button, character_detection_button, screen_height, screen_width, control_window
     control_window = Toplevel()
-    control_window.title("Nightreign Armament Helper")
-    control_window.geometry("330x100")
-    control_window.resizable(False, False)  # Disable resizing
+    control_window.title(PROGRAM_NAME)
+    size_x = 330
+    size_y = 110
+    padding_x = int(screen_width * 0.05)
+    padding_y = int(screen_height * 0.15)
+    control_window.geometry(f"{size_x}x{size_y}+{screen_width - size_x - padding_x}+{screen_height - size_y - padding_y}")
+    control_window.resizable(False, False)
     icon_image = PhotoImage(file=ICON_PATH)
-    control_window.iconphoto(True, icon_image)  # Set the icon for the taskbar and window
-    control_window.protocol("WM_DELETE_WINDOW", quit_app)  # Close program when window is closed
+    control_window.iconphoto(True, icon_image)
+    control_window.protocol("WM_DELETE_WINDOW", quit_app)
 
-    top_button_frame = Frame(control_window)  # Frame for the top buttons
+    top_button_frame = Frame(control_window)
     top_button_frame.pack(pady=5)
 
     button_style = {
         "font": ("Arial", 12, "bold"),
-        "fg": "white",  # White text
+        "fg": "white",
         "activeforeground": "white",
         "relief": RAISED,
         "bd": 3,
@@ -171,15 +198,15 @@ def create_control_window() -> Toplevel:
     enable_disable_button = Button(
         top_button_frame, text="Disable", command=toggle_threads, bg=BUTTON_ENABLED_COLOR, activebackground=BUTTON_ENABLED_ACTIVE_COLOR, **button_style
     )
-    enable_disable_button.pack(side=LEFT, padx=5)  # Place the button on the left side
+    enable_disable_button.pack(side=LEFT, padx=5)
 
     quit_button = Button(top_button_frame, text="Quit", command=quit_app, bg=BUTTON_QUIT_COLOR, activebackground=BUTTON_QUIT_ACTIVE_COLOR, **button_style)
-    quit_button.pack(side=LEFT, padx=5)  # Place the button next to the Enable/Disable button
+    quit_button.pack(side=LEFT, padx=5)
 
-    bottom_button_frame = Frame(control_window)  # Frame for the bottom button
+    bottom_button_frame = Frame(control_window)
     bottom_button_frame.pack(pady=5)
 
-    button_style["width"] = 22  # Set a wider width for the bottom button
+    button_style["width"] = 22
 
     character_detection_button = Button(
         bottom_button_frame,
@@ -189,7 +216,17 @@ def create_control_window() -> Toplevel:
         activebackground=BUTTON_ENABLED_ACTIVE_COLOR,
         **button_style,
     )
-    character_detection_button.pack()  # Center the button at the bottom
+    character_detection_button.pack()
+
+    # Add version label at the bottom left
+    version_label = Label(
+        control_window,
+        text=f"Version {VERSION}",
+        font=("Arial", 8),
+        fg="gray",
+        anchor="sw",
+    )
+    version_label.place(relx=0.01, rely=0.95, anchor="sw")
 
     return control_window
 
@@ -216,7 +253,7 @@ def ocr_get_character_name() -> str:
         filename = path.join(TEMP_PATH, f"ocr_character_{timestamp}.png")
         imwrite(filename, cropped)
 
-    text = pytesseract.image_to_string(cropped, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=1)
+    text = pytesseract.image_to_string(cropped, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
     if DEBUG:
         debug_window.hide_character_rect()
         print(f"Character detected: {repr(text)}")
@@ -251,7 +288,7 @@ def ocr_get_menu_state() -> int:
         filename = path.join(TEMP_PATH, f"ocr_menu_{timestamp}.png")
         imwrite(filename, cropped)
 
-    text = pytesseract.image_to_string(cropped, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=1)
+    text = pytesseract.image_to_string(cropped, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
     if DEBUG:
         debug_window.hide_menu_title_rect()
         print(f"Menu title detected: {repr(text)}")
@@ -260,8 +297,8 @@ def ocr_get_menu_state() -> int:
         state = SHOP_STATE
     elif any(text_matches(text, word) for word in BOSS_DROP_TITLE_WORDS):
         state = BOSS_DROP_STATE
-    previous_menu_img = cropped  # Store the current image for future comparisons
-    previous_menu_state = state  # Update the previous state
+    previous_menu_img = cropped
+    previous_menu_state = state
     return state
 
 
@@ -294,7 +331,7 @@ def ocr_get_armament_name() -> str:
         filename = path.join(TEMP_PATH, f"ocr_armament_{timestamp}.png")
         imwrite(filename, cropped)
 
-    text = pytesseract.image_to_string(cropped, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=1)
+    text = pytesseract.image_to_string(cropped, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
     text_upper = text.upper().strip()
     if DEBUG:
         debug_window.hide_armament_rect()
@@ -316,12 +353,15 @@ class MenuDetectionLoopThread(Thread):
         global current_menu_state
         while not self.is_stopped():
             t0 = time()
-            new_state = ocr_get_menu_state()
-            if new_state != current_menu_state:
-                with current_state_lock:
-                    current_menu_state = new_state
-                    if DEBUG:
-                        print(f"Menu state changed: {current_menu_state}")
+            try:
+                new_state = ocr_get_menu_state()
+                if new_state != current_menu_state:
+                    with current_state_lock:
+                        current_menu_state = new_state
+                        if DEBUG:
+                            print(f"Menu state changed: {current_menu_state}")
+            except Exception as e:
+                log_error(e)
             t1 = time()
             sleep_time = max(0, MENU_DETECTION_LOOP_PERIOD - (t1 - t0))
             sleep(sleep_time)
@@ -342,26 +382,29 @@ class ArmamentDetectionLoopThread(Thread):
         global current_menu_state, thread_running, current_character_name
         while not self.is_stopped():
             t0 = time()
-            if current_character_name is not None and current_character_name != "":
-                detected_armament_name = ocr_get_armament_name()
-                with character_lock:
-                    type_matches: list[ArmamentSpec] = CHARACTER_SPECS[current_character_name].type_matches
-                    great_matches: list[ArmamentSpec] = CHARACTER_SPECS[current_character_name].great_matches
-                    decent_matches: list[ArmamentSpec] = CHARACTER_SPECS[current_character_name].decent_matches
-                all_matches: set = set(type_matches + great_matches + decent_matches)
+            try:
+                if current_character_name is not None and current_character_name != "":
+                    detected_armament_name = ocr_get_armament_name()
+                    with character_lock:
+                        type_matches: list[ArmamentSpec] = CHARACTER_SPECS[current_character_name].type_matches
+                        great_matches: list[ArmamentSpec] = CHARACTER_SPECS[current_character_name].great_matches
+                        decent_matches: list[ArmamentSpec] = CHARACTER_SPECS[current_character_name].decent_matches
+                    all_matches: set = set(type_matches + great_matches + decent_matches)
 
-                icons = []
-                for armament_spec in all_matches:
-                    if text_matches(detected_armament_name, armament_spec.name):
-                        if DEBUG:
-                            print(f"Armament match found: {armament_spec.name} ({detected_armament_name})")
-                        if armament_spec in great_matches:
-                            icons.append(GREAT_MATCH_TEXT)
-                        elif armament_spec in decent_matches:
-                            icons.append(DECENT_MATCH_TEXT)
-                        if armament_spec in type_matches:
-                            icons.append(TYPE_MATCH_TEXT)
-                update_armament_feedback_label(icons)
+                    icons = []
+                    for armament_spec in all_matches:
+                        if text_matches(detected_armament_name, armament_spec.name):
+                            if DEBUG:
+                                print(f"Armament match found: {armament_spec.name} ({detected_armament_name})")
+                            if armament_spec in great_matches:
+                                icons.append(GREAT_MATCH_TEXT)
+                            elif armament_spec in decent_matches:
+                                icons.append(DECENT_MATCH_TEXT)
+                            if armament_spec in type_matches:
+                                icons.append(TYPE_MATCH_TEXT)
+                    update_armament_feedback_label(icons)
+            except Exception as e:
+                log_error(e)
             t1 = time()
             sleep_time = max(0, ARMAMENT_DETECTION_LOOP_PERIOD - (t1 - t0))
             sleep(sleep_time)
@@ -382,10 +425,13 @@ class CharacterDetectionLoopThread(Thread):
         global current_character_name
         while not self.is_stopped():
             t0 = time()
-            if character_detection_enabled:
-                new_character = ocr_get_character_name()
-                if new_character != None and new_character != "" and new_character != current_character_name:
-                    update_current_character_dropdown(new_character)
+            try:
+                if character_detection_enabled:
+                    new_character = ocr_get_character_name()
+                    if new_character != None and new_character != "" and new_character != current_character_name:
+                        update_current_character_dropdown(new_character)
+            except Exception as e:
+                log_error(e)
             t1 = time()
             sleep_time = max(0, CHARACTER_DETECTION_LOOP_PERIOD - (t1 - t0))
             sleep(sleep_time)
@@ -448,6 +494,8 @@ if __name__ == "__main__":
         armament_detection_thread.start()
         print("Ready!")
         root.mainloop()
+    except Exception as e:
+        log_error(e, True)
     except KeyboardInterrupt:
         print("Manual program stop.")
         quit_app()

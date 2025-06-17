@@ -1,3 +1,5 @@
+PROGRAM_NAME = "Nightreign Armament Helper"
+VERSION = "1.0.3"
 SHOP_TITLE_WORDS = ["SHOP"]
 BOSS_DROP_TITLE_WORDS = ["DORMANT POWER"]
 ARMAMENT_TEXT_DISTANCE_THRESHOLD = 0.85  # Relative distance threshold for armament text detection
@@ -8,6 +10,7 @@ CHARACTER_DETECTION_LOOP_PERIOD = 0.01
 
 TESSERACT_CONFIG = f"--oem 3 --psm 7 -c language_model_penalty_non_freq_dict_word=1 -c language_model_penalty_non_dict_word=1"
 TESSERACT_LANG = "eldenring"
+TESSERACT_TIMEOUT = 2 # seconds
 
 TYPE_MATCH_TEXT = "\U0001F9E4"
 GREAT_MATCH_TEXT = "\u2B50"
