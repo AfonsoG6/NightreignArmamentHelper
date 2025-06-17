@@ -6,11 +6,11 @@
 
 ## Description
 
-Nightreign Armament Helper is an Overlay mod for Elden Ring: Nightreign that is safe to use ONLINE and with EAC ENABLED. It aims to help players choose the best armaments for the character they are using. It does this in a very simple manner, by displaying three separate icons directly on top of the armament's image.
+**Nightreign Armament Helper** is an Overlay mod for Elden Ring: Nightreign that is safe to use ONLINE and with EAC ENABLED. It aims to help players choose the best armaments for the character they are using. It does this in a very simple manner, by displaying three separate icons directly on top of the armament's image.
 
-- ✔️: The weapon's stats are a decent match for the character's stats.
-- ⭐: The weapon's stats are a great match for the character's stats.
-- 🧤: The weapon is of the type preferred by the character.
+- ✔️: The weapon's stats are a **decent match** for the character's stats.
+- ⭐: The weapon's stats are a **great match** for the character's stats.
+- 🧤: The weapon is of the **type preferred** by the character.
 
 <p align="center">
     <img src="./images/decent-match.png" width="100" />
@@ -19,6 +19,18 @@ Nightreign Armament Helper is an Overlay mod for Elden Ring: Nightreign that is 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img src="./images/two-matches.png" width="100" />
 </p>
+
+Additionally, as of version 1.1.0, the mod also provides an **Advanced Mode** that in addition to the simple recommendation icons, also displays an armament's type and stats.
+
+<p align="center">
+    <img src="./images/advanced-mode.png" width="420" />
+</p>
+
+*Note:* The **Advanced Mode** being enabled does not impact performance in any way, so feel free to enable it if you prefer.
+
+*Recommendations:*
+- The **basic mode is recommended for newer players**, as it is simpler and easier to understand at a glance.
+- The **advanced mode is recommended for experienced players** who want to see more information about the armament they are using, such as its type and stats.
 
 ## How to use
 
@@ -38,6 +50,7 @@ Furthermore, an additional window containing a control panel for the mod will ap
 
 - Temporarily disable/enable the mod, without closing it.
 - Disable/enable the automatic detection of the character.
+- Disable/enable the advanced mode, which shows additional information about the armament.
 - Fully stop the mod.
 
 <p align="center">
@@ -85,12 +98,6 @@ pyinstaller --onefile --noconsole --icon=images/icon.ico --add-data "Tesseract-O
 ```
 
 Upon successful completion, you will find the executable in the `dist` folder.
-
-*Optional:* Download [UPX](https://upx.github.io) and extract it to any location. Then, add the following option to the `pyinstaller` command:
-
-```bash
---upx-dir <path/to/upx_directory>
-```
 
 ## License
 

@@ -43,7 +43,24 @@ class ArmamentSpec:
             res.append("ARC")
         return ", ".join(res)
 
-ARMAMENT_SPECS: list[ArmamentSpec] = [
+    def get_stat_letter(self, stat_id: str) -> str:
+        stat_value: int = getattr(self, stat_id)
+        if stat_value == S:
+            return "S"
+        elif stat_value == A:
+            return "A"
+        elif stat_value == B:
+            return "B"
+        elif stat_value == C:
+            return "C"
+        elif stat_value == D:
+            return "D"
+        elif stat_value == E:
+            return "E"
+        else:
+            return "-"
+
+ARMAMENT_SPECS: set[ArmamentSpec] = set([
     ############ DAGGERS ############
     ArmamentSpec("Duchess' Dagger",              DAGGER,               [],                   E, S, _, _, _),
     ArmamentSpec("Dagger",                       DAGGER,               [],                   E, S, _, _, _),
@@ -464,4 +481,4 @@ ARMAMENT_SPECS: list[ArmamentSpec] = [
     ArmamentSpec("Golden Order Seal",            SACRED_SEAL,          [],                   _, _, _, S, _),
     ArmamentSpec("Frenzied Flame Seal",          SACRED_SEAL,          [MADNESS],            _, _, _, S, _),
     ArmamentSpec("Dragon Communion Seal",        SACRED_SEAL,          [],                   _, _, _, S, _),
-]
+])

@@ -43,6 +43,12 @@ class CharacterSpec:
             elif stat_score > 0.1:
                 self.decent_matches.append(armament_spec)
 
+    def get_all_matches(self) -> set[ArmamentSpec]:
+        """
+        Returns all armaments that match the character's weapon types.
+        """
+        return set(self.type_matches + self.great_matches + self.decent_matches)
+    
     def get_highest_rating(self) -> int:
         """
         Returns the highest rating among the character's stats.

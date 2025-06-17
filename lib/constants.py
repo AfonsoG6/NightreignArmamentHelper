@@ -1,19 +1,19 @@
 PROGRAM_NAME = "Nightreign Armament Helper"
-VERSION = "1.0.3"
+VERSION = "1.1.0"
 SHOP_TITLE_WORDS = ["SHOP"]
 BOSS_DROP_TITLE_WORDS = ["DORMANT POWER"]
-ARMAMENT_TEXT_DISTANCE_THRESHOLD = 0.85  # Relative distance threshold for armament text detection
+TEXT_DISTANCE_THRESHOLD = 0.85
 # Time in seconds between detection checks
-MENU_DETECTION_LOOP_PERIOD = 0.01
-ARMAMENT_DETECTION_LOOP_PERIOD = 0.01
-CHARACTER_DETECTION_LOOP_PERIOD = 0.01
+MENU_DETECTION_LOOP_PERIOD = 0.2
+ARMAMENT_DETECTION_LOOP_PERIOD = 0.05
+CHARACTER_DETECTION_LOOP_PERIOD = 0.2
 
 TESSERACT_CONFIG = f"--oem 3 --psm 7 -c language_model_penalty_non_freq_dict_word=1 -c language_model_penalty_non_dict_word=1"
 TESSERACT_LANG = "eldenring"
 TESSERACT_TIMEOUT = 2 # seconds
 
-TYPE_MATCH_TEXT = "\U0001F9E4"
-GREAT_MATCH_TEXT = "\u2B50"
+TYPE_MATCH_TEXT = "\U0001f9e4"
+GREAT_MATCH_TEXT = "\u2b50"
 DECENT_MATCH_TEXT = "\u2714"
 NO_CHARACTER = "None"
 
@@ -65,6 +65,18 @@ def get_detection_box(identifier: str, screen_width: int, screen_height: int) ->
     return top, bottom, left, right
 
 
+def get_detection_box_rel(identifier: str, screen_width: int, screen_height: int) -> tuple[float, float, float, float]:
+    """
+    Returns the detection box coordinates in relative format based on the box name and screen resolution.
+    :param identifier: Identifier for the detection box.
+    :param screen_width: Width of the screen.
+    :param screen_height: Height of the screen.
+    :return: Tuple containing (top, bottom, left, right) coordinates of the detection box in relative format.
+    """
+    top, bottom, left, right = get_detection_box(identifier, screen_width, screen_height)
+    return top / screen_height, bottom / screen_height, left / screen_width, right / screen_width
+
+
 UI_ELEMENT_POSITIONS = {
     # (x, y) in relative coordinates
     "default_armament": {"resolution": (16, 9), "coordinates": (0.314, 0.2444)},
@@ -72,6 +84,8 @@ UI_ELEMENT_POSITIONS = {
     "shop_armament": {"resolution": (16, 9), "coordinates": (0.334, 0.22)},
     "character_dropdown": {"resolution": (16, 9), "coordinates": (0.085, 0.0944)},
 }
+
+ADVANCED_FEEDBACK_RELPOSTONAME = -0.03
 
 
 def get_ui_element_rel_positions(identifier: str, screen_width: int, screen_height: int) -> tuple[float, float]:
