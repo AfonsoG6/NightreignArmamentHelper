@@ -22,26 +22,11 @@ ITEM_HELPER_STATES = [
 
 DETECTION_BOXES = {
     # (top, bottom, left, right)
-    "default_armament": {
-        "resolution": (16, 10),
-        "coordinates": (0.305, 0.332, 0.38, 0.62),
-    },
-    "boss_drop_armament": {
-        "resolution": (16, 10),
-        "coordinates": (0.295, 0.325, 0.482, 0.71),
-    },
-    "shop_armament": {
-        "resolution": (16, 10),
-        "coordinates": (0.28, 0.31, 0.4, 0.65),
-    },
-    "menu_title": {
-        "resolution": (16, 10),
-        "coordinates": (0.165, 0.23, 0.07, 0.18),
-    },
-    "character": {
-        "resolution": (16, 10),
-        "coordinates": (0.23, 0.265, 0.125, 0.24),
-    },
+    "default_armament": {"resolution": (16, 9), "coordinates": (0.2833, 0.3133, 0.38, 0.62)},
+    "boss_drop_armament": {"resolution": (16, 9), "coordinates": (0.2722, 0.3055, 0.482, 0.71)},
+    "shop_armament": {"resolution": (16, 9), "coordinates": (0.2555, 0.2889, 0.4, 0.65)},
+    "menu_title": {"resolution": (16, 9), "coordinates": (0.1278, 0.2, 0.07, 0.18)},
+    "character": {"resolution": (16, 9), "coordinates": (0.2, 0.2389, 0.125, 0.24)},
 }
 
 
@@ -57,40 +42,32 @@ def get_detection_box(identifier: str, screen_width: int, screen_height: int) ->
     if identifier not in DETECTION_BOXES:
         raise ValueError(f"Invalid detection box name: {identifier}")
 
-    # Convert the coordinates from the reference resolution to the current screen resolution
-    ref_resolution: tuple[int, int] = DETECTION_BOXES[identifier]["resolution"]
-    tgt_resolution: tuple[float, float]
     # Check if the screen resolution is more wide than 16:9 or more tall than 16:9
     if (screen_width / screen_height) > (16 / 9):  # Wider than 16:9
-        tgt_resolution = ((screen_width / screen_height) * 9, 9)
-    else:  # Taller than 16:9
-        tgt_resolution = (16, (screen_height / screen_width) * 16)
+        # Find width occupied by black bars
+        black_bars_height = 0
+        black_bars_width = screen_width - (screen_height * 16 / 9)
+    elif (screen_width / screen_height) < (16 / 9):  # Taller than 16:9
+        # Find height occupied by black bars
+        black_bars_height = screen_height - (screen_width * 9 / 16)
+        black_bars_width = 0
+    else:  # Exactly 16:9
+        black_bars_height = 0
+        black_bars_width = 0
     coordinates: tuple[float, float, float, float] = DETECTION_BOXES[identifier]["coordinates"]
-    top: int = int(screen_height * (coordinates[0] * tgt_resolution[1] / ref_resolution[1]))
-    bottom: int = int(screen_height * (coordinates[1] * tgt_resolution[1] / ref_resolution[1]))
-    left: int = int(screen_width * (coordinates[2] * tgt_resolution[0] / ref_resolution[0]))
-    right: int = int(screen_width * (coordinates[3] * tgt_resolution[0] / ref_resolution[0]))
+    top: int = int(((screen_height - black_bars_height) * coordinates[0]) + black_bars_height / 2)
+    bottom: int = int(((screen_height - black_bars_height) * coordinates[1]) + black_bars_height / 2)
+    left: int = int(((screen_width - black_bars_width) * coordinates[2]) + black_bars_width / 2)
+    right: int = int(((screen_width - black_bars_width) * coordinates[3]) + black_bars_width / 2)
     return top, bottom, left, right
 
 
 UI_ELEMENT_POSITIONS = {
     # (x, y) in relative coordinates
-    "default_armament": {
-        "resolution": (16, 10),
-        "coordinates": (0.314, 0.27),
-    },
-    "boss_drop_armament": {
-        "resolution": (16, 10),
-        "coordinates": (0.417, 0.262),
-    },
-    "shop_armament": {
-        "resolution": (16, 10),
-        "coordinates": (0.334, 0.248),
-    },
-    "character_dropdown": {
-        "resolution": (16, 10),
-        "coordinates": (0.085, 0.135),
-    },
+    "default_armament": {"resolution": (16, 9), "coordinates": (0.314, 0.2444)},
+    "boss_drop_armament": {"resolution": (16, 9), "coordinates": (0.417, 0.2355)},
+    "shop_armament": {"resolution": (16, 9), "coordinates": (0.334, 0.22)},
+    "character_dropdown": {"resolution": (16, 9), "coordinates": (0.085, 0.0944)},
 }
 
 
@@ -106,17 +83,21 @@ def get_ui_element_rel_positions(identifier: str, screen_width: int, screen_heig
     if identifier not in UI_ELEMENT_POSITIONS:
         raise ValueError(f"Invalid item feedback identifier: {identifier}")
 
-    # Convert the coordinates from the reference resolution to the current screen resolution
-    ref_resolution: tuple[int, int] = UI_ELEMENT_POSITIONS[identifier]["resolution"]
-    tgt_resolution: tuple[float, float]
     # Check if the screen resolution is more wide than 16:9 or more tall than 16:9
-    if screen_width / screen_height > 16 / 9:  # Wider than 16:9
-        tgt_resolution = ((screen_width / screen_height) * 9, 9)
-    else:  # Taller than 16:9
-        tgt_resolution = (16, (screen_height / screen_width) * 16)
+    if (screen_width / screen_height) > (16 / 9):  # Wider than 16:9
+        # Find width occupied by black bars
+        black_bars_height = 0
+        black_bars_width = screen_width - (screen_height * 16 / 9)
+    elif (screen_width / screen_height) < (16 / 9):  # Taller than 16:9
+        # Find height occupied by black bars
+        black_bars_height = screen_height - (screen_width * 9 / 16)
+        black_bars_width = 0
+    else:  # Exactly 16:9
+        black_bars_height = 0
+        black_bars_width = 0
     coordinates: tuple[float, float] = UI_ELEMENT_POSITIONS[identifier]["coordinates"]
-    x: float = coordinates[0] * tgt_resolution[0] / ref_resolution[0]
-    y: float = coordinates[1] * tgt_resolution[1] / ref_resolution[1]
+    x: float = (((screen_width - black_bars_width) * coordinates[0]) + black_bars_width / 2) / screen_width
+    y: float = (((screen_height - black_bars_height) * coordinates[1]) + black_bars_height / 2) / screen_height
     return x, y
 
 
