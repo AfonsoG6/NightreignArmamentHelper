@@ -8,7 +8,7 @@ from os import path, makedirs
 from datetime import datetime
 from PIL import ImageGrab
 from pytesseract import pytesseract
-from cv2 import cvtColor, threshold, imwrite, COLOR_BGR2GRAY, THRESH_BINARY
+from cv2 import cvtColor, threshold, imwrite, COLOR_BGR2GRAY, THRESH_BINARY_INV
 from os import getenv
 from traceback import format_exc
 import json
@@ -377,7 +377,7 @@ def ocr_get_character_name() -> str:
     top, bottom, left, right = get_detection_box("character", width, height)
     cropped = gray[top:bottom, left:right]
 
-    _, img_for_ocr = threshold(cropped, 140, 255, THRESH_BINARY)
+    _, img_for_ocr = threshold(cropped, 140, 255, THRESH_BINARY_INV)
     if not image_changed(previous_character_img, cropped):
         return previous_character_name
 
@@ -438,7 +438,7 @@ def ocr_get_menu_state() -> str:
     top, bottom, left, right = get_detection_box("menu_title", width, height)
     cropped = gray[top:bottom, left:right]
 
-    _, img_for_ocr = threshold(cropped, 170, 255, THRESH_BINARY)
+    _, img_for_ocr = threshold(cropped, 170, 255, THRESH_BINARY_INV)
     if not image_changed(previous_menu_img, cropped):
         return previous_menu_state
 
@@ -503,7 +503,7 @@ def ocr_get_armament_name() -> str:
     top, bottom, left, right = get_detection_box(box_identifier, width, height)
     cropped = gray[top:bottom, left:right]
 
-    _, img_for_ocr = threshold(cropped, 115, 255, THRESH_BINARY)
+    _, img_for_ocr = threshold(cropped, 115, 255, THRESH_BINARY_INV)
     if not image_changed(previous_armament_img, img_for_ocr):
         return previous_armament_name
 
