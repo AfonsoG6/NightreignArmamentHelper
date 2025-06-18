@@ -1,26 +1,43 @@
 PROGRAM_NAME = "Nightreign Armament Helper"
 VERSION = "1.1.1"
-SHOP_TITLE_WORDS = ["SHOP"]
-BOSS_DROP_TITLE_WORDS = ["DORMANT POWER"]
+SHOP_TITLE = "SHOP"
+BOSS_DROP_TITLE = "DORMANT POWER"
 TEXT_DISTANCE_THRESHOLD = 0.85
+OCR_MINIMUM_PIXELS_PERCENT = 0.005  # At least 0.5% of the pixels in the detection box must be white to even consider calling the OCR
+# Accepted false negative rate when matching pixel sets ((100-x)% of the white pixels must match)
+ARMAMENT_PIXELSET_FN_RATE = 0.075
+CHARACTER_PIXELSET_FN_RATE = 0.05
+MENU_PIXELSET_FN_RATE = 0.1
+# Accepted false positive rate when matching pixel sets ((100-x)% of the black pixels must match)
+ARMAMENT_PIXELSET_FP_RATE = 0.70
+CHARACTER_PIXELSET_FP_RATE = 0.10
+MENU_PIXELSET_FP_RATE = 0.70
+# Threshold from 0 - 255, higher means a cleaner image, but less info to match
+ARMAMENT_PIXELSET_THRESHOLD = 190
+CHARACTER_PIXELSET_THRESHOLD = 200
+MENU_PIXELSET_THRESHOLD = 210
+# Threshold reduction for comparison, higher means more lenient matching
+ARMAMENT_PIXELSET_THRESHOLD_REDUCTION = 10
+CHARACTER_PIXELSET_THRESHOLD_REDUCTION = 0
+MENU_PIXELSET_THRESHOLD_REDUCTION = 20
 # Time in seconds between detection checks
 MENU_DETECTION_LOOP_PERIOD = 0.2
 ARMAMENT_DETECTION_LOOP_PERIOD = 0.05
 CHARACTER_DETECTION_LOOP_PERIOD = 0.2
 
-TESSERACT_CONFIG = f"--oem 3 --psm 7 -c language_model_penalty_non_freq_dict_word=1 -c language_model_penalty_non_dict_word=1"
+TESSERACT_CONFIG = f"--oem 3 --psm 7 -c language_model_penalty_non_freq_dict_word=1 -c language_model_penalty_non_dict_word=1 -c tessedit_do_invert=0"
 TESSERACT_LANG = "eldenring"
-TESSERACT_TIMEOUT = 2 # seconds
+TESSERACT_TIMEOUT = 2  # seconds
 
 TYPE_MATCH_TEXT = "\U0001f9e4"
 GREAT_MATCH_TEXT = "\u2b50"
 DECENT_MATCH_TEXT = "\u2714"
 NO_CHARACTER = "None"
 
-ITEM_HELPER_STATES = [
-    DEFAULT_STATE := 0,
-    SHOP_STATE := 1,
-    BOSS_DROP_STATE := 2,
+ITEM_HELPER_STATES: list[str] = [
+    DEFAULT_STATE := "DEFAULT",
+    SHOP_STATE := SHOP_TITLE,
+    BOSS_DROP_STATE := BOSS_DROP_TITLE,
 ]
 
 DETECTION_BOXES = {

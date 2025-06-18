@@ -8,15 +8,17 @@ from os import path, makedirs
 from datetime import datetime
 from PIL import ImageGrab
 from pytesseract import pytesseract
-from cv2 import cvtColor, threshold, imwrite, COLOR_BGR2GRAY, THRESH_BINARY_INV
+from cv2 import cvtColor, threshold, imwrite, COLOR_BGR2GRAY, THRESH_BINARY
 from os import getenv
+from traceback import format_exc
+import json
 import sys
 
 # ---------------------- Project Imports -----------------------#
 from lib.debug import DebugWindow
 from lib.constants import *
 from lib.characters import *
-from lib.misc import text_matches, image_changed
+from lib.misc import *
 
 # ------------------------ Constants ---------------------------#
 
@@ -27,12 +29,18 @@ if getattr(sys, "frozen", False):
     BASE_PATH = sys._MEIPASS
     TEMP_PATH: str = path.join(PROGRAM_DATA_PATH, "temp")
     makedirs(TEMP_PATH, exist_ok=True)
+    PIXEL_SETS_PATH: str = path.join(PROGRAM_DATA_PATH, "pixel_sets")
+    makedirs(PIXEL_SETS_PATH, exist_ok=True)
     ERROR_LOG_PATH: str = path.join(PROGRAM_DATA_PATH, f"error_log_{PROGRAM_START_TIME}.txt")
+    CONFIG_PATH: str = path.join(PROGRAM_DATA_PATH, "config.json")
 else:
     BASE_PATH = path.dirname(__file__)
     TEMP_PATH: str = path.join(BASE_PATH, "temp")
     makedirs(TEMP_PATH, exist_ok=True)
+    PIXEL_SETS_PATH: str = path.join(TEMP_PATH, "pixel_sets")
+    makedirs(PIXEL_SETS_PATH, exist_ok=True)
     ERROR_LOG_PATH: str = path.join(TEMP_PATH, f"error_log_{PROGRAM_START_TIME}.txt")
+    CONFIG_PATH: str = path.join(TEMP_PATH, "config.json")
 
 TESSERACT_PATH: str = path.join(BASE_PATH, "Tesseract-OCR", "tesseract.exe")
 pytesseract.tesseract_cmd = TESSERACT_PATH
@@ -60,8 +68,8 @@ advanced_mode_button: Button
 hide_show_button: Button
 
 previous_menu_img: ndarray | None = None
-previous_menu_state: int = DEFAULT_STATE
-current_menu_state: int = DEFAULT_STATE
+previous_menu_state: str = DEFAULT_STATE
+current_menu_state: str = DEFAULT_STATE
 current_menu_state_lock: Lock = Lock()
 
 previous_character_img: ndarray | None = None
@@ -80,7 +88,39 @@ advanced_armament_feedback_label: Label
 current_character_var: StringVar
 current_character_dropdown: OptionMenu
 
+last_menu_pixel_set: PixelSet | None = None
+last_character_pixel_set: PixelSet | None = None
+last_armament_pixel_set: PixelSet | None = None
+pixelset_cache: PixelSetCache
+
 # ---------------------- Functions -----------------------------#
+
+
+def save_configs() -> None:
+    global enabled, character_detection_enabled, advanced_mode_enabled, CONFIG_PATH, character_detection_enabled_lock, advanced_mode_enabled_lock
+    with character_detection_enabled_lock, advanced_mode_enabled_lock:
+        config_data = {
+            "character_detection_enabled": character_detection_enabled,
+            "advanced_mode_enabled": advanced_mode_enabled,
+        }
+    makedirs(path.dirname(CONFIG_PATH), exist_ok=True)
+    with open(CONFIG_PATH, "w") as config_file:
+        json.dump(config_data, config_file, indent=4)
+
+
+def load_configs() -> None:
+    global enabled, character_detection_enabled, advanced_mode_enabled, CONFIG_PATH, character_detection_enabled_lock, advanced_mode_enabled_lock
+    try:
+        with open(CONFIG_PATH, "r") as config_file:
+            config_data = json.load(config_file)
+            with character_detection_enabled_lock, advanced_mode_enabled_lock:
+                character_detection_enabled = config_data.get("character_detection_enabled", True)
+                advanced_mode_enabled = config_data.get("advanced_mode_enabled", False)
+    except (FileNotFoundError, json.JSONDecodeError):
+        with character_detection_enabled_lock, advanced_mode_enabled_lock:
+            character_detection_enabled = True
+            advanced_mode_enabled = False
+        save_configs()
 
 
 def log_error(e: Exception, fatal: bool = False) -> None:
@@ -96,7 +136,7 @@ def log_error(e: Exception, fatal: bool = False) -> None:
         open(ERROR_LOG_PATH, "w").close()
 
     with open(ERROR_LOG_PATH, "a") as f:
-        f.write(f"[{type}] {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {str(e)}\n")
+        f.write(f"[{type}] {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {format_exc()}\n")
 
 
 def on_character_selected(e) -> None:
@@ -184,19 +224,20 @@ def update_current_character_dropdown(character_name: str) -> None:
 
 
 def toggle_character_detection() -> None:
-    global character_detection_enabled, character_detection_thread, character_detection_button
-    with character_detection_enabled_lock:
+    global character_detection_enabled, character_detection_thread, character_detection_button, enabled, character_detection_enabled_lock, enabled_lock
+    with enabled_lock, character_detection_enabled_lock:
         character_detection_enabled = not character_detection_enabled
-        if character_detection_enabled and not character_detection_thread.is_alive():
+        if (enabled and character_detection_enabled) and not character_detection_thread.is_alive():
             character_detection_thread = CharacterDetectionLoopThread(daemon=True)
             character_detection_thread.start()
-        else:
+        elif not (enabled and character_detection_enabled) and character_detection_thread.is_alive():
             character_detection_thread.stop()
         character_detection_button.config(
             text=f"{'Disable' if character_detection_enabled else 'Enable'} Character Detection",
             bg=BUTTON_ENABLED_COLOR if character_detection_enabled else BUTTON_DISABLED_COLOR,
             activebackground=BUTTON_ENABLED_ACTIVE_COLOR if character_detection_enabled else BUTTON_DISABLED_COLOR,
         )
+    save_configs()
 
 
 def toggle_advanced_mode() -> None:
@@ -208,17 +249,19 @@ def toggle_advanced_mode() -> None:
             bg=BUTTON_ENABLED_COLOR if advanced_mode_enabled else BUTTON_DISABLED_COLOR,
             activebackground=BUTTON_ENABLED_ACTIVE_COLOR if advanced_mode_enabled else BUTTON_DISABLED_ACTIVE_COLOR,
         )
+    save_configs()
 
 
-def toggle_threads() -> None:
+def toggle_enabled() -> None:
     global enabled, enable_disable_button, character_detection_thread, menu_detection_thread, armament_detection_thread, root
     with enabled_lock:
         enabled = not enabled
         if enabled:
             # Restart threads if they are not alive
-            if not character_detection_thread.is_alive():
-                character_detection_thread = CharacterDetectionLoopThread(daemon=True)
-                character_detection_thread.start()
+            with character_detection_enabled_lock:
+                if character_detection_enabled and not character_detection_thread.is_alive():
+                    character_detection_thread = CharacterDetectionLoopThread(daemon=True)
+                    character_detection_thread.start()
             if not menu_detection_thread.is_alive():
                 menu_detection_thread = MenuDetectionLoopThread(daemon=True)
                 menu_detection_thread.start()
@@ -229,9 +272,12 @@ def toggle_threads() -> None:
             root.deiconify()
         else:
             # Stop threads
-            character_detection_thread.stop()
-            menu_detection_thread.stop()
-            armament_detection_thread.stop()
+            if character_detection_thread.is_alive():
+                character_detection_thread.stop()
+            if menu_detection_thread.is_alive():
+                menu_detection_thread.stop()
+            if armament_detection_thread.is_alive():
+                armament_detection_thread.stop()
             # Hide all the Overlay UI elements
             root.withdraw()
         enable_disable_button.config(
@@ -239,6 +285,7 @@ def toggle_threads() -> None:
             bg=BUTTON_ENABLED_COLOR if enabled else BUTTON_DISABLED_COLOR,
             activebackground=BUTTON_ENABLED_ACTIVE_COLOR if enabled else BUTTON_DISABLED_COLOR,
         )
+    save_configs()
 
 
 def create_control_window() -> Toplevel:
@@ -270,7 +317,12 @@ def create_control_window() -> Toplevel:
     }
 
     enable_disable_button = Button(
-        top_button_frame, text="Disable", command=toggle_threads, bg=BUTTON_ENABLED_COLOR, activebackground=BUTTON_ENABLED_ACTIVE_COLOR, **button_style
+        top_button_frame,
+        text="Disable" if enabled else "Enable",
+        command=toggle_enabled,
+        bg=BUTTON_ENABLED_COLOR if enabled else BUTTON_DISABLED_COLOR,
+        activebackground=BUTTON_ENABLED_ACTIVE_COLOR if enabled else BUTTON_DISABLED_COLOR,
+        **button_style,
     )
     enable_disable_button.pack(side=LEFT, padx=BUTTON_PADDING)
 
@@ -315,7 +367,7 @@ def create_control_window() -> Toplevel:
 
 
 def ocr_get_character_name() -> str:
-    global current_character_name, previous_character_img, previous_character_name
+    global previous_character_img, previous_character_name, last_character_pixel_set
     img = ImageGrab.grab()
 
     img_np = array(img)
@@ -325,32 +377,58 @@ def ocr_get_character_name() -> str:
     top, bottom, left, right = get_detection_box("character", width, height)
     cropped = gray[top:bottom, left:right]
 
-    _, cropped = threshold(cropped, 140, 255, THRESH_BINARY_INV)
+    _, img_for_ocr = threshold(cropped, 140, 255, THRESH_BINARY)
     if not image_changed(previous_character_img, cropped):
         return previous_character_name
+
+    # To save time and resources in future detection of the same armament, we generate a pixel set
+    # and check if it matches any of the previously saved pixel sets.
+    pixel_set: PixelSet = PixelSet(
+        pixelset_cache,
+        cropped,
+        width,
+        height,
+        "character",
+        CHARACTER_PIXELSET_THRESHOLD,
+        CHARACTER_PIXELSET_THRESHOLD_REDUCTION,
+        CHARACTER_PIXELSET_FN_RATE,
+        CHARACTER_PIXELSET_FP_RATE,
+    )
+    pixel_set_match = pixel_set.find_match()
+    if pixel_set_match != "":
+        if DEBUG:
+            print(f"Armament pixel set match found: {pixel_set_match}")
+        previous_character_img = img_for_ocr
+        previous_character_name = pixel_set_match
+        last_character_pixel_set = None
+        return pixel_set_match
+    if pixel_set.size() / (pixel_set.width * pixel_set.height) < OCR_MINIMUM_PIXELS_PERCENT:
+        # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
+        # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
+        return ""
+    if pixelset_cache.all_characters_learned(width, height):
+        # Character detection is stable enough that we can ditch the OCR completely if we have already learned a pixel set for each character for this resolution.
+        return ""
+    last_character_pixel_set = pixel_set
 
     if DEBUG:
         debug_window.show_character_rect()
         makedirs(TEMP_PATH, exist_ok=True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = path.join(TEMP_PATH, f"ocr_character_{timestamp}.png")
-        imwrite(filename, cropped)
+        imwrite(filename, img_for_ocr)
 
-    text = pytesseract.image_to_string(cropped, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
+    text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
     if DEBUG:
         debug_window.hide_character_rect()
-        print(f"Character detected: {repr(text)}")
-    previous_character_img = cropped
-    for char in CHARACTERS:
-        if text_matches(text, char):
-            previous_character_name = char
-            return char
-    previous_character_name = ""
-    return ""
+        print(f"Character detected: {text}")
+    previous_character_img = img_for_ocr
+    previous_character_name = text
+    return text
 
 
-def ocr_get_menu_state() -> int:
-    global previous_menu_img, previous_menu_state
+def ocr_get_menu_state() -> str:
+    global previous_menu_img, previous_menu_state, last_menu_pixel_set, pixelset_cache
     img = ImageGrab.grab()
 
     img_np = array(img)
@@ -360,33 +438,55 @@ def ocr_get_menu_state() -> int:
     top, bottom, left, right = get_detection_box("menu_title", width, height)
     cropped = gray[top:bottom, left:right]
 
-    _, cropped = threshold(cropped, 140, 255, THRESH_BINARY_INV)
+    _, img_for_ocr = threshold(cropped, 170, 255, THRESH_BINARY)
     if not image_changed(previous_menu_img, cropped):
         return previous_menu_state
+
+    # To save time and resources in future detection of the same armament, we generate a pixel set
+    # and check if it matches any of the previously saved pixel sets.
+    pixel_set: PixelSet = PixelSet(
+        pixelset_cache,
+        cropped,
+        width,
+        height,
+        "menu_title",
+        MENU_PIXELSET_THRESHOLD,
+        MENU_PIXELSET_THRESHOLD_REDUCTION,
+        MENU_PIXELSET_FN_RATE,
+        MENU_PIXELSET_FP_RATE,
+    )
+    pixel_set_match = pixel_set.find_match()
+    if pixel_set_match != "":
+        if DEBUG:
+            print(f"Menu pixel set match found: {pixel_set_match}")
+        previous_menu_img = img_for_ocr
+        previous_menu_state = pixel_set_match
+        last_menu_pixel_set = None
+        return pixel_set_match
+    if pixel_set.size() / (pixel_set.width * pixel_set.height) < OCR_MINIMUM_PIXELS_PERCENT:
+    # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
+        # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
+        return DEFAULT_STATE
+    last_menu_pixel_set = pixel_set
 
     if DEBUG:
         debug_window.show_menu_title_rect()
         makedirs(TEMP_PATH, exist_ok=True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = path.join(TEMP_PATH, f"ocr_menu_{timestamp}.png")
-        imwrite(filename, cropped)
+        imwrite(filename, img_for_ocr)
 
-    text = pytesseract.image_to_string(cropped, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
+    text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
     if DEBUG:
         debug_window.hide_menu_title_rect()
-        print(f"Menu title detected: {repr(text)}")
-    state = DEFAULT_STATE
-    if any(text_matches(text, word) for word in SHOP_TITLE_WORDS):
-        state = SHOP_STATE
-    elif any(text_matches(text, word) for word in BOSS_DROP_TITLE_WORDS):
-        state = BOSS_DROP_STATE
-    previous_menu_img = cropped
-    previous_menu_state = state
-    return state
+        print(f"Menu title detected: {text}")
+    previous_menu_img = img_for_ocr
+    previous_menu_state = text
+    return text
 
 
 def ocr_get_armament_name() -> str:
-    global previous_armament_img, previous_armament_name
+    global previous_armament_img, previous_armament_name, last_armament_pixel_set
     img = ImageGrab.grab()
 
     img_np = array(img)
@@ -403,25 +503,50 @@ def ocr_get_armament_name() -> str:
     top, bottom, left, right = get_detection_box(box_identifier, width, height)
     cropped = gray[top:bottom, left:right]
 
-    _, cropped = threshold(cropped, 115, 255, THRESH_BINARY_INV)
-    if not image_changed(previous_armament_img, cropped):
+    _, img_for_ocr = threshold(cropped, 115, 255, THRESH_BINARY)
+    if not image_changed(previous_armament_img, img_for_ocr):
         return previous_armament_name
+
+    # To save time and resources in future detection of the same armament, we generate a pixel set
+    # and check if it matches any of the previously saved pixel sets.
+    pixel_set: PixelSet = PixelSet(
+        pixelset_cache,
+        cropped,
+        width,
+        height,
+        box_identifier,
+        ARMAMENT_PIXELSET_THRESHOLD,
+        ARMAMENT_PIXELSET_THRESHOLD_REDUCTION,
+        ARMAMENT_PIXELSET_FN_RATE,
+        ARMAMENT_PIXELSET_FP_RATE,
+    )
+    pixel_set_match = pixel_set.find_match()
+    if pixel_set_match != "":
+        if DEBUG:
+            print(f"Armament pixel set match found: {pixel_set_match}")
+        previous_armament_img = img_for_ocr
+        previous_armament_name = pixel_set_match
+        last_armament_pixel_set = None
+        return pixel_set_match
+    if pixel_set.size() / (pixel_set.width * pixel_set.height) < OCR_MINIMUM_PIXELS_PERCENT:
+        # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
+        return ""
+    last_armament_pixel_set = pixel_set
 
     if DEBUG:
         debug_window.show_armament_rect(box_identifier)
         makedirs(TEMP_PATH, exist_ok=True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = path.join(TEMP_PATH, f"ocr_armament_{timestamp}.png")
-        imwrite(filename, cropped)
+        imwrite(filename, img_for_ocr)
 
-    text = pytesseract.image_to_string(cropped, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
-    text_upper = text.upper().strip()
+    text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
     if DEBUG:
         debug_window.hide_armament_rect()
-        print(f"Armament detected: {repr(text_upper)}")
-    previous_armament_img = cropped
-    previous_armament_name = text_upper
-    return text_upper
+        print(f"Armament detected: {text}")
+    previous_armament_img = img_for_ocr
+    previous_armament_name = text
+    return text
 
 
 # -------------------------- Classes ---------------------------#
@@ -437,12 +562,20 @@ class MenuDetectionLoopThread(Thread):
         while not self.is_stopped():
             t0 = time()
             try:
-                new_menu_state = ocr_get_menu_state()
+                text: str = ocr_get_menu_state()
+                match: int = FALSE
+                new_menu_state = DEFAULT_STATE
+                if match := text_matches(text, SHOP_TITLE):
+                    new_menu_state = SHOP_STATE
+                elif match := text_matches(text, BOSS_DROP_TITLE):
+                    new_menu_state = BOSS_DROP_STATE
                 with current_menu_state_lock:
                     if new_menu_state != current_menu_state:
-                        current_menu_state = new_menu_state
                         if DEBUG:
-                            print(f"Menu state changed: {current_menu_state}")
+                            print(f"Menu state changing from '{current_menu_state}' to '{new_menu_state}'")
+                        current_menu_state = new_menu_state
+                        if last_menu_pixel_set and match == PERFECT and new_menu_state != DEFAULT_STATE:
+                            last_menu_pixel_set.write(new_menu_state)
             except Exception as e:
                 log_error(e)
             t1 = time()
@@ -469,17 +602,14 @@ class ArmamentDetectionLoopThread(Thread):
                 with current_character_name_lock:
                     character_spec: CharacterSpec | None = CHARACTER_SPECS.get(current_character_name, None)
                 if character_spec is not None:
-                    detected_armament_name = ocr_get_armament_name()
-                    with advanced_mode_enabled_lock:
-                        if advanced_mode_enabled:
-                            armaments_to_search: set = ARMAMENT_SPECS
-                        else:
-                            armaments_to_search: set = character_spec.get_all_matches()
-                    for armament_spec in armaments_to_search:
-                        if text_matches(detected_armament_name, armament_spec.name):
+                    text = ocr_get_armament_name()
+                    for armament_spec in ARMAMENT_SPECS:
+                        if match := text_matches(text, armament_spec.name):
                             if DEBUG:
-                                print(f"Armament match found: {armament_spec.name} ({detected_armament_name})")
+                                print(f"Armament match found: {armament_spec.name} ({text})")
                             update_armament_feedback_labels(character_spec, armament_spec)
+                            if last_armament_pixel_set and match == PERFECT:
+                                last_armament_pixel_set.write(armament_spec.name)
                             break
                     else:  # No match found
                         update_armament_feedback_labels()
@@ -503,22 +633,35 @@ class CharacterDetectionLoopThread(Thread):
 
     def run(self) -> None:
         global current_character_name, current_character_name_lock, character_detection_enabled, current_character_name_lock
+        if DEBUG:
+            print("Starting character detection thread.")
         while not self.is_stopped():
             t0 = time()
             try:
                 with current_character_name_lock:
                     do_character_detection: bool = character_detection_enabled
                 if do_character_detection:
-                    new_character_name = ocr_get_character_name()
+                    text: str = ocr_get_character_name()
+                    match: int = FALSE
+                    for char in CHARACTERS:
+                        if match := text_matches(text, char):
+                            new_character_name = char
+                            break
+                    else:  # No match found
+                        new_character_name = ""
                     with current_character_name_lock:
                         if new_character_name != "" and new_character_name != current_character_name:
                             current_character_name = new_character_name
                             update_current_character_dropdown(new_character_name)
+                            if last_character_pixel_set and match == PERFECT:
+                                last_character_pixel_set.write(new_character_name)
             except Exception as e:
                 log_error(e)
             t1 = time()
             sleep_time = max(0, CHARACTER_DETECTION_LOOP_PERIOD - (t1 - t0))
             sleep(sleep_time)
+        if DEBUG:
+            print("Character detection thread stopped.")
 
     def stop(self) -> None:
         self._stop_event.set()
@@ -531,6 +674,8 @@ class CharacterDetectionLoopThread(Thread):
 
 
 if __name__ == "__main__":
+    load_configs()
+    
     root = Tk()
     root.overrideredirect(True)
     root.attributes("-topmost", True)
@@ -574,12 +719,17 @@ if __name__ == "__main__":
         debug_window = DebugWindow(root)
 
     calculate_all_armaments()
+    pixelset_cache = PixelSetCache(PIXEL_SETS_PATH, DEBUG)
     update_armament_feedback_labels()
     update_current_character_dropdown(current_character_name)
     control_window = create_control_window()
     try:
         root.deiconify()
-        character_detection_thread.start()
+        do_start: bool
+        with character_detection_enabled_lock:
+            do_start = character_detection_enabled
+        if do_start:
+            character_detection_thread.start()
         menu_detection_thread.start()
         armament_detection_thread.start()
         print("Ready!")
