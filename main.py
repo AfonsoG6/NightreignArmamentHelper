@@ -79,18 +79,23 @@ current_character_name_lock: Lock = Lock()
 
 previous_armament_img: ndarray | None = None
 previous_armament_name: str = ""
+previous_replace_armament_img: ndarray | None = None
+previous_replace_armament_name: str = ""
 
 root: Tk
 screen_width: int
 screen_height: int
-armament_feedback_label: Label
+basic_armament_feedback_label: Label
 advanced_armament_feedback_label: Label
+replace_basic_armament_feedback_label: Label
+replace_advanced_armament_feedback_label: Label
 current_character_var: StringVar
 current_character_dropdown: OptionMenu
 
 last_menu_pixel_set: PixelSet | None = None
 last_character_pixel_set: PixelSet | None = None
 last_armament_pixel_set: PixelSet | None = None
+last_replace_armament_pixel_set: PixelSet | None = None
 pixelset_cache: PixelSetCache
 
 last_screengrab = None
@@ -156,15 +161,16 @@ def on_character_selected(e) -> None:
 
 
 def quit_app() -> None:
-    global root, character_detection_thread, menu_detection_thread, armament_detection_thread
+    global root, character_detection_thread, menu_detection_thread, armament_detection_thread, replace_armament_detection_thread
     root.quit()
     character_detection_thread.stop()
     menu_detection_thread.stop()
     armament_detection_thread.stop()
+    replace_armament_detection_thread.stop()
 
 
 def update_basic_armament_feedback_label(character_spec: CharacterSpec, armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
-    global armament_feedback_label
+    global basic_armament_feedback_label
     icons: list[str] = []
     if armament_spec in character_spec.great_matches:
         icons.append(GREAT_MATCH_TEXT)
@@ -174,8 +180,8 @@ def update_basic_armament_feedback_label(character_spec: CharacterSpec, armament
         icons.append(TYPE_MATCH_TEXT)
     text = "\n".join(icons) if len(icons) > 0 else ""
 
-    armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
-    armament_feedback_label.config(text=text)
+    basic_armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
+    basic_armament_feedback_label.config(text=text)
 
 
 def update_advanced_armament_feedback_label(armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
@@ -196,10 +202,10 @@ def update_advanced_armament_feedback_label(armament_spec: ArmamentSpec, relx: f
 
 
 def update_armament_feedback_labels(character_spec: CharacterSpec | None = None, armament_spec: ArmamentSpec | None = None) -> None:
-    global armament_feedback_label, advanced_armament_feedback_label, screen_width, screen_height, current_menu_state, current_menu_state_lock
+    global basic_armament_feedback_label, advanced_armament_feedback_label, screen_width, screen_height, current_menu_state, current_menu_state_lock
     if character_spec is None or armament_spec is None:
-        armament_feedback_label.config(text="")
-        armament_feedback_label.place_forget()
+        basic_armament_feedback_label.config(text="")
+        basic_armament_feedback_label.place_forget()
         advanced_armament_feedback_label.config(text="")
         advanced_armament_feedback_label.place_forget()
         return
@@ -216,6 +222,57 @@ def update_armament_feedback_labels(character_spec: CharacterSpec | None = None,
 
     update_basic_armament_feedback_label(character_spec, armament_spec, basic_relx, basic_rely)
     update_advanced_armament_feedback_label(armament_spec, advanced_relx, advanced_rely)
+    root.update_idletasks()
+
+
+def update_replace_basic_armament_feedback_label(character_spec: CharacterSpec, armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
+    global replace_basic_armament_feedback_label
+    icons: list[str] = []
+    if armament_spec in character_spec.great_matches:
+        icons.append(GREAT_MATCH_TEXT)
+    elif armament_spec in character_spec.decent_matches:
+        icons.append(DECENT_MATCH_TEXT)
+    if armament_spec in character_spec.type_matches:
+        icons.append(TYPE_MATCH_TEXT)
+    text = "\n".join(icons) if len(icons) > 0 else ""
+
+    replace_basic_armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
+    replace_basic_armament_feedback_label.config(text=text)
+
+
+def update_replace_advanced_armament_feedback_label(armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
+    global replace_advanced_armament_feedback_label, advanced_mode_enabled, advanced_mode_enabled_lock
+    STR: str = armament_spec.get_stat_letter("STR")
+    DEX: str = armament_spec.get_stat_letter("DEX")
+    INT: str = armament_spec.get_stat_letter("INT")
+    FAI: str = armament_spec.get_stat_letter("FAI")
+    ARC: str = armament_spec.get_stat_letter("ARC")
+    text = f"{armament_spec.type} [{STR}|{DEX}|{INT}|{FAI}|{ARC}]"
+    with advanced_mode_enabled_lock:
+        if advanced_mode_enabled:
+            replace_advanced_armament_feedback_label.config(text=text)
+            replace_advanced_armament_feedback_label.place(relx=relx, rely=rely, anchor="sw")
+        else:
+            replace_advanced_armament_feedback_label.config(text="")
+            replace_advanced_armament_feedback_label.place_forget()
+
+
+def update_replace_armament_feedback_labels(character_spec: CharacterSpec | None = None, armament_spec: ArmamentSpec | None = None) -> None:
+    global replace_basic_armament_feedback_label, replace_advanced_armament_feedback_label, screen_width, screen_height
+    if character_spec is None or armament_spec is None:
+        replace_basic_armament_feedback_label.config(text="")
+        replace_basic_armament_feedback_label.place_forget()
+        replace_advanced_armament_feedback_label.config(text="")
+        replace_advanced_armament_feedback_label.place_forget()
+        return
+
+    basic_relx, basic_rely = get_ui_element_rel_positions("default_armament", screen_width, screen_height)
+    advanced_rely, _, advanced_relx, _ = get_detection_box_rel("default_armament", screen_width, screen_height)
+    basic_relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
+    advanced_relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
+
+    update_replace_basic_armament_feedback_label(character_spec, armament_spec, basic_relx, basic_rely)
+    update_replace_advanced_armament_feedback_label(armament_spec, advanced_relx, advanced_rely)
     root.update_idletasks()
 
 
@@ -257,7 +314,7 @@ def toggle_advanced_mode() -> None:
 
 
 def toggle_enabled() -> None:
-    global enabled, enable_disable_button, character_detection_thread, menu_detection_thread, armament_detection_thread, root
+    global enabled, enable_disable_button, character_detection_thread, menu_detection_thread, armament_detection_thread, replace_armament_detection_thread, root
     with enabled_lock:
         enabled = not enabled
         if enabled:
@@ -272,6 +329,9 @@ def toggle_enabled() -> None:
             if not armament_detection_thread.is_alive():
                 armament_detection_thread = ArmamentDetectionLoopThread(daemon=True)
                 armament_detection_thread.start()
+            if not replace_armament_detection_thread.is_alive():
+                replace_armament_detection_thread = ReplaceArmamentDetectionLoopThread(daemon=True)
+                replace_armament_detection_thread.start()
             # Show all the Overlay UI elements
             root.deiconify()
         else:
@@ -282,6 +342,8 @@ def toggle_enabled() -> None:
                 menu_detection_thread.stop()
             if armament_detection_thread.is_alive():
                 armament_detection_thread.stop()
+            if replace_armament_detection_thread.is_alive():
+                replace_armament_detection_thread.stop()
             # Hide all the Overlay UI elements
             root.withdraw()
         enable_disable_button.config(
@@ -483,7 +545,6 @@ def ocr_get_menu_state() -> str:
         last_menu_pixel_set = None
         return pixel_set_match
     if pixel_set.size() / (pixel_set.width * pixel_set.height) < OCR_MINIMUM_PIXELS_PERCENT:
-    # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
         # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
         return DEFAULT_STATE
     last_menu_pixel_set = pixel_set
@@ -503,28 +564,44 @@ def ocr_get_menu_state() -> str:
     previous_menu_state = text
     return text
 
+OCR_RESULTS: list[int] = [
+    NONE:= 0,
+    ROUGH:= 1,
+    CLEAN:= 2,
+]
 
-def ocr_get_armament_name() -> str:
-    global previous_armament_img, previous_armament_name, last_armament_pixel_set
-    img = get_screen_grab()
-
-    img_np = array(img)
-    gray = cvtColor(img_np, COLOR_BGR2GRAY)
+def ocr_get_armament_name(is_replace: bool = False) -> tuple[int, str]:
+    global previous_armament_img, previous_armament_name, last_armament_pixel_set, last_replace_armament_pixel_set, previous_replace_armament_img, previous_replace_armament_name, current_menu_state, current_menu_state_lock, pixelset_cache
 
     with current_menu_state_lock:
         state = current_menu_state
+        if state != DEFAULT_STATE and is_replace:
+            return (NONE, "")
     box_identifier = "default_armament"
     if state == SHOP_STATE:
         box_identifier = "shop_armament"
     elif state == BOSS_DROP_STATE:
         box_identifier = "boss_drop_armament"
+
+    img = get_screen_grab()
+
+    img_np = array(img)
+    gray = cvtColor(img_np, COLOR_BGR2GRAY)
+
     width, height = img.size
-    top, bottom, left, right = get_detection_box(box_identifier, width, height)
+    if is_replace:
+        top, bottom, left, right = get_detection_box(box_identifier, width, height, REPLACE_ARMAMENT_REL_POS_TO_NAME, 0)
+    else:
+        top, bottom, left, right = get_detection_box(box_identifier, width, height)
     cropped = gray[top:bottom, left:right]
 
     _, img_for_ocr = threshold(cropped, 115, 255, THRESH_BINARY_INV)
-    if not image_changed(previous_armament_img, img_for_ocr):
-        return previous_armament_name
+    if is_replace:
+        if not image_changed(previous_replace_armament_img, img_for_ocr):
+            return (ROUGH, previous_replace_armament_name)
+    else:
+        if not image_changed(previous_armament_img, img_for_ocr):
+            return (ROUGH, previous_armament_name)
 
     # To save time and resources in future detection of the same armament, we generate a pixel set
     # and check if it matches any of the previously saved pixel sets.
@@ -542,18 +619,24 @@ def ocr_get_armament_name() -> str:
     pixel_set_match = pixel_set.find_match()
     if pixel_set_match != "":
         if DEBUG:
-            print(f"Armament pixel set match found: {pixel_set_match}")
-        previous_armament_img = img_for_ocr
-        previous_armament_name = pixel_set_match
-        last_armament_pixel_set = None
-        return pixel_set_match
+            print(f"{'Replace ' if is_replace else ''}Armament pixel set match found: {pixel_set_match}")
+        if is_replace:
+            previous_replace_armament_img = img_for_ocr
+            previous_replace_armament_name = pixel_set_match
+        else:
+            previous_armament_img = img_for_ocr
+            previous_armament_name = pixel_set_match
+        return (CLEAN, pixel_set_match)
     if pixel_set.size() / (pixel_set.width * pixel_set.height) < OCR_MINIMUM_PIXELS_PERCENT:
         # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
-        return ""
-    last_armament_pixel_set = pixel_set
+        return (NONE, "")
+    if is_replace:
+        last_replace_armament_pixel_set = pixel_set
+    else:
+        last_armament_pixel_set = pixel_set
 
     if DEBUG:
-        debug_window.show_armament_rect(box_identifier)
+        debug_window.show_armament_rect(box_identifier, is_replace)
         makedirs(TEMP_PATH, exist_ok=True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = path.join(TEMP_PATH, f"ocr_armament_{timestamp}.png")
@@ -561,11 +644,15 @@ def ocr_get_armament_name() -> str:
 
     text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
     if DEBUG:
-        debug_window.hide_armament_rect()
-        print(f"Armament detected: {text}")
-    previous_armament_img = img_for_ocr
-    previous_armament_name = text
-    return text
+        debug_window.hide_armament_rect(is_replace)
+        print(f"{'Replace ' if is_replace else ''}Armament detected: {text}")
+    if is_replace:
+        previous_replace_armament_img = img_for_ocr
+        previous_replace_armament_name = text
+    else:
+        previous_armament_img = img_for_ocr
+        previous_armament_name = text
+    return (ROUGH, text)
 
 
 # -------------------------- Classes ---------------------------#
@@ -621,17 +708,24 @@ class ArmamentDetectionLoopThread(Thread):
                 with current_character_name_lock:
                     character_spec: CharacterSpec | None = CHARACTER_SPECS.get(current_character_name, None)
                 if character_spec is not None:
-                    text = ocr_get_armament_name()
-                    for armament_spec in ARMAMENT_SPECS:
-                        if match := text_matches(text, armament_spec.name):
-                            if DEBUG:
-                                print(f"Armament match found: {armament_spec.name} ({text})")
-                            update_armament_feedback_labels(character_spec, armament_spec)
-                            if last_armament_pixel_set and match == PERFECT:
-                                last_armament_pixel_set.write(armament_spec.name)
-                            break
+                    result, text = ocr_get_armament_name()
+                    if result != NONE:
+                        for armament_spec in EXPANDED_ARMAMENT_SPECS:
+                            if result == CLEAN:
+                                match = TRUE if text == armament_spec.name else FALSE
+                            else:
+                                match = text_matches(text, armament_spec.name)
+                            if match:
+                                if DEBUG:
+                                    print(f"Armament match found: {armament_spec.name} ({text})")
+                                update_armament_feedback_labels(character_spec, armament_spec)
+                                if last_armament_pixel_set and match == PERFECT:
+                                    last_armament_pixel_set.write(armament_spec.name)
+                                break
+                        else:  # No match found
+                            update_armament_feedback_labels()
                     else:  # No match found
-                        update_armament_feedback_labels()
+                        update_replace_armament_feedback_labels()
             except Exception as e:
                 log_error(e)
             t1 = time()
@@ -689,12 +783,56 @@ class CharacterDetectionLoopThread(Thread):
         return self._stop_event.is_set()
 
 
+class ReplaceArmamentDetectionLoopThread(Thread):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._stop_event = Event()
+
+    def run(self) -> None:
+        global current_menu_state, current_character_name, last_replace_armament_pixel_set
+        while not self.is_stopped():
+            t0 = time()
+            try:
+                with current_character_name_lock:
+                    character_spec: CharacterSpec | None = CHARACTER_SPECS.get(current_character_name, None)
+                if character_spec is not None:
+                    result, text = ocr_get_armament_name(is_replace=True)
+                    if result != NONE:
+                        for armament_spec in EXPANDED_ARMAMENT_SPECS:
+                            if result == CLEAN:
+                                match = TRUE if text == armament_spec.name else FALSE
+                            else:
+                                match = text_matches(text, armament_spec.name)
+                            if match:
+                                if DEBUG:
+                                    print(f"Replace Armament match found: {armament_spec.name} ({text})")
+                                update_replace_armament_feedback_labels(character_spec, armament_spec)
+                                if last_replace_armament_pixel_set and match == PERFECT:
+                                    last_replace_armament_pixel_set.write(armament_spec.name)
+                                break
+                        else:  # No match found
+                            update_replace_armament_feedback_labels()
+                    else:  # No match found
+                        update_replace_armament_feedback_labels()
+            except Exception as e:
+                log_error(e)
+            t1 = time()
+            sleep_time = max(0, ARMAMENT_DETECTION_LOOP_PERIOD - (t1 - t0))
+            sleep(sleep_time)
+
+    def stop(self) -> None:
+        self._stop_event.set()
+
+    def is_stopped(self) -> bool:
+        return self._stop_event.is_set()
+
+
 # -------------------------- Main ------------------------------#
 
 
 if __name__ == "__main__":
     load_configs()
-    
+
     root = Tk()
     root.overrideredirect(True)
     root.attributes("-topmost", True)
@@ -713,15 +851,27 @@ if __name__ == "__main__":
     advanced_armament_feedback_label_font_size = int(screen_height * 0.012)
     current_character_label_font_size = int(screen_height * 0.008)
 
-    armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Arial", basic_armament_feedback_label_font_size))
-    armament_feedback_label.pack()
+    basic_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Arial", basic_armament_feedback_label_font_size))
+    basic_armament_feedback_label.pack()
     relx, rely = get_ui_element_rel_positions("default_armament", screen_width, screen_height)
-    armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
+    basic_armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
 
     advanced_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Consolas", advanced_armament_feedback_label_font_size))
     advanced_armament_feedback_label.pack()
     rely, _, relx, _ = get_detection_box("default_armament", screen_width, screen_height)
-    advanced_armament_feedback_label.place(relx=relx, rely=rely + ADVANCED_FEEDBACK_RELPOSTONAME, anchor="nw")
+    advanced_armament_feedback_label.place(relx=relx, rely=rely, anchor="sw")
+
+    replace_basic_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Arial", basic_armament_feedback_label_font_size))
+    replace_basic_armament_feedback_label.pack()
+    relx, rely = get_ui_element_rel_positions("default_armament", screen_width, screen_height)
+    relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
+    replace_basic_armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
+
+    replace_advanced_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Consolas", advanced_armament_feedback_label_font_size))
+    replace_advanced_armament_feedback_label.pack()
+    rely, _, relx, _ = get_detection_box("default_armament", screen_width, screen_height)
+    relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
+    replace_advanced_armament_feedback_label.place(relx=relx, rely=rely, anchor="sw")
 
     current_character_var = StringVar(value=NO_CHARACTER)
 
@@ -734,6 +884,7 @@ if __name__ == "__main__":
     character_detection_thread = CharacterDetectionLoopThread(daemon=True)
     menu_detection_thread = MenuDetectionLoopThread(daemon=True)
     armament_detection_thread = ArmamentDetectionLoopThread(daemon=True)
+    replace_armament_detection_thread = ReplaceArmamentDetectionLoopThread(daemon=True)
     if DEBUG:
         debug_window = DebugWindow(root)
 
@@ -751,7 +902,8 @@ if __name__ == "__main__":
             character_detection_thread.start()
         menu_detection_thread.start()
         armament_detection_thread.start()
-        print("Ready!")
+        replace_armament_detection_thread.start()
+        print("Ready! Armaments loaded: ", len(ARMAMENT_SPECS))
         root.mainloop()
     except Exception as e:
         log_error(e, True)

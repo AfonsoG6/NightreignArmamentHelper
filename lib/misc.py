@@ -5,6 +5,7 @@ from PIL import Image
 from os import path, makedirs, listdir
 from cv2 import threshold, THRESH_BINARY, imwrite
 from lib.constants import *
+from re import sub
 
 TEXT_MATCH_RESULTS: list[int] = [
     FALSE := 0,
@@ -19,8 +20,10 @@ def text_matches(rough_text: str, target_text: str, threshold: float = TEXT_DIST
     """
     clean_target_text: str = target_text.strip().upper()
     clean_rough_text: str = rough_text.strip().upper()
-
-    clean_rough_text = clean_rough_text[: min(len(clean_rough_text), len(clean_target_text))]
+    clean_rough_text = clean_rough_text.replace("’", "'").replace("‘", "'")
+    clean_rough_text = clean_rough_text.replace("!", "l").replace("+", "t")
+    clean_rough_text = sub(r"[^a-zA-ZéÉ\'\-\.]", "", clean_rough_text)
+    clean_rough_text = sub(r"\s+", " ", clean_rough_text)
 
     if jaccard.normalized_similarity(clean_rough_text, clean_target_text) >= threshold:
         if clean_rough_text == clean_target_text:

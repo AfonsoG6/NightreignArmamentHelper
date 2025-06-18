@@ -43,15 +43,30 @@ ITEM_HELPER_STATES: list[str] = [
 
 DETECTION_BOXES = {
     # (top, bottom, left, right)
-    "default_armament": {"resolution": (16, 9), "coordinates": (0.2833, 0.3133, 0.38, 0.62)},
-    "boss_drop_armament": {"resolution": (16, 9), "coordinates": (0.2722, 0.3055, 0.482, 0.71)},
-    "shop_armament": {"resolution": (16, 9), "coordinates": (0.2555, 0.2889, 0.4, 0.65)},
-    "menu_title": {"resolution": (16, 9), "coordinates": (0.1278, 0.2, 0.07, 0.18)},
-    "character": {"resolution": (16, 9), "coordinates": (0.2, 0.2389, 0.125, 0.24)},
+    "default_armament": {
+        "resolution": (16, 9),
+        "coordinates": (0.2833, 0.3133, 0.3800, 0.5800),
+    },
+    "boss_drop_armament": {
+        "resolution": (16, 9),
+        "coordinates": (0.2722, 0.3055, 0.4820, 0.6820),
+    },
+    "shop_armament": {
+        "resolution": (16, 9),
+        "coordinates": (0.2555, 0.2889, 0.400, 0.600),
+    },
+    "menu_title": {
+        "resolution": (16, 9),
+        "coordinates": (0.1278, 0.2000, 0.0700, 0.1800),
+    },
+    "character": {
+        "resolution": (16, 9),
+        "coordinates": (0.2000, 0.2389, 0.1250, 0.2400),
+    },
 }
 
 
-def get_detection_box(identifier: str, screen_width: int, screen_height: int) -> tuple[int, int, int, int]:
+def get_detection_box(identifier: str, screen_width: int, screen_height: int, x_offset: float = 0, y_offset: float = 0) -> tuple[int, int, int, int]:
     """
     Returns the detection box coordinates based on the box name and screen resolution.
     :param identifier: Identifier for the detection box.
@@ -76,10 +91,10 @@ def get_detection_box(identifier: str, screen_width: int, screen_height: int) ->
         black_bars_height = 0
         black_bars_width = 0
     coordinates: tuple[float, float, float, float] = DETECTION_BOXES[identifier]["coordinates"]
-    top: int = int(((screen_height - black_bars_height) * coordinates[0]) + black_bars_height / 2)
-    bottom: int = int(((screen_height - black_bars_height) * coordinates[1]) + black_bars_height / 2)
-    left: int = int(((screen_width - black_bars_width) * coordinates[2]) + black_bars_width / 2)
-    right: int = int(((screen_width - black_bars_width) * coordinates[3]) + black_bars_width / 2)
+    top: int = int(((screen_height - black_bars_height) * (coordinates[0] + y_offset)) + black_bars_height / 2)
+    bottom: int = int(((screen_height - black_bars_height) * (coordinates[1] + y_offset)) + black_bars_height / 2)
+    left: int = int(((screen_width - black_bars_width) * (coordinates[2] + x_offset)) + black_bars_width / 2)
+    right: int = int(((screen_width - black_bars_width) * (coordinates[3] + x_offset)) + black_bars_width / 2)
     return top, bottom, left, right
 
 
@@ -103,7 +118,8 @@ UI_ELEMENT_POSITIONS = {
     "character_dropdown": {"resolution": (16, 9), "coordinates": (0.085, 0.0944)},
 }
 
-ADVANCED_FEEDBACK_RELPOSTONAME = -0.03
+
+REPLACE_ARMAMENT_REL_POS_TO_NAME = 0.3281
 
 
 def get_ui_element_rel_positions(identifier: str, screen_width: int, screen_height: int) -> tuple[float, float]:

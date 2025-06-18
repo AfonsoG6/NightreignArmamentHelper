@@ -17,17 +17,29 @@ class DebugWindow:
         self.menu_title_rect = None
         self.character_rect = None
         self.armament_rect = None
+        self.replace_armament_rect = None
 
-    def show_armament_rect(self, box_identifier: str) -> None:
-        if self.armament_rect:
-            self.debug_canvas.delete(self.armament_rect)
-        top, bottom, left, right = get_detection_box(box_identifier, self.screen_width, self.screen_height)
-        self.armament_rect = self.debug_canvas.create_rectangle(left, top, right, bottom, outline="red", width=2)
+    def show_armament_rect(self, box_identifier: str, is_replace: bool = False) -> None:
+        if is_replace:
+            if self.replace_armament_rect:
+                self.debug_canvas.delete(self.replace_armament_rect)
+            top, bottom, left, right = get_detection_box(box_identifier, self.screen_width, self.screen_height, REPLACE_ARMAMENT_REL_POS_TO_NAME, 0)
+            self.replace_armament_rect = self.debug_canvas.create_rectangle(left, top, right, bottom, outline="green", width=2)
+        else:
+            if self.armament_rect:
+                self.debug_canvas.delete(self.armament_rect)
+            top, bottom, left, right = get_detection_box(box_identifier, self.screen_width, self.screen_height)
+            self.armament_rect = self.debug_canvas.create_rectangle(left, top, right, bottom, outline="red", width=2)
 
-    def hide_armament_rect(self) -> None:
-        if self.armament_rect:
-            self.debug_canvas.delete(self.armament_rect)
-            self.armament_rect = None
+    def hide_armament_rect(self, is_replace: bool = False) -> None:
+        if is_replace:
+            if self.replace_armament_rect:
+                self.debug_canvas.delete(self.replace_armament_rect)
+                self.replace_armament_rect = None
+        else:
+            if self.armament_rect:
+                self.debug_canvas.delete(self.armament_rect)
+                self.armament_rect = None
 
     def show_menu_title_rect(self) -> None:
         if self.menu_title_rect:
