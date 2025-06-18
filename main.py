@@ -93,6 +93,10 @@ last_character_pixel_set: PixelSet | None = None
 last_armament_pixel_set: PixelSet | None = None
 pixelset_cache: PixelSetCache
 
+last_screengrab = None
+last_screengrab_time: float = 0.0
+screengrab_lock: Lock = Lock()
+
 # ---------------------- Functions -----------------------------#
 
 
@@ -366,9 +370,24 @@ def create_control_window() -> Toplevel:
     return control_window
 
 
+def get_screen_grab():
+    """
+    Returns the most recent screen grab if it occurred within the minimum time threshold, otherwise takes a new screen grab.
+    Ensures thread safety using a lock.
+    """
+    global last_screengrab, last_screengrab_time, screengrab_lock
+    with screengrab_lock:
+        current_time = time()
+        if current_time - last_screengrab_time < MINIMUM_TIME_BETWEEN_SCREENGRABS and last_screengrab is not None:
+            return last_screengrab
+        last_screengrab = ImageGrab.grab()
+        last_screengrab_time = current_time
+        return last_screengrab
+
+
 def ocr_get_character_name() -> str:
     global previous_character_img, previous_character_name, last_character_pixel_set
-    img = ImageGrab.grab()
+    img = get_screen_grab()
 
     img_np = array(img)
     gray = cvtColor(img_np, COLOR_BGR2GRAY)
@@ -429,7 +448,7 @@ def ocr_get_character_name() -> str:
 
 def ocr_get_menu_state() -> str:
     global previous_menu_img, previous_menu_state, last_menu_pixel_set, pixelset_cache
-    img = ImageGrab.grab()
+    img = get_screen_grab()
 
     img_np = array(img)
     gray = cvtColor(img_np, COLOR_BGR2GRAY)
@@ -487,7 +506,7 @@ def ocr_get_menu_state() -> str:
 
 def ocr_get_armament_name() -> str:
     global previous_armament_img, previous_armament_name, last_armament_pixel_set
-    img = ImageGrab.grab()
+    img = get_screen_grab()
 
     img_np = array(img)
     gray = cvtColor(img_np, COLOR_BGR2GRAY)
