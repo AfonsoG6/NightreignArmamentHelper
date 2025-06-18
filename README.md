@@ -67,6 +67,10 @@ It then uses this information to determine which weapon the player is currently 
 
 It is also important to note that the mod defines the categories "great" and "decent" based on a custom mathematical algorithm, which sometimes may not match the player's expectations. If you think that a weapon should be marked as "great" or "decent" but it is not, please open an issue on GitHub.
 
+As of version 1.2.0, the mod also implements an **eventual responsiveness** method that learns, through analysis of perfect OCR matches, a set of reference points to detect the same text in the future without having to call the OCR again. As these reference points are learned, they are stored in the user's %LOCALAPPDATA% folder, thus persisting across game sessions.
+
+*Note:* If the resolution of the screen is changed, the mod will have to relearn all the reference points for the new resolution. This is because the reference points are based on the position of the text on the screen, which may change with different resolutions.
+
 ### Will I get banned for using this mod?
 
 **No**, you will not get banned for using this mod. The mod does not modify the game files in any way, and it does not interact with the game's memory. It simply reads the screen and displays information based on that.
