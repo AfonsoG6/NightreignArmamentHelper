@@ -67,8 +67,8 @@ It is also important to note that the mod defines the categories "great" and "de
 [list=1]
 [*][b]Display Mode[/b]: For the overlay to be correctly shown on top of the game window, the game [color=#cc4125][b]MUST BE RUNNING IN BORDERLESS WINDOWED[/b][/color] mode.
 [*][b]Ground items[/b]: Items found in the ground show their details in varying locations, making it difficult to detect them in a both efficient and accurate way. Therefore, the mod [color=#cc4125][b]DOES NOT SUPPORT THE DETECTION OF ITEMS FOUND ON THE GROUND[/b][/color]. To circumvent this, you can simply pick up the item and then open the inventory to view its details.
-[*][b]Language[/b]: The mod is designed to work with the [b][color=#cc4125]ENGLISH [/color][/b]version of Elden Ring: Nightreign. It may not work correctly with other languages, as the OCR is trained on English text. If you are using a different language and the mod is not working correctly, please open an issue on GitHub.
-[*][b]Responsiveness[/b]: The mod is designed to be as efficient and responsive as possible, through the usage of [i]ImageHash[/i] comparisons to detect screen area changes and thus avoid unnecessary OCR calls, as well as the OCR configuration being optimized for speed. However, it may sometimes take half a second to detect the armament and show the corresponding icons. This is due to the nature of OCR and the fact that it needs to analyze the screen in real-time. If you notice that the mod is not responding quickly enough, please open an issue on GitHub.
+[*][b]Language[/b]: The mod is designed to work with the [b][color=#cc4125]ENGLISH [/color][/b]version of Elden Ring: Nightreign. It may not work correctly with other languages, as the OCR is trained on English text.
+[*][b]Responsiveness[/b]: The mod is designed to be as efficient and responsive as possible, using multiple methods to avoid unnecessary OCR calls. However, it may sometimes take half a second to detect the armament and show the corresponding icons. This is due to the nature of OCR and the fact that it needs to analyze the screen in real-time.
 [*][b]Accuracy[/b]: The mod uses OCR to detect text on the screen, which is not always 100% accurate. This means that it may sometimes fail to detect the armament or the character correctly. To mitigate this, we use the [i]Jaccard[/i] similarity algorithm to account for small innacuracies in the OCR results. During our testing, we found that the mod seems to always be able to detect the armament and character correctly, but there may be some edge cases where this fails.
 [/list]
 
@@ -77,6 +77,10 @@ It is also important to note that the mod defines the categories "great" and "de
 Thanks to [url=https://github.com/lud-berthe]lud-berthe[/url] for the original idea that inspired this mod.
 
 Check out his mod [b]Nightreign Auto-Timer[/b] on [url=https://www.nexusmods.com/eldenringnightreign/mods/139]Nexus Mods[/url] or [url=https://github.com/lud-berthe/nightreign-auto-timer]GitHub[/url] if you haven't already.
+
+[u][b]Source Code[/b][/u]
+
+The source code of the project can be found on [url=https://github.com/AfonsoG6/NightreignArmamentHelper]GitHub[/url]. Feel free to contribute to the project by opening issues or pull requests.
 
 [u][b]Support my work[/b][/u]
 

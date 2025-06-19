@@ -24,31 +24,27 @@ from lib.misc import *
 
 PROGRAM_START_TIME: str = datetime.now().strftime("%Y%m%d_%H%M%S")
 if getattr(sys, "frozen", False):
+    BASE_PATH = sys._MEIPASS  # type: ignore
     PROGRAM_DATA_PATH: str = path.join(getenv("LOCALAPPDATA", path.expanduser("~\\AppData\\Local")), PROGRAM_NAME)
     makedirs(PROGRAM_DATA_PATH, exist_ok=True)
-    BASE_PATH = sys._MEIPASS  # type: ignore
-    TEMP_PATH: str = path.join(PROGRAM_DATA_PATH, "temp")
-    makedirs(TEMP_PATH, exist_ok=True)
-    PIXEL_SETS_PATH: str = path.join(PROGRAM_DATA_PATH, "pixel_sets")
-    makedirs(PIXEL_SETS_PATH, exist_ok=True)
-    ERROR_LOG_PATH: str = path.join(PROGRAM_DATA_PATH, f"error_log_{PROGRAM_START_TIME}.txt")
-    DEBUG_PATH: str = path.join(PROGRAM_DATA_PATH, "debug")
-    CONFIG_PATH: str = path.join(PROGRAM_DATA_PATH, "config.json")
 else:
     BASE_PATH = path.dirname(__file__)
-    TEMP_PATH: str = path.join(BASE_PATH, "temp")
-    makedirs(TEMP_PATH, exist_ok=True)
-    PIXEL_SETS_PATH: str = path.join(TEMP_PATH, "pixel_sets")
-    makedirs(PIXEL_SETS_PATH, exist_ok=True)
-    ERROR_LOG_PATH: str = path.join(TEMP_PATH, f"error_log_{PROGRAM_START_TIME}.txt")
-    DEBUG_PATH: str = path.join(TEMP_PATH, "debug")
-    CONFIG_PATH: str = path.join(TEMP_PATH, "config.json")
+    PROGRAM_DATA_PATH: str = path.join(BASE_PATH, "temp")
+    makedirs(PROGRAM_DATA_PATH, exist_ok=True)
 
-TESSERACT_PATH: str = path.join(BASE_PATH, "Tesseract-OCR", "tesseract.exe")
+PIXEL_SETS_PATH: str = path.join(PROGRAM_DATA_PATH, "pixel_sets")
+makedirs(PIXEL_SETS_PATH, exist_ok=True)
+DEBUG_PATH: str = path.join(PROGRAM_DATA_PATH, "debug")
+RESOURCES_PATH: str = path.join(BASE_PATH, "resources")
+
+CONFIG_PATH: str = path.join(PROGRAM_DATA_PATH, "config.json")
+ERROR_LOG_PATH: str = path.join(PROGRAM_DATA_PATH, f"error_log_{PROGRAM_START_TIME}.txt")
+TESSERACT_PATH: str = path.join(RESOURCES_PATH, "Tesseract-OCR", "tesseract.exe")
+ICON_PATH: str = path.join(RESOURCES_PATH, "images", "icon.png")
+
 pytesseract.tesseract_cmd = TESSERACT_PATH
-ICON_PATH: str = path.join(BASE_PATH, "images", "icon.png")
-DEBUG: bool = False
 
+DEBUG: bool = False
 if __name__ == "__main__":
     parser = ArgumentParser(description="Run the Elden Ring Armament Detection Tool.")
     parser.add_argument("-d", "--debug", action="store_true", help="Enable debug mode.")
@@ -202,11 +198,11 @@ def update_basic_armament_feedback_label(character_spec: CharacterSpec, armament
 
 def update_advanced_armament_feedback_label(armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
     global advanced_armament_feedback_label, advanced_mode_enabled, advanced_mode_enabled_lock
-    STR: str = armament_spec.get_stat_letter("STR")
-    DEX: str = armament_spec.get_stat_letter("DEX")
-    INT: str = armament_spec.get_stat_letter("INT")
-    FAI: str = armament_spec.get_stat_letter("FAI")
-    ARC: str = armament_spec.get_stat_letter("ARC")
+    STR: str = armament_spec.get_stat_rating_text("STR")
+    DEX: str = armament_spec.get_stat_rating_text("DEX")
+    INT: str = armament_spec.get_stat_rating_text("INT")
+    FAI: str = armament_spec.get_stat_rating_text("FAI")
+    ARC: str = armament_spec.get_stat_rating_text("ARC")
     text = f"{armament_spec.type} [{STR}|{DEX}|{INT}|{FAI}|{ARC}]"
     with advanced_mode_enabled_lock:
         if advanced_mode_enabled:
@@ -265,11 +261,11 @@ def update_replace_basic_armament_feedback_label(character_spec: CharacterSpec, 
 
 def update_replace_advanced_armament_feedback_label(armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
     global replace_advanced_armament_feedback_label, advanced_mode_enabled, advanced_mode_enabled_lock
-    STR: str = armament_spec.get_stat_letter("STR")
-    DEX: str = armament_spec.get_stat_letter("DEX")
-    INT: str = armament_spec.get_stat_letter("INT")
-    FAI: str = armament_spec.get_stat_letter("FAI")
-    ARC: str = armament_spec.get_stat_letter("ARC")
+    STR: str = armament_spec.get_stat_rating_text("STR")
+    DEX: str = armament_spec.get_stat_rating_text("DEX")
+    INT: str = armament_spec.get_stat_rating_text("INT")
+    FAI: str = armament_spec.get_stat_rating_text("FAI")
+    ARC: str = armament_spec.get_stat_rating_text("ARC")
     text = f"{armament_spec.type} [{STR}|{DEX}|{INT}|{FAI}|{ARC}]"
     with advanced_mode_enabled_lock:
         if advanced_mode_enabled:
@@ -472,15 +468,19 @@ def get_screen_grab():
 
 def get_eff_detection_id(detection_id: str) -> str | None:
     global current_menu_state, current_menu_state_lock
-    if detection_id in [ARMAMENT_DETECTION_DEFAULT, ARMAMENT_DETECTION_DEFAULT_REPLACE]:
+    if detection_id == ARMAMENT_DETECTION_DEFAULT_REPLACE:
         with current_menu_state_lock:
             if current_menu_state == MENU_STATE_DEFAULT:
-                return detection_id
-            elif detection_id == ARMAMENT_DETECTION_DEFAULT_REPLACE:
+                return ARMAMENT_DETECTION_DEFAULT_REPLACE
+            else:
                 return None
-            elif current_menu_state == MENU_STATE_SHOP and detection_id == ARMAMENT_DETECTION_DEFAULT:
+    elif detection_id == ARMAMENT_DETECTION_DEFAULT:
+        with current_menu_state_lock:
+            if current_menu_state == MENU_STATE_DEFAULT:
+                return ARMAMENT_DETECTION_DEFAULT
+            elif current_menu_state == MENU_STATE_SHOP:
                 return ARMAMENT_DETECTION_SHOP
-            elif current_menu_state == MENU_STATE_BOSS_DROP and detection_id == ARMAMENT_DETECTION_DEFAULT:
+            elif current_menu_state == MENU_STATE_BOSS_DROP:
                 return ARMAMENT_DETECTION_BOSS_DROP
     return detection_id
 
@@ -514,13 +514,13 @@ def detect_text(detection_id: str) -> tuple[int, str]:
     # To save time and resources in future detection of the same armament, we generate a pixel set
     # and check if it matches any of the previously saved pixel sets.
     pixel_set: PixelSet = PixelSet(pixelset_cache, cropped, screen_width, screen_height, eff_detection_id)
-    pixel_set_match = pixel_set.find_match()
+    pixel_set_match = pixel_set.find_match(eff_detection_id)
     if pixel_set_match != "":
         debug_window.matched_pixelset(eff_detection_id, pixel_set_match)
         previous_imgs[eff_detection_id] = img_for_ocr
         previous_matches[eff_detection_id] = (TEXT_ORIGIN_PIXELSET, pixel_set_match)
         return (TEXT_ORIGIN_PIXELSET, pixel_set_match)
-    
+
     # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
     if pixel_set.size() / (pixel_set.width * pixel_set.height) < OCR_MINIMUM_PIXELS_PERCENTS[eff_detection_id]:
         return (TEXT_ORIGIN_NONE, "")
@@ -580,24 +580,26 @@ def convert_menu_title_to_state(title: str) -> str:
     return MENU_STATE_DEFAULT
 
 
-def learn_pixelset(detection_id: str, match_result: int, match: str) -> None:
+def learn_pixelset(detection_id: str, match_result: int, match: Any, get_id: Callable) -> None:
     # Learn the pixel set if it is a perfect match
     last_pixelset: PixelSet | None = last_pixelsets[detection_id]
     if last_pixelset and match_result == PERFECT_MATCH:
-        last_pixelset.write(match)
+        last_pixelset.write(get_id(match))
 
 
 def detect_menu(detection_id: str) -> None:
     global current_menu_state, current_menu_state_lock
     text_origin, text = detect_text(MENU_DETECTION)
     match_result, match = find_match(detection_id, text_origin, text, [BOSS_DROP_TITLE, SHOP_TITLE], convert_menu_title_to_state)
+    if match_result == NO_MATCH:
+        match = MENU_STATE_DEFAULT
     with current_menu_state_lock:
         if match == current_menu_state:
             return
         debug_window.found_match(detection_id, text_origin, text, match_result, match)
         current_menu_state = match
         if match != MENU_STATE_DEFAULT:  # Do not learn pixelset for the default menu state (which represents the absence of a menu)
-            learn_pixelset(detection_id, match_result, detection_id)
+            learn_pixelset(detection_id, match_result, match, lambda x: x)
 
 
 def detect_character(detection_id: str) -> None:
@@ -614,7 +616,7 @@ def detect_character(detection_id: str) -> None:
             debug_window.found_match(detection_id, text_origin, text, match_result, match.name)
             current_character_name = match.name
             update_current_character_dropdown(match.name)
-            learn_pixelset(detection_id, match_result, match.name)
+            learn_pixelset(detection_id, match_result, match, lambda x: x.name)
 
 
 def detect_armament(detection_id: str) -> None:
@@ -623,13 +625,13 @@ def detect_armament(detection_id: str) -> None:
     if character_spec is None:
         return
     text_origin, text = detect_text(detection_id)
-    match_result, match = find_match(detection_id, text_origin, text, EXPANDED_ARMAMENT_SPECS, lambda armament_spec: armament_spec.name)
+    match_result, match = find_match(detection_id, text_origin, text, ARMAMENT_SPECS, lambda armament_spec: armament_spec.name)
     if match_result == NO_MATCH:
         update_armament_feedback_labels_general(detection_id)
         return
     debug_window.found_match(detection_id, text_origin, text, match_result, match.name)
     update_armament_feedback_labels_general(detection_id, character_spec, match)
-    learn_pixelset(detection_id, match_result, match.name)
+    learn_pixelset(detection_id, match_result, match, lambda x: str(x.id))
 
 
 # -------------------------- Main ------------------------------#
@@ -692,6 +694,7 @@ if __name__ == "__main__":
     replace_armament_detection_thread = DetectionThread(detection_id=ARMAMENT_DETECTION_DEFAULT_REPLACE, function=detect_armament, daemon=True)
     debug_window = DebugWindow(root, DEBUG, DEBUG_PATH)
 
+    load_all_armament_specs(path.join(RESOURCES_PATH, "armaments.json"))
     calculate_all_armaments()
     pixelset_cache = PixelSetCache(PIXEL_SETS_PATH, DEBUG)
     update_armament_feedback_labels()

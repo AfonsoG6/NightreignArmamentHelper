@@ -1,7 +1,7 @@
 # Nightreign Armament Helper
 
 <p align="center">
-    <img src="./images/banner.png" style="width:800px;" />
+    <img src="./resources/images/banner.png" style="width:800px;" />
 </p>
 
 ## Description
@@ -13,17 +13,17 @@
 - 🧤: The weapon is of the **type preferred** by the character.
 
 <p align="center">
-    <img src="./images/decent-match.png" width="100" />
+    <img src="./resources/images/decent-match.png" width="100" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="./images/great-match.png" width="100" />
+    <img src="./resources/images/great-match.png" width="100" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="./images/two-matches.png" width="100" />
+    <img src="./resources/images/two-matches.png" width="100" />
 </p>
 
 Additionally, as of version 1.1.0, the mod also provides an **Advanced Mode** that in addition to the simple recommendation icons, also displays an armament's type and stats.
 
 <p align="center">
-    <img src="./images/advanced-mode.png" width="420" />
+    <img src="./resources/images/advanced-mode.png" width="420" />
 </p>
 
 *Note:* The **Advanced Mode** being enabled does not impact performance in any way, so feel free to enable it if you prefer.
@@ -43,7 +43,7 @@ The mod will immediately start working, attempting to detect the character being
 Additionally, you may verify and/or manually change the currently selected character through the very discreet dropdown menu in the top left corner of the screen.
 
 <p align="center">
-    <img src="./images/character-dropdown.png" width="420" />
+    <img src="./resources/images/character-dropdown.png" width="420" />
 </p>
 
 Furthermore, an additional window containing a control panel for the mod will appear. This window allows you to perform the following actions:
@@ -54,7 +54,7 @@ Furthermore, an additional window containing a control panel for the mod will ap
 - Fully stop the mod.
 
 <p align="center">
-    <img src="./images/control-panel.png" width="420" />
+    <img src="./resources/images/control-panel.png" width="420" />
 </p>
 
 ## Common Questions
@@ -79,8 +79,8 @@ As of version 1.2.0, the mod also implements an **eventual responsiveness** meth
 
 1. **Display Mode**: For the overlay to be correctly shown on top of the game window, the game must be running in borderless windowed mode.
 2. **Ground items**: Items found in the ground show their details in varying locations, making it difficult to detect them in a both efficient and accurate way. Therefore, the mod does not support the detection of items found on the ground. To circumvent this, you can simply pick up the item and then open the inventory to view its details.
-3. **Language**: The mod is designed to work with the English version of Elden Ring: Nightreign. It may not work correctly with other languages, as the OCR is trained on English text. If you are using a different language and the mod is not working correctly, please open an issue on GitHub.
-4. **Responsiveness**: The mod is designed to be as efficient and responsive as possible, through the usage of *ImageHash* comparisons to detect screen area changes and thus avoid unnecessary OCR calls, as well as the OCR configuration being optimized for speed. However, it may sometimes take half a second to detect the armament and show the corresponding icons. This is due to the nature of OCR and the fact that it needs to analyze the screen in real-time. If you notice that the mod is not responding quickly enough, please open an issue on GitHub.
+3. **Language**: The mod is designed to work with the English version of Elden Ring: Nightreign. It may not work correctly with other languages, as the OCR is trained on English text.
+4. **Responsiveness**: The mod is designed to be as efficient and responsive as possible, using multiple methods to avoid unnecessary OCR calls. However, it may sometimes take half a second to detect the armament and show the corresponding icons. This is due to the nature of OCR and the fact that it needs to analyze the screen in real-time.
 5. **Accuracy**: The mod uses OCR to detect text on the screen, which is not always 100% accurate. This means that it may sometimes fail to detect the armament or the character correctly. To mitigate this, we use the *Jaccard* similarity algorithm to account for small innacuracies in the OCR results. During our testing, we found that the mod seems to always be able to detect the armament and character correctly, but there may be some edge cases where this fails.
 
 ## Optional: Manual Compilation
@@ -98,7 +98,7 @@ Additionally, you must install [Tesseract-OCR](https://github.com/UB-Mannheim/te
 Lastly, run the following command to compile the program:
 
 ```bash
-pyinstaller --onefile --noconsole --icon=images/icon.ico --add-data "Tesseract-OCR;Tesseract-OCR" --add-data "images/icon.png;images" -n NightreignArmamentHelper main.py
+pyinstaller --onefile --noconsole --icon=resources/images/icon.ico --add-data "Tesseract-OCR;Tesseract-OCR" --add-data "resources/images/icon.png;images" -n NightreignArmamentHelper main.py
 ```
 
 Upon successful completion, you will find the executable in the `dist` folder.

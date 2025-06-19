@@ -5,6 +5,7 @@ from PIL import Image
 from os import path, makedirs, listdir
 from cv2 import threshold, THRESH_BINARY
 from lib.constants import *
+from lib.armaments import *
 from re import sub
 from typing import Iterable, Any, Callable
 
@@ -19,7 +20,6 @@ def text_matches(rough_text: str, target_text: str, detection_id: str) -> int:
     clean_rough_text = sub(r"\s+", " ", clean_rough_text)
 
     if jaccard.normalized_similarity(clean_rough_text, clean_target_text) >= threshold:
-        print(clean_rough_text, clean_target_text, detection_id)
         if clean_rough_text == clean_target_text:
             return PERFECT_MATCH
         return GOOD_MATCH
@@ -184,7 +184,7 @@ class PixelSet:
             return  # Require at least 10 pixels to write
         self.cache.save_pixelset(self.resolution, self.detection_id, identifier, ref_pixelset)
 
-    def find_match(self) -> str:
+    def find_match(self, detection_id: str) -> str:
         if len(self.pixelset) < 10:
             return ""
         pixelsets: dict[str, set[tuple[int, int]]] = self.cache.get_pixelsets(self.resolution, self.detection_id)
@@ -193,5 +193,10 @@ class PixelSet:
             fn_rate = len(ref_pixelset - self.pixelset) / len(ref_pixelset) if ref_pixelset else 0
             fp_rate = len(self.pixelset - ref_pixelset) / len(self.pixelset) if self.pixelset else 0
             if fn_rate <= self.fn_rate and fp_rate <= self.fp_rate:
+                if detection_id in ARMAMENT_DETECTION_IDS:
+                    try:
+                        return find_armament_name_by_id(int(identifier))
+                    except:
+                        return ""
                 return identifier
         return ""  # No match found
