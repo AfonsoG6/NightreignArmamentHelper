@@ -23,7 +23,7 @@ Additionally, as of version 1.1.0, the mod also provides an [b]Advanced Mode[/b]
 [*]The [b]advanced mode is recommended for experienced players[/b] who want to see more information about the armament they are using, such as its type and stats.
 [/list]
 
-As of version 1.2.0, the mod also implements an [b]eventual responsiveness[/b] method that learns, through analysis of perfect OCR matches, a set of reference points to detect the same text in the future without having to call the OCR again. These reference points are stored in the user's %LOCALAPPDATA% folder, persisting across game sessions.
+As of version 2.0.0, the mod also implements an [b]eventual responsiveness[/b] method that learns, through analysis of perfect OCR matches, a set of reference points to detect the same text in the future without having to call the OCR again. These reference points are stored in the user's %LOCALAPPDATA% folder, persisting across game sessions.
 
 [i]Note:[/i] If the resolution of the screen is changed, the mod will have to relearn all the reference points for the new resolution.
 
