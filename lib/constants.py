@@ -1,5 +1,5 @@
 PROGRAM_NAME = "Nightreign Armament Helper"
-VERSION = "1.2.0"
+VERSION = "2.0.0"
 SHOP_TITLE = "SHOP"
 BOSS_DROP_TITLE = "DORMANT POWER"
 

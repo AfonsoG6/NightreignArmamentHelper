@@ -98,7 +98,7 @@ Additionally, you must install [Tesseract-OCR](https://github.com/UB-Mannheim/te
 Lastly, run the following command to compile the program:
 
 ```bash
-pyinstaller --onefile --noconsole --icon=resources/images/icon.ico --add-data "Tesseract-OCR;Tesseract-OCR" --add-data "resources/images/icon.png;images" -n NightreignArmamentHelper main.py
+pyinstaller --onefile --noconsole --icon=resources/images/icon.ico --add-data "resources;resources" -n NightreignArmamentHelper main.py
 ```
 
 Upon successful completion, you will find the executable in the `dist` folder.
