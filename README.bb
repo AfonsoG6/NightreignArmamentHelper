@@ -1,5 +1,3 @@
-[center][img]https://staticdelivery.nexusmods.com/mods/7800/images/193/193-1750104987-1353635541.png[/img][/center]
-
 [u][b]Description[/b][/u]
 
 [b]Nightreign Armament Helper[/b] is an Overlay mod for Elden Ring: Nightreign that is [b][color=#6aa84f]safe to use ONLINE and with EAC ENABLED[/color][/b]. It aims to help players choose the best armaments for the character they are using. It does this in a very simple manner, by displaying three separate icons directly on top of the armament's image.

@@ -2,15 +2,16 @@
 from tkinter import Tk, Toplevel, Button, Label, StringVar, OptionMenu, PhotoImage, Frame, LEFT, TOP, RAISED
 from threading import Thread, Event, Lock
 from argparse import ArgumentParser
+from traceback import format_exc
 from numpy import ndarray, array
 from time import time, sleep
 from os import path, makedirs
+from shutil import rmtree
 from datetime import datetime
 from PIL import ImageGrab
 from pytesseract import pytesseract
 from cv2 import cvtColor, threshold, COLOR_BGR2GRAY, THRESH_BINARY_INV
 from os import getenv
-from traceback import format_exc
 import json
 import sys
 
@@ -26,21 +27,18 @@ PROGRAM_START_TIME: str = datetime.now().strftime("%Y%m%d_%H%M%S")
 if getattr(sys, "frozen", False):
     BASE_PATH = sys._MEIPASS  # type: ignore
     PROGRAM_DATA_PATH: str = path.join(getenv("LOCALAPPDATA", path.expanduser("~\\AppData\\Local")), PROGRAM_NAME)
-    makedirs(PROGRAM_DATA_PATH, exist_ok=True)
 else:
     BASE_PATH = path.dirname(__file__)
     PROGRAM_DATA_PATH: str = path.join(BASE_PATH, "temp")
-    makedirs(PROGRAM_DATA_PATH, exist_ok=True)
 
 PIXEL_SETS_PATH: str = path.join(PROGRAM_DATA_PATH, "pixel_sets")
-makedirs(PIXEL_SETS_PATH, exist_ok=True)
 DEBUG_PATH: str = path.join(PROGRAM_DATA_PATH, "debug")
 RESOURCES_PATH: str = path.join(BASE_PATH, "resources")
 
 CONFIG_PATH: str = path.join(PROGRAM_DATA_PATH, "config.json")
 ERROR_LOG_PATH: str = path.join(PROGRAM_DATA_PATH, f"error_log_{PROGRAM_START_TIME}.txt")
 TESSERACT_PATH: str = path.join(RESOURCES_PATH, "Tesseract-OCR", "tesseract.exe")
-ICON_PATH: str = path.join(RESOURCES_PATH, "images", "icon.png")
+ICON_PATH: str = path.join(RESOURCES_PATH, "icon.png")
 
 pytesseract.tesseract_cmd = TESSERACT_PATH
 
@@ -70,7 +68,7 @@ current_menu_state_lock: Lock = Lock()
 current_character_name: str = ""
 current_character_name_lock: Lock = Lock()
 
-
+previous_imgs_lock: Lock = Lock()
 previous_imgs: dict[str, ndarray | None] = {
     ARMAMENT_DETECTION_DEFAULT: None,
     ARMAMENT_DETECTION_DEFAULT_REPLACE: None,
@@ -80,6 +78,7 @@ previous_imgs: dict[str, ndarray | None] = {
     CHARACTER_DETECTION: None,
 }
 
+previous_matches_lock: Lock = Lock()
 previous_matches: dict[str, tuple[int, str]] = {
     ARMAMENT_DETECTION_DEFAULT: (TEXT_ORIGIN_NONE, ""),
     ARMAMENT_DETECTION_DEFAULT_REPLACE: (TEXT_ORIGIN_NONE, ""),
@@ -89,6 +88,7 @@ previous_matches: dict[str, tuple[int, str]] = {
     CHARACTER_DETECTION: (TEXT_ORIGIN_NONE, ""),
 }
 
+last_pixelsets_lock: Lock = Lock()
 last_pixelsets: dict[str, PixelSet | None] = {
     ARMAMENT_DETECTION_DEFAULT: None,
     ARMAMENT_DETECTION_DEFAULT_REPLACE: None,
@@ -124,7 +124,7 @@ def save_configs() -> None:
             "character_detection_enabled": character_detection_enabled,
             "advanced_mode_enabled": advanced_mode_enabled,
         }
-    makedirs(path.dirname(CONFIG_PATH), exist_ok=True)
+    makedirs(PROGRAM_DATA_PATH, exist_ok=True)
     with open(CONFIG_PATH, "w") as config_file:
         json.dump(config_data, config_file, indent=4)
 
@@ -137,6 +137,9 @@ def load_configs() -> None:
             with character_detection_enabled_lock, advanced_mode_enabled_lock:
                 character_detection_enabled = config_data.get("character_detection_enabled", True)
                 advanced_mode_enabled = config_data.get("advanced_mode_enabled", False)
+                data_version = config_data.get("version", "0.0.0")
+                if data_version < VERSION:
+                    rmtree(PIXEL_SETS_PATH, ignore_errors=True)
     except (FileNotFoundError, json.JSONDecodeError):
         with character_detection_enabled_lock, advanced_mode_enabled_lock:
             character_detection_enabled = True
@@ -151,7 +154,7 @@ def log_error(e: Exception, fatal: bool = False) -> None:
     :param e: Exception to log.
     """
     type: str = "FATAL" if fatal else "ERROR"
-    makedirs(path.dirname(ERROR_LOG_PATH), exist_ok=True)
+    makedirs(PROGRAM_DATA_PATH, exist_ok=True)
 
     if not path.exists(ERROR_LOG_PATH):
         open(ERROR_LOG_PATH, "w").close()
@@ -508,8 +511,9 @@ def detect_text(detection_id: str) -> tuple[int, str]:
     _, img_for_ocr = threshold(cropped, 115, 255, THRESH_BINARY_INV)
 
     # To avoid unnecessary processing, we check if the image has changed since the last detection.
-    if not image_changed(previous_imgs[eff_detection_id], cropped):
-        return previous_matches[eff_detection_id]
+    with previous_imgs_lock, previous_matches_lock:
+        if not image_changed(previous_imgs[eff_detection_id], cropped):
+            return previous_matches[eff_detection_id]
 
     # To save time and resources in future detection of the same armament, we generate a pixel set
     # and check if it matches any of the previously saved pixel sets.
@@ -517,8 +521,10 @@ def detect_text(detection_id: str) -> tuple[int, str]:
     pixel_set_match = pixel_set.find_match(eff_detection_id)
     if pixel_set_match != "":
         debug_window.matched_pixelset(eff_detection_id, pixel_set_match)
-        previous_imgs[eff_detection_id] = img_for_ocr
-        previous_matches[eff_detection_id] = (TEXT_ORIGIN_PIXELSET, pixel_set_match)
+        with previous_imgs_lock, previous_matches_lock, last_pixelsets_lock:
+            previous_imgs[eff_detection_id] = img_for_ocr
+            previous_matches[eff_detection_id] = (TEXT_ORIGIN_PIXELSET, pixel_set_match)
+            last_pixelsets[eff_detection_id] = None
         return (TEXT_ORIGIN_PIXELSET, pixel_set_match)
 
     # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
@@ -536,9 +542,10 @@ def detect_text(detection_id: str) -> tuple[int, str]:
     debug_window.end_ocr(eff_detection_id, text)
 
     # Save all the relevant data for the next detection.
-    previous_imgs[eff_detection_id] = img_for_ocr
-    previous_matches[eff_detection_id] = (TEXT_ORIGIN_OCR, text)
-    last_pixelsets[eff_detection_id] = pixel_set
+    with previous_imgs_lock, previous_matches_lock, last_pixelsets_lock:
+        previous_imgs[eff_detection_id] = img_for_ocr
+        previous_matches[eff_detection_id] = (TEXT_ORIGIN_OCR, text)
+        last_pixelsets[eff_detection_id] = pixel_set
     return (TEXT_ORIGIN_OCR, text)
 
 
@@ -580,11 +587,13 @@ def convert_menu_title_to_state(title: str) -> str:
     return MENU_STATE_DEFAULT
 
 
-def learn_pixelset(detection_id: str, match_result: int, match: Any, get_id: Callable) -> None:
+def learn_pixelset(detection_id: str, text_origin: int, match_result: int, match: Any, get_id: Callable) -> None:
     # Learn the pixel set if it is a perfect match
-    last_pixelset: PixelSet | None = last_pixelsets[detection_id]
-    if last_pixelset and match_result == PERFECT_MATCH:
-        last_pixelset.write(get_id(match))
+    with last_pixelsets_lock:
+        last_pixelset: PixelSet | None = last_pixelsets[detection_id]
+        if last_pixelset and text_origin == TEXT_ORIGIN_OCR and match_result == PERFECT_MATCH:
+            last_pixelset.write(get_id(match))
+        last_pixelsets[detection_id] = None  # Reset the last pixel set
 
 
 def detect_menu(detection_id: str) -> None:
@@ -599,11 +608,11 @@ def detect_menu(detection_id: str) -> None:
         debug_window.found_match(detection_id, text_origin, text, match_result, match)
         current_menu_state = match
         if match != MENU_STATE_DEFAULT:  # Do not learn pixelset for the default menu state (which represents the absence of a menu)
-            learn_pixelset(detection_id, match_result, match, lambda x: x)
+            learn_pixelset(detection_id, text_origin, match_result, match, lambda x: x)
 
 
 def detect_character(detection_id: str) -> None:
-    global current_character_name, current_character_name_lock, character_detection_enabled, character_detection_enabled_lock, last_pixelsets, debug_window
+    global current_character_name, current_character_name_lock, character_detection_enabled, character_detection_enabled_lock, debug_window
     with character_detection_enabled_lock:
         if not character_detection_enabled:
             return
@@ -616,7 +625,7 @@ def detect_character(detection_id: str) -> None:
             debug_window.found_match(detection_id, text_origin, text, match_result, match.name)
             current_character_name = match.name
             update_current_character_dropdown(match.name)
-            learn_pixelset(detection_id, match_result, match, lambda x: x.name)
+            learn_pixelset(detection_id, text_origin, match_result, match, lambda x: x.name)
 
 
 def detect_armament(detection_id: str) -> None:
@@ -631,7 +640,7 @@ def detect_armament(detection_id: str) -> None:
         return
     debug_window.found_match(detection_id, text_origin, text, match_result, match.name)
     update_armament_feedback_labels_general(detection_id, character_spec, match)
-    learn_pixelset(detection_id, match_result, match, lambda x: str(x.id))
+    learn_pixelset(detection_id, text_origin, match_result, match, lambda x: str(x.id))
 
 
 # -------------------------- Main ------------------------------#
@@ -639,6 +648,10 @@ def detect_armament(detection_id: str) -> None:
 
 if __name__ == "__main__":
     load_configs()
+    makedirs(PROGRAM_DATA_PATH, exist_ok=True)
+    makedirs(PIXEL_SETS_PATH, exist_ok=True)
+    if DEBUG:
+        makedirs(DEBUG_PATH, exist_ok=True)
 
     root = Tk()
     root.overrideredirect(True)

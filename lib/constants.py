@@ -1,5 +1,5 @@
 PROGRAM_NAME = "Nightreign Armament Helper"
-VERSION = "2.0.0"
+VERSION = "2.0.1"
 SHOP_TITLE = "SHOP"
 BOSS_DROP_TITLE = "DORMANT POWER"
 
@@ -37,7 +37,7 @@ TEXT_SIMILARITY_THRESHOLDS = {
     ARMAMENT_DETECTION_BOSS_DROP: 0.85,
     ARMAMENT_DETECTION_SHOP: 0.85,
     MENU_DETECTION: 0.75,
-    CHARACTER_DETECTION: 0.85,
+    CHARACTER_DETECTION: 0.90,
 }
 # How many pixels in the detection box must be white to even consider calling the OCR
 OCR_MINIMUM_PIXELS_PERCENTS = {

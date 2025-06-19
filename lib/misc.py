@@ -174,6 +174,7 @@ class PixelSet:
         return len(self.pixelset)
 
     def write(self, identifier: str) -> None:
+        print(f"Writing pixel set for {self.detection_id} with identifier {identifier}...")
         _, ref_image = threshold(self.cropped, self.pixelset_threshold, 255, THRESH_BINARY)
         ref_pixelset: set = set()
         for y in range(self.height):
@@ -184,19 +185,37 @@ class PixelSet:
             return  # Require at least 10 pixels to write
         self.cache.save_pixelset(self.resolution, self.detection_id, identifier, ref_pixelset)
 
-    def find_match(self, detection_id: str) -> str:
+    def find_match(self, detection_id: str, extensive: bool = True) -> str:
         if len(self.pixelset) < 10:
             return ""
         pixelsets: dict[str, set[tuple[int, int]]] = self.cache.get_pixelsets(self.resolution, self.detection_id)
+        best_match: str = ""
+        best_fn_rate: float = 1.0
         for identifier in pixelsets.keys():
             ref_pixelset: set = pixelsets[identifier]
             fn_rate = len(ref_pixelset - self.pixelset) / len(ref_pixelset) if ref_pixelset else 0
             fp_rate = len(self.pixelset - ref_pixelset) / len(self.pixelset) if self.pixelset else 0
             if fn_rate <= self.fn_rate and fp_rate <= self.fp_rate:
-                if detection_id in ARMAMENT_DETECTION_IDS:
-                    try:
-                        return find_armament_name_by_id(int(identifier))
-                    except:
-                        return ""
-                return identifier
+                if extensive:
+                    if best_match == "" or (fn_rate < best_fn_rate):
+                        if detection_id in ARMAMENT_DETECTION_IDS:
+                            try:
+                                match = find_armament_name_by_id(int(identifier))
+                            except:
+                                match = ""
+                        else:
+                            match = identifier
+                        best_match = match
+                        best_fn_rate = fn_rate
+                else:
+                    if detection_id in ARMAMENT_DETECTION_IDS:
+                        try:
+                            match = find_armament_name_by_id(int(identifier))
+                        except:
+                            match = ""
+                    else:
+                        match = identifier
+                    return match
+        if extensive:
+            return best_match
         return ""  # No match found

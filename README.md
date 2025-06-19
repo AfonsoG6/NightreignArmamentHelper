@@ -1,7 +1,7 @@
 # Nightreign Armament Helper
 
 <p align="center">
-    <img src="./resources/images/banner.png" style="width:800px;" />
+    <img src="./images/banner.png" style="width:800px;" />
 </p>
 
 ## Description
@@ -13,17 +13,17 @@
 - 🧤: The weapon is of the **type preferred** by the character.
 
 <p align="center">
-    <img src="./resources/images/decent-match.png" width="100" />
+    <img src="./images/decent-match.png" width="100" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="./resources/images/great-match.png" width="100" />
+    <img src="./images/great-match.png" width="100" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="./resources/images/two-matches.png" width="100" />
+    <img src="./images/two-matches.png" width="100" />
 </p>
 
 Additionally, as of version 1.1.0, the mod also provides an **Advanced Mode** that in addition to the simple recommendation icons, also displays an armament's type and stats.
 
 <p align="center">
-    <img src="./resources/images/advanced-mode.png" width="420" />
+    <img src="./images/advanced-mode.png" width="420" />
 </p>
 
 *Note:* The **Advanced Mode** being enabled does not impact performance in any way, so feel free to enable it if you prefer.
@@ -43,7 +43,7 @@ The mod will immediately start working, attempting to detect the character being
 Additionally, you may verify and/or manually change the currently selected character through the very discreet dropdown menu in the top left corner of the screen.
 
 <p align="center">
-    <img src="./resources/images/character-dropdown.png" width="420" />
+    <img src="./images/character-dropdown.png" width="420" />
 </p>
 
 Furthermore, an additional window containing a control panel for the mod will appear. This window allows you to perform the following actions:
@@ -54,7 +54,7 @@ Furthermore, an additional window containing a control panel for the mod will ap
 - Fully stop the mod.
 
 <p align="center">
-    <img src="./resources/images/control-panel.png" width="420" />
+    <img src="./images/control-panel.png" width="420" />
 </p>
 
 ## Common Questions
@@ -98,7 +98,7 @@ Additionally, you must install [Tesseract-OCR](https://github.com/UB-Mannheim/te
 Lastly, run the following command to compile the program:
 
 ```bash
-pyinstaller --onefile --noconsole --icon=resources/images/icon.ico --add-data "resources;resources" -n NightreignArmamentHelper main.py
+pyinstaller --onefile --noconsole --icon=images/icon.ico --add-data "resources;resources" -n NightreignArmamentHelper main.py
 ```
 
 Upon successful completion, you will find the executable in the `dist` folder.
