@@ -1,5 +1,5 @@
 # --------------------------- Imports --------------------------#
-from tkinter import Tk, Toplevel, Button, Label, StringVar, OptionMenu, PhotoImage, Frame, LEFT, RIGHT, TOP, RAISED
+from tkinter import Tk, Toplevel, Button, Label, StringVar, OptionMenu, PhotoImage, Frame, LEFT, TOP, RAISED
 from threading import Thread, Event, Lock
 from argparse import ArgumentParser
 from numpy import ndarray, array
@@ -8,7 +8,7 @@ from os import path, makedirs
 from datetime import datetime
 from PIL import ImageGrab
 from pytesseract import pytesseract
-from cv2 import cvtColor, threshold, imwrite, COLOR_BGR2GRAY, THRESH_BINARY_INV
+from cv2 import cvtColor, threshold, COLOR_BGR2GRAY, THRESH_BINARY_INV
 from os import getenv
 from traceback import format_exc
 import json
@@ -26,12 +26,13 @@ PROGRAM_START_TIME: str = datetime.now().strftime("%Y%m%d_%H%M%S")
 if getattr(sys, "frozen", False):
     PROGRAM_DATA_PATH: str = path.join(getenv("LOCALAPPDATA", path.expanduser("~\\AppData\\Local")), PROGRAM_NAME)
     makedirs(PROGRAM_DATA_PATH, exist_ok=True)
-    BASE_PATH = sys._MEIPASS
+    BASE_PATH = sys._MEIPASS  # type: ignore
     TEMP_PATH: str = path.join(PROGRAM_DATA_PATH, "temp")
     makedirs(TEMP_PATH, exist_ok=True)
     PIXEL_SETS_PATH: str = path.join(PROGRAM_DATA_PATH, "pixel_sets")
     makedirs(PIXEL_SETS_PATH, exist_ok=True)
     ERROR_LOG_PATH: str = path.join(PROGRAM_DATA_PATH, f"error_log_{PROGRAM_START_TIME}.txt")
+    DEBUG_PATH: str = path.join(PROGRAM_DATA_PATH, "debug")
     CONFIG_PATH: str = path.join(PROGRAM_DATA_PATH, "config.json")
 else:
     BASE_PATH = path.dirname(__file__)
@@ -40,6 +41,7 @@ else:
     PIXEL_SETS_PATH: str = path.join(TEMP_PATH, "pixel_sets")
     makedirs(PIXEL_SETS_PATH, exist_ok=True)
     ERROR_LOG_PATH: str = path.join(TEMP_PATH, f"error_log_{PROGRAM_START_TIME}.txt")
+    DEBUG_PATH: str = path.join(TEMP_PATH, "debug")
     CONFIG_PATH: str = path.join(TEMP_PATH, "config.json")
 
 TESSERACT_PATH: str = path.join(BASE_PATH, "Tesseract-OCR", "tesseract.exe")
@@ -57,30 +59,48 @@ if __name__ == "__main__":
 
 enabled: bool = True
 enabled_lock: Lock = Lock()
-advanced_mode_enabled: bool = False
-advanced_mode_enabled_lock: Lock = Lock()
+enable_disable_button: Button
+
 character_detection_enabled: bool = True
 character_detection_enabled_lock: Lock = Lock()
-
-enable_disable_button: Button
 character_detection_button: Button
+
+advanced_mode_enabled: bool = False
+advanced_mode_enabled_lock: Lock = Lock()
 advanced_mode_button: Button
-hide_show_button: Button
 
-previous_menu_img: ndarray | None = None
-previous_menu_state: str = DEFAULT_STATE
-current_menu_state: str = DEFAULT_STATE
+current_menu_state: str = MENU_STATE_DEFAULT
 current_menu_state_lock: Lock = Lock()
-
-previous_character_img: ndarray | None = None
-previous_character_name: str = ""
 current_character_name: str = ""
 current_character_name_lock: Lock = Lock()
 
-previous_armament_img: ndarray | None = None
-previous_armament_name: str = ""
-previous_replace_armament_img: ndarray | None = None
-previous_replace_armament_name: str = ""
+
+previous_imgs: dict[str, ndarray | None] = {
+    ARMAMENT_DETECTION_DEFAULT: None,
+    ARMAMENT_DETECTION_DEFAULT_REPLACE: None,
+    ARMAMENT_DETECTION_BOSS_DROP: None,
+    ARMAMENT_DETECTION_SHOP: None,
+    MENU_DETECTION: None,
+    CHARACTER_DETECTION: None,
+}
+
+previous_matches: dict[str, tuple[int, str]] = {
+    ARMAMENT_DETECTION_DEFAULT: (TEXT_ORIGIN_NONE, ""),
+    ARMAMENT_DETECTION_DEFAULT_REPLACE: (TEXT_ORIGIN_NONE, ""),
+    ARMAMENT_DETECTION_BOSS_DROP: (TEXT_ORIGIN_NONE, ""),
+    ARMAMENT_DETECTION_SHOP: (TEXT_ORIGIN_NONE, ""),
+    MENU_DETECTION: (TEXT_ORIGIN_NONE, ""),
+    CHARACTER_DETECTION: (TEXT_ORIGIN_NONE, ""),
+}
+
+last_pixelsets: dict[str, PixelSet | None] = {
+    ARMAMENT_DETECTION_DEFAULT: None,
+    ARMAMENT_DETECTION_DEFAULT_REPLACE: None,
+    ARMAMENT_DETECTION_BOSS_DROP: None,
+    ARMAMENT_DETECTION_SHOP: None,
+    MENU_DETECTION: None,
+    CHARACTER_DETECTION: None,
+}
 
 root: Tk
 screen_width: int
@@ -92,15 +112,10 @@ replace_advanced_armament_feedback_label: Label
 current_character_var: StringVar
 current_character_dropdown: OptionMenu
 
-last_menu_pixel_set: PixelSet | None = None
-last_character_pixel_set: PixelSet | None = None
-last_armament_pixel_set: PixelSet | None = None
-last_replace_armament_pixel_set: PixelSet | None = None
-pixelset_cache: PixelSetCache
-
 last_screengrab = None
 last_screengrab_time: float = 0.0
 screengrab_lock: Lock = Lock()
+pixelset_cache: PixelSetCache
 
 # ---------------------- Functions -----------------------------#
 
@@ -109,6 +124,7 @@ def save_configs() -> None:
     global enabled, character_detection_enabled, advanced_mode_enabled, CONFIG_PATH, character_detection_enabled_lock, advanced_mode_enabled_lock
     with character_detection_enabled_lock, advanced_mode_enabled_lock:
         config_data = {
+            "version": VERSION,
             "character_detection_enabled": character_detection_enabled,
             "advanced_mode_enabled": advanced_mode_enabled,
         }
@@ -210,19 +226,26 @@ def update_armament_feedback_labels(character_spec: CharacterSpec | None = None,
         advanced_armament_feedback_label.place_forget()
         return
     with current_menu_state_lock:
-        if current_menu_state == SHOP_STATE:
-            basic_relx, basic_rely = get_ui_element_rel_positions("shop_armament", screen_width, screen_height)
-            advanced_rely, _, advanced_relx, _ = get_detection_box_rel("shop_armament", screen_width, screen_height)
-        elif current_menu_state == BOSS_DROP_STATE:
-            basic_relx, basic_rely = get_ui_element_rel_positions("boss_drop_armament", screen_width, screen_height)
-            advanced_rely, _, advanced_relx, _ = get_detection_box_rel("boss_drop_armament", screen_width, screen_height)
+        if current_menu_state == MENU_STATE_SHOP:
+            basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_SHOP, screen_width, screen_height)
+            advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_SHOP, screen_width, screen_height)
+        elif current_menu_state == MENU_STATE_BOSS_DROP:
+            basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_BOSS_DROP, screen_width, screen_height)
+            advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_BOSS_DROP, screen_width, screen_height)
         else:
-            basic_relx, basic_rely = get_ui_element_rel_positions("default_armament", screen_width, screen_height)
-            advanced_rely, _, advanced_relx, _ = get_detection_box_rel("default_armament", screen_width, screen_height)
+            basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
+            advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
 
     update_basic_armament_feedback_label(character_spec, armament_spec, basic_relx, basic_rely)
     update_advanced_armament_feedback_label(armament_spec, advanced_relx, advanced_rely)
     root.update_idletasks()
+
+
+def update_armament_feedback_labels_general(detection_id: str, character_spec: CharacterSpec | None = None, armament_spec: ArmamentSpec | None = None) -> None:
+    if detection_id == ARMAMENT_DETECTION_DEFAULT:
+        update_armament_feedback_labels(character_spec, armament_spec)
+    elif detection_id == ARMAMENT_DETECTION_DEFAULT_REPLACE:
+        update_replace_armament_feedback_labels(character_spec, armament_spec)
 
 
 def update_replace_basic_armament_feedback_label(character_spec: CharacterSpec, armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
@@ -266,8 +289,8 @@ def update_replace_armament_feedback_labels(character_spec: CharacterSpec | None
         replace_advanced_armament_feedback_label.place_forget()
         return
 
-    basic_relx, basic_rely = get_ui_element_rel_positions("default_armament", screen_width, screen_height)
-    advanced_rely, _, advanced_relx, _ = get_detection_box_rel("default_armament", screen_width, screen_height)
+    basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
+    advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
     basic_relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
     advanced_relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
 
@@ -289,7 +312,7 @@ def toggle_character_detection() -> None:
     with enabled_lock, character_detection_enabled_lock:
         character_detection_enabled = not character_detection_enabled
         if (enabled and character_detection_enabled) and not character_detection_thread.is_alive():
-            character_detection_thread = CharacterDetectionLoopThread(daemon=True)
+            character_detection_thread = DetectionThread(detection_id=CHARACTER_DETECTION, function=detect_character, daemon=True)
             character_detection_thread.start()
         elif not (enabled and character_detection_enabled) and character_detection_thread.is_alive():
             character_detection_thread.stop()
@@ -321,16 +344,16 @@ def toggle_enabled() -> None:
             # Restart threads if they are not alive
             with character_detection_enabled_lock:
                 if character_detection_enabled and not character_detection_thread.is_alive():
-                    character_detection_thread = CharacterDetectionLoopThread(daemon=True)
+                    character_detection_thread = DetectionThread(detection_id=CHARACTER_DETECTION, function=detect_character, daemon=True)
                     character_detection_thread.start()
             if not menu_detection_thread.is_alive():
-                menu_detection_thread = MenuDetectionLoopThread(daemon=True)
+                menu_detection_thread = DetectionThread(detection_id=MENU_DETECTION, function=detect_menu, daemon=True)
                 menu_detection_thread.start()
             if not armament_detection_thread.is_alive():
-                armament_detection_thread = ArmamentDetectionLoopThread(daemon=True)
+                armament_detection_thread = DetectionThread(detection_id=ARMAMENT_DETECTION_DEFAULT, function=detect_armament, daemon=True)
                 armament_detection_thread.start()
             if not replace_armament_detection_thread.is_alive():
-                replace_armament_detection_thread = ReplaceArmamentDetectionLoopThread(daemon=True)
+                replace_armament_detection_thread = DetectionThread(detection_id=ARMAMENT_DETECTION_DEFAULT_REPLACE, function=detect_armament, daemon=True)
                 replace_armament_detection_thread.start()
             # Show all the Overlay UI elements
             root.deiconify()
@@ -447,246 +470,100 @@ def get_screen_grab():
         return last_screengrab
 
 
-def ocr_get_character_name() -> str:
-    global previous_character_img, previous_character_name, last_character_pixel_set
+def get_eff_detection_id(detection_id: str) -> str | None:
+    global current_menu_state, current_menu_state_lock
+    if detection_id in [ARMAMENT_DETECTION_DEFAULT, ARMAMENT_DETECTION_DEFAULT_REPLACE]:
+        with current_menu_state_lock:
+            if current_menu_state == MENU_STATE_DEFAULT:
+                return detection_id
+            elif detection_id == ARMAMENT_DETECTION_DEFAULT_REPLACE:
+                return None
+            elif current_menu_state == MENU_STATE_SHOP and detection_id == ARMAMENT_DETECTION_DEFAULT:
+                return ARMAMENT_DETECTION_SHOP
+            elif current_menu_state == MENU_STATE_BOSS_DROP and detection_id == ARMAMENT_DETECTION_DEFAULT:
+                return ARMAMENT_DETECTION_BOSS_DROP
+    return detection_id
+
+
+def get_cropped_area(box_identifier: str) -> ndarray:
     img = get_screen_grab()
 
     img_np = array(img)
     gray = cvtColor(img_np, COLOR_BGR2GRAY)
 
     width, height = img.size
-    top, bottom, left, right = get_detection_box("character", width, height)
-    cropped = gray[top:bottom, left:right]
-
-    _, img_for_ocr = threshold(cropped, 140, 255, THRESH_BINARY_INV)
-    if not image_changed(previous_character_img, cropped):
-        return previous_character_name
-
-    # To save time and resources in future detection of the same armament, we generate a pixel set
-    # and check if it matches any of the previously saved pixel sets.
-    pixel_set: PixelSet = PixelSet(
-        pixelset_cache,
-        cropped,
-        width,
-        height,
-        "character",
-        CHARACTER_PIXELSET_THRESHOLD,
-        CHARACTER_PIXELSET_THRESHOLD_REDUCTION,
-        CHARACTER_PIXELSET_FN_RATE,
-        CHARACTER_PIXELSET_FP_RATE,
-    )
-    pixel_set_match = pixel_set.find_match()
-    if pixel_set_match != "":
-        if DEBUG:
-            print(f"Armament pixel set match found: {pixel_set_match}")
-        previous_character_img = img_for_ocr
-        previous_character_name = pixel_set_match
-        last_character_pixel_set = None
-        return pixel_set_match
-    if pixel_set.size() / (pixel_set.width * pixel_set.height) < OCR_MINIMUM_PIXELS_PERCENT:
-        # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
-        # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
-        return ""
-    if pixelset_cache.all_characters_learned(width, height):
-        # Character detection is stable enough that we can ditch the OCR completely if we have already learned a pixel set for each character for this resolution.
-        return ""
-    last_character_pixel_set = pixel_set
-
-    if DEBUG:
-        debug_window.show_character_rect()
-        makedirs(TEMP_PATH, exist_ok=True)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = path.join(TEMP_PATH, f"ocr_character_{timestamp}.png")
-        imwrite(filename, img_for_ocr)
-
-    text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
-    if DEBUG:
-        debug_window.hide_character_rect()
-        print(f"Character detected: {text}")
-    previous_character_img = img_for_ocr
-    previous_character_name = text
-    return text
+    top, bottom, left, right = get_detection_box(box_identifier, width, height)
+    return gray[top:bottom, left:right]
 
 
-def ocr_get_menu_state() -> str:
-    global previous_menu_img, previous_menu_state, last_menu_pixel_set, pixelset_cache
-    img = get_screen_grab()
-
-    img_np = array(img)
-    gray = cvtColor(img_np, COLOR_BGR2GRAY)
-
-    width, height = img.size
-    top, bottom, left, right = get_detection_box("menu_title", width, height)
-    cropped = gray[top:bottom, left:right]
-
-    _, img_for_ocr = threshold(cropped, 170, 255, THRESH_BINARY_INV)
-    if not image_changed(previous_menu_img, cropped):
-        return previous_menu_state
-
-    # To save time and resources in future detection of the same armament, we generate a pixel set
-    # and check if it matches any of the previously saved pixel sets.
-    pixel_set: PixelSet = PixelSet(
-        pixelset_cache,
-        cropped,
-        width,
-        height,
-        "menu_title",
-        MENU_PIXELSET_THRESHOLD,
-        MENU_PIXELSET_THRESHOLD_REDUCTION,
-        MENU_PIXELSET_FN_RATE,
-        MENU_PIXELSET_FP_RATE,
-    )
-    pixel_set_match = pixel_set.find_match()
-    if pixel_set_match != "":
-        if DEBUG:
-            print(f"Menu pixel set match found: {pixel_set_match}")
-        previous_menu_img = img_for_ocr
-        previous_menu_state = pixel_set_match
-        last_menu_pixel_set = None
-        return pixel_set_match
-    if pixel_set.size() / (pixel_set.width * pixel_set.height) < OCR_MINIMUM_PIXELS_PERCENT:
-        # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
-        return DEFAULT_STATE
-    last_menu_pixel_set = pixel_set
-
-    if DEBUG:
-        debug_window.show_menu_title_rect()
-        makedirs(TEMP_PATH, exist_ok=True)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = path.join(TEMP_PATH, f"ocr_menu_{timestamp}.png")
-        imwrite(filename, img_for_ocr)
-
-    text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
-    if DEBUG:
-        debug_window.hide_menu_title_rect()
-        print(f"Menu title detected: {text}")
-    previous_menu_img = img_for_ocr
-    previous_menu_state = text
-    return text
-
-OCR_RESULTS: list[int] = [
-    NONE:= 0,
-    ROUGH:= 1,
-    CLEAN:= 2,
-]
-
-def ocr_get_armament_name(is_replace: bool = False) -> tuple[int, str]:
+def detect_text(detection_id: str) -> tuple[int, str]:
     global previous_armament_img, previous_armament_name, last_armament_pixel_set, last_replace_armament_pixel_set, previous_replace_armament_img, previous_replace_armament_name, current_menu_state, current_menu_state_lock, pixelset_cache
 
-    with current_menu_state_lock:
-        state = current_menu_state
-        if state != DEFAULT_STATE and is_replace:
-            return (NONE, "")
-    box_identifier = "default_armament"
-    if state == SHOP_STATE:
-        box_identifier = "shop_armament"
-    elif state == BOSS_DROP_STATE:
-        box_identifier = "boss_drop_armament"
+    # Get a more specific detection ID if necessary, for example, due to the current menu state.
+    eff_detection_id = get_eff_detection_id(detection_id)
+    if eff_detection_id is None:
+        return (TEXT_ORIGIN_NONE, "")
 
-    img = get_screen_grab()
-
-    img_np = array(img)
-    gray = cvtColor(img_np, COLOR_BGR2GRAY)
-
-    width, height = img.size
-    if is_replace:
-        top, bottom, left, right = get_detection_box(box_identifier, width, height, REPLACE_ARMAMENT_REL_POS_TO_NAME, 0)
-    else:
-        top, bottom, left, right = get_detection_box(box_identifier, width, height)
-    cropped = gray[top:bottom, left:right]
-
+    cropped = get_cropped_area(eff_detection_id)
     _, img_for_ocr = threshold(cropped, 115, 255, THRESH_BINARY_INV)
-    if is_replace:
-        if not image_changed(previous_replace_armament_img, img_for_ocr):
-            return (ROUGH, previous_replace_armament_name)
-    else:
-        if not image_changed(previous_armament_img, img_for_ocr):
-            return (ROUGH, previous_armament_name)
+
+    # To avoid unnecessary processing, we check if the image has changed since the last detection.
+    if not image_changed(previous_imgs[eff_detection_id], cropped):
+        return previous_matches[eff_detection_id]
 
     # To save time and resources in future detection of the same armament, we generate a pixel set
     # and check if it matches any of the previously saved pixel sets.
-    pixel_set: PixelSet = PixelSet(
-        pixelset_cache,
-        cropped,
-        width,
-        height,
-        box_identifier,
-        ARMAMENT_PIXELSET_THRESHOLD,
-        ARMAMENT_PIXELSET_THRESHOLD_REDUCTION,
-        ARMAMENT_PIXELSET_FN_RATE,
-        ARMAMENT_PIXELSET_FP_RATE,
-    )
+    pixel_set: PixelSet = PixelSet(pixelset_cache, cropped, screen_width, screen_height, eff_detection_id)
     pixel_set_match = pixel_set.find_match()
     if pixel_set_match != "":
-        if DEBUG:
-            print(f"{'Replace ' if is_replace else ''}Armament pixel set match found: {pixel_set_match}")
-        if is_replace:
-            previous_replace_armament_img = img_for_ocr
-            previous_replace_armament_name = pixel_set_match
-        else:
-            previous_armament_img = img_for_ocr
-            previous_armament_name = pixel_set_match
-        return (CLEAN, pixel_set_match)
-    if pixel_set.size() / (pixel_set.width * pixel_set.height) < OCR_MINIMUM_PIXELS_PERCENT:
-        # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
-        return (NONE, "")
-    if is_replace:
-        last_replace_armament_pixel_set = pixel_set
-    else:
-        last_armament_pixel_set = pixel_set
+        debug_window.matched_pixelset(eff_detection_id, pixel_set_match)
+        previous_imgs[eff_detection_id] = img_for_ocr
+        previous_matches[eff_detection_id] = (TEXT_ORIGIN_PIXELSET, pixel_set_match)
+        return (TEXT_ORIGIN_PIXELSET, pixel_set_match)
+    
+    # If the detection area contains too few relevant colored pixels, we assume that the OCR will be unable to detect anything useful.
+    if pixel_set.size() / (pixel_set.width * pixel_set.height) < OCR_MINIMUM_PIXELS_PERCENTS[eff_detection_id]:
+        return (TEXT_ORIGIN_NONE, "")
 
-    if DEBUG:
-        debug_window.show_armament_rect(box_identifier, is_replace)
-        makedirs(TEMP_PATH, exist_ok=True)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = path.join(TEMP_PATH, f"ocr_armament_{timestamp}.png")
-        imwrite(filename, img_for_ocr)
+    # Character detection is stable enough that we can ditch the OCR completely if we have already learned a pixel set for each character for this resolution.
+    if eff_detection_id == CHARACTER_DETECTION and pixelset_cache.all_characters_learned(screen_width, screen_height):
+        return (TEXT_ORIGIN_NONE, "")
 
+    # Last resource: OCR
+    debug_window.begin_ocr(eff_detection_id, img_for_ocr)
     text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
-    if DEBUG:
-        debug_window.hide_armament_rect(is_replace)
-        print(f"{'Replace ' if is_replace else ''}Armament detected: {text}")
-    if is_replace:
-        previous_replace_armament_img = img_for_ocr
-        previous_replace_armament_name = text
-    else:
-        previous_armament_img = img_for_ocr
-        previous_armament_name = text
-    return (ROUGH, text)
+    text = text.strip()
+    debug_window.end_ocr(eff_detection_id, text)
+
+    # Save all the relevant data for the next detection.
+    previous_imgs[eff_detection_id] = img_for_ocr
+    previous_matches[eff_detection_id] = (TEXT_ORIGIN_OCR, text)
+    last_pixelsets[eff_detection_id] = pixel_set
+    return (TEXT_ORIGIN_OCR, text)
 
 
 # -------------------------- Classes ---------------------------#
 
 
-class MenuDetectionLoopThread(Thread):
-    def __init__(self, *args, **kwargs):
+class DetectionThread(Thread):
+    def __init__(self, detection_id: str, function: Callable, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._stop_event = Event()
+        self.detection_id = detection_id
+        self.function = function
 
     def run(self) -> None:
-        global current_menu_state
+        debug_window.thread_started(self.detection_id)
         while not self.is_stopped():
             t0 = time()
             try:
-                text: str = ocr_get_menu_state()
-                match: int = FALSE
-                new_menu_state = DEFAULT_STATE
-                if match := text_matches(text, SHOP_TITLE):
-                    new_menu_state = SHOP_STATE
-                elif match := text_matches(text, BOSS_DROP_TITLE):
-                    new_menu_state = BOSS_DROP_STATE
-                with current_menu_state_lock:
-                    if new_menu_state != current_menu_state:
-                        if DEBUG:
-                            print(f"Menu state changing from '{current_menu_state}' to '{new_menu_state}'")
-                        current_menu_state = new_menu_state
-                        if last_menu_pixel_set and match == PERFECT and new_menu_state != DEFAULT_STATE:
-                            last_menu_pixel_set.write(new_menu_state)
+                self.function(self.detection_id)
             except Exception as e:
                 log_error(e)
             t1 = time()
-            sleep_time = max(0, MENU_DETECTION_LOOP_PERIOD - (t1 - t0))
+            sleep_time = max(0, DETECTION_LOOP_PERIODS[self.detection_id] - (t1 - t0))
             sleep(sleep_time)
+        debug_window.thread_stopped(self.detection_id)
 
     def stop(self) -> None:
         self._stop_event.set()
@@ -695,136 +572,64 @@ class MenuDetectionLoopThread(Thread):
         return self._stop_event.is_set()
 
 
-class ArmamentDetectionLoopThread(Thread):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self._stop_event = Event()
-
-    def run(self) -> None:
-        global current_menu_state, thread_running, current_character_name
-        while not self.is_stopped():
-            t0 = time()
-            try:
-                with current_character_name_lock:
-                    character_spec: CharacterSpec | None = CHARACTER_SPECS.get(current_character_name, None)
-                if character_spec is not None:
-                    result, text = ocr_get_armament_name()
-                    if result != NONE:
-                        for armament_spec in EXPANDED_ARMAMENT_SPECS:
-                            if result == CLEAN:
-                                match = TRUE if text == armament_spec.name else FALSE
-                            else:
-                                match = text_matches(text, armament_spec.name)
-                            if match:
-                                if DEBUG:
-                                    print(f"Armament match found: {armament_spec.name} ({text})")
-                                update_armament_feedback_labels(character_spec, armament_spec)
-                                if last_armament_pixel_set and match == PERFECT:
-                                    last_armament_pixel_set.write(armament_spec.name)
-                                break
-                        else:  # No match found
-                            update_armament_feedback_labels()
-                    else:  # No match found
-                        update_replace_armament_feedback_labels()
-            except Exception as e:
-                log_error(e)
-            t1 = time()
-            sleep_time = max(0, ARMAMENT_DETECTION_LOOP_PERIOD - (t1 - t0))
-            sleep(sleep_time)
-
-    def stop(self) -> None:
-        self._stop_event.set()
-
-    def is_stopped(self) -> bool:
-        return self._stop_event.is_set()
+def convert_menu_title_to_state(title: str) -> str:
+    if title == SHOP_TITLE:
+        return MENU_STATE_SHOP
+    elif title == BOSS_DROP_TITLE:
+        return MENU_STATE_BOSS_DROP
+    return MENU_STATE_DEFAULT
 
 
-class CharacterDetectionLoopThread(Thread):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self._stop_event = Event()
-
-    def run(self) -> None:
-        global current_character_name, current_character_name_lock, character_detection_enabled, current_character_name_lock
-        if DEBUG:
-            print("Starting character detection thread.")
-        while not self.is_stopped():
-            t0 = time()
-            try:
-                with current_character_name_lock:
-                    do_character_detection: bool = character_detection_enabled
-                if do_character_detection:
-                    text: str = ocr_get_character_name()
-                    match: int = FALSE
-                    for char in CHARACTERS:
-                        if match := text_matches(text, char):
-                            new_character_name = char
-                            break
-                    else:  # No match found
-                        new_character_name = ""
-                    with current_character_name_lock:
-                        if new_character_name != "" and new_character_name != current_character_name:
-                            current_character_name = new_character_name
-                            update_current_character_dropdown(new_character_name)
-                            if last_character_pixel_set and match == PERFECT:
-                                last_character_pixel_set.write(new_character_name)
-            except Exception as e:
-                log_error(e)
-            t1 = time()
-            sleep_time = max(0, CHARACTER_DETECTION_LOOP_PERIOD - (t1 - t0))
-            sleep(sleep_time)
-        if DEBUG:
-            print("Character detection thread stopped.")
-
-    def stop(self) -> None:
-        self._stop_event.set()
-
-    def is_stopped(self) -> bool:
-        return self._stop_event.is_set()
+def learn_pixelset(detection_id: str, match_result: int, match: str) -> None:
+    # Learn the pixel set if it is a perfect match
+    last_pixelset: PixelSet | None = last_pixelsets[detection_id]
+    if last_pixelset and match_result == PERFECT_MATCH:
+        last_pixelset.write(match)
 
 
-class ReplaceArmamentDetectionLoopThread(Thread):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self._stop_event = Event()
+def detect_menu(detection_id: str) -> None:
+    global current_menu_state, current_menu_state_lock
+    text_origin, text = detect_text(MENU_DETECTION)
+    match_result, match = find_match(detection_id, text_origin, text, [BOSS_DROP_TITLE, SHOP_TITLE], convert_menu_title_to_state)
+    with current_menu_state_lock:
+        if match == current_menu_state:
+            return
+        debug_window.found_match(detection_id, text_origin, text, match_result, match)
+        current_menu_state = match
+        if match != MENU_STATE_DEFAULT:  # Do not learn pixelset for the default menu state (which represents the absence of a menu)
+            learn_pixelset(detection_id, match_result, detection_id)
 
-    def run(self) -> None:
-        global current_menu_state, current_character_name, last_replace_armament_pixel_set
-        while not self.is_stopped():
-            t0 = time()
-            try:
-                with current_character_name_lock:
-                    character_spec: CharacterSpec | None = CHARACTER_SPECS.get(current_character_name, None)
-                if character_spec is not None:
-                    result, text = ocr_get_armament_name(is_replace=True)
-                    if result != NONE:
-                        for armament_spec in EXPANDED_ARMAMENT_SPECS:
-                            if result == CLEAN:
-                                match = TRUE if text == armament_spec.name else FALSE
-                            else:
-                                match = text_matches(text, armament_spec.name)
-                            if match:
-                                if DEBUG:
-                                    print(f"Replace Armament match found: {armament_spec.name} ({text})")
-                                update_replace_armament_feedback_labels(character_spec, armament_spec)
-                                if last_replace_armament_pixel_set and match == PERFECT:
-                                    last_replace_armament_pixel_set.write(armament_spec.name)
-                                break
-                        else:  # No match found
-                            update_replace_armament_feedback_labels()
-                    else:  # No match found
-                        update_replace_armament_feedback_labels()
-            except Exception as e:
-                log_error(e)
-            t1 = time()
-            sleep_time = max(0, ARMAMENT_DETECTION_LOOP_PERIOD - (t1 - t0))
-            sleep(sleep_time)
 
-    def stop(self) -> None:
-        self._stop_event.set()
+def detect_character(detection_id: str) -> None:
+    global current_character_name, current_character_name_lock, character_detection_enabled, character_detection_enabled_lock, last_pixelsets, debug_window
+    with character_detection_enabled_lock:
+        if not character_detection_enabled:
+            return
+    text_origin, text = detect_text(detection_id)
+    match_result, match = find_match(detection_id, text_origin, text, CHARACTER_SPECS.values(), lambda character_spec: character_spec.name)
+    if match_result == NO_MATCH:
+        return
+    with current_character_name_lock:
+        if match.name != current_character_name:
+            debug_window.found_match(detection_id, text_origin, text, match_result, match.name)
+            current_character_name = match.name
+            update_current_character_dropdown(match.name)
+            learn_pixelset(detection_id, match_result, match.name)
 
-    def is_stopped(self) -> bool:
-        return self._stop_event.is_set()
+
+def detect_armament(detection_id: str) -> None:
+    with current_character_name_lock:
+        character_spec: CharacterSpec | None = CHARACTER_SPECS.get(current_character_name, None)
+    if character_spec is None:
+        return
+    text_origin, text = detect_text(detection_id)
+    match_result, match = find_match(detection_id, text_origin, text, EXPANDED_ARMAMENT_SPECS, lambda armament_spec: armament_spec.name)
+    if match_result == NO_MATCH:
+        update_armament_feedback_labels_general(detection_id)
+        return
+    debug_window.found_match(detection_id, text_origin, text, match_result, match.name)
+    update_armament_feedback_labels_general(detection_id, character_spec, match)
+    learn_pixelset(detection_id, match_result, match.name)
 
 
 # -------------------------- Main ------------------------------#
@@ -853,23 +658,23 @@ if __name__ == "__main__":
 
     basic_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Arial", basic_armament_feedback_label_font_size))
     basic_armament_feedback_label.pack()
-    relx, rely = get_ui_element_rel_positions("default_armament", screen_width, screen_height)
+    relx, rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
     basic_armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
 
     advanced_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Consolas", advanced_armament_feedback_label_font_size))
     advanced_armament_feedback_label.pack()
-    rely, _, relx, _ = get_detection_box("default_armament", screen_width, screen_height)
+    rely, _, relx, _ = get_detection_box(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
     advanced_armament_feedback_label.place(relx=relx, rely=rely, anchor="sw")
 
     replace_basic_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Arial", basic_armament_feedback_label_font_size))
     replace_basic_armament_feedback_label.pack()
-    relx, rely = get_ui_element_rel_positions("default_armament", screen_width, screen_height)
+    relx, rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
     relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
     replace_basic_armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
 
     replace_advanced_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Consolas", advanced_armament_feedback_label_font_size))
     replace_advanced_armament_feedback_label.pack()
-    rely, _, relx, _ = get_detection_box("default_armament", screen_width, screen_height)
+    rely, _, relx, _ = get_detection_box(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
     relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
     replace_advanced_armament_feedback_label.place(relx=relx, rely=rely, anchor="sw")
 
@@ -881,12 +686,11 @@ if __name__ == "__main__":
     relx, rely = get_ui_element_rel_positions("character_dropdown", screen_width, screen_height)
     current_character_dropdown.place(relx=relx, rely=rely, anchor="ne")
 
-    character_detection_thread = CharacterDetectionLoopThread(daemon=True)
-    menu_detection_thread = MenuDetectionLoopThread(daemon=True)
-    armament_detection_thread = ArmamentDetectionLoopThread(daemon=True)
-    replace_armament_detection_thread = ReplaceArmamentDetectionLoopThread(daemon=True)
-    if DEBUG:
-        debug_window = DebugWindow(root)
+    character_detection_thread = DetectionThread(detection_id=CHARACTER_DETECTION, function=detect_character, daemon=True)
+    menu_detection_thread = DetectionThread(detection_id=MENU_DETECTION, function=detect_menu, daemon=True)
+    armament_detection_thread = DetectionThread(detection_id=ARMAMENT_DETECTION_DEFAULT, function=detect_armament, daemon=True)
+    replace_armament_detection_thread = DetectionThread(detection_id=ARMAMENT_DETECTION_DEFAULT_REPLACE, function=detect_armament, daemon=True)
+    debug_window = DebugWindow(root, DEBUG, DEBUG_PATH)
 
     calculate_all_armaments()
     pixelset_cache = PixelSetCache(PIXEL_SETS_PATH, DEBUG)

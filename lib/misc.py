@@ -3,33 +3,44 @@ from textdistance import jaccard
 from numpy import ndarray
 from PIL import Image
 from os import path, makedirs, listdir
-from cv2 import threshold, THRESH_BINARY, imwrite
+from cv2 import threshold, THRESH_BINARY
 from lib.constants import *
 from re import sub
-
-TEXT_MATCH_RESULTS: list[int] = [
-    FALSE := 0,
-    TRUE := 1,
-    PERFECT := 2,
-]
+from typing import Iterable, Any, Callable
 
 
-def text_matches(rough_text: str, target_text: str, threshold: float = TEXT_DISTANCE_THRESHOLD) -> int:
-    """
-    Check if the rough text matches the target text based on a Jaccard similarity threshold.
-    """
+def text_matches(rough_text: str, target_text: str, detection_id: str) -> int:
+    threshold: float = TEXT_SIMILARITY_THRESHOLDS[detection_id]
     clean_target_text: str = target_text.strip().upper()
     clean_rough_text: str = rough_text.strip().upper()
     clean_rough_text = clean_rough_text.replace("’", "'").replace("‘", "'")
-    clean_rough_text = clean_rough_text.replace("!", "l").replace("+", "t")
-    clean_rough_text = sub(r"[^a-zA-ZéÉ\'\-\.]", "", clean_rough_text)
+    clean_rough_text = clean_rough_text.replace("!", "L").replace("+", "T")
+    clean_rough_text = sub(r"[^a-zA-ZéÉ\s\'\-\.]", "", clean_rough_text)
     clean_rough_text = sub(r"\s+", " ", clean_rough_text)
 
     if jaccard.normalized_similarity(clean_rough_text, clean_target_text) >= threshold:
+        print(clean_rough_text, clean_target_text, detection_id)
         if clean_rough_text == clean_target_text:
-            return PERFECT
-        return TRUE
-    return FALSE
+            return PERFECT_MATCH
+        return GOOD_MATCH
+    return NO_MATCH
+
+
+def find_match(detection_id: str, text_origin: int, text: str, search_space: Iterable, get_text: Callable) -> tuple[int, Any]:
+    if text_origin == TEXT_ORIGIN_NONE or text == "":
+        return (NO_MATCH, None)
+    if text_origin == TEXT_ORIGIN_PIXELSET:
+        for item in search_space:
+            item_text: str = get_text(item)
+            if text == item_text:
+                return (PERFECT_MATCH, item)
+    if text_origin == TEXT_ORIGIN_OCR:
+        for item in search_space:
+            item_text: str = get_text(item)
+            match = text_matches(text, item_text, detection_id)
+            if match:
+                return (match, item)
+    return (NO_MATCH, None)
 
 
 def image_changed(previous_img: ndarray | None, current_img: ndarray) -> bool:
@@ -126,20 +137,12 @@ class PixelSetCache:
 
     def clear_cache(self) -> None:
         self.cache = {}
-    
+
     def all_characters_learned(self, screen_width: int, screen_height: int) -> bool:
-        """
-        Check if all characters have learned pixel sets for the given screen resolution.
-        :param screen_width: Width of the screen.
-        :param screen_height: Height of the screen.
-        :return: True if all characters have learned pixel sets, False otherwise.
-        """
         resolution = f"{screen_width}x{screen_height}"
-        detection_box_id = "character"
+        detection_box_id = MENU_DETECTION
         pixelset_characters: list[str] = list(self.get_pixelsets(resolution, detection_box_id).keys())
-        return all(
-            character in pixelset_characters for character in CHARACTERS
-        )
+        return all(character in pixelset_characters for character in CHARACTERS)
 
 
 class PixelSet:
@@ -149,19 +152,16 @@ class PixelSet:
         cropped: ndarray,
         screen_width: int,
         screen_height: int,
-        detection_box_id: str,
-        pixelset_threshold: int,
-        threshold_reduction: int,
-        fn_rate: float,
-        fp_rate: float,
+        detection_id: str,
     ):
         self.cache: PixelSetCache = cache
         self.cropped: ndarray = cropped
         self.resolution: str = f"{screen_width}x{screen_height}"
-        self.detection_box_id: str = detection_box_id
-        self.fn_rate: float = fn_rate
-        self.fp_rate: float = fp_rate
-        self.pixelset_threshold: int = pixelset_threshold
+        self.detection_id: str = detection_id
+        self.fn_rate: float = PIXELSET_FN_RATES[detection_id]
+        self.fp_rate: float = PIXELSET_FP_RATES[detection_id]
+        self.pixelset_threshold: int = PIXELSET_THRESHOLDS[detection_id]
+        threshold_reduction: int = PIXELSET_THRESHOLD_REDUCTIONS[detection_id]
         self.pixelset: set = set()
         _, self.image = threshold(cropped, self.pixelset_threshold - threshold_reduction, 255, THRESH_BINARY)
         self.height, self.width = cropped.shape[:2]
@@ -182,12 +182,12 @@ class PixelSet:
                     ref_pixelset.add((x, y))
         if len(ref_pixelset) < 10:
             return  # Require at least 10 pixels to write
-        self.cache.save_pixelset(self.resolution, self.detection_box_id, identifier, ref_pixelset)
+        self.cache.save_pixelset(self.resolution, self.detection_id, identifier, ref_pixelset)
 
     def find_match(self) -> str:
         if len(self.pixelset) < 10:
             return ""
-        pixelsets: dict[str, set[tuple[int, int]]] = self.cache.get_pixelsets(self.resolution, self.detection_box_id)
+        pixelsets: dict[str, set[tuple[int, int]]] = self.cache.get_pixelsets(self.resolution, self.detection_id)
         for identifier in pixelsets.keys():
             ref_pixelset: set = pixelsets[identifier]
             fn_rate = len(ref_pixelset - self.pixelset) / len(ref_pixelset) if ref_pixelset else 0

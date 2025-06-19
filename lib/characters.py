@@ -34,7 +34,7 @@ class CharacterSpec:
         self.great_matches = []
         self.decent_matches = []
 
-        for armament_spec in get_all_armaments_expanded():
+        for armament_spec in EXPANDED_ARMAMENT_SPECS:
             if armament_spec.type in self.weapon_types:
                 self.type_matches.append(armament_spec)
             stat_score = calculate_stat_score(armament_spec, self)
