@@ -138,8 +138,10 @@ def load_configs() -> None:
                 character_detection_enabled = config_data.get("character_detection_enabled", True)
                 advanced_mode_enabled = config_data.get("advanced_mode_enabled", False)
                 data_version = config_data.get("version", "0.0.0")
-                if data_version < VERSION:
+                if version_is_older(data_version, "2.0.1"):
                     rmtree(PIXEL_SETS_PATH, ignore_errors=True)
+            if data_version != VERSION:
+                save_configs()
     except (FileNotFoundError, json.JSONDecodeError):
         with character_detection_enabled_lock, advanced_mode_enabled_lock:
             character_detection_enabled = True

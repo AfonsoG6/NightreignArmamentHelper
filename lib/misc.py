@@ -219,3 +219,16 @@ class PixelSet:
         if extensive:
             return best_match
         return ""  # No match found
+
+
+def version_is_older(version: str, target_version: str) -> bool:
+    numbers = list(map(int, version.split('.')))
+    target_numbers = list(map(int, target_version.split('.')))
+
+    for num, t_num in zip(numbers, target_numbers):
+        if num < t_num:
+            return True
+        elif num > t_num:
+            return False
+    # Identical versions
+    return False
