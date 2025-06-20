@@ -637,14 +637,17 @@ def detect_armament(detection_id: str) -> None:
         return
     text_origin, text = detect_text(detection_id)
     match_result, match = find_match(detection_id, text_origin, text, GRABBABLE_SPECS, lambda armament_spec: armament_spec.name)
-    if match_result == NO_MATCH or not isinstance(match, ArmamentSpec):
+    if match_result == NO_MATCH:
         update_armament_feedback_labels_general(detection_id)
         return
     debug_window.found_match(detection_id, text_origin, text, match_result, match.name)
-    update_armament_feedback_labels_general(detection_id, character_spec, match)
+    if isinstance(match, ArmamentSpec):
+        update_armament_feedback_labels_general(detection_id, character_spec, match)
+    else:
+        update_armament_feedback_labels_general(detection_id)
     eff_detection_id = get_eff_detection_id(detection_id)
     if eff_detection_id is not None:
-        learn_pixelset(eff_detection_id, text_origin, match_result, match, lambda x: str(x.id))
+        learn_pixelset(eff_detection_id, text_origin, match_result, match, lambda x: x.id)
 
 
 # -------------------------- Main ------------------------------#
