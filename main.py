@@ -642,7 +642,9 @@ def detect_armament(detection_id: str) -> None:
         return
     debug_window.found_match(detection_id, text_origin, text, match_result, match.name)
     update_armament_feedback_labels_general(detection_id, character_spec, match)
-    learn_pixelset(detection_id, text_origin, match_result, match, lambda x: str(x.id))
+    eff_detection_id = get_eff_detection_id(detection_id)
+    if eff_detection_id is not None:
+        learn_pixelset(eff_detection_id, text_origin, match_result, match, lambda x: str(x.id))
 
 
 # -------------------------- Main ------------------------------#

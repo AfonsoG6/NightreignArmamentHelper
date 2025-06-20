@@ -13,10 +13,13 @@ from typing import Iterable, Any, Callable
 def text_matches(rough_text: str, target_text: str, detection_id: str) -> tuple[int, float]:
     threshold: float = TEXT_SIMILARITY_THRESHOLDS[detection_id]
     clean_target_text: str = target_text.strip().upper()
+    clean_target_text = clean_target_text.replace("É", "E").replace("é", "E")
+    
     clean_rough_text: str = rough_text.strip().upper()
     clean_rough_text = clean_rough_text.replace("’", "'").replace("‘", "'")
     clean_rough_text = clean_rough_text.replace("!", "L").replace("+", "T")
-    clean_rough_text = sub(r"[^a-zA-ZéÉ\s\'\-\.]", "", clean_rough_text)
+    clean_rough_text = clean_rough_text.replace("É", "E").replace("é", "E")
+    clean_rough_text = sub(r"[^a-zA-Z\s\'\-\.]", "", clean_rough_text)
     clean_rough_text = sub(r"\s+", " ", clean_rough_text)
 
     similarity = jaccard.normalized_similarity(clean_rough_text, clean_target_text)
@@ -36,7 +39,7 @@ def find_match(detection_id: str, text_origin: int, text: str, search_space: Ite
             if text == item_text:
                 return (PERFECT_MATCH, item)
     if text_origin == TEXT_ORIGIN_OCR:
-        best_match_text: str = ""
+        best_match: Any = None
         best_match_similarity: float = 0.0
         for item in search_space:
             item_text: str = get_text(item)
@@ -46,12 +49,13 @@ def find_match(detection_id: str, text_origin: int, text: str, search_space: Ite
             elif match_result == GOOD_MATCH:
                 if exhaustive:
                     if similarity > best_match_similarity:
-                        best_match_text = item_text
+                        best_match = item
                         best_match_similarity = similarity
+                        print(f"Found good match: {item_text} (similarity: {similarity})")
                 else:
                     return (match_result, item)
-    if exhaustive and best_match_text != "":
-        return (GOOD_MATCH, best_match_text)
+    if exhaustive and best_match is not None:
+        return (GOOD_MATCH, best_match)
     return (NO_MATCH, None)
 
 
