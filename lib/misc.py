@@ -186,7 +186,6 @@ class PixelSet:
         return len(self.pixelset)
 
     def write(self, identifier: str) -> None:
-        print(f"Writing pixel set for {self.detection_id} with identifier {identifier}...")
         _, ref_image = threshold(self.cropped, self.pixelset_threshold, 255, THRESH_BINARY)
         ref_pixelset: set = set()
         for y in range(self.height):
