@@ -10,7 +10,7 @@ from re import sub
 from typing import Iterable, Any, Callable
 
 
-def text_matches(rough_text: str, target_text: str, detection_id: str) -> int:
+def text_matches(rough_text: str, target_text: str, detection_id: str) -> tuple[int, float]:
     threshold: float = TEXT_SIMILARITY_THRESHOLDS[detection_id]
     clean_target_text: str = target_text.strip().upper()
     clean_rough_text: str = rough_text.strip().upper()
@@ -19,14 +19,15 @@ def text_matches(rough_text: str, target_text: str, detection_id: str) -> int:
     clean_rough_text = sub(r"[^a-zA-ZéÉ\s\'\-\.]", "", clean_rough_text)
     clean_rough_text = sub(r"\s+", " ", clean_rough_text)
 
-    if jaccard.normalized_similarity(clean_rough_text, clean_target_text) >= threshold:
+    similarity = jaccard.normalized_similarity(clean_rough_text, clean_target_text)
+    if similarity >= threshold:
         if clean_rough_text == clean_target_text:
-            return PERFECT_MATCH
-        return GOOD_MATCH
-    return NO_MATCH
+            return (PERFECT_MATCH, 1)
+        return (GOOD_MATCH, similarity)
+    return (NO_MATCH, 0)
 
 
-def find_match(detection_id: str, text_origin: int, text: str, search_space: Iterable, get_text: Callable) -> tuple[int, Any]:
+def find_match(detection_id: str, text_origin: int, text: str, search_space: Iterable, get_text: Callable, exhaustive: bool = True) -> tuple[int, Any]:
     if text_origin == TEXT_ORIGIN_NONE or text == "":
         return (NO_MATCH, None)
     if text_origin == TEXT_ORIGIN_PIXELSET:
@@ -35,11 +36,22 @@ def find_match(detection_id: str, text_origin: int, text: str, search_space: Ite
             if text == item_text:
                 return (PERFECT_MATCH, item)
     if text_origin == TEXT_ORIGIN_OCR:
+        best_match_text: str = ""
+        best_match_similarity: float = 0.0
         for item in search_space:
             item_text: str = get_text(item)
-            match = text_matches(text, item_text, detection_id)
-            if match:
-                return (match, item)
+            match_result, similarity = text_matches(text, item_text, detection_id)
+            if match_result == PERFECT_MATCH:
+                return (PERFECT_MATCH, item)
+            elif match_result == GOOD_MATCH:
+                if exhaustive:
+                    if similarity > best_match_similarity:
+                        best_match_text = item_text
+                        best_match_similarity = similarity
+                else:
+                    return (match_result, item)
+    if exhaustive and best_match_text != "":
+        return (GOOD_MATCH, best_match_text)
     return (NO_MATCH, None)
 
 
@@ -185,7 +197,7 @@ class PixelSet:
             return  # Require at least 10 pixels to write
         self.cache.save_pixelset(self.resolution, self.detection_id, identifier, ref_pixelset)
 
-    def find_match(self, detection_id: str, extensive: bool = True) -> str:
+    def find_match(self, detection_id: str, exhaustive: bool = True) -> str:
         if len(self.pixelset) < 10:
             return ""
         pixelsets: dict[str, set[tuple[int, int]]] = self.cache.get_pixelsets(self.resolution, self.detection_id)
@@ -196,7 +208,7 @@ class PixelSet:
             fn_rate = len(ref_pixelset - self.pixelset) / len(ref_pixelset) if ref_pixelset else 0
             fp_rate = len(self.pixelset - ref_pixelset) / len(self.pixelset) if self.pixelset else 0
             if fn_rate <= self.fn_rate and fp_rate <= self.fp_rate:
-                if extensive:
+                if exhaustive:
                     if best_match == "" or (fn_rate < best_fn_rate):
                         if detection_id in ARMAMENT_DETECTION_IDS:
                             try:
@@ -216,14 +228,14 @@ class PixelSet:
                     else:
                         match = identifier
                     return match
-        if extensive:
+        if exhaustive:
             return best_match
         return ""  # No match found
 
 
 def version_is_older(version: str, target_version: str) -> bool:
-    numbers = list(map(int, version.split('.')))
-    target_numbers = list(map(int, target_version.split('.')))
+    numbers = list(map(int, version.split(".")))
+    target_numbers = list(map(int, target_version.split(".")))
 
     for num, t_num in zip(numbers, target_numbers):
         if num < t_num:
