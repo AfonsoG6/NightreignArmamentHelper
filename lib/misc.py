@@ -201,8 +201,9 @@ class PixelSet:
             return  # Require at least 10 pixels to write
         self.cache.save_pixelset(self.resolution, self.detection_id, identifier, ref_pixelset)
 
-    def find_match(self, detection_id: str, exhaustive: bool = False) -> str:
+    def find_match(self, detection_id: str, exhaustive: bool = True) -> str:
         if len(self.pixelset) < 10:
+            print(f"Pixel set for {detection_id} is too small to match: {len(self.pixelset)} pixels")
             return ""
         pixelsets: dict[str, set[tuple[int, int]]] = self.cache.get_pixelsets(self.resolution, self.detection_id)
         best_match: str = ""
@@ -212,6 +213,7 @@ class PixelSet:
             fn_rate = len(ref_pixelset - self.pixelset) / len(ref_pixelset) if ref_pixelset else 0
             fp_rate = len(self.pixelset - ref_pixelset) / len(self.pixelset) if self.pixelset else 0
             if fn_rate <= self.fn_rate and fp_rate <= self.fp_rate:
+                print(f"Found match for {identifier}: FN rate: {round(fn_rate, 3)}, FP rate: {round(fp_rate, 3)}")
                 if exhaustive:
                     if best_match == "" or (fn_rate < best_fn_rate):
                         if detection_id in ARMAMENT_DETECTION_IDS:
