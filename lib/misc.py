@@ -14,7 +14,7 @@ def text_matches(rough_text: str, target_text: str, detection_id: str) -> tuple[
     threshold: float = TEXT_SIMILARITY_THRESHOLDS[detection_id]
     clean_target_text: str = target_text.strip().upper()
     clean_target_text = clean_target_text.replace("É", "E").replace("é", "E")
-    clean_target_text = sub(r"[^a-zA-Z\s\'\-\.]", "", clean_target_text) # Will mainly remove: []0-9
+    clean_target_text = sub(r"[^a-zA-Z\s\'\-\.]", "", clean_target_text)  # Will mainly remove: []0-9
 
     clean_rough_text: str = rough_text.strip().upper()
     clean_rough_text = clean_rough_text.replace("’", "'").replace("‘", "'")
@@ -201,7 +201,7 @@ class PixelSet:
             return  # Require at least 10 pixels to write
         self.cache.save_pixelset(self.resolution, self.detection_id, identifier, ref_pixelset)
 
-    def find_match(self, detection_id: str, exhaustive: bool = True) -> str:
+    def find_match(self, detection_id: str, exhaustive: bool = False) -> str:
         if len(self.pixelset) < 10:
             return ""
         pixelsets: dict[str, set[tuple[int, int]]] = self.cache.get_pixelsets(self.resolution, self.detection_id)
@@ -216,7 +216,7 @@ class PixelSet:
                     if best_match == "" or (fn_rate < best_fn_rate):
                         if detection_id in ARMAMENT_DETECTION_IDS:
                             try:
-                                match = find_grabbable_name_by_id(int(identifier))
+                                match = find_grabbable_name_by_id(identifier)
                             except:
                                 match = ""
                         else:
@@ -226,7 +226,7 @@ class PixelSet:
                 else:
                     if detection_id in ARMAMENT_DETECTION_IDS:
                         try:
-                            match = find_grabbable_name_by_id(int(identifier))
+                            match = find_grabbable_name_by_id(identifier)
                         except:
                             match = ""
                     else:

@@ -150,7 +150,7 @@ def load_all_grabbable_specs(resources_path: str) -> None:
             GRABBABLE_SPECS.add(TalismanSpec(id=talisman["id"], name=talisman["name"]))
 
 
-def find_grabbable_name_by_id(grabbable_id: int) -> str:
+def find_grabbable_name_by_id(grabbable_id: str) -> str:
     for grabbable in GRABBABLE_SPECS:
         if grabbable.id == grabbable_id:
             return grabbable.name
