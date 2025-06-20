@@ -14,12 +14,13 @@ def text_matches(rough_text: str, target_text: str, detection_id: str) -> tuple[
     threshold: float = TEXT_SIMILARITY_THRESHOLDS[detection_id]
     clean_target_text: str = target_text.strip().upper()
     clean_target_text = clean_target_text.replace("É", "E").replace("é", "E")
-    
+    clean_target_text = sub(r"[^a-zA-Z0-9\s\'\-\.]", "", clean_target_text) # Will mainly remove: []
+
     clean_rough_text: str = rough_text.strip().upper()
     clean_rough_text = clean_rough_text.replace("’", "'").replace("‘", "'")
     clean_rough_text = clean_rough_text.replace("!", "L").replace("+", "T")
     clean_rough_text = clean_rough_text.replace("É", "E").replace("é", "E")
-    clean_rough_text = sub(r"[^a-zA-Z\s\'\-\.]", "", clean_rough_text)
+    clean_rough_text = sub(r"[^a-zA-Z0-9\s\'\-\.]", "", clean_rough_text)
     clean_rough_text = sub(r"\s+", " ", clean_rough_text)
 
     similarity = jaccard.normalized_similarity(clean_rough_text, clean_target_text)
@@ -215,7 +216,7 @@ class PixelSet:
                     if best_match == "" or (fn_rate < best_fn_rate):
                         if detection_id in ARMAMENT_DETECTION_IDS:
                             try:
-                                match = find_armament_name_by_id(int(identifier))
+                                match = find_grabbable_name_by_id(int(identifier))
                             except:
                                 match = ""
                         else:
@@ -225,7 +226,7 @@ class PixelSet:
                 else:
                     if detection_id in ARMAMENT_DETECTION_IDS:
                         try:
-                            match = find_armament_name_by_id(int(identifier))
+                            match = find_grabbable_name_by_id(int(identifier))
                         except:
                             match = ""
                     else:

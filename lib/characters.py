@@ -34,7 +34,9 @@ class CharacterSpec:
         self.great_matches = []
         self.decent_matches = []
 
-        for armament_spec in ARMAMENT_SPECS:
+        for armament_spec in GRABBABLE_SPECS:
+            if not isinstance(armament_spec, ArmamentSpec):
+                continue
             if armament_spec.type in self.weapon_types:
                 self.type_matches.append(armament_spec)
             stat_score = calculate_stat_score(armament_spec, self)
@@ -48,7 +50,7 @@ class CharacterSpec:
         Returns all armaments that match the character's weapon types.
         """
         return set(self.type_matches + self.great_matches + self.decent_matches)
-    
+
     def get_highest_rating(self) -> int:
         """
         Returns the highest rating among the character's stats.
@@ -100,13 +102,9 @@ def calculate_stat_score(armament_spec: ArmamentSpec, character_spec: CharacterS
 
 
 def calculate_all_armaments():
-    """
-    Calculates the best armaments for each character based on their stats and weapon preferences.
-    Returns a dictionary with character names as keys and their best armaments as values.
-    This should be called only once at the start of the program to populate the matches.
-    """
     for _, character_spec in CHARACTER_SPECS.items():
         character_spec.calculate_armaments()
+
 
 """
 # This block is for debugging purposes to generate a JSON file with matches for each character.

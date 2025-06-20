@@ -1,0 +1,4018 @@
+[
+    {
+        "id": 100,
+        "name": "Tarnished's Furled Finger"
+    },
+    {
+        "id": 101,
+        "name": "Duelist's Furled Finger"
+    },
+    {
+        "id": 102,
+        "name": "Bloody Finger"
+    },
+    {
+        "id": 103,
+        "name": "Finger Severer"
+    },
+    {
+        "id": 104,
+        "name": "White Cipher Ring"
+    },
+    {
+        "id": 105,
+        "name": "Blue Cipher Ring"
+    },
+    {
+        "id": 106,
+        "name": "Tarnished's Wizened Finger"
+    },
+    {
+        "id": 107,
+        "name": "Phantom Bloody Finger"
+    },
+    {
+        "id": 108,
+        "name": "Taunter's Tongue"
+    },
+    {
+        "id": 109,
+        "name": "Small Golden Effigy"
+    },
+    {
+        "id": 110,
+        "name": "Small Red Effigy"
+    },
+    {
+        "id": 111,
+        "name": "Festering Bloody Finger"
+    },
+    {
+        "id": 112,
+        "name": "Recusant Finger"
+    },
+    {
+        "id": 113,
+        "name": "Phantom Bloody Finger"
+    },
+    {
+        "id": 114,
+        "name": "Phantom Recusant Finger"
+    },
+    {
+        "id": 115,
+        "name": "Memory of Grace"
+    },
+    {
+        "id": 130,
+        "name": "Spectral Steed Whistle"
+    },
+    {
+        "id": 135,
+        "name": "Phantom Great Rune"
+    },
+    {
+        "id": 150,
+        "name": "Furlcalling Finger Remedy"
+    },
+    {
+        "id": 170,
+        "name": "Tarnished's Furled Finger"
+    },
+    {
+        "id": 171,
+        "name": "Duelist's Furled Finger"
+    },
+    {
+        "id": 172,
+        "name": "Bloody Finger"
+    },
+    {
+        "id": 174,
+        "name": "White Cipher Ring"
+    },
+    {
+        "id": 175,
+        "name": "Blue Cipher Ring"
+    },
+    {
+        "id": 178,
+        "name": "Taunter's Tongue"
+    },
+    {
+        "id": 179,
+        "name": "Small Golden Effigy"
+    },
+    {
+        "id": 180,
+        "name": "Small Red Effigy"
+    },
+    {
+        "id": 181,
+        "name": "Spectral Steed Whistle"
+    },
+    {
+        "id": 182,
+        "name": "Furlcalling Finger Remedy"
+    },
+    {
+        "id": 183,
+        "name": "Festering Bloody Finger"
+    },
+    {
+        "id": 184,
+        "name": "Recusant Finger"
+    },
+    {
+        "id": 190,
+        "name": "Rune Arc"
+    },
+    {
+        "id": 191,
+        "name": "Godrick's Great Rune"
+    },
+    {
+        "id": 192,
+        "name": "Radahn's Great Rune"
+    },
+    {
+        "id": 193,
+        "name": "Morgott's Great Rune"
+    },
+    {
+        "id": 194,
+        "name": "Rykard's Great Rune"
+    },
+    {
+        "id": 195,
+        "name": "Mohg's Great Rune"
+    },
+    {
+        "id": 196,
+        "name": "Malenia's Great Rune"
+    },
+    {
+        "id": 200,
+        "name": "Flask of Crimson Tears"
+    },
+    {
+        "id": 201,
+        "name": "Flask of Crimson Tears"
+    },
+    {
+        "id": 202,
+        "name": "Flask of Crimson Tears +1"
+    },
+    {
+        "id": 203,
+        "name": "Flask of Crimson Tears +1"
+    },
+    {
+        "id": 204,
+        "name": "Flask of Crimson Tears +2"
+    },
+    {
+        "id": 205,
+        "name": "Flask of Crimson Tears +2"
+    },
+    {
+        "id": 206,
+        "name": "Flask of Crimson Tears +3"
+    },
+    {
+        "id": 207,
+        "name": "Flask of Crimson Tears +3"
+    },
+    {
+        "id": 208,
+        "name": "Flask of Crimson Tears +4"
+    },
+    {
+        "id": 209,
+        "name": "Flask of Crimson Tears +4"
+    },
+    {
+        "id": 210,
+        "name": "Flask of Crimson Tears +5"
+    },
+    {
+        "id": 211,
+        "name": "Flask of Crimson Tears +5"
+    },
+    {
+        "id": 212,
+        "name": "Flask of Crimson Tears +6"
+    },
+    {
+        "id": 213,
+        "name": "Flask of Crimson Tears +6"
+    },
+    {
+        "id": 214,
+        "name": "Flask of Crimson Tears +7"
+    },
+    {
+        "id": 215,
+        "name": "Flask of Crimson Tears +7"
+    },
+    {
+        "id": 220,
+        "name": "Flask of Cerulean Tears"
+    },
+    {
+        "id": 221,
+        "name": "Flask of Cerulean Tears"
+    },
+    {
+        "id": 222,
+        "name": "Flask of Cerulean Tears +1"
+    },
+    {
+        "id": 223,
+        "name": "Flask of Cerulean Tears +1"
+    },
+    {
+        "id": 224,
+        "name": "Flask of Cerulean Tears +2"
+    },
+    {
+        "id": 225,
+        "name": "Flask of Cerulean Tears +2"
+    },
+    {
+        "id": 226,
+        "name": "Flask of Cerulean Tears +3"
+    },
+    {
+        "id": 227,
+        "name": "Flask of Cerulean Tears +3"
+    },
+    {
+        "id": 228,
+        "name": "Flask of Cerulean Tears +4"
+    },
+    {
+        "id": 229,
+        "name": "Flask of Cerulean Tears +4"
+    },
+    {
+        "id": 230,
+        "name": "Flask of Cerulean Tears +5"
+    },
+    {
+        "id": 231,
+        "name": "Flask of Cerulean Tears +5"
+    },
+    {
+        "id": 232,
+        "name": "Flask of Cerulean Tears +6"
+    },
+    {
+        "id": 233,
+        "name": "Flask of Cerulean Tears +6"
+    },
+    {
+        "id": 234,
+        "name": "Flask of Cerulean Tears +7"
+    },
+    {
+        "id": 235,
+        "name": "Flask of Cerulean Tears +7"
+    },
+    {
+        "id": 250,
+        "name": "Flask of Wondrous Physick"
+    },
+    {
+        "id": 251,
+        "name": "Flask of Wondrous Physick"
+    },
+    {
+        "id": 300,
+        "name": "Fire Pot"
+    },
+    {
+        "id": 301,
+        "name": "Redmane Fire Pot"
+    },
+    {
+        "id": 302,
+        "name": "Giantsflame Fire Pot"
+    },
+    {
+        "id": 320,
+        "name": "Lightning Pot"
+    },
+    {
+        "id": 321,
+        "name": "Ancient Dragonbolt Pot"
+    },
+    {
+        "id": 330,
+        "name": "Fetid Pot"
+    },
+    {
+        "id": 340,
+        "name": "Swarm Pot"
+    },
+    {
+        "id": 350,
+        "name": "Holy Water Pot"
+    },
+    {
+        "id": 351,
+        "name": "Sacred Order Pot"
+    },
+    {
+        "id": 360,
+        "name": "Freezing Pot"
+    },
+    {
+        "id": 370,
+        "name": "Poison Pot"
+    },
+    {
+        "id": 380,
+        "name": "Oil Pot"
+    },
+    {
+        "id": 390,
+        "name": "Alluring Pot"
+    },
+    {
+        "id": 391,
+        "name": "Beastlure Pot"
+    },
+    {
+        "id": 400,
+        "name": "Roped Fire Pot"
+    },
+    {
+        "id": 420,
+        "name": "Roped Lightning Pot"
+    },
+    {
+        "id": 430,
+        "name": "Roped Fetid Pot"
+    },
+    {
+        "id": 440,
+        "name": "Roped Poison Pot"
+    },
+    {
+        "id": 450,
+        "name": "Roped Oil Pot"
+    },
+    {
+        "id": 460,
+        "name": "Roped Magic Pot"
+    },
+    {
+        "id": 470,
+        "name": "Roped Fly Pot"
+    },
+    {
+        "id": 480,
+        "name": "Roped Freezing Pot"
+    },
+    {
+        "id": 490,
+        "name": "Roped Volcano Pot"
+    },
+    {
+        "id": 510,
+        "name": "Roped Holy Water Pot"
+    },
+    {
+        "id": 600,
+        "name": "Volcano Pot"
+    },
+    {
+        "id": 610,
+        "name": "Albinauric Pot"
+    },
+    {
+        "id": 630,
+        "name": "Cursed-Blood Pot"
+    },
+    {
+        "id": 640,
+        "name": "Sleep Pot"
+    },
+    {
+        "id": 650,
+        "name": "Rancor Pot"
+    },
+    {
+        "id": 660,
+        "name": "Magic Pot"
+    },
+    {
+        "id": 661,
+        "name": "Academy Magic Pot"
+    },
+    {
+        "id": 670,
+        "name": "Rot Pot"
+    },
+    {
+        "id": 700,
+        "name": "Wending Grace"
+    },
+    {
+        "id": 810,
+        "name": "Rowa Raisin"
+    },
+    {
+        "id": 811,
+        "name": "Sweet Raisin"
+    },
+    {
+        "id": 812,
+        "name": "Frozen Raisin"
+    },
+    {
+        "id": 820,
+        "name": "Boiled Crab"
+    },
+    {
+        "id": 830,
+        "name": "Boiled Prawn"
+    },
+    {
+        "id": 900,
+        "name": "Neutralizing Boluses"
+    },
+    {
+        "id": 910,
+        "name": "Stanching Boluses"
+    },
+    {
+        "id": 920,
+        "name": "Thawfrost Boluses"
+    },
+    {
+        "id": 930,
+        "name": "Stimulating Boluses"
+    },
+    {
+        "id": 940,
+        "name": "Preserving Boluses"
+    },
+    {
+        "id": 950,
+        "name": "Rejuvenating Boluses"
+    },
+    {
+        "id": 960,
+        "name": "Clarifying Boluses"
+    },
+    {
+        "id": 1000,
+        "name": "Flask of Crimson Tears"
+    },
+    {
+        "id": 1001,
+        "name": "Flask of Crimson Tears"
+    },
+    {
+        "id": 1002,
+        "name": "Flask of Crimson Tears +1"
+    },
+    {
+        "id": 1003,
+        "name": "Flask of Crimson Tears +1"
+    },
+    {
+        "id": 1004,
+        "name": "Flask of Crimson Tears +2"
+    },
+    {
+        "id": 1005,
+        "name": "Flask of Crimson Tears +2"
+    },
+    {
+        "id": 1006,
+        "name": "Flask of Crimson Tears +3"
+    },
+    {
+        "id": 1007,
+        "name": "Flask of Crimson Tears +3"
+    },
+    {
+        "id": 1008,
+        "name": "Flask of Crimson Tears +4"
+    },
+    {
+        "id": 1009,
+        "name": "Flask of Crimson Tears +4"
+    },
+    {
+        "id": 1010,
+        "name": "Flask of Crimson Tears +5"
+    },
+    {
+        "id": 1011,
+        "name": "Flask of Crimson Tears +5"
+    },
+    {
+        "id": 1012,
+        "name": "Flask of Crimson Tears +6"
+    },
+    {
+        "id": 1013,
+        "name": "Flask of Crimson Tears +6"
+    },
+    {
+        "id": 1014,
+        "name": "Flask of Crimson Tears +7"
+    },
+    {
+        "id": 1015,
+        "name": "Flask of Crimson Tears +7"
+    },
+    {
+        "id": 1016,
+        "name": "Flask of Crimson Tears +8"
+    },
+    {
+        "id": 1017,
+        "name": "Flask of Crimson Tears +8"
+    },
+    {
+        "id": 1018,
+        "name": "Flask of Crimson Tears +9"
+    },
+    {
+        "id": 1019,
+        "name": "Flask of Crimson Tears +9"
+    },
+    {
+        "id": 1020,
+        "name": "Flask of Crimson Tears +10"
+    },
+    {
+        "id": 1021,
+        "name": "Flask of Crimson Tears +10"
+    },
+    {
+        "id": 1022,
+        "name": "Flask of Crimson Tears +11"
+    },
+    {
+        "id": 1023,
+        "name": "Flask of Crimson Tears +11"
+    },
+    {
+        "id": 1024,
+        "name": "Flask of Crimson Tears +12"
+    },
+    {
+        "id": 1025,
+        "name": "Flask of Crimson Tears +12"
+    },
+    {
+        "id": 1050,
+        "name": "Flask of Cerulean Tears"
+    },
+    {
+        "id": 1051,
+        "name": "Flask of Cerulean Tears"
+    },
+    {
+        "id": 1052,
+        "name": "Flask of Cerulean Tears +1"
+    },
+    {
+        "id": 1053,
+        "name": "Flask of Cerulean Tears +1"
+    },
+    {
+        "id": 1054,
+        "name": "Flask of Cerulean Tears +2"
+    },
+    {
+        "id": 1055,
+        "name": "Flask of Cerulean Tears +2"
+    },
+    {
+        "id": 1056,
+        "name": "Flask of Cerulean Tears +3"
+    },
+    {
+        "id": 1057,
+        "name": "Flask of Cerulean Tears +3"
+    },
+    {
+        "id": 1058,
+        "name": "Flask of Cerulean Tears +4"
+    },
+    {
+        "id": 1059,
+        "name": "Flask of Cerulean Tears +4"
+    },
+    {
+        "id": 1060,
+        "name": "Flask of Cerulean Tears +5"
+    },
+    {
+        "id": 1061,
+        "name": "Flask of Cerulean Tears +5"
+    },
+    {
+        "id": 1062,
+        "name": "Flask of Cerulean Tears +6"
+    },
+    {
+        "id": 1063,
+        "name": "Flask of Cerulean Tears +6"
+    },
+    {
+        "id": 1064,
+        "name": "Flask of Cerulean Tears +7"
+    },
+    {
+        "id": 1065,
+        "name": "Flask of Cerulean Tears +7"
+    },
+    {
+        "id": 1066,
+        "name": "Flask of Cerulean Tears +8"
+    },
+    {
+        "id": 1067,
+        "name": "Flask of Cerulean Tears +8"
+    },
+    {
+        "id": 1068,
+        "name": "Flask of Cerulean Tears +9"
+    },
+    {
+        "id": 1069,
+        "name": "Flask of Cerulean Tears +9"
+    },
+    {
+        "id": 1070,
+        "name": "Flask of Cerulean Tears +10"
+    },
+    {
+        "id": 1071,
+        "name": "Flask of Cerulean Tears +10"
+    },
+    {
+        "id": 1072,
+        "name": "Flask of Cerulean Tears +11"
+    },
+    {
+        "id": 1073,
+        "name": "Flask of Cerulean Tears +11"
+    },
+    {
+        "id": 1074,
+        "name": "Flask of Cerulean Tears +12"
+    },
+    {
+        "id": 1075,
+        "name": "Flask of Cerulean Tears +12"
+    },
+    {
+        "id": 1100,
+        "name": "Pickled Turtle Neck"
+    },
+    {
+        "id": 1110,
+        "name": "Immunizing Cured Meat"
+    },
+    {
+        "id": 1120,
+        "name": "Invigorating Cured Meat"
+    },
+    {
+        "id": 1130,
+        "name": "Clarifying Cured Meat"
+    },
+    {
+        "id": 1140,
+        "name": "Dappled Cured Meat"
+    },
+    {
+        "id": 1150,
+        "name": "Spellproof Dried Liver"
+    },
+    {
+        "id": 1160,
+        "name": "Fireproof Dried Liver"
+    },
+    {
+        "id": 1170,
+        "name": "Lightningproof Dried Liver"
+    },
+    {
+        "id": 1180,
+        "name": "Holyproof Dried Liver"
+    },
+    {
+        "id": 1190,
+        "name": "Silver-Pickled Fowl Foot"
+    },
+    {
+        "id": 1200,
+        "name": "Gold-Pickled Fowl Foot"
+    },
+    {
+        "id": 1210,
+        "name": "Exalted Flesh"
+    },
+    {
+        "id": 1220,
+        "name": "Deathsbane Jerky"
+    },
+    {
+        "id": 1235,
+        "name": "Raw Meat Dumpling"
+    },
+    {
+        "id": 1240,
+        "name": "Shabriri Grape"
+    },
+    {
+        "id": 1290,
+        "name": "Starlight Shards"
+    },
+    {
+        "id": 1310,
+        "name": "Immunizing White Cured Meat"
+    },
+    {
+        "id": 1320,
+        "name": "Invigorating White Cured Meat"
+    },
+    {
+        "id": 1330,
+        "name": "Clarifying White Cured Meat"
+    },
+    {
+        "id": 1340,
+        "name": "Dappled White Cured Meat"
+    },
+    {
+        "id": 1350,
+        "name": "Deathsbane White Jerky"
+    },
+    {
+        "id": 1400,
+        "name": "Fire Grease"
+    },
+    {
+        "id": 1410,
+        "name": "Lightning Grease"
+    },
+    {
+        "id": 1420,
+        "name": "Magic Grease"
+    },
+    {
+        "id": 1430,
+        "name": "Holy Grease"
+    },
+    {
+        "id": 1440,
+        "name": "Blood Grease"
+    },
+    {
+        "id": 1450,
+        "name": "Soporific Grease"
+    },
+    {
+        "id": 1460,
+        "name": "Poison Grease"
+    },
+    {
+        "id": 1470,
+        "name": "Freezing Grease"
+    },
+    {
+        "id": 1480,
+        "name": "Dragonwound Grease"
+    },
+    {
+        "id": 1490,
+        "name": "Rot Grease"
+    },
+    {
+        "id": 1500,
+        "name": "Drawstring Fire Grease"
+    },
+    {
+        "id": 1510,
+        "name": "Drawstring Lightning Grease"
+    },
+    {
+        "id": 1520,
+        "name": "Drawstring Magic Grease"
+    },
+    {
+        "id": 1530,
+        "name": "Drawstring Holy Grease"
+    },
+    {
+        "id": 1540,
+        "name": "Drawstring Blood Grease"
+    },
+    {
+        "id": 1550,
+        "name": "Drawstring Soporific Grease"
+    },
+    {
+        "id": 1560,
+        "name": "Drawstring Poison Grease"
+    },
+    {
+        "id": 1570,
+        "name": "Drawstring Freezing Grease"
+    },
+    {
+        "id": 1590,
+        "name": "Drawstring Rot Grease"
+    },
+    {
+        "id": 1690,
+        "name": "Shield Grease"
+    },
+    {
+        "id": 1700,
+        "name": "Throwing Dagger"
+    },
+    {
+        "id": 1710,
+        "name": "Bone Dart"
+    },
+    {
+        "id": 1720,
+        "name": "Poisonbone Dart"
+    },
+    {
+        "id": 1730,
+        "name": "Kukri"
+    },
+    {
+        "id": 1740,
+        "name": "Crystal Dart"
+    },
+    {
+        "id": 1750,
+        "name": "Fan Daggers"
+    },
+    {
+        "id": 1760,
+        "name": "Ruin Fragment"
+    },
+    {
+        "id": 1810,
+        "name": "Fetid Flesh"
+    },
+    {
+        "id": 1830,
+        "name": "Explosive Stone"
+    },
+    {
+        "id": 1831,
+        "name": "Explosive Stone Clump"
+    },
+    {
+        "id": 1840,
+        "name": "Poisoned Stone"
+    },
+    {
+        "id": 1841,
+        "name": "Poisoned Stone Clump"
+    },
+    {
+        "id": 2020,
+        "name": "Rainbow Stone"
+    },
+    {
+        "id": 2030,
+        "name": "Glowstone"
+    },
+    {
+        "id": 2040,
+        "name": "Telescope"
+    },
+    {
+        "id": 2050,
+        "name": "Grace Mimic"
+    },
+    {
+        "id": 2070,
+        "name": "Lantern"
+    },
+    {
+        "id": 2080,
+        "name": "Blasphemous Claw"
+    },
+    {
+        "id": 2090,
+        "name": "Deathroot"
+    },
+    {
+        "id": 2100,
+        "name": "Soft Cotton"
+    },
+    {
+        "id": 2120,
+        "name": "Soap"
+    },
+    {
+        "id": 2130,
+        "name": "Celestial Dew"
+    },
+    {
+        "id": 2140,
+        "name": "Margit's Shackle"
+    },
+    {
+        "id": 2150,
+        "name": "Mohg's Shackle"
+    },
+    {
+        "id": 2160,
+        "name": "Pureblood Knight's Medal"
+    },
+    {
+        "id": 2190,
+        "name": "Miquella's Needle"
+    },
+    {
+        "id": 2200,
+        "name": "Prattling Pate \"Hello\""
+    },
+    {
+        "id": 2201,
+        "name": "Prattling Pate \"Thank you\""
+    },
+    {
+        "id": 2202,
+        "name": "Prattling Pate \"Apologies\""
+    },
+    {
+        "id": 2203,
+        "name": "Prattling Pate \"Wonderful\""
+    },
+    {
+        "id": 2204,
+        "name": "Prattling Pate \"Please help\""
+    },
+    {
+        "id": 2205,
+        "name": "Prattling Pate \"My beloved\""
+    },
+    {
+        "id": 2206,
+        "name": "Prattling Pate \"Let's get to it\""
+    },
+    {
+        "id": 2207,
+        "name": "Prattling Pate \"You're beautiful\""
+    },
+    {
+        "id": 2900,
+        "name": "Golden Rune [1]"
+    },
+    {
+        "id": 2901,
+        "name": "Golden Rune [2]"
+    },
+    {
+        "id": 2902,
+        "name": "Golden Rune [3]"
+    },
+    {
+        "id": 2903,
+        "name": "Golden Rune [4]"
+    },
+    {
+        "id": 2904,
+        "name": "Golden Rune [5]"
+    },
+    {
+        "id": 2905,
+        "name": "Golden Rune [6]"
+    },
+    {
+        "id": 2906,
+        "name": "Golden Rune [7]"
+    },
+    {
+        "id": 2907,
+        "name": "Golden Rune [8]"
+    },
+    {
+        "id": 2908,
+        "name": "Golden Rune [9]"
+    },
+    {
+        "id": 2909,
+        "name": "Golden Rune [10]"
+    },
+    {
+        "id": 2910,
+        "name": "Golden Rune [11]"
+    },
+    {
+        "id": 2911,
+        "name": "Golden Rune [12]"
+    },
+    {
+        "id": 2912,
+        "name": "Golden Rune [13]"
+    },
+    {
+        "id": 2913,
+        "name": "Numen's Rune"
+    },
+    {
+        "id": 2914,
+        "name": "Hero's Rune [1]"
+    },
+    {
+        "id": 2915,
+        "name": "Hero's Rune [2]"
+    },
+    {
+        "id": 2916,
+        "name": "Hero's Rune [3]"
+    },
+    {
+        "id": 2917,
+        "name": "Hero's Rune [4]"
+    },
+    {
+        "id": 2918,
+        "name": "Hero's Rune [5]"
+    },
+    {
+        "id": 2919,
+        "name": "Lord's Rune"
+    },
+    {
+        "id": 2950,
+        "name": "Remembrance of the Grafted"
+    },
+    {
+        "id": 2951,
+        "name": "Remembrance of the Starscourge"
+    },
+    {
+        "id": 2952,
+        "name": "Remembrance of the Omen King"
+    },
+    {
+        "id": 2953,
+        "name": "Remembrance of the Blasphemous"
+    },
+    {
+        "id": 2954,
+        "name": "Remembrance of the Rot Goddess"
+    },
+    {
+        "id": 2955,
+        "name": "Remembrance of the Blood Lord"
+    },
+    {
+        "id": 2956,
+        "name": "Remembrance of the Black Blade"
+    },
+    {
+        "id": 2957,
+        "name": "Remembrance of Hoarah Loux"
+    },
+    {
+        "id": 2958,
+        "name": "Remembrance of the Dragonlord"
+    },
+    {
+        "id": 2959,
+        "name": "Remembrance of the Full Moon Queen"
+    },
+    {
+        "id": 2960,
+        "name": "Remembrance of the Lichdragon"
+    },
+    {
+        "id": 2961,
+        "name": "Remembrance of the Fire Giant"
+    },
+    {
+        "id": 2962,
+        "name": "Remembrance of the Regal Ancestor"
+    },
+    {
+        "id": 2963,
+        "name": "Elden Remembrance"
+    },
+    {
+        "id": 2964,
+        "name": "Remembrance of the Naturalborn"
+    },
+    {
+        "id": 2990,
+        "name": "Lands Between Rune"
+    },
+    {
+        "id": 3000,
+        "name": "Ancestral Infant's Head"
+    },
+    {
+        "id": 3010,
+        "name": "Omen Bairn"
+    },
+    {
+        "id": 3011,
+        "name": "Regal Omen Bairn"
+    },
+    {
+        "id": 3020,
+        "name": "Miranda's Prayer"
+    },
+    {
+        "id": 3030,
+        "name": "Cuckoo Glintstone"
+    },
+    {
+        "id": 3040,
+        "name": "Mimic's Veil"
+    },
+    {
+        "id": 3050,
+        "name": "Glintstone Scrap"
+    },
+    {
+        "id": 3051,
+        "name": "Large Glintstone Scrap"
+    },
+    {
+        "id": 3060,
+        "name": "Gravity Stone Fan"
+    },
+    {
+        "id": 3070,
+        "name": "Gravity Stone Chunk"
+    },
+    {
+        "id": 3080,
+        "name": "Wraith Calling Bell"
+    },
+    {
+        "id": 3300,
+        "name": "Holy Water Grease"
+    },
+    {
+        "id": 3310,
+        "name": "Warming Stone"
+    },
+    {
+        "id": 3311,
+        "name": "Frenzyflame Stone"
+    },
+    {
+        "id": 3320,
+        "name": "Scriptstone"
+    },
+    {
+        "id": 3350,
+        "name": "Bewitching Branch"
+    },
+    {
+        "id": 3360,
+        "name": "Baldachin's Blessing"
+    },
+    {
+        "id": 3361,
+        "name": "Radiant Baldachin's Blessing"
+    },
+    {
+        "id": 3500,
+        "name": "Uplifting Aromatic"
+    },
+    {
+        "id": 3510,
+        "name": "Spark Aromatic"
+    },
+    {
+        "id": 3520,
+        "name": "Ironjar Aromatic"
+    },
+    {
+        "id": 3550,
+        "name": "Bloodboil Aromatic"
+    },
+    {
+        "id": 3580,
+        "name": "Poison Spraymist"
+    },
+    {
+        "id": 3610,
+        "name": "Acid Spraymist"
+    },
+    {
+        "id": 8000,
+        "name": "Stonesword Key"
+    },
+    {
+        "id": 8005,
+        "name": "Cord End"
+    },
+    {
+        "id": 8102,
+        "name": "Lucent Baldachin's Blessing"
+    },
+    {
+        "id": 8105,
+        "name": "Dectus Medallion (Left)"
+    },
+    {
+        "id": 8106,
+        "name": "Dectus Medallion (Right)"
+    },
+    {
+        "id": 8107,
+        "name": "Rold Medallion"
+    },
+    {
+        "id": 8109,
+        "name": "Academy Glintstone Key"
+    },
+    {
+        "id": 8111,
+        "name": "Carian Inverted Statue"
+    },
+    {
+        "id": 8121,
+        "name": "Dark Moon Ring"
+    },
+    {
+        "id": 8126,
+        "name": "Fingerprint Grape"
+    },
+    {
+        "id": 8127,
+        "name": "Letter from Volcano Manor"
+    },
+    {
+        "id": 8128,
+        "name": "Tonic of Forgetfulness"
+    },
+    {
+        "id": 8129,
+        "name": "Serpent's Amnion"
+    },
+    {
+        "id": 8130,
+        "name": "Rya's Necklace"
+    },
+    {
+        "id": 8131,
+        "name": "Irina's Letter"
+    },
+    {
+        "id": 8132,
+        "name": "Letter from Volcano Manor"
+    },
+    {
+        "id": 8133,
+        "name": "Red Letter"
+    },
+    {
+        "id": 8134,
+        "name": "Drawing-Room Key"
+    },
+    {
+        "id": 8136,
+        "name": "Rya's Necklace"
+    },
+    {
+        "id": 8137,
+        "name": "Volcano Manor Invitation"
+    },
+    {
+        "id": 8142,
+        "name": "Amber Starlight"
+    },
+    {
+        "id": 8143,
+        "name": "Seluvis's Introduction"
+    },
+    {
+        "id": 8144,
+        "name": "Sellen's Primal Glintstone"
+    },
+    {
+        "id": 8146,
+        "name": "Miniature Ranni"
+    },
+    {
+        "id": 8147,
+        "name": "Asimi, Silver Tear"
+    },
+    {
+        "id": 8148,
+        "name": "Godrick's Great Rune"
+    },
+    {
+        "id": 8149,
+        "name": "Radahn's Great Rune"
+    },
+    {
+        "id": 8150,
+        "name": "Morgott's Great Rune"
+    },
+    {
+        "id": 8151,
+        "name": "Rykard's Great Rune"
+    },
+    {
+        "id": 8152,
+        "name": "Mohg's Great Rune"
+    },
+    {
+        "id": 8153,
+        "name": "Malenia's Great Rune"
+    },
+    {
+        "id": 8154,
+        "name": "Lord of Blood's Favor"
+    },
+    {
+        "id": 8155,
+        "name": "Lord of Blood's Favor"
+    },
+    {
+        "id": 8156,
+        "name": "Burial Crow's Letter"
+    },
+    {
+        "id": 8158,
+        "name": "Spirit Calling Bell"
+    },
+    {
+        "id": 8159,
+        "name": "Fingerslayer Blade"
+    },
+    {
+        "id": 8161,
+        "name": "Sewing Needle"
+    },
+    {
+        "id": 8162,
+        "name": "Gold Sewing Needle"
+    },
+    {
+        "id": 8163,
+        "name": "Tailoring Tools"
+    },
+    {
+        "id": 8164,
+        "name": "Seluvis's Potion"
+    },
+    {
+        "id": 8166,
+        "name": "Amber Draught"
+    },
+    {
+        "id": 8167,
+        "name": "Letter to Patches"
+    },
+    {
+        "id": 8168,
+        "name": "Dancer's Castanets"
+    },
+    {
+        "id": 8169,
+        "name": "Sellian Sealbreaker"
+    },
+    {
+        "id": 8171,
+        "name": "Chrysalids' Memento"
+    },
+    {
+        "id": 8172,
+        "name": "Black Knifeprint"
+    },
+    {
+        "id": 8173,
+        "name": "Letter to Bernahl"
+    },
+    {
+        "id": 8174,
+        "name": "Academy Glintstone Key"
+    },
+    {
+        "id": 8175,
+        "name": "Haligtree Secret Medallion (Left)"
+    },
+    {
+        "id": 8176,
+        "name": "Haligtree Secret Medallion (Right)"
+    },
+    {
+        "id": 8181,
+        "name": "Burial Crow's Letter"
+    },
+    {
+        "id": 8182,
+        "name": "Mending Rune of Perfect Order"
+    },
+    {
+        "id": 8183,
+        "name": "Mending Rune of the Death-Prince"
+    },
+    {
+        "id": 8184,
+        "name": "Mending Rune of the Fell Curse"
+    },
+    {
+        "id": 8185,
+        "name": "Larval Tear"
+    },
+    {
+        "id": 8186,
+        "name": "Imbued Sword Key"
+    },
+    {
+        "id": 8187,
+        "name": "Miniature Ranni"
+    },
+    {
+        "id": 8188,
+        "name": "Golden Tailoring Tools"
+    },
+    {
+        "id": 8189,
+        "name": "Iji's Confession"
+    },
+    {
+        "id": 8190,
+        "name": "Knifeprint Clue"
+    },
+    {
+        "id": 8191,
+        "name": "Cursemark of Death"
+    },
+    {
+        "id": 8192,
+        "name": "Asimi's Husk"
+    },
+    {
+        "id": 8193,
+        "name": "Seedbed Curse"
+    },
+    {
+        "id": 8194,
+        "name": "The Stormhawk King"
+    },
+    {
+        "id": 8195,
+        "name": "Asimi, Silver Chrysalid"
+    },
+    {
+        "id": 8196,
+        "name": "Unalloyed Gold Needle"
+    },
+    {
+        "id": 8197,
+        "name": "Sewer-Gaol Key"
+    },
+    {
+        "id": 8198,
+        "name": "Meeting Place Map"
+    },
+    {
+        "id": 8199,
+        "name": "Discarded Palace Key"
+    },
+    {
+        "id": 8200,
+        "name": "\"Homing Instinct\" Painting"
+    },
+    {
+        "id": 8201,
+        "name": "\"Resurrection\" Painting"
+    },
+    {
+        "id": 8202,
+        "name": "\"Champion's Song\" Painting"
+    },
+    {
+        "id": 8203,
+        "name": "\"Sorcerer\" Painting"
+    },
+    {
+        "id": 8204,
+        "name": "\"Prophecy\" Painting"
+    },
+    {
+        "id": 8205,
+        "name": "\"Flightless Bird\" Painting"
+    },
+    {
+        "id": 8206,
+        "name": "\"Redmane\" Painting"
+    },
+    {
+        "id": 8221,
+        "name": "Zorayas's Letter"
+    },
+    {
+        "id": 8222,
+        "name": "Alexander's Innards"
+    },
+    {
+        "id": 8223,
+        "name": "Rogier's Letter"
+    },
+    {
+        "id": 8224,
+        "name": "Note: The Preceptor's Secret"
+    },
+    {
+        "id": 8225,
+        "name": "Weathered Map"
+    },
+    {
+        "id": 8226,
+        "name": "Note: The Preceptor's Secret"
+    },
+    {
+        "id": 8227,
+        "name": "Weathered Map"
+    },
+    {
+        "id": 8500,
+        "name": "Crafting Kit"
+    },
+    {
+        "id": 8590,
+        "name": "Whetstone Knife"
+    },
+    {
+        "id": 8600,
+        "name": "Map: Limgrave, West"
+    },
+    {
+        "id": 8601,
+        "name": "Map: Weeping Peninsula"
+    },
+    {
+        "id": 8602,
+        "name": "Map: Limgrave, East"
+    },
+    {
+        "id": 8603,
+        "name": "Map: Liurnia, East"
+    },
+    {
+        "id": 8604,
+        "name": "Map: Liurnia, North"
+    },
+    {
+        "id": 8605,
+        "name": "Map: Liurnia, West"
+    },
+    {
+        "id": 8606,
+        "name": "Map: Altus Plateau"
+    },
+    {
+        "id": 8607,
+        "name": "Map: Leyndell, Royal Capital"
+    },
+    {
+        "id": 8608,
+        "name": "Map: Mt. Gelmir"
+    },
+    {
+        "id": 8609,
+        "name": "Map: Caelid"
+    },
+    {
+        "id": 8610,
+        "name": "Map: Dragonbarrow"
+    },
+    {
+        "id": 8611,
+        "name": "Map: Mountaintops of the Giants, West"
+    },
+    {
+        "id": 8612,
+        "name": "Map: Mountaintops of the Giants, East"
+    },
+    {
+        "id": 8613,
+        "name": "Map: Ainsel River"
+    },
+    {
+        "id": 8614,
+        "name": "Map: Lake of Rot"
+    },
+    {
+        "id": 8615,
+        "name": "Map: Siofra River"
+    },
+    {
+        "id": 8616,
+        "name": "Map: Mohgwyn Palace"
+    },
+    {
+        "id": 8617,
+        "name": "Map: Deeproot Depths"
+    },
+    {
+        "id": 8618,
+        "name": "Map: Consecrated Snowfield"
+    },
+    {
+        "id": 8660,
+        "name": "Mirage Riddle"
+    },
+    {
+        "id": 8700,
+        "name": "Note: Hidden Cave"
+    },
+    {
+        "id": 8701,
+        "name": "Note: Imp Shades"
+    },
+    {
+        "id": 8702,
+        "name": "Note: Flask of Wondrous Physick"
+    },
+    {
+        "id": 8703,
+        "name": "Note: Stonedigger Trolls"
+    },
+    {
+        "id": 8704,
+        "name": "Note: Wandering Mausoleum"
+    },
+    {
+        "id": 8705,
+        "name": "Note: Unseen Assassins"
+    },
+    {
+        "id": 8706,
+        "name": "Note: Great Coffins"
+    },
+    {
+        "id": 8707,
+        "name": "Note: Flame Chariots"
+    },
+    {
+        "id": 8708,
+        "name": "Note: Demi-human Mobs"
+    },
+    {
+        "id": 8709,
+        "name": "Note: Land Squirts"
+    },
+    {
+        "id": 8710,
+        "name": "Note: Gravity's Advantage"
+    },
+    {
+        "id": 8711,
+        "name": "Note: Revenants"
+    },
+    {
+        "id": 8712,
+        "name": "Note: Waypoint Ruins"
+    },
+    {
+        "id": 8713,
+        "name": "Note: Gateway"
+    },
+    {
+        "id": 8714,
+        "name": "Note: Miquella's Needle"
+    },
+    {
+        "id": 8715,
+        "name": "Note: Frenzied Flame Village"
+    },
+    {
+        "id": 8716,
+        "name": "Note: The Lord of Frenzied Flame"
+    },
+    {
+        "id": 8717,
+        "name": "Note: Below the Capital"
+    },
+    {
+        "id": 8750,
+        "name": "Note: Hidden Cave"
+    },
+    {
+        "id": 8751,
+        "name": "Note: Imp Shades"
+    },
+    {
+        "id": 8752,
+        "name": "Note: Flask of Wondrous Physick"
+    },
+    {
+        "id": 8753,
+        "name": "Note: Stonedigger Trolls"
+    },
+    {
+        "id": 8754,
+        "name": "Note: Wandering Mausoleum"
+    },
+    {
+        "id": 8755,
+        "name": "Note: Unseen Assassins"
+    },
+    {
+        "id": 8756,
+        "name": "Note: Great Coffins"
+    },
+    {
+        "id": 8757,
+        "name": "Note: Flame Chariots"
+    },
+    {
+        "id": 8758,
+        "name": "Note: Demi-human Mobs"
+    },
+    {
+        "id": 8759,
+        "name": "Note: Land Squirts"
+    },
+    {
+        "id": 8760,
+        "name": "Note: Gravity's Advantage"
+    },
+    {
+        "id": 8761,
+        "name": "Note: Revenants"
+    },
+    {
+        "id": 8762,
+        "name": "Note: Waypoint Ruins"
+    },
+    {
+        "id": 8763,
+        "name": "Note: Gateway"
+    },
+    {
+        "id": 8765,
+        "name": "Note: Frenzied Flame Village"
+    },
+    {
+        "id": 8767,
+        "name": "Note: Below the Capital"
+    },
+    {
+        "id": 8850,
+        "name": "Conspectus Scroll"
+    },
+    {
+        "id": 8851,
+        "name": "Royal House Scroll"
+    },
+    {
+        "id": 8855,
+        "name": "Fire Monks' Prayerbook"
+    },
+    {
+        "id": 8856,
+        "name": "Giant's Prayerbook"
+    },
+    {
+        "id": 8857,
+        "name": "Godskin Prayerbook"
+    },
+    {
+        "id": 8858,
+        "name": "Two Fingers' Prayerbook"
+    },
+    {
+        "id": 8859,
+        "name": "Assassin's Prayerbook"
+    },
+    {
+        "id": 8860,
+        "name": "Erdtree Prayerbook"
+    },
+    {
+        "id": 8861,
+        "name": "Erdtree Codex"
+    },
+    {
+        "id": 8862,
+        "name": "Golden Order Principia"
+    },
+    {
+        "id": 8863,
+        "name": "Golden Order Principles"
+    },
+    {
+        "id": 8864,
+        "name": "Dragon Cult Prayerbook"
+    },
+    {
+        "id": 8865,
+        "name": "Ancient Dragon Prayerbook"
+    },
+    {
+        "id": 8866,
+        "name": "Academy Scroll"
+    },
+    {
+        "id": 8910,
+        "name": "Pidia's Bell Bearing"
+    },
+    {
+        "id": 8911,
+        "name": "Seluvis's Bell Bearing"
+    },
+    {
+        "id": 8912,
+        "name": "Patches' Bell Bearing"
+    },
+    {
+        "id": 8913,
+        "name": "Sellen's Bell Bearing"
+    },
+    {
+        "id": 8915,
+        "name": "D's Bell Bearing"
+    },
+    {
+        "id": 8916,
+        "name": "Bernahl's Bell Bearing"
+    },
+    {
+        "id": 8917,
+        "name": "Miriel's Bell Bearing"
+    },
+    {
+        "id": 8918,
+        "name": "Gostoc's Bell Bearing"
+    },
+    {
+        "id": 8919,
+        "name": "Thops's Bell Bearing"
+    },
+    {
+        "id": 8920,
+        "name": "Kal\u00e9's Bell Bearing"
+    },
+    {
+        "id": 8921,
+        "name": "Nomadic Merchant's Bell Bearing [1]"
+    },
+    {
+        "id": 8922,
+        "name": "Nomadic Merchant's Bell Bearing [2]"
+    },
+    {
+        "id": 8923,
+        "name": "Nomadic Merchant's Bell Bearing [3]"
+    },
+    {
+        "id": 8924,
+        "name": "Nomadic Merchant's Bell Bearing [4]"
+    },
+    {
+        "id": 8925,
+        "name": "Nomadic Merchant's Bell Bearing [5]"
+    },
+    {
+        "id": 8926,
+        "name": "Isolated Merchant's Bell Bearing [1]"
+    },
+    {
+        "id": 8927,
+        "name": "Isolated Merchant's Bell Bearing [2]"
+    },
+    {
+        "id": 8928,
+        "name": "Nomadic Merchant's Bell Bearing [6]"
+    },
+    {
+        "id": 8929,
+        "name": "Hermit Merchant's Bell Bearing [1]"
+    },
+    {
+        "id": 8930,
+        "name": "Nomadic Merchant's Bell Bearing [7]"
+    },
+    {
+        "id": 8931,
+        "name": "Nomadic Merchant's Bell Bearing [8]"
+    },
+    {
+        "id": 8932,
+        "name": "Nomadic Merchant's Bell Bearing [9]"
+    },
+    {
+        "id": 8933,
+        "name": "Nomadic Merchant's Bell Bearing [10]"
+    },
+    {
+        "id": 8934,
+        "name": "Nomadic Merchant's Bell Bearing [11]"
+    },
+    {
+        "id": 8935,
+        "name": "Isolated Merchant's Bell Bearing [3]"
+    },
+    {
+        "id": 8936,
+        "name": "Hermit Merchant's Bell Bearing [2]"
+    },
+    {
+        "id": 8937,
+        "name": "Abandoned Merchant's Bell Bearing"
+    },
+    {
+        "id": 8938,
+        "name": "Hermit Merchant's Bell Bearing [3]"
+    },
+    {
+        "id": 8939,
+        "name": "Imprisoned Merchant's Bell Bearing"
+    },
+    {
+        "id": 8940,
+        "name": "Iji's Bell Bearing"
+    },
+    {
+        "id": 8941,
+        "name": "Rogier's Bell Bearing"
+    },
+    {
+        "id": 8942,
+        "name": "Blackguard's Bell Bearing"
+    },
+    {
+        "id": 8943,
+        "name": "Corhyn's Bell Bearing"
+    },
+    {
+        "id": 8944,
+        "name": "Gowry's Bell Bearing"
+    },
+    {
+        "id": 8945,
+        "name": "Bone Peddler's Bell Bearing"
+    },
+    {
+        "id": 8946,
+        "name": "Meat Peddler's Bell Bearing"
+    },
+    {
+        "id": 8947,
+        "name": "Medicine Peddler's Bell Bearing"
+    },
+    {
+        "id": 8948,
+        "name": "Gravity Stone Peddler's Bell Bearing"
+    },
+    {
+        "id": 8951,
+        "name": "Smithing-Stone Miner's Bell Bearing [1]"
+    },
+    {
+        "id": 8952,
+        "name": "Smithing-Stone Miner's Bell Bearing [2]"
+    },
+    {
+        "id": 8953,
+        "name": "Smithing-Stone Miner's Bell Bearing [3]"
+    },
+    {
+        "id": 8954,
+        "name": "Smithing-Stone Miner's Bell Bearing [4]"
+    },
+    {
+        "id": 8955,
+        "name": "Somberstone Miner's Bell Bearing [1]"
+    },
+    {
+        "id": 8956,
+        "name": "Somberstone Miner's Bell Bearing [2]"
+    },
+    {
+        "id": 8957,
+        "name": "Somberstone Miner's Bell Bearing [3]"
+    },
+    {
+        "id": 8958,
+        "name": "Somberstone Miner's Bell Bearing [4]"
+    },
+    {
+        "id": 8959,
+        "name": "Somberstone Miner's Bell Bearing [5]"
+    },
+    {
+        "id": 8960,
+        "name": "Glovewort Picker's Bell Bearing [1]"
+    },
+    {
+        "id": 8961,
+        "name": "Glovewort Picker's Bell Bearing [2]"
+    },
+    {
+        "id": 8962,
+        "name": "Glovewort Picker's Bell Bearing [3]"
+    },
+    {
+        "id": 8963,
+        "name": "Ghost-Glovewort Picker's Bell Bearing [1]"
+    },
+    {
+        "id": 8964,
+        "name": "Ghost-Glovewort Picker's Bell Bearing [2]"
+    },
+    {
+        "id": 8965,
+        "name": "Ghost-Glovewort Picker's Bell Bearing [3]"
+    },
+    {
+        "id": 8970,
+        "name": "Iron Whetblade"
+    },
+    {
+        "id": 8971,
+        "name": "Red-Hot Whetblade"
+    },
+    {
+        "id": 8972,
+        "name": "Sanctified Whetblade"
+    },
+    {
+        "id": 8973,
+        "name": "Glintstone Whetblade"
+    },
+    {
+        "id": 8974,
+        "name": "Black Whetblade"
+    },
+    {
+        "id": 8975,
+        "name": "Unalloyed Gold Needle"
+    },
+    {
+        "id": 8976,
+        "name": "Unalloyed Gold Needle"
+    },
+    {
+        "id": 8977,
+        "name": "Valkyrie's Prosthesis"
+    },
+    {
+        "id": 8978,
+        "name": "Sellia's Secret"
+    },
+    {
+        "id": 8979,
+        "name": "Beast Eye"
+    },
+    {
+        "id": 8980,
+        "name": "Weathered Dagger"
+    },
+    {
+        "id": 9000,
+        "name": "Bow"
+    },
+    {
+        "id": 9001,
+        "name": "Polite Bow"
+    },
+    {
+        "id": 9002,
+        "name": "My Thanks"
+    },
+    {
+        "id": 9003,
+        "name": "Curtsy"
+    },
+    {
+        "id": 9004,
+        "name": "Reverential Bow"
+    },
+    {
+        "id": 9005,
+        "name": "My Lord"
+    },
+    {
+        "id": 9006,
+        "name": "Warm Welcome"
+    },
+    {
+        "id": 9007,
+        "name": "Wave"
+    },
+    {
+        "id": 9008,
+        "name": "Casual Greeting"
+    },
+    {
+        "id": 9009,
+        "name": "Strength!"
+    },
+    {
+        "id": 9010,
+        "name": "As You Wish"
+    },
+    {
+        "id": 9011,
+        "name": "Point Forwards"
+    },
+    {
+        "id": 9012,
+        "name": "Point Upwards"
+    },
+    {
+        "id": 9013,
+        "name": "Point Downwards"
+    },
+    {
+        "id": 9014,
+        "name": "Beckon"
+    },
+    {
+        "id": 9015,
+        "name": "Wait!"
+    },
+    {
+        "id": 9016,
+        "name": "Calm Down!"
+    },
+    {
+        "id": 9017,
+        "name": "Nod In Thought"
+    },
+    {
+        "id": 9018,
+        "name": "Extreme Repentance"
+    },
+    {
+        "id": 9019,
+        "name": "Grovel For Mercy"
+    },
+    {
+        "id": 9020,
+        "name": "Rallying Cry"
+    },
+    {
+        "id": 9021,
+        "name": "Heartening Cry"
+    },
+    {
+        "id": 9022,
+        "name": "By My Sword"
+    },
+    {
+        "id": 9023,
+        "name": "Hoslow's Oath"
+    },
+    {
+        "id": 9024,
+        "name": "Fire Spur Me"
+    },
+    {
+        "id": 9025,
+        "name": "The Carian Oath"
+    },
+    {
+        "id": 9026,
+        "name": "Bravo!"
+    },
+    {
+        "id": 9027,
+        "name": "Jump for Joy"
+    },
+    {
+        "id": 9028,
+        "name": "Triumphant Delight"
+    },
+    {
+        "id": 9029,
+        "name": "Fancy Spin"
+    },
+    {
+        "id": 9030,
+        "name": "Finger Snap"
+    },
+    {
+        "id": 9031,
+        "name": "Dejection"
+    },
+    {
+        "id": 9032,
+        "name": "Patches' Crouch"
+    },
+    {
+        "id": 9033,
+        "name": "Crossed Legs"
+    },
+    {
+        "id": 9034,
+        "name": "Rest"
+    },
+    {
+        "id": 9035,
+        "name": "Sitting Sideways"
+    },
+    {
+        "id": 9036,
+        "name": "Dozing Cross-Legged"
+    },
+    {
+        "id": 9037,
+        "name": "Spread Out"
+    },
+    {
+        "id": 9038,
+        "name": "Fetal Position"
+    },
+    {
+        "id": 9039,
+        "name": "Balled Up"
+    },
+    {
+        "id": 9040,
+        "name": "What Do You Want?"
+    },
+    {
+        "id": 9041,
+        "name": "Prayer"
+    },
+    {
+        "id": 9042,
+        "name": "Desperate Prayer"
+    },
+    {
+        "id": 9043,
+        "name": "Rapture"
+    },
+    {
+        "id": 9045,
+        "name": "Erudition"
+    },
+    {
+        "id": 9046,
+        "name": "Outer Order"
+    },
+    {
+        "id": 9047,
+        "name": "Inner Order"
+    },
+    {
+        "id": 9048,
+        "name": "Golden Order Totality"
+    },
+    {
+        "id": 9050,
+        "name": "The Ring"
+    },
+    {
+        "id": 9060,
+        "name": "Prattling Pate \"Hello\""
+    },
+    {
+        "id": 9061,
+        "name": "Prattling Pate \"Thank you\""
+    },
+    {
+        "id": 9062,
+        "name": "Prattling Pate \"Apologies\""
+    },
+    {
+        "id": 9063,
+        "name": "Prattling Pate \"Wonderful\""
+    },
+    {
+        "id": 9064,
+        "name": "Prattling Pate \"Please help\""
+    },
+    {
+        "id": 9065,
+        "name": "Prattling Pate \"My beloved\""
+    },
+    {
+        "id": 9066,
+        "name": "Prattling Pate \"Let's get to it\""
+    },
+    {
+        "id": 9067,
+        "name": "Prattling Pate \"You're beautiful\""
+    },
+    {
+        "id": 9070,
+        "name": "It's Raining!"
+    },
+    {
+        "id": 9071,
+        "name": "It's Raining!"
+    },
+    {
+        "id": 9100,
+        "name": "About Sites of Grace"
+    },
+    {
+        "id": 9101,
+        "name": "About Sorceries and Incantations"
+    },
+    {
+        "id": 9102,
+        "name": "About Bows"
+    },
+    {
+        "id": 9103,
+        "name": "About Crouching"
+    },
+    {
+        "id": 9104,
+        "name": "About Stance-Breaking"
+    },
+    {
+        "id": 9105,
+        "name": "About Stakes of Marika"
+    },
+    {
+        "id": 9106,
+        "name": "About Guard Counters"
+    },
+    {
+        "id": 9107,
+        "name": "About the Map"
+    },
+    {
+        "id": 9108,
+        "name": "About Guidance of Grace"
+    },
+    {
+        "id": 9109,
+        "name": "About Horseback Riding"
+    },
+    {
+        "id": 9110,
+        "name": "About Death"
+    },
+    {
+        "id": 9111,
+        "name": "About Summoning Spirits"
+    },
+    {
+        "id": 9112,
+        "name": "About Guarding"
+    },
+    {
+        "id": 9113,
+        "name": "About Item Crafting"
+    },
+    {
+        "id": 9115,
+        "name": "About Flask of Wondrous Physick"
+    },
+    {
+        "id": 9116,
+        "name": "About Adding Skills"
+    },
+    {
+        "id": 9117,
+        "name": "About Birdseye Telescopes"
+    },
+    {
+        "id": 9118,
+        "name": "About Spiritspring Jumping"
+    },
+    {
+        "id": 9119,
+        "name": "About Vanquishing Enemy Groups"
+    },
+    {
+        "id": 9120,
+        "name": "About Teardrop Scarabs"
+    },
+    {
+        "id": 9121,
+        "name": "About Summoning Other Players"
+    },
+    {
+        "id": 9122,
+        "name": "About Cooperative Multiplayer"
+    },
+    {
+        "id": 9123,
+        "name": "About Competitive Multiplayer"
+    },
+    {
+        "id": 9124,
+        "name": "About Invasion Multiplayer"
+    },
+    {
+        "id": 9125,
+        "name": "About Hunter Multiplayer"
+    },
+    {
+        "id": 9126,
+        "name": "About Summoning Pools"
+    },
+    {
+        "id": 9127,
+        "name": "About Monument Icon"
+    },
+    {
+        "id": 9128,
+        "name": "About Requesting Help from Hunters"
+    },
+    {
+        "id": 9129,
+        "name": "About Skills"
+    },
+    {
+        "id": 9130,
+        "name": "About Fast Travel to Sites of Grace"
+    },
+    {
+        "id": 9131,
+        "name": "About Strengthening Armaments"
+    },
+    {
+        "id": 9132,
+        "name": "About Roundtable Hold"
+    },
+    {
+        "id": 9133,
+        "name": "Note: Redeemers"
+    },
+    {
+        "id": 9134,
+        "name": "About Materials"
+    },
+    {
+        "id": 9135,
+        "name": "About Containers"
+    },
+    {
+        "id": 9136,
+        "name": "About Adding Affinities"
+    },
+    {
+        "id": 9137,
+        "name": "About Pouches"
+    },
+    {
+        "id": 9138,
+        "name": "About Dodging"
+    },
+    {
+        "id": 9140,
+        "name": "About Wielding Armaments"
+    },
+    {
+        "id": 9141,
+        "name": "About Great Runes"
+    },
+    {
+        "id": 9142,
+        "name": "About the Cave of Knowledge"
+    },
+    {
+        "id": 9195,
+        "name": "About Multiplayer"
+    },
+    {
+        "id": 9200,
+        "name": "Carrier Pigeon Letter [1]"
+    },
+    {
+        "id": 9201,
+        "name": "Carrier Pigeon Letter [2]"
+    },
+    {
+        "id": 9300,
+        "name": "Nomadic Warrior's Cookbook [1]"
+    },
+    {
+        "id": 9301,
+        "name": "Nomadic Warrior's Cookbook [3]"
+    },
+    {
+        "id": 9302,
+        "name": "Nomadic Warrior's Cookbook [6]"
+    },
+    {
+        "id": 9303,
+        "name": "Nomadic Warrior's Cookbook [10]"
+    },
+    {
+        "id": 9304,
+        "name": "Fugitive Warrior's Recipe [5]"
+    },
+    {
+        "id": 9305,
+        "name": "Nomadic Warrior's Cookbook [7]"
+    },
+    {
+        "id": 9306,
+        "name": "Nomadic Warrior's Cookbook [12]"
+    },
+    {
+        "id": 9307,
+        "name": "Nomadic Warrior's Cookbook [19]"
+    },
+    {
+        "id": 9308,
+        "name": "Nomadic Warrior's Cookbook [13]"
+    },
+    {
+        "id": 9309,
+        "name": "Nomadic Warrior's Cookbook [23]"
+    },
+    {
+        "id": 9310,
+        "name": "Nomadic Warrior's Cookbook [17]"
+    },
+    {
+        "id": 9311,
+        "name": "Nomadic Warrior's Cookbook [2]"
+    },
+    {
+        "id": 9312,
+        "name": "Nomadic Warrior's Cookbook [21]"
+    },
+    {
+        "id": 9313,
+        "name": "Missionary's Cookbook [6]"
+    },
+    {
+        "id": 9320,
+        "name": "Armorer's Cookbook [1]"
+    },
+    {
+        "id": 9321,
+        "name": "Armorer's Cookbook [2]"
+    },
+    {
+        "id": 9322,
+        "name": "Nomadic Warrior's Cookbook [11]"
+    },
+    {
+        "id": 9323,
+        "name": "Nomadic Warrior's Cookbook [20]"
+    },
+    {
+        "id": 9324,
+        "name": "Armorer's Cookbook (5)"
+    },
+    {
+        "id": 9325,
+        "name": "Armorer's Cookbook [7]"
+    },
+    {
+        "id": 9326,
+        "name": "Armorer's Cookbook [4]"
+    },
+    {
+        "id": 9327,
+        "name": "Nomadic Warrior's Cookbook [18]"
+    },
+    {
+        "id": 9328,
+        "name": "Armorer's Cookbook [3]"
+    },
+    {
+        "id": 9329,
+        "name": "Nomadic Warrior's Cookbook [16]"
+    },
+    {
+        "id": 9330,
+        "name": "Armorer's Cookbook [6]"
+    },
+    {
+        "id": 9331,
+        "name": "Armorer's Cookbook [5]"
+    },
+    {
+        "id": 9340,
+        "name": "Glintstone Craftsman's Cookbook [4]"
+    },
+    {
+        "id": 9341,
+        "name": "Glintstone Craftsman's Cookbook [1]"
+    },
+    {
+        "id": 9342,
+        "name": "Glintstone Craftsman's Cookbook [5]"
+    },
+    {
+        "id": 9343,
+        "name": "Nomadic Warrior's Cookbook [9]"
+    },
+    {
+        "id": 9344,
+        "name": "Glintstone Craftsman's Cookbook [8]"
+    },
+    {
+        "id": 9345,
+        "name": "Glintstone Craftsman's Cookbook [2]"
+    },
+    {
+        "id": 9346,
+        "name": "Glintstone Craftsman's Cookbook [6]"
+    },
+    {
+        "id": 9347,
+        "name": "Glintstone Craftsman's Cookbook [7]"
+    },
+    {
+        "id": 9348,
+        "name": "Glintstone Craftsman's Cookbook [3]"
+    },
+    {
+        "id": 9360,
+        "name": "Missionary's Cookbook [2]"
+    },
+    {
+        "id": 9361,
+        "name": "Missionary's Cookbook [1]"
+    },
+    {
+        "id": 9362,
+        "name": "Missionary's Cookbook (3)"
+    },
+    {
+        "id": 9363,
+        "name": "Missionary's Cookbook [5]"
+    },
+    {
+        "id": 9364,
+        "name": "Missionary's Cookbook [4]"
+    },
+    {
+        "id": 9365,
+        "name": "Missionary's Cookbook [3]"
+    },
+    {
+        "id": 9380,
+        "name": "Nomadic Warrior's Cookbook [4]"
+    },
+    {
+        "id": 9381,
+        "name": "Perfumer's Cookbook (1)"
+    },
+    {
+        "id": 9382,
+        "name": "Perfumer's Cookbook (2)"
+    },
+    {
+        "id": 9383,
+        "name": "Nomadic Warrior's Cookbook [5]"
+    },
+    {
+        "id": 9384,
+        "name": "Perfumer's Cookbook [1]"
+    },
+    {
+        "id": 9385,
+        "name": "Perfumer's Cookbook [2]"
+    },
+    {
+        "id": 9386,
+        "name": "Perfumer's Cookbook [3]"
+    },
+    {
+        "id": 9387,
+        "name": "Nomadic Warrior's Cookbook [14]"
+    },
+    {
+        "id": 9388,
+        "name": "Nomadic Warrior's Cookbook [8]"
+    },
+    {
+        "id": 9389,
+        "name": "Nomadic Warrior's Cookbook [22]"
+    },
+    {
+        "id": 9390,
+        "name": "Nomadic Warrior's Cookbook [15]"
+    },
+    {
+        "id": 9391,
+        "name": "Nomadic Warrior's Cookbook [24]"
+    },
+    {
+        "id": 9392,
+        "name": "Perfumer's Cookbook [4]"
+    },
+    {
+        "id": 9393,
+        "name": "Perfumer's Cookbook (13)"
+    },
+    {
+        "id": 9400,
+        "name": "Ancient Dragon Apostle's Cookbook [1]"
+    },
+    {
+        "id": 9401,
+        "name": "Ancient Dragon Apostle's Cookbook [2]"
+    },
+    {
+        "id": 9402,
+        "name": "Ancient Dragon Apostle's Cookbook [4]"
+    },
+    {
+        "id": 9403,
+        "name": "Ancient Dragon Apostle's Cookbook [3]"
+    },
+    {
+        "id": 9420,
+        "name": "Fevor's Cookbook [1]"
+    },
+    {
+        "id": 9421,
+        "name": "Fevor's Cookbook [3]"
+    },
+    {
+        "id": 9422,
+        "name": "Fevor's Cookbook [2]"
+    },
+    {
+        "id": 9423,
+        "name": "Missionary's Cookbook [7]"
+    },
+    {
+        "id": 9440,
+        "name": "Frenzied's Cookbook [1]"
+    },
+    {
+        "id": 9441,
+        "name": "Frenzied's Cookbook [2]"
+    },
+    {
+        "id": 9500,
+        "name": "Cracked Pot"
+    },
+    {
+        "id": 9501,
+        "name": "Ritual Pot"
+    },
+    {
+        "id": 9510,
+        "name": "Perfume Bottle"
+    },
+    {
+        "id": 9600,
+        "name": "Wylder's Urn"
+    },
+    {
+        "id": 9601,
+        "name": "Wylder's Goblet"
+    },
+    {
+        "id": 9602,
+        "name": "Wylder's Chalice"
+    },
+    {
+        "id": 9603,
+        "name": "Guardian's Urn"
+    },
+    {
+        "id": 9604,
+        "name": "Guardian's Goblet"
+    },
+    {
+        "id": 9605,
+        "name": "Guardian's Chalice"
+    },
+    {
+        "id": 9606,
+        "name": "Ironeye's Urn"
+    },
+    {
+        "id": 9607,
+        "name": "Ironeye's Goblet"
+    },
+    {
+        "id": 9608,
+        "name": "Ironeye's Chalice"
+    },
+    {
+        "id": 9609,
+        "name": "Duchess' Urn"
+    },
+    {
+        "id": 9610,
+        "name": "Duchess' Goblet"
+    },
+    {
+        "id": 9611,
+        "name": "Duchess' Chalice"
+    },
+    {
+        "id": 9612,
+        "name": "Raider's Urn"
+    },
+    {
+        "id": 9613,
+        "name": "Raider's Goblet"
+    },
+    {
+        "id": 9614,
+        "name": "Raider's Chalice"
+    },
+    {
+        "id": 9615,
+        "name": "Revenant's Urn"
+    },
+    {
+        "id": 9616,
+        "name": "Revenant's Goblet"
+    },
+    {
+        "id": 9617,
+        "name": "Revenant's Chalice"
+    },
+    {
+        "id": 9618,
+        "name": "Recluse's Urn"
+    },
+    {
+        "id": 9619,
+        "name": "Recluse's Goblet"
+    },
+    {
+        "id": 9620,
+        "name": "Recluse's Chalice"
+    },
+    {
+        "id": 9621,
+        "name": "Executor's Urn"
+    },
+    {
+        "id": 9622,
+        "name": "Executor's Goblet"
+    },
+    {
+        "id": 9623,
+        "name": "Executor's Chalice"
+    },
+    {
+        "id": 9650,
+        "name": "Sacred Erdtree Grail"
+    },
+    {
+        "id": 9651,
+        "name": "Spirit Shelter Grail"
+    },
+    {
+        "id": 9652,
+        "name": "Giant's Cradle Grail"
+    },
+    {
+        "id": 9700,
+        "name": "Soot-Covered Wylder's Urn"
+    },
+    {
+        "id": 9701,
+        "name": "Soot-Covered Wylder's Goblet"
+    },
+    {
+        "id": 9702,
+        "name": "Soot-Covered Wylder's Chalice"
+    },
+    {
+        "id": 9703,
+        "name": "Soot-Covered Guardian's Urn"
+    },
+    {
+        "id": 9704,
+        "name": "Soot-Covered Guardian's Goblet"
+    },
+    {
+        "id": 9705,
+        "name": "Soot-Covered Guardian's Chalice"
+    },
+    {
+        "id": 9706,
+        "name": "Soot-Covered Ironeye's Urn"
+    },
+    {
+        "id": 9707,
+        "name": "Soot-Covered Ironeye's Goblet"
+    },
+    {
+        "id": 9708,
+        "name": "Soot-Covered Ironeye's Chalice"
+    },
+    {
+        "id": 9709,
+        "name": "Soot-Covered Duchess' Urn"
+    },
+    {
+        "id": 9710,
+        "name": "Soot-Covered Duchess' Goblet"
+    },
+    {
+        "id": 9711,
+        "name": "Soot-Covered Duchess' Chalice"
+    },
+    {
+        "id": 9712,
+        "name": "Soot-Covered Raider's Urn"
+    },
+    {
+        "id": 9713,
+        "name": "Soot-Covered Raider's Goblet"
+    },
+    {
+        "id": 9714,
+        "name": "Soot-Covered Raider's Chalice"
+    },
+    {
+        "id": 9715,
+        "name": "Soot-Covered Revenant's Urn"
+    },
+    {
+        "id": 9716,
+        "name": "Soot-Covered Revenant's Goblet"
+    },
+    {
+        "id": 9717,
+        "name": "Soot-Covered Revenant's Chalice"
+    },
+    {
+        "id": 9718,
+        "name": "Soot-Covered Recluse's Urn"
+    },
+    {
+        "id": 9719,
+        "name": "Soot-Covered Recluse's Goblet"
+    },
+    {
+        "id": 9720,
+        "name": "Soot-Covered Recluse's Chalice"
+    },
+    {
+        "id": 9721,
+        "name": "Soot-Covered Executor's Urn"
+    },
+    {
+        "id": 9722,
+        "name": "Soot-Covered Executor's Goblet"
+    },
+    {
+        "id": 9723,
+        "name": "Soot-Covered Executor's Chalice"
+    },
+    {
+        "id": 9800,
+        "name": "Sealed Wylder's Urn"
+    },
+    {
+        "id": 9801,
+        "name": "Sealed Wylder's Goblet"
+    },
+    {
+        "id": 9802,
+        "name": "Sealed Wylder's Chalice"
+    },
+    {
+        "id": 9803,
+        "name": "Sealed Guardian's Urn"
+    },
+    {
+        "id": 9804,
+        "name": "Sealed Guardian's Goblet"
+    },
+    {
+        "id": 9805,
+        "name": "Sealed Guardian's Chalice"
+    },
+    {
+        "id": 9806,
+        "name": "Sealed Ironeye's Urn"
+    },
+    {
+        "id": 9807,
+        "name": "Sealed Ironeye's Goblet"
+    },
+    {
+        "id": 9808,
+        "name": "Sealed Ironeye's Chalice"
+    },
+    {
+        "id": 9809,
+        "name": "Sealed Duchess' Urn"
+    },
+    {
+        "id": 9810,
+        "name": "Sealed Duchess' Goblet"
+    },
+    {
+        "id": 9811,
+        "name": "Sealed Duchess' Chalice"
+    },
+    {
+        "id": 9812,
+        "name": "Sealed Raider's Urn"
+    },
+    {
+        "id": 9813,
+        "name": "Sealed Raider's Goblet"
+    },
+    {
+        "id": 9814,
+        "name": "Sealed Raider's Chalice"
+    },
+    {
+        "id": 9815,
+        "name": "Sealed Revenant's Urn"
+    },
+    {
+        "id": 9816,
+        "name": "Sealed Revenant's Goblet"
+    },
+    {
+        "id": 9817,
+        "name": "Sealed Revenant's Chalice"
+    },
+    {
+        "id": 9818,
+        "name": "Sealed Recluse's Urn"
+    },
+    {
+        "id": 9819,
+        "name": "Sealed Recluse's Goblet"
+    },
+    {
+        "id": 9820,
+        "name": "Sealed Recluse's Chalice"
+    },
+    {
+        "id": 9821,
+        "name": "Sealed Executor's Urn"
+    },
+    {
+        "id": 9822,
+        "name": "Sealed Executor's Goblet"
+    },
+    {
+        "id": 9823,
+        "name": "Sealed Executor's Chalice"
+    },
+    {
+        "id": 10000,
+        "name": "Glass Shard"
+    },
+    {
+        "id": 10010,
+        "name": "Golden Seed"
+    },
+    {
+        "id": 10020,
+        "name": "Sacred Tear"
+    },
+    {
+        "id": 10030,
+        "name": "Memory Stone"
+    },
+    {
+        "id": 10040,
+        "name": "Talisman Pouch"
+    },
+    {
+        "id": 10050,
+        "name": "Small Pouch"
+    },
+    {
+        "id": 10060,
+        "name": "Dragon Heart"
+    },
+    {
+        "id": 10070,
+        "name": "Lost Ashes of War"
+    },
+    {
+        "id": 10080,
+        "name": "Great Rune of the Unborn"
+    },
+    {
+        "id": 10100,
+        "name": "Smithing Stone [1]"
+    },
+    {
+        "id": 10101,
+        "name": "Smithing Stone [2]"
+    },
+    {
+        "id": 10102,
+        "name": "Smithing Stone [3]"
+    },
+    {
+        "id": 10103,
+        "name": "Smithing Stone [4]"
+    },
+    {
+        "id": 10104,
+        "name": "Smithing Stone [5]"
+    },
+    {
+        "id": 10105,
+        "name": "Smithing Stone [6]"
+    },
+    {
+        "id": 10106,
+        "name": "Smithing Stone [7]"
+    },
+    {
+        "id": 10107,
+        "name": "Smithing Stone [8]"
+    },
+    {
+        "id": 10140,
+        "name": "Ancient Dragon Smithing Stone"
+    },
+    {
+        "id": 10160,
+        "name": "Somber Smithing Stone [1]"
+    },
+    {
+        "id": 10161,
+        "name": "Somber Smithing Stone [2]"
+    },
+    {
+        "id": 10162,
+        "name": "Somber Smithing Stone [3]"
+    },
+    {
+        "id": 10163,
+        "name": "Somber Smithing Stone [4]"
+    },
+    {
+        "id": 10164,
+        "name": "Somber Smithing Stone [5]"
+    },
+    {
+        "id": 10165,
+        "name": "Somber Smithing Stone [6]"
+    },
+    {
+        "id": 10166,
+        "name": "Somber Smithing Stone [7]"
+    },
+    {
+        "id": 10167,
+        "name": "Somber Smithing Stone [8]"
+    },
+    {
+        "id": 10168,
+        "name": "Somber Ancient Dragon Smithing Stone"
+    },
+    {
+        "id": 10200,
+        "name": "Somber Smithing Stone [9]"
+    },
+    {
+        "id": 10900,
+        "name": "Grave Glovewort [1]"
+    },
+    {
+        "id": 10901,
+        "name": "Grave Glovewort [2]"
+    },
+    {
+        "id": 10902,
+        "name": "Grave Glovewort [3]"
+    },
+    {
+        "id": 10903,
+        "name": "Grave Glovewort [4]"
+    },
+    {
+        "id": 10904,
+        "name": "Grave Glovewort [5]"
+    },
+    {
+        "id": 10905,
+        "name": "Grave Glovewort [6]"
+    },
+    {
+        "id": 10906,
+        "name": "Grave Glovewort [7]"
+    },
+    {
+        "id": 10907,
+        "name": "Grave Glovewort [8]"
+    },
+    {
+        "id": 10908,
+        "name": "Grave Glovewort [9]"
+    },
+    {
+        "id": 10909,
+        "name": "Great Grave Glovewort"
+    },
+    {
+        "id": 10910,
+        "name": "Ghost Glovewort [1]"
+    },
+    {
+        "id": 10911,
+        "name": "Ghost Glovewort [2]"
+    },
+    {
+        "id": 10912,
+        "name": "Ghost Glovewort [3]"
+    },
+    {
+        "id": 10913,
+        "name": "Ghost Glovewort [4]"
+    },
+    {
+        "id": 10914,
+        "name": "Ghost Glovewort [5]"
+    },
+    {
+        "id": 10915,
+        "name": "Ghost Glovewort [6]"
+    },
+    {
+        "id": 10916,
+        "name": "Ghost Glovewort [7]"
+    },
+    {
+        "id": 10917,
+        "name": "Ghost Glovewort [8]"
+    },
+    {
+        "id": 10918,
+        "name": "Ghost Glovewort [9]"
+    },
+    {
+        "id": 10919,
+        "name": "Great Ghost Glovewort"
+    },
+    {
+        "id": 11000,
+        "name": "Crimsonspill Crystal Tear"
+    },
+    {
+        "id": 11001,
+        "name": "Greenspill Crystal Tear"
+    },
+    {
+        "id": 11002,
+        "name": "Crimson Crystal Tear"
+    },
+    {
+        "id": 11003,
+        "name": "Crimson Crystal Tear"
+    },
+    {
+        "id": 11004,
+        "name": "Cerulean Crystal Tear"
+    },
+    {
+        "id": 11005,
+        "name": "Cerulean Crystal Tear"
+    },
+    {
+        "id": 11006,
+        "name": "Speckled Hardtear"
+    },
+    {
+        "id": 11007,
+        "name": "Crimson Bubbletear"
+    },
+    {
+        "id": 11008,
+        "name": "Opaline Bubbletear"
+    },
+    {
+        "id": 11009,
+        "name": "Crimsonburst Crystal Tear"
+    },
+    {
+        "id": 11010,
+        "name": "Greenburst Crystal Tear"
+    },
+    {
+        "id": 11011,
+        "name": "Opaline Hardtear"
+    },
+    {
+        "id": 11012,
+        "name": "Winged Crystal Tear"
+    },
+    {
+        "id": 11013,
+        "name": "Thorny Cracked Tear"
+    },
+    {
+        "id": 11014,
+        "name": "Spiked Cracked Tear"
+    },
+    {
+        "id": 11015,
+        "name": "Windy Crystal Tear"
+    },
+    {
+        "id": 11016,
+        "name": "Ruptured Crystal Tear"
+    },
+    {
+        "id": 11017,
+        "name": "Ruptured Crystal Tear"
+    },
+    {
+        "id": 11018,
+        "name": "Leaden Hardtear"
+    },
+    {
+        "id": 11019,
+        "name": "Twiggy Cracked Tear"
+    },
+    {
+        "id": 11020,
+        "name": "Crimsonwhorl Bubbletear"
+    },
+    {
+        "id": 11021,
+        "name": "Strength-knot Crystal Tear"
+    },
+    {
+        "id": 11022,
+        "name": "Dexterity-knot Crystal Tear"
+    },
+    {
+        "id": 11023,
+        "name": "Intelligence-knot Crystal Tear"
+    },
+    {
+        "id": 11024,
+        "name": "Faith-knot Crystal Tear"
+    },
+    {
+        "id": 11025,
+        "name": "Cerulean Hidden Tear"
+    },
+    {
+        "id": 11026,
+        "name": "Stonebarb Cracked Tear"
+    },
+    {
+        "id": 11027,
+        "name": "Purifying Crystal Tear"
+    },
+    {
+        "id": 11028,
+        "name": "Flame-Shrouding Cracked Tear"
+    },
+    {
+        "id": 11029,
+        "name": "Magic-Shrouding Cracked Tear"
+    },
+    {
+        "id": 11030,
+        "name": "Lightning-Shrouding Cracked Tear"
+    },
+    {
+        "id": 11031,
+        "name": "Holy-Shrouding Cracked Tear"
+    },
+    {
+        "id": 15000,
+        "name": "Sliver of Meat"
+    },
+    {
+        "id": 15010,
+        "name": "Beast Liver"
+    },
+    {
+        "id": 15020,
+        "name": "Lump of Flesh"
+    },
+    {
+        "id": 15030,
+        "name": "Beast Blood"
+    },
+    {
+        "id": 15040,
+        "name": "Old Fang"
+    },
+    {
+        "id": 15050,
+        "name": "Budding Horn"
+    },
+    {
+        "id": 15060,
+        "name": "Flight Pinion"
+    },
+    {
+        "id": 15070,
+        "name": "Hidden Plumage"
+    },
+    {
+        "id": 15080,
+        "name": "Four-Toed Fowl Foot"
+    },
+    {
+        "id": 15090,
+        "name": "Turtle Neck Meat"
+    },
+    {
+        "id": 15100,
+        "name": "Human Bone Shard"
+    },
+    {
+        "id": 15110,
+        "name": "Great Dragonfly Head"
+    },
+    {
+        "id": 15120,
+        "name": "Slumbering Egg"
+    },
+    {
+        "id": 15130,
+        "name": "Crab Eggs"
+    },
+    {
+        "id": 15140,
+        "name": "Land Octopus Ovary"
+    },
+    {
+        "id": 15150,
+        "name": "Miranda Powder"
+    },
+    {
+        "id": 15160,
+        "name": "Strip of White Flesh"
+    },
+    {
+        "id": 15310,
+        "name": "Golden Dung"
+    },
+    {
+        "id": 15340,
+        "name": "Thin Beast Bones"
+    },
+    {
+        "id": 15341,
+        "name": "Hefty Beast Bone"
+    },
+    {
+        "id": 15390,
+        "name": "Glinstone Scrap"
+    },
+    {
+        "id": 15400,
+        "name": "String"
+    },
+    {
+        "id": 15410,
+        "name": "Living Jar Shard"
+    },
+    {
+        "id": 15420,
+        "name": "Albinauric Bloodclot"
+    },
+    {
+        "id": 15430,
+        "name": "Stormhawk Feather"
+    },
+    {
+        "id": 20650,
+        "name": "Poisonbloom"
+    },
+    {
+        "id": 20651,
+        "name": "Trina's Lily"
+    },
+    {
+        "id": 20652,
+        "name": "Fulgurbloom"
+    },
+    {
+        "id": 20653,
+        "name": "Miquella's Lily"
+    },
+    {
+        "id": 20654,
+        "name": "Grave Violet"
+    },
+    {
+        "id": 20660,
+        "name": "Faded Erdleaf Flower"
+    },
+    {
+        "id": 20680,
+        "name": "Erdleaf Flower"
+    },
+    {
+        "id": 20681,
+        "name": "Altus Bloom"
+    },
+    {
+        "id": 20682,
+        "name": "Fire Blossom"
+    },
+    {
+        "id": 20683,
+        "name": "Golden Sunflower"
+    },
+    {
+        "id": 20685,
+        "name": "Tarnished Golden Sunflower"
+    },
+    {
+        "id": 20690,
+        "name": "Herba"
+    },
+    {
+        "id": 20691,
+        "name": "Arteria Leaf"
+    },
+    {
+        "id": 20710,
+        "name": "Dewkissed Herba"
+    },
+    {
+        "id": 20720,
+        "name": "Rowa Fruit"
+    },
+    {
+        "id": 20721,
+        "name": "Golden Rowa"
+    },
+    {
+        "id": 20722,
+        "name": "Rimed Rowa"
+    },
+    {
+        "id": 20723,
+        "name": "Bloodrose"
+    },
+    {
+        "id": 20740,
+        "name": "Eye of Yelough"
+    },
+    {
+        "id": 20750,
+        "name": "Crystal Bud"
+    },
+    {
+        "id": 20751,
+        "name": "Rimed Crystal Bud"
+    },
+    {
+        "id": 20753,
+        "name": "Sacramental Bud"
+    },
+    {
+        "id": 20760,
+        "name": "Mushroom"
+    },
+    {
+        "id": 20761,
+        "name": "Melted Mushroom"
+    },
+    {
+        "id": 20770,
+        "name": "Toxic Mushroom"
+    },
+    {
+        "id": 20775,
+        "name": "Root Resin"
+    },
+    {
+        "id": 20780,
+        "name": "Cracked Crystal"
+    },
+    {
+        "id": 20795,
+        "name": "Sanctuary Stone"
+    },
+    {
+        "id": 20800,
+        "name": "Nascent Butterfly"
+    },
+    {
+        "id": 20801,
+        "name": "Aeonian Butterfly"
+    },
+    {
+        "id": 20802,
+        "name": "Smoldering Butterfly"
+    },
+    {
+        "id": 20810,
+        "name": "Silver Firefly"
+    },
+    {
+        "id": 20811,
+        "name": "Gold Firefly"
+    },
+    {
+        "id": 20812,
+        "name": "Glintstone Firefly"
+    },
+    {
+        "id": 20820,
+        "name": "Golden Centipede"
+    },
+    {
+        "id": 20825,
+        "name": "Silver Tear Husk"
+    },
+    {
+        "id": 20830,
+        "name": "Gold-Tinged Excrement"
+    },
+    {
+        "id": 20831,
+        "name": "Blood-Tainted Excrement"
+    },
+    {
+        "id": 20840,
+        "name": "Cave Moss"
+    },
+    {
+        "id": 20841,
+        "name": "Budding Cave Moss"
+    },
+    {
+        "id": 20842,
+        "name": "Crystal Cave Moss"
+    },
+    {
+        "id": 20845,
+        "name": "Yellow Ember"
+    },
+    {
+        "id": 20850,
+        "name": "Volcanic Stone"
+    },
+    {
+        "id": 20852,
+        "name": "Formic Rock"
+    },
+    {
+        "id": 20855,
+        "name": "Gravel Stone"
+    },
+    {
+        "id": 40000,
+        "name": "Wylder"
+    },
+    {
+        "id": 40010,
+        "name": "Dawn"
+    },
+    {
+        "id": 40020,
+        "name": "Darkness"
+    },
+    {
+        "id": 40030,
+        "name": "Remembrance"
+    },
+    {
+        "id": 40050,
+        "name": "Abysswalker"
+    },
+    {
+        "id": 40060,
+        "name": "Lion Knight"
+    },
+    {
+        "id": 40100,
+        "name": "Guardian"
+    },
+    {
+        "id": 40110,
+        "name": "Dawn"
+    },
+    {
+        "id": 40120,
+        "name": "Darkness"
+    },
+    {
+        "id": 40130,
+        "name": "Remembrance"
+    },
+    {
+        "id": 40150,
+        "name": "Sunlight Knight"
+    },
+    {
+        "id": 40160,
+        "name": "Wayfarer"
+    },
+    {
+        "id": 40200,
+        "name": "Ironeye"
+    },
+    {
+        "id": 40210,
+        "name": "Dawn"
+    },
+    {
+        "id": 40220,
+        "name": "Darkness"
+    },
+    {
+        "id": 40230,
+        "name": "Remembrance"
+    },
+    {
+        "id": 40250,
+        "name": "Ringfinger"
+    },
+    {
+        "id": 40260,
+        "name": "Sellsword"
+    },
+    {
+        "id": 40300,
+        "name": "Duchess"
+    },
+    {
+        "id": 40310,
+        "name": "Dawn"
+    },
+    {
+        "id": 40320,
+        "name": "Darkness"
+    },
+    {
+        "id": 40330,
+        "name": "Remembrance"
+    },
+    {
+        "id": 40350,
+        "name": "Black Leather"
+    },
+    {
+        "id": 40360,
+        "name": "Wraith"
+    },
+    {
+        "id": 40400,
+        "name": "Raider"
+    },
+    {
+        "id": 40410,
+        "name": "Dawn"
+    },
+    {
+        "id": 40420,
+        "name": "Darkness"
+    },
+    {
+        "id": 40430,
+        "name": "Remembrance"
+    },
+    {
+        "id": 40450,
+        "name": "Rock-like"
+    },
+    {
+        "id": 40460,
+        "name": "Catarina"
+    },
+    {
+        "id": 40500,
+        "name": "Revenant"
+    },
+    {
+        "id": 40510,
+        "name": "Dawn"
+    },
+    {
+        "id": 40520,
+        "name": "Darkness"
+    },
+    {
+        "id": 40530,
+        "name": "Remembrance"
+    },
+    {
+        "id": 40550,
+        "name": "The Sister in the Painting"
+    },
+    {
+        "id": 40560,
+        "name": "Dragon School"
+    },
+    {
+        "id": 40600,
+        "name": "Recluse"
+    },
+    {
+        "id": 40610,
+        "name": "Dawn"
+    },
+    {
+        "id": 40620,
+        "name": "Darkness"
+    },
+    {
+        "id": 40630,
+        "name": "Remembrance"
+    },
+    {
+        "id": 40650,
+        "name": "Heretic Sorcerer"
+    },
+    {
+        "id": 40660,
+        "name": "Emerald Fate"
+    },
+    {
+        "id": 40700,
+        "name": "Executor"
+    },
+    {
+        "id": 40710,
+        "name": "Dawn"
+    },
+    {
+        "id": 40720,
+        "name": "Darkness"
+    },
+    {
+        "id": 40730,
+        "name": "Remembrance"
+    },
+    {
+        "id": 40750,
+        "name": "Thorns"
+    },
+    {
+        "id": 40760,
+        "name": "Sable Church"
+    },
+    {
+        "id": 1000000,
+        "name": "Slate Whetstone"
+    },
+    {
+        "id": 1000001,
+        "name": "Silver Tear"
+    },
+    {
+        "id": 1000002,
+        "name": "Golden Dew"
+    },
+    {
+        "id": 1000003,
+        "name": "Weathervane's Words"
+    },
+    {
+        "id": 1000004,
+        "name": "Blessed Flowers"
+    },
+    {
+        "id": 1000005,
+        "name": "Golden Seed"
+    },
+    {
+        "id": 1000006,
+        "name": "Golden Sprout"
+    },
+    {
+        "id": 1000007,
+        "name": "Night Shard"
+    },
+    {
+        "id": 1000008,
+        "name": "Vestige of Night"
+    },
+    {
+        "id": 1000009,
+        "name": "Fine Arrowhead"
+    },
+    {
+        "id": 1000010,
+        "name": "Traitor's Letter"
+    },
+    {
+        "id": 1000011,
+        "name": "Edge of Order"
+    },
+    {
+        "id": 1000012,
+        "name": "Ragged Doll"
+    },
+    {
+        "id": 1000013,
+        "name": "Stone Stake"
+    },
+    {
+        "id": 1000014,
+        "name": "Third Volume"
+    },
+    {
+        "id": 1000015,
+        "name": "Witch's Brooch"
+    },
+    {
+        "id": 1000016,
+        "name": "Blade of Night Fragment"
+    },
+    {
+        "id": 1000017,
+        "name": "Dried Droplet"
+    },
+    {
+        "id": 1000018,
+        "name": "Mended Earring"
+    },
+    {
+        "id": 1000019,
+        "name": "Faded Iron Coins"
+    },
+    {
+        "id": 1000020,
+        "name": "Eerie Charm"
+    },
+    {
+        "id": 1000021,
+        "name": "Merchant's Ledger"
+    },
+    {
+        "id": 1000022,
+        "name": "Torn Braided Cord"
+    },
+    {
+        "id": 1000024,
+        "name": "Black Claw Necklace"
+    },
+    {
+        "id": 1000025,
+        "name": "Double Sided Coin"
+    },
+    {
+        "id": 1000026,
+        "name": "Crown Medal"
+    },
+    {
+        "id": 1000027,
+        "name": "Pita Bread"
+    },
+    {
+        "id": 1000028,
+        "name": "Second Volume"
+    },
+    {
+        "id": 1000030,
+        "name": "Iron Menial's Scrawl"
+    },
+    {
+        "id": 1000031,
+        "name": "Blessed Iron Coin"
+    },
+    {
+        "id": 1000032,
+        "name": "Cracked Witch's Brooch"
+    },
+    {
+        "id": 1000033,
+        "name": "Virtuous Thief's Key"
+    },
+    {
+        "id": 1000034,
+        "name": "Torn-Out Paper Scrap"
+    },
+    {
+        "id": 1000035,
+        "name": "The Wylder's Earring"
+    },
+    {
+        "id": 1000100,
+        "name": "Primordial Nightlord's Rune"
+    },
+    {
+        "id": 1000101,
+        "name": "Trace of Night"
+    },
+    {
+        "id": 1000102,
+        "name": "Trace of Night"
+    },
+    {
+        "id": 1000103,
+        "name": "Trace of Night"
+    },
+    {
+        "id": 9999099,
+        "name": "Localization test_99"
+    }
+]

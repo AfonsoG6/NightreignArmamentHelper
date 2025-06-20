@@ -1,0 +1,250 @@
+[
+    {
+        "id": 1000,
+        "name": "Crimson Amber Medallion"
+    },
+    {
+        "id": 1010,
+        "name": "Cerulean Amber Medallion"
+    },
+    {
+        "id": 1020,
+        "name": "Viridian Amber Medallion"
+    },
+    {
+        "id": 1040,
+        "name": "Erdtree's Favor"
+    },
+    {
+        "id": 1100,
+        "name": "Silver Scarab"
+    },
+    {
+        "id": 1110,
+        "name": "Gold Scarab"
+    },
+    {
+        "id": 1150,
+        "name": "Green Turtle Talisman"
+    },
+    {
+        "id": 1160,
+        "name": "Stalwart Horn Charm"
+    },
+    {
+        "id": 1170,
+        "name": "Immunizing Horn Charm"
+    },
+    {
+        "id": 1180,
+        "name": "Clarifying Horn Charm"
+    },
+    {
+        "id": 1190,
+        "name": "Prince of Death's Pustule"
+    },
+    {
+        "id": 1200,
+        "name": "Mottled Necklace"
+    },
+    {
+        "id": 1210,
+        "name": "Bull-Goat's Talisman"
+    },
+    {
+        "id": 1230,
+        "name": "Warrior Jar Shard"
+    },
+    {
+        "id": 1250,
+        "name": "Millicent's Prosthesis"
+    },
+    {
+        "id": 2000,
+        "name": "Magic Scorpion Charm"
+    },
+    {
+        "id": 2010,
+        "name": "Lightning Scorpion Charm"
+    },
+    {
+        "id": 2020,
+        "name": "Fire Scorpion Charm"
+    },
+    {
+        "id": 2030,
+        "name": "Sacred Scorpion Charm"
+    },
+    {
+        "id": 2040,
+        "name": "Red-Feathered Branchsword"
+    },
+    {
+        "id": 2050,
+        "name": "Ritual Sword Talisman"
+    },
+    {
+        "id": 2060,
+        "name": "Spear Talisman"
+    },
+    {
+        "id": 2070,
+        "name": "Hammer Talisman"
+    },
+    {
+        "id": 2080,
+        "name": "Winged Sword Insignia"
+    },
+    {
+        "id": 2090,
+        "name": "Dagger Talisman"
+    },
+    {
+        "id": 2100,
+        "name": "Arrow's Reach Talisman"
+    },
+    {
+        "id": 2120,
+        "name": "Twinblade Talisman"
+    },
+    {
+        "id": 2130,
+        "name": "Axe Talisman"
+    },
+    {
+        "id": 2150,
+        "name": "Arrow's Sting Talisman"
+    },
+    {
+        "id": 2160,
+        "name": "Lord of Blood's Exultation"
+    },
+    {
+        "id": 2170,
+        "name": "Kindred of Rot's Exultation"
+    },
+    {
+        "id": 2180,
+        "name": "Claw Talisman"
+    },
+    {
+        "id": 2190,
+        "name": "Roar Medallion"
+    },
+    {
+        "id": 2200,
+        "name": "Curved Sword Talisman"
+    },
+    {
+        "id": 2210,
+        "name": "Companion Jar"
+    },
+    {
+        "id": 2220,
+        "name": "Perfumer's Talisman"
+    },
+    {
+        "id": 3000,
+        "name": "Graven-School Talisman"
+    },
+    {
+        "id": 3040,
+        "name": "Faithful's Canvas Talisman"
+    },
+    {
+        "id": 3060,
+        "name": "Old Lord's Talisman"
+    },
+    {
+        "id": 3070,
+        "name": "Radagon Icon"
+    },
+    {
+        "id": 3080,
+        "name": "Primal Glintstone Blade"
+    },
+    {
+        "id": 3090,
+        "name": "Godfrey Icon"
+    },
+    {
+        "id": 4000,
+        "name": "Dragoncrest Shield Talisman"
+    },
+    {
+        "id": 4010,
+        "name": "Spelldrake Talisman"
+    },
+    {
+        "id": 4020,
+        "name": "Flamedrake Talisman"
+    },
+    {
+        "id": 4030,
+        "name": "Boltdrake Talisman"
+    },
+    {
+        "id": 4040,
+        "name": "Haligdrake Talisman"
+    },
+    {
+        "id": 4050,
+        "name": "Pearldrake Talisman"
+    },
+    {
+        "id": 4070,
+        "name": "Crucible Feather Talisman"
+    },
+    {
+        "id": 4080,
+        "name": "Blue-Feathered Branchsword"
+    },
+    {
+        "id": 4090,
+        "name": "Ritual Shield Talisman"
+    },
+    {
+        "id": 4100,
+        "name": "Greatshield Talisman"
+    },
+    {
+        "id": 5000,
+        "name": "Crimson Seed Talisman"
+    },
+    {
+        "id": 5020,
+        "name": "Blessed Dew Talisman"
+    },
+    {
+        "id": 5030,
+        "name": "Taker's Cameo"
+    },
+    {
+        "id": 5040,
+        "name": "Godskin Swaddling Cloth"
+    },
+    {
+        "id": 5050,
+        "name": "Assassin's Crimson Dagger"
+    },
+    {
+        "id": 5060,
+        "name": "Assassin's Cerulean Dagger"
+    },
+    {
+        "id": 6020,
+        "name": "Carian Filigreed Crest"
+    },
+    {
+        "id": 6070,
+        "name": "Sacrificial Twig"
+    },
+    {
+        "id": 6110,
+        "name": "Ancestral Spirit's Horn"
+    },
+    {
+        "id": 7000,
+        "name": "Symbol of Avarice"
+    }
+]

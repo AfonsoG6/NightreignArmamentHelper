@@ -1,4 +1,6 @@
 from lib.constants import *
+from abc import ABC
+from os import path
 import json
 
 RATINGS: list[int] = [
@@ -12,14 +14,25 @@ RATINGS: list[int] = [
 ]
 
 
-class ArmamentSpec:
-    """
-    Class representing an armament specification.
-    """
-
-    def __init__(self, id: int, name: str, type: str, STR: int, DEX: int, INT: int, FAI: int, ARC: int):
-        self.id: int = id
+class GrabbableSpec(ABC):
+    def __init__(self, id: str, name: str):
+        self.id: str = id
         self.name: str = name
+
+
+class ItemSpec(GrabbableSpec):
+    def __init__(self, id: int, name: str):
+        super().__init__("i" + str(id), name)
+
+
+class TalismanSpec(GrabbableSpec):
+    def __init__(self, id: int, name: str):
+        super().__init__("t" + str(id), name)
+
+
+class ArmamentSpec(GrabbableSpec):
+    def __init__(self, id: int, name: str, type: str, STR: int, DEX: int, INT: int, FAI: int, ARC: int):
+        super().__init__(str(id), name)
         self.type: str = type
         self.STR: int = self.convert_stat_to_rating("STR", STR)
         self.DEX: int = self.convert_stat_to_rating("DEX", DEX)
@@ -65,7 +78,7 @@ class ArmamentSpec:
                 return C
             elif stat_value < 60:
                 return B
-            elif stat_value < 80: 
+            elif stat_value < 80:
                 return A
             else:
                 return S
@@ -106,27 +119,39 @@ class ArmamentSpec:
         else:
             return "-"
 
-ARMAMENT_SPECS: set[ArmamentSpec] = set()
 
-def load_all_armament_specs(json_path: str) -> None:
-    global ARMAMENT_SPECS
-    with open(json_path, 'r', encoding='utf-8') as file:
+GRABBABLE_SPECS: set[GrabbableSpec] = set()
+
+
+def load_all_grabbable_specs(resources_path: str) -> None:
+    global GRABBABLE_SPECS
+    with open(path.join(resources_path, "armaments.json"), "r", encoding="utf-8") as file:
         armament_data = json.load(file)
         for armament in armament_data:
-            ARMAMENT_SPECS.add(ArmamentSpec(
-                id=armament['id'],
-                name=armament['name'],
-                type=armament['type'],
-                STR=armament['STR'],
-                DEX=armament['DEX'],
-                INT=armament['INT'],
-                FAI=armament['FAI'],
-                ARC=armament['ARC']
-            ))
+            GRABBABLE_SPECS.add(
+                ArmamentSpec(
+                    id=armament["id"],
+                    name=armament["name"],
+                    type=armament["type"],
+                    STR=armament["STR"],
+                    DEX=armament["DEX"],
+                    INT=armament["INT"],
+                    FAI=armament["FAI"],
+                    ARC=armament["ARC"],
+                )
+            )
+    with open(path.join(resources_path, "items.json"), "r", encoding="utf-8") as file:
+        item_data = json.load(file)
+        for item in item_data:
+            GRABBABLE_SPECS.add(ItemSpec(id=item["id"], name=item["name"]))
+    with open(path.join(resources_path, "talismans.json"), "r", encoding="utf-8") as file:
+        talisman_data = json.load(file)
+        for talisman in talisman_data:
+            GRABBABLE_SPECS.add(TalismanSpec(id=talisman["id"], name=talisman["name"]))
 
 
-def find_armament_name_by_id(armament_id: int) -> str:
-    for armament in ARMAMENT_SPECS:
-        if armament.id == armament_id:
-            return armament.name
+def find_grabbable_name_by_id(grabbable_id: int) -> str:
+    for grabbable in GRABBABLE_SPECS:
+        if grabbable.id == grabbable_id:
+            return grabbable.name
     return ""

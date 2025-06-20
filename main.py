@@ -636,8 +636,8 @@ def detect_armament(detection_id: str) -> None:
     if character_spec is None:
         return
     text_origin, text = detect_text(detection_id)
-    match_result, match = find_match(detection_id, text_origin, text, ARMAMENT_SPECS, lambda armament_spec: armament_spec.name)
-    if match_result == NO_MATCH:
+    match_result, match = find_match(detection_id, text_origin, text, GRABBABLE_SPECS, lambda armament_spec: armament_spec.name)
+    if match_result == NO_MATCH or not isinstance(match, ArmamentSpec):
         update_armament_feedback_labels_general(detection_id)
         return
     debug_window.found_match(detection_id, text_origin, text, match_result, match.name)
@@ -711,7 +711,7 @@ if __name__ == "__main__":
     replace_armament_detection_thread = DetectionThread(detection_id=ARMAMENT_DETECTION_DEFAULT_REPLACE, function=detect_armament, daemon=True)
     debug_window = DebugWindow(root, DEBUG, DEBUG_PATH)
 
-    load_all_armament_specs(path.join(RESOURCES_PATH, "armaments.json"))
+    load_all_grabbable_specs(RESOURCES_PATH)
     calculate_all_armaments()
     pixelset_cache = PixelSetCache(PIXEL_SETS_PATH, DEBUG)
     update_armament_feedback_labels()
@@ -727,7 +727,7 @@ if __name__ == "__main__":
         menu_detection_thread.start()
         armament_detection_thread.start()
         replace_armament_detection_thread.start()
-        print("Ready! Armaments loaded: ", len(ARMAMENT_SPECS))
+        print("Ready! Grabbables loaded: ", len(GRABBABLE_SPECS))
         root.mainloop()
     except Exception as e:
         log_error(e, True)

@@ -1,0 +1,838 @@
+[
+    {
+        "id": 120300,
+        "name": "Sixth Sense"
+    },
+    {
+        "id": 120301,
+        "name": "Sixth Sense"
+    },
+    {
+        "id": 1000000,
+        "name": "Slate Whetstone"
+    },
+    {
+        "id": 1000001,
+        "name": "Silver Tear"
+    },
+    {
+        "id": 1000002,
+        "name": "Golden Dew"
+    },
+    {
+        "id": 1000003,
+        "name": "Weathervane's Words"
+    },
+    {
+        "id": 1000004,
+        "name": "Blessed Flowers"
+    },
+    {
+        "id": 1000005,
+        "name": "Golden Seed"
+    },
+    {
+        "id": 1000006,
+        "name": "Golden Sprout"
+    },
+    {
+        "id": 1000007,
+        "name": "Night Shard"
+    },
+    {
+        "id": 1000008,
+        "name": "Vestige of Night"
+    },
+    {
+        "id": 1000009,
+        "name": "Fine Arrowhead"
+    },
+    {
+        "id": 1000010,
+        "name": "Traitor's Letter"
+    },
+    {
+        "id": 1000011,
+        "name": "Edge of Order"
+    },
+    {
+        "id": 1000012,
+        "name": "Ragged Doll"
+    },
+    {
+        "id": 1000013,
+        "name": "Stone Stake"
+    },
+    {
+        "id": 1000014,
+        "name": "Third Volume"
+    },
+    {
+        "id": 1000015,
+        "name": "Witch's Brooch"
+    },
+    {
+        "id": 1000016,
+        "name": "Blade of Night Fragment"
+    },
+    {
+        "id": 1000017,
+        "name": "Dried Droplet"
+    },
+    {
+        "id": 1000018,
+        "name": "Mended Earring"
+    },
+    {
+        "id": 1000019,
+        "name": "Faded Iron Coins"
+    },
+    {
+        "id": 1000020,
+        "name": "Eerie Charm"
+    },
+    {
+        "id": 1000021,
+        "name": "Merchant's Ledger"
+    },
+    {
+        "id": 1000022,
+        "name": "Torn Braided Cord"
+    },
+    {
+        "id": 1000024,
+        "name": "Black Claw Necklace"
+    },
+    {
+        "id": 1000025,
+        "name": "Double Sided Coin"
+    },
+    {
+        "id": 1000026,
+        "name": "Crown Medal"
+    },
+    {
+        "id": 1000027,
+        "name": "Pita Bread"
+    },
+    {
+        "id": 1000028,
+        "name": "Second Volume"
+    },
+    {
+        "id": 1000030,
+        "name": "Iron Menial's Scrawl"
+    },
+    {
+        "id": 1000031,
+        "name": "Blessed Iron Coin"
+    },
+    {
+        "id": 1000032,
+        "name": "Cracked Witch's Brooch"
+    },
+    {
+        "id": 1000033,
+        "name": "Virtuous Thief's Key"
+    },
+    {
+        "id": 1000034,
+        "name": "Torn-Out Paper Scrap"
+    },
+    {
+        "id": 1000035,
+        "name": "The Wylder's Earring"
+    },
+    {
+        "id": 1000036,
+        "name": "Bone-Like Stone"
+    },
+    {
+        "id": 1000100,
+        "name": "Primordial Nightlord's Rune"
+    },
+    {
+        "id": 1000101,
+        "name": "Trace of Night"
+    },
+    {
+        "id": 1000102,
+        "name": "Trace of Night"
+    },
+    {
+        "id": 1000103,
+        "name": "Trace of Night"
+    },
+    {
+        "id": 8000000,
+        "name": "Increased Maximum HP"
+    },
+    {
+        "id": 8010000,
+        "name": "Increased Maximum FP"
+    },
+    {
+        "id": 8010100,
+        "name": "Reduced FP Consumption"
+    },
+    {
+        "id": 8020000,
+        "name": "Increased Maximum Stamina"
+    },
+    {
+        "id": 8020100,
+        "name": "Reduced Stamina Consumption"
+    },
+    {
+        "id": 8020200,
+        "name": "Improved Stamina Recovery"
+    },
+    {
+        "id": 8100000,
+        "name": "Improved Physical Attack Power"
+    },
+    {
+        "id": 8100500,
+        "name": "Improved Affinity Attack Power"
+    },
+    {
+        "id": 8100600,
+        "name": "Improved Slash Attack Power"
+    },
+    {
+        "id": 8100700,
+        "name": "Improved Strike Attack Power"
+    },
+    {
+        "id": 8100800,
+        "name": "Improved Thrust Attack Power"
+    },
+    {
+        "id": 8100900,
+        "name": "Improved Standard Attack Power"
+    },
+    {
+        "id": 8120000,
+        "name": "Improved Stance-Breaking"
+    },
+    {
+        "id": 8150000,
+        "name": "Attack Boost [Lifeforms Born of Falling Stars]"
+    },
+    {
+        "id": 8150100,
+        "name": "Attack Boost [Those Who Live in Death]"
+    },
+    {
+        "id": 8150300,
+        "name": "Attack Boost [Dragons]"
+    },
+    {
+        "id": 8160000,
+        "name": "Improved Dagger Attack Power"
+    },
+    {
+        "id": 8160100,
+        "name": "Improved Straight Sword Attack Power"
+    },
+    {
+        "id": 8160200,
+        "name": "Improved Greatsword Attack Power"
+    },
+    {
+        "id": 8160300,
+        "name": "Improved Colossal Sword Attack Power"
+    },
+    {
+        "id": 8160400,
+        "name": "Improved Curved Sword Attack Power"
+    },
+    {
+        "id": 8160500,
+        "name": "Improved Curved Greatsword Attack Power"
+    },
+    {
+        "id": 8160600,
+        "name": "Improved Katana Attack Power"
+    },
+    {
+        "id": 8160700,
+        "name": "Improved Twinblade Attack Power"
+    },
+    {
+        "id": 8160800,
+        "name": "Improved Thrusting Sword Attack Power"
+    },
+    {
+        "id": 8160900,
+        "name": "Improved Heavy Thrusting Sword Attack Power"
+    },
+    {
+        "id": 8161000,
+        "name": "Improved Axe Attack Power"
+    },
+    {
+        "id": 8161100,
+        "name": "Improved Greataxe Attack Power"
+    },
+    {
+        "id": 8161200,
+        "name": "Improved Hammer Attack Power"
+    },
+    {
+        "id": 8161300,
+        "name": "Improved Great Hammer Attack Power"
+    },
+    {
+        "id": 8161400,
+        "name": "Improved Flail Attack Power"
+    },
+    {
+        "id": 8161500,
+        "name": "Improved Spear Attack Power"
+    },
+    {
+        "id": 8161600,
+        "name": "Improved Pike Attack Power"
+    },
+    {
+        "id": 8161700,
+        "name": "Improved Great Spear Attack Power"
+    },
+    {
+        "id": 8161800,
+        "name": "Improved Halberd Attack Power"
+    },
+    {
+        "id": 8161900,
+        "name": "Improved Reaper Attack Power"
+    },
+    {
+        "id": 8162000,
+        "name": "Improved Fist Attack Power"
+    },
+    {
+        "id": 8162100,
+        "name": "Improved Claw Attack Power"
+    },
+    {
+        "id": 8162200,
+        "name": "Improved Whip Attack Power"
+    },
+    {
+        "id": 8162300,
+        "name": "Improved Colossal Weapon Attack Power"
+    },
+    {
+        "id": 8162400,
+        "name": "Improved Bow Attack Power"
+    },
+    {
+        "id": 8200000,
+        "name": "Improved Physical Damage Negation"
+    },
+    {
+        "id": 8200500,
+        "name": "Improved Affinity Damage Negation"
+    },
+    {
+        "id": 8210700,
+        "name": "All Resistances Up"
+    },
+    {
+        "id": 8230000,
+        "name": "Improved Poise"
+    },
+    {
+        "id": 8330103,
+        "name": "Improved Sorceries & Incantations"
+    },
+    {
+        "id": 8330500,
+        "name": "Increased Sorcery & Incantation Duration"
+    },
+    {
+        "id": 8330700,
+        "name": "Dragonwound upon Dragon Communion"
+    },
+    {
+        "id": 8330800,
+        "name": "Improved Stonedigger Sorcery"
+    },
+    {
+        "id": 8330900,
+        "name": "Improved Carian Sword Sorcery"
+    },
+    {
+        "id": 8331000,
+        "name": "Improved Glintblade Sorcery"
+    },
+    {
+        "id": 8331100,
+        "name": "Improved Invisibility Sorcery"
+    },
+    {
+        "id": 8331200,
+        "name": "Improved Crystalian sorcery"
+    },
+    {
+        "id": 8331300,
+        "name": "Improved Gravity Sorcery"
+    },
+    {
+        "id": 8331400,
+        "name": "Improved Thorn Sorcery"
+    },
+    {
+        "id": 8331500,
+        "name": "Improved Night Sorcery"
+    },
+    {
+        "id": 8331600,
+        "name": "Improved Fundamentalist Incantations"
+    },
+    {
+        "id": 8331700,
+        "name": "Improved Dragon Cult Incantations"
+    },
+    {
+        "id": 8331800,
+        "name": "Improved Giants' Flame Incantations"
+    },
+    {
+        "id": 8331900,
+        "name": "Improved Godslayer Incantations"
+    },
+    {
+        "id": 8332000,
+        "name": "Improved Bestial Incantations"
+    },
+    {
+        "id": 8332100,
+        "name": "Improved Frenzied Flame Incantations"
+    },
+    {
+        "id": 8332200,
+        "name": "Improved Dragon Communion Incantations"
+    },
+    {
+        "id": 8350100,
+        "name": "Improved Charged Skill"
+    },
+    {
+        "id": 8350400,
+        "name": "Successful Parries Activate Golden Retaliation"
+    },
+    {
+        "id": 8360000,
+        "name": "Improved Ultimate Art Gauge Charge Speed"
+    },
+    {
+        "id": 8370000,
+        "name": "Character Skill Cooldown Reduction"
+    },
+    {
+        "id": 8380000,
+        "name": "Improved Roar & Breath Attacks"
+    },
+    {
+        "id": 8390000,
+        "name": "Improved Throwing Pots"
+    },
+    {
+        "id": 8400000,
+        "name": "Improved Perfuming Arts"
+    },
+    {
+        "id": 8410000,
+        "name": "Improved Dodging"
+    },
+    {
+        "id": 8410100,
+        "name": "Lightning upon Dodging"
+    },
+    {
+        "id": 8420100,
+        "name": "Guard Counters Activate Holy Attacks"
+    },
+    {
+        "id": 8420200,
+        "name": "Guard Counters Activate Summoning Attack"
+    },
+    {
+        "id": 8430000,
+        "name": "Improved Thrusting Counterattack"
+    },
+    {
+        "id": 8440000,
+        "name": "Improved Flask HP Restoration"
+    },
+    {
+        "id": 8440100,
+        "name": "Flask Also Heals Allies"
+    },
+    {
+        "id": 8440200,
+        "name": "Gradual Restoration by Flask"
+    },
+    {
+        "id": 8450100,
+        "name": "Ice Storm Surge Sprint"
+    },
+    {
+        "id": 8460000,
+        "name": "Area of Darkness Conceals Caster While Walking"
+    },
+    {
+        "id": 8460200,
+        "name": "Flame of Frenzy While Walking"
+    },
+    {
+        "id": 8460400,
+        "name": "Violent Deluge of Star Rain While Walking"
+    },
+    {
+        "id": 8500000,
+        "name": "More Runes From Defeated Enemies"
+    },
+    {
+        "id": 8500100,
+        "name": "Rune of the Strong"
+    },
+    {
+        "id": 8500101,
+        "name": "Rune of the Strong"
+    },
+    {
+        "id": 8500102,
+        "name": "Rune of the Strong"
+    },
+    {
+        "id": 8530200,
+        "name": "Periodical Giant Glintblade"
+    },
+    {
+        "id": 8600101,
+        "name": "HP Restoration upon Dagger Attacks"
+    },
+    {
+        "id": 8600102,
+        "name": "HP Restoration upon Straight Sword Attacks"
+    },
+    {
+        "id": 8600103,
+        "name": "HP Restoration upon Greatsword Attacks"
+    },
+    {
+        "id": 8600104,
+        "name": "HP Restoration upon Colossal Sword Attacks"
+    },
+    {
+        "id": 8600105,
+        "name": "HP Restoration upon Curved Sword Attacks"
+    },
+    {
+        "id": 8600106,
+        "name": "HP Restoration upon Curved Greatsword Attacks"
+    },
+    {
+        "id": 8600107,
+        "name": "HP Restoration upon Katana Attacks"
+    },
+    {
+        "id": 8600108,
+        "name": "HP Restoration upon Twinblade Attacks"
+    },
+    {
+        "id": 8600109,
+        "name": "HP Restoration upon Thrusting Sword Attacks"
+    },
+    {
+        "id": 8600110,
+        "name": "HP Restoration upon Heavy Thrusting Sword Attacks"
+    },
+    {
+        "id": 8600111,
+        "name": "HP Restoration upon Axe Attacks"
+    },
+    {
+        "id": 8600112,
+        "name": "HP Restoration upon Greataxe Attacks"
+    },
+    {
+        "id": 8600113,
+        "name": "HP Restoration upon Hammer Attacks"
+    },
+    {
+        "id": 8600114,
+        "name": "HP Restoration upon Great Hammer Attacks"
+    },
+    {
+        "id": 8600115,
+        "name": "HP Restoration upon Flail Attacks"
+    },
+    {
+        "id": 8600116,
+        "name": "HP Restoration upon Spear Attacks"
+    },
+    {
+        "id": 8600117,
+        "name": "HP Restoration upon Pike Attacks"
+    },
+    {
+        "id": 8600118,
+        "name": "HP Restoration upon Great Spear Attacks"
+    },
+    {
+        "id": 8600119,
+        "name": "HP Restoration upon Halberd Attacks"
+    },
+    {
+        "id": 8600120,
+        "name": "HP Restoration upon Reaper Attacks"
+    },
+    {
+        "id": 8600121,
+        "name": "HP Restoration upon Fist Attacks"
+    },
+    {
+        "id": 8600122,
+        "name": "HP Restoration upon Claw Attacks"
+    },
+    {
+        "id": 8600123,
+        "name": "HP Restoration upon Whip Attacks"
+    },
+    {
+        "id": 8600124,
+        "name": "HP Restoration upon Colossal Weapon Attacks"
+    },
+    {
+        "id": 8600125,
+        "name": "HP Restoration upon Bow Attacks"
+    },
+    {
+        "id": 8600201,
+        "name": "FP Restoration upon Dagger Attacks"
+    },
+    {
+        "id": 8600202,
+        "name": "FP Restoration upon Straight Sword Attacks"
+    },
+    {
+        "id": 8600203,
+        "name": "FP Restoration upon Greatsword Attacks"
+    },
+    {
+        "id": 8600204,
+        "name": "FP Restoration upon Colossal Sword Attacks"
+    },
+    {
+        "id": 8600205,
+        "name": "FP Restoration upon Curved Sword Attacks"
+    },
+    {
+        "id": 8600206,
+        "name": "FP Restoration upon Curved Greatsword Attacks"
+    },
+    {
+        "id": 8600207,
+        "name": "FP Restoration upon Katana Attacks"
+    },
+    {
+        "id": 8600208,
+        "name": "FP Restoration upon Twinblade Attacks"
+    },
+    {
+        "id": 8600209,
+        "name": "FP Restoration upon Thrusting Sword Attacks"
+    },
+    {
+        "id": 8600210,
+        "name": "FP Restoration upon Heavy Thrusting Sword Attacks"
+    },
+    {
+        "id": 8600211,
+        "name": "FP Restoration upon Axe Attacks"
+    },
+    {
+        "id": 8600212,
+        "name": "FP Restoration upon Greataxe Attacks"
+    },
+    {
+        "id": 8600213,
+        "name": "FP Restoration upon Hammer Attacks"
+    },
+    {
+        "id": 8600214,
+        "name": "FP Restoration upon Great Hammer Attacks"
+    },
+    {
+        "id": 8600215,
+        "name": "FP Restoration upon Flail Attacks"
+    },
+    {
+        "id": 8600216,
+        "name": "FP Restoration upon Spear Attacks"
+    },
+    {
+        "id": 8600217,
+        "name": "FP Restoration upon Pike Attacks"
+    },
+    {
+        "id": 8600218,
+        "name": "FP Restoration upon Great Spear Attacks"
+    },
+    {
+        "id": 8600219,
+        "name": "FP Restoration upon Halberd Attacks"
+    },
+    {
+        "id": 8600220,
+        "name": "FP Restoration upon Reaper Attacks"
+    },
+    {
+        "id": 8600221,
+        "name": "FP Restoration upon Fist Attacks"
+    },
+    {
+        "id": 8600222,
+        "name": "FP Restoration upon Claw Attacks"
+    },
+    {
+        "id": 8600223,
+        "name": "FP Restoration upon Whip Attacks"
+    },
+    {
+        "id": 8600224,
+        "name": "FP Restoration upon Colossal Weapon Attacks"
+    },
+    {
+        "id": 8600225,
+        "name": "FP Restoration upon Bow Attacks"
+    },
+    {
+        "id": 8600300,
+        "name": "Sudden Enemy Death upon Attacks"
+    },
+    {
+        "id": 8610000,
+        "name": "HP Restoration upon Successive Attacks"
+    },
+    {
+        "id": 8610100,
+        "name": "FP Restoration upon Successive Attacks"
+    },
+    {
+        "id": 8610200,
+        "name": "Successive Attacks Boost Attack Power"
+    },
+    {
+        "id": 8640000,
+        "name": "Critical Hit HP Restoration"
+    },
+    {
+        "id": 8640100,
+        "name": "Critical Hit FP Restoration"
+    },
+    {
+        "id": 8640200,
+        "name": "Increased Enemy Damage after Critical Hit"
+    },
+    {
+        "id": 8650000,
+        "name": "HP Recovery upon Successful Guards"
+    },
+    {
+        "id": 8650100,
+        "name": "FP Recovery upon Successful Guards"
+    },
+    {
+        "id": 8660200,
+        "name": "Inflict Blood Loss at Low HP"
+    },
+    {
+        "id": 8660300,
+        "name": "Create Holy Ground at Low HP"
+    },
+    {
+        "id": 8660400,
+        "name": "Full HP Restoration upon Critical Hit at Low HP"
+    },
+    {
+        "id": 8680000,
+        "name": "Holy-Affinity Guards Activate Golden Vow"
+    },
+    {
+        "id": 8680100,
+        "name": "Fire-Affinity Guards Activate Flame, Grant Me Strength"
+    },
+    {
+        "id": 8680200,
+        "name": "Lightning-Affinity Guards Activate Dragonbolt Blessing"
+    },
+    {
+        "id": 8680300,
+        "name": "Magic-Affinity Guards Activate Terra Magica"
+    },
+    {
+        "id": 8700000,
+        "name": "Poison & Rot Trigger Continuous HP Recovery"
+    },
+    {
+        "id": 8710000,
+        "name": "Blood Loss in Vicinity Increases Attack Power"
+    },
+    {
+        "id": 8970000,
+        "name": "Traces of Grace-Given Lord"
+    },
+    {
+        "id": 8970010,
+        "name": "Integration of Intelligence"
+    },
+    {
+        "id": 8970020,
+        "name": "Unifying Fate"
+    },
+    {
+        "id": 8970030,
+        "name": "Demon's Plating"
+    },
+    {
+        "id": 9990000,
+        "name": "Favor of the Night"
+    },
+    {
+        "id": 9990010,
+        "name": "Favor of Noklateo, the Shrouded City"
+    },
+    {
+        "id": 9990020,
+        "name": "Favor of the Rotted Woods"
+    },
+    {
+        "id": 9990030,
+        "name": "Favor of the Mountaintop"
+    },
+    {
+        "id": 9990031,
+        "name": "Improved Frost Resistance"
+    },
+    {
+        "id": 9990032,
+        "name": "Attack Boost [Dragons]"
+    },
+    {
+        "id": 9990033,
+        "name": "Favor of the Mountaintop"
+    },
+    {
+        "id": 9990034,
+        "name": "Improves resistance to frost ailment"
+    },
+    {
+        "id": 9990040,
+        "name": "Unhealed Wound Carved by the Night"
+    }
+]
