@@ -99,8 +99,10 @@ last_pixelsets: dict[str, PixelSet | None] = {
 }
 
 root: Tk
-screen_width: int
-screen_height: int
+screen_width_ui: int
+screen_height_ui: int
+screen_width_real: int
+screen_height_real: int
 basic_armament_feedback_label: Label
 advanced_armament_feedback_label: Label
 replace_basic_armament_feedback_label: Label
@@ -219,7 +221,7 @@ def update_advanced_armament_feedback_label(armament_spec: ArmamentSpec, relx: f
 
 
 def update_armament_feedback_labels(character_spec: CharacterSpec | None = None, armament_spec: ArmamentSpec | None = None) -> None:
-    global basic_armament_feedback_label, advanced_armament_feedback_label, screen_width, screen_height, current_menu_state, current_menu_state_lock
+    global basic_armament_feedback_label, advanced_armament_feedback_label, screen_width_ui, screen_height_ui, current_menu_state, current_menu_state_lock
     if character_spec is None or armament_spec is None:
         basic_armament_feedback_label.config(text="")
         basic_armament_feedback_label.place_forget()
@@ -228,14 +230,14 @@ def update_armament_feedback_labels(character_spec: CharacterSpec | None = None,
         return
     with current_menu_state_lock:
         if current_menu_state == MENU_STATE_SHOP:
-            basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_SHOP, screen_width, screen_height)
-            advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_SHOP, screen_width, screen_height)
+            basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_SHOP, screen_width_ui, screen_height_ui)
+            advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_SHOP, screen_width_ui, screen_height_ui)
         elif current_menu_state == MENU_STATE_BOSS_DROP:
-            basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_BOSS_DROP, screen_width, screen_height)
-            advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_BOSS_DROP, screen_width, screen_height)
+            basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_BOSS_DROP, screen_width_ui, screen_height_ui)
+            advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_BOSS_DROP, screen_width_ui, screen_height_ui)
         else:
-            basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
-            advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
+            basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width_ui, screen_height_ui)
+            advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_DEFAULT, screen_width_ui, screen_height_ui)
 
     update_basic_armament_feedback_label(character_spec, armament_spec, basic_relx, basic_rely)
     update_advanced_armament_feedback_label(armament_spec, advanced_relx, advanced_rely)
@@ -282,7 +284,7 @@ def update_replace_advanced_armament_feedback_label(armament_spec: ArmamentSpec,
 
 
 def update_replace_armament_feedback_labels(character_spec: CharacterSpec | None = None, armament_spec: ArmamentSpec | None = None) -> None:
-    global replace_basic_armament_feedback_label, replace_advanced_armament_feedback_label, screen_width, screen_height
+    global replace_basic_armament_feedback_label, replace_advanced_armament_feedback_label, screen_width_ui, screen_height_ui
     if character_spec is None or armament_spec is None:
         replace_basic_armament_feedback_label.config(text="")
         replace_basic_armament_feedback_label.place_forget()
@@ -290,8 +292,8 @@ def update_replace_armament_feedback_labels(character_spec: CharacterSpec | None
         replace_advanced_armament_feedback_label.place_forget()
         return
 
-    basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
-    advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
+    basic_relx, basic_rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width_ui, screen_height_ui)
+    advanced_rely, _, advanced_relx, _ = get_detection_box_rel(ARMAMENT_DETECTION_DEFAULT, screen_width_ui, screen_height_ui)
     basic_relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
     advanced_relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
 
@@ -379,15 +381,15 @@ def toggle_enabled() -> None:
 
 
 def create_control_window() -> Toplevel:
-    global enable_disable_button, character_detection_button, advanced_mode_button, screen_height, screen_width, control_window
+    global enable_disable_button, character_detection_button, advanced_mode_button, screen_height_ui, screen_width_ui, control_window
     SIZE_X = 330
     SIZE_Y = 140
     BUTTON_PADDING = 2
     control_window = Toplevel()
     control_window.title(PROGRAM_NAME)
-    padding_x = int(screen_width * 0.05)
-    padding_y = int(screen_height * 0.15)
-    control_window.geometry(f"{SIZE_X}x{SIZE_Y}+{screen_width - SIZE_X - padding_x}+{screen_height - SIZE_Y - padding_y}")
+    padding_x = int(screen_width_ui * 0.05)
+    padding_y = int(screen_height_ui * 0.15)
+    control_window.geometry(f"{SIZE_X}x{SIZE_Y}+{screen_width_ui - SIZE_X - padding_x}+{screen_height_ui - SIZE_Y - padding_y}")
     control_window.resizable(False, False)
     icon_image = PhotoImage(file=ICON_PATH)
     control_window.iconphoto(True, icon_image)
@@ -461,13 +463,17 @@ def get_screen_grab():
     Returns the most recent screen grab if it occurred within the minimum time threshold, otherwise takes a new screen grab.
     Ensures thread safety using a lock.
     """
-    global last_screengrab, last_screengrab_time, screengrab_lock
+    global last_screengrab, last_screengrab_time, screengrab_lock, screen_width_real, screen_height_real
     with screengrab_lock:
         current_time = time()
         if current_time - last_screengrab_time < MINIMUM_TIME_BETWEEN_SCREENGRABS and last_screengrab is not None:
             return last_screengrab
         last_screengrab = ImageGrab.grab()
         last_screengrab_time = current_time
+        if last_screengrab.width != screen_width_real or last_screengrab.height != screen_height_real:
+            # Update the real screen dimensions if they have changed
+            screen_width_real = last_screengrab.width
+            screen_height_real = last_screengrab.height
         return last_screengrab
 
 
@@ -502,7 +508,7 @@ def get_cropped_area(box_identifier: str) -> ndarray:
 
 
 def detect_text(detection_id: str) -> tuple[int, str]:
-    global previous_armament_img, previous_armament_name, last_armament_pixel_set, last_replace_armament_pixel_set, previous_replace_armament_img, previous_replace_armament_name, current_menu_state, current_menu_state_lock, pixelset_cache
+    global previous_armament_img, previous_armament_name, last_armament_pixel_set, last_replace_armament_pixel_set, previous_replace_armament_img, previous_replace_armament_name, current_menu_state, current_menu_state_lock, pixelset_cache, screen_width_real, screen_height_real, previous_imgs_lock, previous_matches_lock, last_pixelsets_lock, previous_imgs, previous_matches, last_pixelsets, debug_window
 
     # Get a more specific detection ID if necessary, for example, due to the current menu state.
     eff_detection_id = get_eff_detection_id(detection_id)
@@ -519,7 +525,7 @@ def detect_text(detection_id: str) -> tuple[int, str]:
 
     # To save time and resources in future detection of the same armament, we generate a pixel set
     # and check if it matches any of the previously saved pixel sets.
-    pixel_set: PixelSet = PixelSet(pixelset_cache, cropped, screen_width, screen_height, eff_detection_id)
+    pixel_set: PixelSet = PixelSet(pixelset_cache, cropped, screen_width_real, screen_height_real, eff_detection_id)
     pixel_set_match = pixel_set.find_match(eff_detection_id)
     if pixel_set_match != "":
         debug_window.matched_pixelset(eff_detection_id, pixel_set_match)
@@ -534,7 +540,7 @@ def detect_text(detection_id: str) -> tuple[int, str]:
         return (TEXT_ORIGIN_NONE, "")
 
     # Character detection is stable enough that we can ditch the OCR completely if we have already learned a pixel set for each character for this resolution.
-    if eff_detection_id == CHARACTER_DETECTION and pixelset_cache.all_characters_learned(screen_width, screen_height):
+    if eff_detection_id == CHARACTER_DETECTION and pixelset_cache.all_characters_learned(screen_width_real, screen_height_real):
         return (TEXT_ORIGIN_NONE, "")
 
     # Last resource: OCR
@@ -667,36 +673,42 @@ if __name__ == "__main__":
     icon_image = PhotoImage(file=ICON_PATH)
     root.iconphoto(True, icon_image)
 
-    screen_width = root.winfo_screenwidth()
-    screen_height = root.winfo_screenheight()
+    screen_width_ui = root.winfo_screenwidth()
+    screen_height_ui = root.winfo_screenheight()
+    
+    img = ImageGrab.grab()
+    screen_width_real = img.width
+    screen_height_real = img.height
+    del img
+    print(f"Screen dimensions: UI {screen_width_ui}x{screen_height_ui}, Real {screen_width_real}x{screen_height_real}")
 
-    root.geometry(f"{screen_width}x{screen_height}+0+0")
+    root.geometry(f"{screen_width_ui}x{screen_height_ui}+0+0")
     root.config(bg="black")
     root.withdraw()
 
-    basic_armament_feedback_label_font_size = int(screen_height * 0.014)
-    advanced_armament_feedback_label_font_size = int(screen_height * 0.012)
-    current_character_label_font_size = int(screen_height * 0.008)
+    basic_armament_feedback_label_font_size = int(screen_height_ui * 0.014)
+    advanced_armament_feedback_label_font_size = int(screen_height_ui * 0.012)
+    current_character_label_font_size = int(screen_height_ui * 0.008)
 
     basic_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Arial", basic_armament_feedback_label_font_size))
     basic_armament_feedback_label.pack()
-    relx, rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
+    relx, rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width_ui, screen_height_ui)
     basic_armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
 
     advanced_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Consolas", advanced_armament_feedback_label_font_size))
     advanced_armament_feedback_label.pack()
-    rely, _, relx, _ = get_detection_box(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
+    rely, _, relx, _ = get_detection_box(ARMAMENT_DETECTION_DEFAULT, screen_width_ui, screen_height_ui)
     advanced_armament_feedback_label.place(relx=relx, rely=rely, anchor="sw")
 
     replace_basic_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Arial", basic_armament_feedback_label_font_size))
     replace_basic_armament_feedback_label.pack()
-    relx, rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
+    relx, rely = get_ui_element_rel_positions(ARMAMENT_DETECTION_DEFAULT, screen_width_ui, screen_height_ui)
     relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
     replace_basic_armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
 
     replace_advanced_armament_feedback_label = Label(root, text="", fg="white", bg="black", font=("Consolas", advanced_armament_feedback_label_font_size))
     replace_advanced_armament_feedback_label.pack()
-    rely, _, relx, _ = get_detection_box(ARMAMENT_DETECTION_DEFAULT, screen_width, screen_height)
+    rely, _, relx, _ = get_detection_box(ARMAMENT_DETECTION_DEFAULT, screen_width_ui, screen_height_ui)
     relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
     replace_advanced_armament_feedback_label.place(relx=relx, rely=rely, anchor="sw")
 
@@ -705,7 +717,7 @@ if __name__ == "__main__":
     current_character_dropdown = OptionMenu(root, current_character_var, *CHARACTERS, command=on_character_selected)
     current_character_dropdown.config(bg="black", fg="white", font=("Arial", current_character_label_font_size), bd=0, highlightthickness=0)
     current_character_dropdown["menu"].config(bg="black", fg="white", font=("Arial", current_character_label_font_size))
-    relx, rely = get_ui_element_rel_positions("character_dropdown", screen_width, screen_height)
+    relx, rely = get_ui_element_rel_positions("character_dropdown", screen_width_ui, screen_height_ui)
     current_character_dropdown.place(relx=relx, rely=rely, anchor="ne")
 
     character_detection_thread = DetectionThread(detection_id=CHARACTER_DETECTION, function=detect_character, daemon=True)
