@@ -15,6 +15,31 @@ MATCH_RESULTS: list[int] = [
     PERFECT_MATCH := 2,
 ]
 
+BUTTON_TYPES = [
+    CONFIRM := "confirm",
+    CLOSE := "close",
+]
+CONTROL_TYPES = [
+    KEYBOARD := "kb",
+    GAMEPAD := "gp",
+]
+BUTTON_COORDINATES = {
+    "3840x2160": {
+        KEYBOARD: (1997, 1997 + 64, 97, 97 + 64),
+        GAMEPAD: (2001, 2001 + 56, 101, 101 + 56),
+    },
+    "2560x1440": {
+        KEYBOARD: (1331, 1331 + 43, 65, 65 + 42),
+        GAMEPAD: (1334, 1334 + 37, 68, 68 + 36),
+    },
+    "1920x1080": {
+        KEYBOARD: (999, 999 + 31, 49, 49 + 31),
+        GAMEPAD: (1001, 1001 + 27, 51, 51 + 27),
+    },
+}
+CONFIRM_CONTROLLER_FILENAME = "confirm_controller.png"
+CONFIRM_KEYBOARD_FILENAME = "confirm_keyboard.png"
+
 UI_IDENTIFIERS = [
     ARMAMENT_DETECTION_DEFAULT := "armament_detection_default",
     ARMAMENT_DETECTION_DEFAULT_REPLACE := "armament_detection_default_replace",
@@ -130,50 +155,6 @@ DETECTION_BOXES = {
 }
 
 
-def get_detection_box(identifier: str, screen_width: int, screen_height: int) -> tuple[int, int, int, int]:
-    """
-    Returns the detection box coordinates based on the box name and screen resolution.
-    :param identifier: Identifier for the detection box.
-    :param screen_width: Width of the screen.
-    :param screen_height: Height of the screen.
-    :return: Tuple containing (top, bottom, left, right) coordinates of the detection box.
-    """
-
-    if identifier not in DETECTION_BOXES:
-        raise ValueError(f"Invalid detection box name: {identifier}")
-
-    # Check if the screen resolution is more wide than 16:9 or more tall than 16:9
-    if (screen_width / screen_height) > (16 / 9):  # Wider than 16:9
-        # Find width occupied by black bars
-        black_bars_height = 0
-        black_bars_width = screen_width - (screen_height * 16 / 9)
-    elif (screen_width / screen_height) < (16 / 9):  # Taller than 16:9
-        # Find height occupied by black bars
-        black_bars_height = screen_height - (screen_width * 9 / 16)
-        black_bars_width = 0
-    else:  # Exactly 16:9
-        black_bars_height = 0
-        black_bars_width = 0
-    coordinates: tuple[float, float, float, float] = DETECTION_BOXES[identifier]
-    top: int = int(((screen_height - black_bars_height) * coordinates[0]) + black_bars_height / 2)
-    bottom: int = int(((screen_height - black_bars_height) * coordinates[1]) + black_bars_height / 2)
-    left: int = int(((screen_width - black_bars_width) * coordinates[2]) + black_bars_width / 2)
-    right: int = int(((screen_width - black_bars_width) * coordinates[3]) + black_bars_width / 2)
-    return top, bottom, left, right
-
-
-def get_detection_box_rel(identifier: str, screen_width: int, screen_height: int) -> tuple[float, float, float, float]:
-    """
-    Returns the detection box coordinates in relative format based on the box name and screen resolution.
-    :param identifier: Identifier for the detection box.
-    :param screen_width: Width of the screen.
-    :param screen_height: Height of the screen.
-    :return: Tuple containing (top, bottom, left, right) coordinates of the detection box in relative format.
-    """
-    top, bottom, left, right = get_detection_box(identifier, screen_width, screen_height)
-    return top / screen_height, bottom / screen_height, left / screen_width, right / screen_width
-
-
 UI_ELEMENT_POSITIONS = {
     # (x, y) in relative coordinates
     ARMAMENT_DETECTION_DEFAULT: (0.314, 0.2444),
@@ -181,36 +162,6 @@ UI_ELEMENT_POSITIONS = {
     ARMAMENT_DETECTION_SHOP: (0.334, 0.22),
     CHARACTER_DROPDOWN: (0.085, 0.0944),
 }
-
-
-def get_ui_element_rel_positions(identifier: str, screen_width: int, screen_height: int) -> tuple[float, float]:
-    """
-    Returns the coordinates of a UI element based on its identifier and screen resolution.
-    :param identifier: Identifier for the UI element.
-    :param screen_width: Width of the screen.
-    :param screen_height: Height of the screen.
-    :return: Tuple containing (x, y) coordinates of the UI element.
-    """
-
-    if identifier not in UI_ELEMENT_POSITIONS:
-        raise ValueError(f"Invalid item feedback identifier: {identifier}")
-
-    # Check if the screen resolution is more wide than 16:9 or more tall than 16:9
-    if (screen_width / screen_height) > (16 / 9):  # Wider than 16:9
-        # Find width occupied by black bars
-        black_bars_height = 0
-        black_bars_width = screen_width - (screen_height * 16 / 9)
-    elif (screen_width / screen_height) < (16 / 9):  # Taller than 16:9
-        # Find height occupied by black bars
-        black_bars_height = screen_height - (screen_width * 9 / 16)
-        black_bars_width = 0
-    else:  # Exactly 16:9
-        black_bars_height = 0
-        black_bars_width = 0
-    coordinates: tuple[float, float] = UI_ELEMENT_POSITIONS[identifier]
-    x: float = (((screen_width - black_bars_width) * coordinates[0]) + black_bars_width / 2) / screen_width
-    y: float = (((screen_height - black_bars_height) * coordinates[1]) + black_bars_height / 2) / screen_height
-    return x, y
 
 
 # Button Colors
