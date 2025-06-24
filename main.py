@@ -473,13 +473,13 @@ def find_button(img: Image.Image, button_type: str, control_type: str, mask: boo
     if mask:
         try:
             mask_path = path.join(RESOURCES_PATH, "buttons", resolution, f"{control_type}_mask.png")
-            mask_np = array(image_cache.get_image(mask_path).convert("L"))
+            mask_np = array(image_cache.get_image(mask_path))
             comp_img = bitwise_and(comp_img, mask_np)
-        except FileNotFoundError:
+        except FileNotFoundError|AssertionError:
             pass
 
     ref_img_path = path.join(RESOURCES_PATH, "buttons", resolution, f"{button_type}_{control_type}.png")
-    ref_img = array(image_cache.get_image(ref_img_path).convert("L"))
+    ref_img = array(image_cache.get_image(ref_img_path))
 
     return not are_images_different(ref_img, comp_img, 12)
 

@@ -82,7 +82,8 @@ class ImageCache:
         if image_path not in self.cache:
             if not path.exists(image_path):
                 raise FileNotFoundError(f"Image not found: {image_path}")
-            self.cache[image_path] = Image.open(image_path)
+            with open(image_path, mode="rb") as file:
+                self.cache[image_path] = Image.open(file).convert("L")
         return self.cache[image_path]
 
 

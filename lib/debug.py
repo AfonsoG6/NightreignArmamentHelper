@@ -3,7 +3,7 @@ from numpy import ndarray
 from cv2 import imwrite
 from os import path, makedirs
 from datetime import datetime
-from lib.constants import *
+from lib.misc import *
 
 
 class DebugWindow:
@@ -37,7 +37,7 @@ class DebugWindow:
             return
         if detection_id in self.rectangles and self.rectangles[detection_id]:
             self.debug_canvas.delete(self.rectangles[detection_id])
-        top, bottom, left, right = get_detection_box(detection_id, self.screen_width, self.screen_height)
+        top, bottom, left, right = get_detection_box_coordinates(detection_id, self.screen_width, self.screen_height)
         self.rectangles[detection_id] = self.debug_canvas.create_rectangle(left, top, right, bottom, outline=self.colors[detection_id], width=2)
 
     def hide_rectangle(self, detection_id: str) -> None:
