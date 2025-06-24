@@ -290,7 +290,14 @@ def get_button_coordinates(width: int, height: int, control_type: str) -> tuple[
             if width == w:
                 coordinates = BUTTON_COORDINATES[res][control_type]
                 return (coordinates[0], coordinates[1], coordinates[2] + int(black_bars_height / 2), coordinates[3] + int(black_bars_height / 2))
-    raise ValueError("Invalid screen resolution or control type provided.")
+    coordinates_4k = BUTTON_COORDINATES["3840x2160"][control_type]
+    coordinates_rel = (coordinates_4k[0] / 2160, coordinates_4k[1] / 2160, coordinates_4k[2] / 3840, coordinates_4k[3] / 3840)
+    return (
+        int(((height - black_bars_height) * coordinates_rel[0]) + black_bars_height / 2),
+        int(((height - black_bars_height) * coordinates_rel[1]) + black_bars_height / 2),
+        int(((width - black_bars_width) * coordinates_rel[2]) + black_bars_width / 2),
+        int(((width - black_bars_width) * coordinates_rel[3]) + black_bars_width / 2),
+    )
 
 
 def get_detection_box_coordinates(identifier: str, screen_width: int, screen_height: int) -> tuple[int, int, int, int]:
