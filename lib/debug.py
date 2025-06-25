@@ -95,3 +95,8 @@ class DebugWindow:
         if not self.debug:
             return
         print(f"Debug: Thread '{thread_name}' has stopped.")
+
+    def found_button(self, button_type, control_type, width, height) -> None:
+        if not self.debug:
+            return
+        print(f"Debug: Found button of type '{button_type}' with control type '{control_type}', width {width}, height {height}")

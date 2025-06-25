@@ -71,6 +71,8 @@ def are_images_different(previous_img: ndarray | None, current_img: ndarray, cut
     hash1: ImageHash = average_hash(pil_previous_img)
 
     hashDiff = hash0 - hash1  # Finds the distance between the hashes of images
+    if cutoff == 11:
+        print(f"Hash difference: {hashDiff}")
     return hashDiff >= cutoff
 
 

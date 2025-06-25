@@ -1,5 +1,5 @@
 PROGRAM_NAME = "Nightreign Armament Helper"
-VERSION = "2.1.0"
+VERSION = "2.1.1"
 SHOP_TITLE = "SHOP"
 BOSS_DROP_TITLE = "DORMANT POWER"
 
@@ -19,26 +19,35 @@ BUTTON_TYPES = [
     CONFIRM := "confirm",
     CLOSE := "close",
 ]
-CONTROL_TYPES = [
-    KEYBOARD := "kb",
-    GAMEPAD := "gp",
+BUTTON_GEOMETRY_TYPES = [
+    KEYBOARD_BUTTON_GEOMETRY := "kb",
+    GAMEPAD_BUTTON_GEOMETRY := "gp",
 ]
+CONTROLLER_TYPES_BY_BUTTON_GEOMETRY = {
+    KEYBOARD_BUTTON_GEOMETRY : [
+        KEYBOARD := "kb",
+    ],
+    GAMEPAD_BUTTON_GEOMETRY : [
+        GENERIC_GAMEPAD := "gp",
+        DUALSHOCK4 := "ds4",
+        DUALSENSE := "ds5",
+    ]
+}
+
 BUTTON_COORDINATES = {
     "3840x2160": {
-        KEYBOARD: (1997, 1997 + 64, 97, 97 + 64),
-        GAMEPAD: (2001, 2001 + 56, 101, 101 + 56),
+        KEYBOARD_BUTTON_GEOMETRY: (1997, 1997 + 64, 97, 97 + 64),
+        GAMEPAD_BUTTON_GEOMETRY: (2001, 2001 + 56, 101, 101 + 56),
     },
     "2560x1440": {
-        KEYBOARD: (1331, 1331 + 43, 65, 65 + 42),
-        GAMEPAD: (1334, 1334 + 37, 68, 68 + 36),
+        KEYBOARD_BUTTON_GEOMETRY: (1331, 1331 + 43, 65, 65 + 42),
+        GAMEPAD_BUTTON_GEOMETRY: (1334, 1334 + 37, 68, 68 + 36),
     },
     "1920x1080": {
-        KEYBOARD: (999, 999 + 31, 49, 49 + 31),
-        GAMEPAD: (1001, 1001 + 27, 51, 51 + 27),
+        KEYBOARD_BUTTON_GEOMETRY: (999, 999 + 31, 49, 49 + 31),
+        GAMEPAD_BUTTON_GEOMETRY: (1001, 1001 + 27, 51, 51 + 27),
     },
 }
-CONFIRM_CONTROLLER_FILENAME = "confirm_controller.png"
-CONFIRM_KEYBOARD_FILENAME = "confirm_keyboard.png"
 
 UI_IDENTIFIERS = [
     ARMAMENT_DETECTION_DEFAULT := "armament_detection_default",

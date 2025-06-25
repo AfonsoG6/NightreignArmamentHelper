@@ -461,39 +461,43 @@ def create_control_window() -> Toplevel:
 
 
 # Separate check_confirm_button into two functions to improve readability and maintainability.
-def find_button(img: Image.Image, button_type: str, control_type: str, mask: bool = False) -> bool:
+def find_button(img: Image.Image) -> bool:
     resolution = f"{img.width}x{img.height}"
-
     img_np = array(img)
     gray = cvtColor(img_np, COLOR_BGR2GRAY)
-    top, bottom, left, right = get_button_coordinates(img.width, img.height, control_type)
-    comp_img = gray[top:bottom, left:right]
 
-    ref_img_path = path.join(RESOURCES_PATH, "buttons", resolution, f"{button_type}_{control_type}.png")
-    if path.exists(ref_img_path):
-        ref_img = array(image_cache.get_image(ref_img_path))
-    else:
-        # Default to 4K resolution and rescale.
-        ref_img_path = path.join(RESOURCES_PATH, "buttons", "3840x2160", f"{button_type}_{control_type}.png")
-        ref_img = array(image_cache.get_image(ref_img_path))
-        ref_img = resize(ref_img, (comp_img.shape[1], comp_img.shape[0]), interpolation=INTER_AREA)
-
-    if mask:
-        try:
-            mask_path = path.join(RESOURCES_PATH, "buttons", resolution, f"{control_type}_mask.png")
+    for button_type in BUTTON_TYPES:
+        for geometry_type in BUTTON_GEOMETRY_TYPES:
+            top, bottom, left, right = get_button_coordinates(img.width, img.height, geometry_type)
+            comp_img_np = gray[top:bottom, left:right]
+            dimensions = (comp_img_np.shape[1], comp_img_np.shape[0])
+            mask_path = path.join(RESOURCES_PATH, "buttons", resolution, f"{geometry_type}_mask.png")
             if path.exists(mask_path):
                 mask_np = array(image_cache.get_image(mask_path))
             else:
                 # Default to 4K resolution and rescale.
-                mask_path = path.join(RESOURCES_PATH, "buttons", "3840x2160", f"{control_type}_mask.png")
+                mask_path = path.join(RESOURCES_PATH, "buttons", "3840x2160", f"{geometry_type}_mask.png")
                 mask_np = array(image_cache.get_image(mask_path))
-                mask_np = resize(mask_np, (comp_img.shape[1], comp_img.shape[0]), interpolation=INTER_AREA)
-            comp_img = bitwise_and(comp_img, mask_np)
-            ref_img = bitwise_and(ref_img, mask_np)
-        except FileNotFoundError|AssertionError:
-            pass
+                mask_np = resize(mask_np, dimensions, interpolation=INTER_AREA)
 
-    return not are_images_different(ref_img, comp_img, 12)
+            for controller_type in CONTROLLER_TYPES_BY_BUTTON_GEOMETRY[geometry_type]:
+                ref_img_path = path.join(RESOURCES_PATH, "buttons", resolution, f"{button_type}_{controller_type}.png")
+                if path.exists(ref_img_path):
+                    ref_img_np = array(image_cache.get_image(ref_img_path))
+                else:
+                    # Default to 4K resolution and rescale.
+                    ref_img_path = path.join(RESOURCES_PATH, "buttons", "3840x2160", f"{button_type}_{controller_type}.png")
+                    ref_img_np = array(image_cache.get_image(ref_img_path))
+                    ref_img_np = resize(ref_img_np, dimensions, interpolation=INTER_AREA)
+
+                comp_img_np = bitwise_and(comp_img_np, mask_np)
+                ref_img_np = bitwise_and(ref_img_np, mask_np)
+
+                found: bool = not are_images_different(ref_img_np, comp_img_np, 11)
+                if found:
+                    debug_window.found_button(button_type, geometry_type, img.width, img.height)
+                    return True
+    return False
 
 
 def get_screen_grab() -> Image.Image:
@@ -537,12 +541,7 @@ def get_cropped_area(box_identifier: str) -> ndarray | None:
     global button_detection_required
     img = get_screen_grab()
     try:
-        button_detected: bool = (
-            find_button(img, CONFIRM, KEYBOARD)
-            or find_button(img, CONFIRM, GAMEPAD, True)
-            or find_button(img, CLOSE, KEYBOARD)
-            or find_button(img, CLOSE, GAMEPAD, True)
-        )
+        button_detected: bool = find_button(img)
         if button_detection_required and not button_detected:
             return None
         elif not button_detection_required and button_detected:
