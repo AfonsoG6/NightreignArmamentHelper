@@ -1,5 +1,5 @@
-from lib.constants import *
-from lib.armaments import *
+from os import path
+import json
 
 # Changed DEX from B to A for DUCHESS due to the real stats actually being 1 point apart.
 CHARACTER_SPECS: list[dict] = []

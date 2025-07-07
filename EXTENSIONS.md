@@ -25,12 +25,12 @@ Extensions are Python files placed in the `extensions` folder. The mod automatic
 ```py
 {
     "name": str,  # Name of the character
-    "level": int,  # Level of the character
-    "STR": int,  # Strength stat of the character
-    "DEX": int,  # Dexterity stat of the character
-    "INT": int,  # Intelligence stat of the character
-    "FAI": int,  # Faith stat of the character
-    "ARC": int,  # Arcane stat of the character
+    "weapon_types": list[str],  # List of weapon types the character prefers
+    "STR": str,  # Strength rating of the character (E/D/C/B/A/S)
+    "DEX": str,  # Dexterity rating of the character (E/D/C/B/A/S)
+    "INT": str,  # Intelligence rating of the character (E/D/C/B/A/S)
+    "FAI": str,  # Faith rating of the character (E/D/C/B/A/S)
+    "ARC": str,  # Arcane rating of the character (E/D/C/B/A/S)
 }
 ```
 
