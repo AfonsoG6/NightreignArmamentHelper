@@ -12,7 +12,7 @@ def load_all_character_specs(resources_path: str) -> None:
             CHARACTER_SPECS.append(
                 {
                     "name": character["name"],
-                    "weapon_types": character["weapon_types"],
+                    "armament_types": character["armament_types"],
                     "STR": character["STR"],
                     "DEX": character["DEX"],
                     "INT": character["INT"],

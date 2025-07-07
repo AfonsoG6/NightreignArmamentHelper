@@ -25,7 +25,7 @@ Extensions are Python files placed in the `extensions` folder. The mod automatic
 ```py
 {
     "name": str,  # Name of the character
-    "weapon_types": list[str],  # List of weapon types the character prefers
+    "armament_types": list[str],  # List of armament types the character prefers
     "STR": str,  # Strength rating of the character (E/D/C/B/A/S)
     "DEX": str,  # Dexterity rating of the character (E/D/C/B/A/S)
     "INT": str,  # Intelligence rating of the character (E/D/C/B/A/S)

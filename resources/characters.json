@@ -1,7 +1,7 @@
 [
     {
         "name": "WYLDER",
-        "weapon_types": [
+        "armament_types": [
             "Greatsword"
         ],
         "STR": "A",
@@ -12,7 +12,7 @@
     },
     {
         "name": "GUARDIAN",
-        "weapon_types": [
+        "armament_types": [
             "Halberd",
             "Greatshield"
         ],
@@ -24,7 +24,7 @@
     },
     {
         "name": "IRONEYE",
-        "weapon_types": [
+        "armament_types": [
             "Bow"
         ],
         "STR": "C",
@@ -35,7 +35,7 @@
     },
     {
         "name": "DUCHESS",
-        "weapon_types": [
+        "armament_types": [
             "Dagger"
         ],
         "STR": "D",
@@ -46,7 +46,7 @@
     },
     {
         "name": "RAIDER",
-        "weapon_types": [
+        "armament_types": [
             "Greataxe",
             "Great Hammer",
             "Colossal Weapon"
@@ -59,7 +59,7 @@
     },
     {
         "name": "REVENANT",
-        "weapon_types": [],
+        "armament_types": [],
         "STR": "C",
         "DEX": "C",
         "INT": "B",
@@ -68,7 +68,7 @@
     },
     {
         "name": "RECLUSE",
-        "weapon_types": [],
+        "armament_types": [],
         "STR": "D",
         "DEX": "C",
         "INT": "S",
@@ -77,7 +77,7 @@
     },
     {
         "name": "EXECUTOR",
-        "weapon_types": [
+        "armament_types": [
             "Katana"
         ],
         "STR": "C",

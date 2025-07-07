@@ -247,7 +247,7 @@ def get_basic_label_icons(character_spec: dict, grabbable_spec: dict) -> list[st
         score += armament_stat * character_stat
     average_score: float = score / (get_sum_two_best_stats(character_spec) * 32)
     final_score = round(average_score, 2)
-    if grabbable_spec["armament_type"] in character_spec["weapon_types"]:
+    if grabbable_spec["armament_type"] in character_spec["armament_types"]:
         icons.append(TYPE_MATCH_ICON)
     if final_score >= 0.3:
         icons.append(GREAT_MATCH_ICON)
