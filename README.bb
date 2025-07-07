@@ -9,7 +9,7 @@
 [/list]
 [center][img]https://staticdelivery.nexusmods.com/mods/7800/images/193/193-1750103193-1130109712.png[/img]     [img]https://staticdelivery.nexusmods.com/mods/7800/images/193/193-1750103194-1313378343.png[/img]     [img]https://staticdelivery.nexusmods.com/mods/7800/images/193/193-1750103196-1270148184.png[/img][/center]
 
-Additionally, as of version 1.1.0, the mod also provides an [b]Advanced Mode[/b] that in addition to the simple recommendation icons, also displays an armament's type and stats.
+Additionally, the mod also provides an [b]Advanced Mode[/b] that in addition to the simple recommendation icons, also displays an armament's type and stats.
 
 [center][img]https://staticdelivery.nexusmods.com/mods/7800/images/193/193-1750202311-158920342.png[/img][/center]
 
@@ -21,7 +21,7 @@ Additionally, as of version 1.1.0, the mod also provides an [b]Advanced Mode[/b]
 [*]The [b]advanced mode is recommended for experienced players[/b] who want to see more information about the armament they are using, such as its type and stats.
 [/list]
 
-As of version 2.0.0, the mod also implements an [b]eventual responsiveness[/b] method that learns, through analysis of perfect OCR matches, a set of reference points to detect the same text in the future without having to call the OCR again. These reference points are stored in the user's %LOCALAPPDATA% folder, persisting across game sessions.
+The mod also implements an [b]eventual responsiveness[/b] method that learns, through analysis of perfect OCR matches, a set of reference points to detect the same text in the future without having to call the OCR again. These reference points are stored in the user's %LOCALAPPDATA% folder, persisting across game sessions.
 
 [i]Note:[/i] If the resolution of the screen is changed, the mod will have to relearn all the reference points for the new resolution.
 
@@ -46,7 +46,7 @@ Furthermore, an additional window containing a control panel for the mod will ap
 [*]Fully stop the mod.
 [/list]
 
-[center][img]https://staticdelivery.nexusmods.com/mods/7800/images/193/193-1750202318-1003327327.png[/img][/center]
+[center][img]https://staticdelivery.nexusmods.com/mods/7800/images/193/193-1751929258-1187357238.png[/img][/center]
 
 [u][b]Common Questions[/b][/u]
 
@@ -60,6 +60,20 @@ It is also important to note that the mod defines the categories "great" and "de
 [b]Will I get banned for using this mod?[/b]  
 [color=#6aa84f][b]No[/b], you will not get banned for using this mod. The mod does not modify the game files in any way, and it does not interact with the game's memory. It simply reads the screen and displays information based on that.[/color]
 
+[u][b]Extensions[/b][/u]
+
+[color=#6aa84f][b]As of version 2.2.0, Nightreign Armament Helper supports extensions[/b][/color] to customize the information provided for each armament. Extensions allow you to define custom logic for displaying icons or text based on the detected armament/item/talisman and character, in order to better suit your preferences. The following is an [b]example[/b] of what an extension can do:
+
+[center][img]https://staticdelivery.nexusmods.com/mods/7800/images/193/193-1751930715-1649096796.png[/img][/center]
+
+Unfortunately, you will have to be somewhat familiar with programming to create extensions, as they must be written in Python. However, I urge anyone to try creating their own extension, as it may be easier than you think!
+
+[b]How Extensions Work[/b]
+
+Extensions are Python files placed in the [i]extensions[/i] folder. The mod automatically loads these files and checks for specific functions that match predefined specifications. If your extension implements these functions correctly, they will be used by the mod.
+
+The necessary documentation to implement an extension can be found [url=https://github.com/AfonsoG6/NightreignArmamentHelper/blob/main/EXTENSIONS.md]here[/url]. Please read it carefully before attempting to create your own extension.
+
 [u][b]Limitations[/b][/u]
 
 [list=1]
@@ -67,7 +81,7 @@ It is also important to note that the mod defines the categories "great" and "de
 [*][b]Ground items[/b]: Items found in the ground show their details in varying locations, making it difficult to detect them in a both efficient and accurate way. Therefore, the mod [color=#cc4125][b]DOES NOT SUPPORT THE DETECTION OF ITEMS FOUND ON THE GROUND[/b][/color]. To circumvent this, you can simply pick up the item and then open the inventory to view its details.
 [*][b]Language[/b]: The mod is designed to work with the [b][color=#cc4125]ENGLISH [/color][/b]version of Elden Ring: Nightreign. It may not work correctly with other languages, as the OCR is trained on English text.
 [*][b]Responsiveness[/b]: The mod is designed to be as efficient and responsive as possible, using multiple methods to avoid unnecessary OCR calls. However, it may sometimes take half a second to detect the armament and show the corresponding icons. This is due to the nature of OCR and the fact that it needs to analyze the screen in real-time.
-[*][b]Accuracy[/b]: The mod uses OCR to detect text on the screen, which is not always 100% accurate. This means that it may sometimes fail to detect the armament or the character correctly. To mitigate this, we use the [i]Jaccard[/i] similarity algorithm to account for small innacuracies in the OCR results. During our testing, we found that the mod seems to always be able to detect the armament and character correctly, but there may be some edge cases where this fails.
+[*][b]Accuracy[/b]: The mod uses OCR to detect text on the screen, which is not always 100% accurate. This means that it may sometimes fail to detect the armament or the character correctly. To mitigate this, we use the [i]Jaccard[/i] similarity algorithm to account for small inaccuracies in the OCR results. During our testing, we found that the mod seems to always be able to detect the armament and character correctly, but there may be some edge cases where this fails.
 [/list]
 
 [u][b]Acknowledgements[/b][/u]

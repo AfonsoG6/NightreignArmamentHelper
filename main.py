@@ -11,6 +11,7 @@ from datetime import datetime
 from PIL import ImageGrab
 from pytesseract import pytesseract
 from cv2 import cvtColor, threshold, bitwise_and, resize, COLOR_BGR2GRAY, THRESH_BINARY_INV, INTER_AREA
+from inspect import getfullargspec
 from os import getenv
 import json
 import sys
@@ -35,8 +36,10 @@ PIXEL_SETS_PATH: str = path.join(PROGRAM_DATA_PATH, "pixel_sets")
 DEBUG_PATH: str = path.join(PROGRAM_DATA_PATH, "debug")
 RESOURCES_PATH: str = path.join(BASE_PATH, "resources")
 
+EXTENSIONS_PATH: str = path.join(PROGRAM_DATA_PATH, "extensions")
 CONFIG_PATH: str = path.join(PROGRAM_DATA_PATH, "config.json")
 ERROR_LOG_PATH: str = path.join(PROGRAM_DATA_PATH, f"error_log_{PROGRAM_START_TIME}.txt")
+
 TESSERACT_PATH: str = path.join(RESOURCES_PATH, "Tesseract-OCR", "tesseract.exe")
 ICON_PATH: str = path.join(RESOURCES_PATH, "icon.png")
 
@@ -44,7 +47,7 @@ pytesseract.tesseract_cmd = TESSERACT_PATH
 
 DEBUG: bool = False
 if __name__ == "__main__":
-    parser = ArgumentParser(description="Run the Elden Ring Armament Detection Tool.")
+    parser = ArgumentParser(description="Run Nightreign Armament Helper Overlay.")
     parser.add_argument("-d", "--debug", action="store_true", help="Enable debug mode.")
     args = parser.parse_args()
     DEBUG = args.debug
@@ -116,6 +119,8 @@ screengrab_lock: Lock = Lock()
 pixelset_cache: PixelSetCache
 button_detection_required: bool = False
 image_cache: ImageCache = ImageCache()
+
+loaded_extensions: dict[str, list[str]]
 
 # ---------------------- Functions -----------------------------#
 
@@ -190,29 +195,103 @@ def quit_app() -> None:
     replace_armament_detection_thread.stop()
 
 
-def update_basic_armament_feedback_label(character_spec: CharacterSpec, armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
-    global basic_armament_feedback_label
+def get_current_character_spec() -> dict | None:
+    global current_character_name, current_character_name_lock
+    with current_character_name_lock:
+        character_name = current_character_name
+    if character_name == NO_CHARACTER or character_name == "":
+        return None
+    for character_spec in CHARACTER_SPECS:
+        if character_spec["name"] == character_name:
+            return character_spec
+    return None
+
+
+def get_basic_label_icons(character_spec: dict, grabbable_spec: dict) -> list[str]:
+    global loaded_extensions
     icons: list[str] = []
-    if armament_spec in character_spec.great_matches:
-        icons.append(GREAT_MATCH_TEXT)
-    elif armament_spec in character_spec.decent_matches:
-        icons.append(DECENT_MATCH_TEXT)
-    if armament_spec in character_spec.type_matches:
-        icons.append(TYPE_MATCH_TEXT)
+    if "get_basic_label_icons" in loaded_extensions:
+        for module_name in loaded_extensions["get_basic_label_icons"]:
+            module = sys.modules.get(module_name)
+            if module and hasattr(module, "get_basic_label_icons"):
+                result = module.get_basic_label_icons(character_spec, grabbable_spec)
+                if isinstance(result, list):
+                    icons.extend(result)
+        return icons
+    
+    if grabbable_spec["type"] != "armament":
+        return []
+
+    def get_stat_value(rating: str) -> int:
+        ratings = {
+            "S": 32,
+            "A": 16,
+            "B": 8,
+            "C": 4,
+            "D": 2,
+            "E": 1,
+        }
+        return ratings.get(rating, 0)
+
+    def get_sum_two_best_stats(character_spec: dict) -> int:
+        stats = [character_spec["STR"], character_spec["DEX"], character_spec["INT"], character_spec["FAI"], character_spec["ARC"]]
+        stat_values = [get_stat_value(stat) for stat in stats]
+        stat_values.sort(reverse=True)
+        return stat_values[0] + stat_values[1]
+
+    score: int = 0
+    stats: list[str] = ["STR", "DEX", "INT", "FAI", "ARC"]
+    for stat in stats:
+        armament_stat: int = get_stat_value(convert_stat_to_rating(stat, grabbable_spec.get(stat, 0)))
+        character_stat: int = get_stat_value(character_spec[stat])
+        score += armament_stat * character_stat
+    average_score: float = score / (get_sum_two_best_stats(character_spec) * 32)
+    final_score = round(average_score, 2)
+    if grabbable_spec["armament_type"] in character_spec["weapon_types"]:
+        icons.append(TYPE_MATCH_ICON)
+    if final_score >= 0.3:
+        icons.append(GREAT_MATCH_ICON)
+    elif final_score > 0.1:
+        icons.append(DECENT_MATCH_ICON)
+    return icons
+
+
+def get_advanced_label_text(character_spec: dict, grabbable_spec: dict) -> str:
+    global loaded_extensions
+    text = ""
+    if "get_advanced_label_text" in loaded_extensions:
+        for module_name in loaded_extensions["get_advanced_label_text"]:
+            module = sys.modules.get(module_name)
+            if module and hasattr(module, "get_advanced_label_text"):
+                result = module.get_advanced_label_text(character_spec, grabbable_spec)
+                if isinstance(result, str):
+                    text += result
+        return text
+    
+    if grabbable_spec["type"] == "armament":
+        STR: str = convert_stat_to_rating("STR", grabbable_spec.get("STR", 0))
+        DEX: str = convert_stat_to_rating("DEX", grabbable_spec.get("DEX", 0))
+        INT: str = convert_stat_to_rating("INT", grabbable_spec.get("INT", 0))
+        FAI: str = convert_stat_to_rating("FAI", grabbable_spec.get("FAI", 0))
+        ARC: str = convert_stat_to_rating("ARC", grabbable_spec.get("ARC", 0))
+        text = f"[{STR}|{DEX}|{INT}|{FAI}|{ARC}]"
+    else:
+        text = ""
+    return text
+
+
+def update_basic_armament_feedback_label(character_spec: dict, grabbable_spec: dict, relx: float, rely: float) -> None:
+    global basic_armament_feedback_label
+    icons: list[str] = get_basic_label_icons(character_spec, grabbable_spec)
     text = "\n".join(icons) if len(icons) > 0 else ""
 
     basic_armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
     basic_armament_feedback_label.config(text=text)
 
 
-def update_advanced_armament_feedback_label(armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
+def update_advanced_armament_feedback_label(character_spec: dict, grabbable_spec: dict, relx: float, rely: float) -> None:
     global advanced_armament_feedback_label, advanced_mode_enabled, advanced_mode_enabled_lock
-    STR: str = armament_spec.get_stat_rating_text("STR")
-    DEX: str = armament_spec.get_stat_rating_text("DEX")
-    INT: str = armament_spec.get_stat_rating_text("INT")
-    FAI: str = armament_spec.get_stat_rating_text("FAI")
-    ARC: str = armament_spec.get_stat_rating_text("ARC")
-    text = f"{armament_spec.type} [{STR}|{DEX}|{INT}|{FAI}|{ARC}]"
+    text = get_advanced_label_text(character_spec, grabbable_spec)
     with advanced_mode_enabled_lock:
         if advanced_mode_enabled:
             advanced_armament_feedback_label.config(text=text)
@@ -222,9 +301,9 @@ def update_advanced_armament_feedback_label(armament_spec: ArmamentSpec, relx: f
             advanced_armament_feedback_label.place_forget()
 
 
-def update_armament_feedback_labels(character_spec: CharacterSpec | None = None, armament_spec: ArmamentSpec | None = None) -> None:
+def update_armament_feedback_labels(character_spec: dict | None = None, grabbable_spec: dict | None = None) -> None:
     global basic_armament_feedback_label, advanced_armament_feedback_label, screen_width_ui, screen_height_ui, current_menu_state, current_menu_state_lock
-    if character_spec is None or armament_spec is None:
+    if character_spec is None or grabbable_spec is None:
         basic_armament_feedback_label.config(text="")
         basic_armament_feedback_label.place_forget()
         advanced_armament_feedback_label.config(text="")
@@ -241,41 +320,30 @@ def update_armament_feedback_labels(character_spec: CharacterSpec | None = None,
             basic_relx, basic_rely = get_ui_element_coordinates_rel(ARMAMENT_DETECTION_DEFAULT, screen_width_ui, screen_height_ui)
             advanced_rely, _, advanced_relx, _ = get_detection_box_coordinates_rel(ARMAMENT_DETECTION_DEFAULT, screen_width_ui, screen_height_ui)
 
-    update_basic_armament_feedback_label(character_spec, armament_spec, basic_relx, basic_rely)
-    update_advanced_armament_feedback_label(armament_spec, advanced_relx, advanced_rely)
+    update_basic_armament_feedback_label(character_spec, grabbable_spec, basic_relx, basic_rely)
+    update_advanced_armament_feedback_label(character_spec, grabbable_spec, advanced_relx, advanced_rely)
     root.update_idletasks()
 
 
-def update_armament_feedback_labels_general(detection_id: str, character_spec: CharacterSpec | None = None, armament_spec: ArmamentSpec | None = None) -> None:
+def update_armament_feedback_labels_general(detection_id: str, character_spec: dict | None = None, grabbable_spec: dict | None = None) -> None:
     if detection_id == ARMAMENT_DETECTION_DEFAULT:
-        update_armament_feedback_labels(character_spec, armament_spec)
+        update_armament_feedback_labels(character_spec, grabbable_spec)
     elif detection_id == ARMAMENT_DETECTION_DEFAULT_REPLACE:
-        update_replace_armament_feedback_labels(character_spec, armament_spec)
+        update_replace_armament_feedback_labels(character_spec, grabbable_spec)
 
 
-def update_replace_basic_armament_feedback_label(character_spec: CharacterSpec, armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
+def update_replace_basic_armament_feedback_label(character_spec: dict, grabbable_spec: dict, relx: float, rely: float) -> None:
     global replace_basic_armament_feedback_label
-    icons: list[str] = []
-    if armament_spec in character_spec.great_matches:
-        icons.append(GREAT_MATCH_TEXT)
-    elif armament_spec in character_spec.decent_matches:
-        icons.append(DECENT_MATCH_TEXT)
-    if armament_spec in character_spec.type_matches:
-        icons.append(TYPE_MATCH_TEXT)
+    icons: list[str] = get_basic_label_icons(character_spec, grabbable_spec)
     text = "\n".join(icons) if len(icons) > 0 else ""
 
     replace_basic_armament_feedback_label.place(relx=relx, rely=rely, anchor="nw")
     replace_basic_armament_feedback_label.config(text=text)
 
 
-def update_replace_advanced_armament_feedback_label(armament_spec: ArmamentSpec, relx: float, rely: float) -> None:
+def update_replace_advanced_armament_feedback_label(character_spec: dict, grabbable_spec: dict, relx: float, rely: float) -> None:
     global replace_advanced_armament_feedback_label, advanced_mode_enabled, advanced_mode_enabled_lock
-    STR: str = armament_spec.get_stat_rating_text("STR")
-    DEX: str = armament_spec.get_stat_rating_text("DEX")
-    INT: str = armament_spec.get_stat_rating_text("INT")
-    FAI: str = armament_spec.get_stat_rating_text("FAI")
-    ARC: str = armament_spec.get_stat_rating_text("ARC")
-    text = f"{armament_spec.type} [{STR}|{DEX}|{INT}|{FAI}|{ARC}]"
+    text = get_advanced_label_text(character_spec, grabbable_spec)
     with advanced_mode_enabled_lock:
         if advanced_mode_enabled:
             replace_advanced_armament_feedback_label.config(text=text)
@@ -285,9 +353,9 @@ def update_replace_advanced_armament_feedback_label(armament_spec: ArmamentSpec,
             replace_advanced_armament_feedback_label.place_forget()
 
 
-def update_replace_armament_feedback_labels(character_spec: CharacterSpec | None = None, armament_spec: ArmamentSpec | None = None) -> None:
+def update_replace_armament_feedback_labels(character_spec: dict | None = None, grabbable_spec: dict | None = None) -> None:
     global replace_basic_armament_feedback_label, replace_advanced_armament_feedback_label, screen_width_ui, screen_height_ui
-    if character_spec is None or armament_spec is None:
+    if character_spec is None or grabbable_spec is None:
         replace_basic_armament_feedback_label.config(text="")
         replace_basic_armament_feedback_label.place_forget()
         replace_advanced_armament_feedback_label.config(text="")
@@ -299,8 +367,8 @@ def update_replace_armament_feedback_labels(character_spec: CharacterSpec | None
     basic_relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
     advanced_relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
 
-    update_replace_basic_armament_feedback_label(character_spec, armament_spec, basic_relx, basic_rely)
-    update_replace_advanced_armament_feedback_label(armament_spec, advanced_relx, advanced_rely)
+    update_replace_basic_armament_feedback_label(character_spec, grabbable_spec, basic_relx, basic_rely)
+    update_replace_advanced_armament_feedback_label(character_spec, grabbable_spec, advanced_relx, advanced_rely)
     root.update_idletasks()
 
 
@@ -385,20 +453,20 @@ def toggle_enabled() -> None:
 def create_control_window() -> Toplevel:
     global enable_disable_button, character_detection_button, advanced_mode_button, screen_height_ui, screen_width_ui, control_window
     SIZE_X = 330
-    SIZE_Y = 140
-    BUTTON_PADDING = 2
+    SIZE_Y = 160
+    if len(loaded_extensions) > 0:
+        SIZE_Y += 40
     control_window = Toplevel()
     control_window.title(PROGRAM_NAME)
     padding_x = int(screen_width_ui * 0.05)
     padding_y = int(screen_height_ui * 0.15)
     control_window.geometry(f"{SIZE_X}x{SIZE_Y}+{screen_width_ui - SIZE_X - padding_x}+{screen_height_ui - SIZE_Y - padding_y}")
-    control_window.resizable(False, False)
     icon_image = PhotoImage(file=ICON_PATH)
     control_window.iconphoto(True, icon_image)
     control_window.protocol("WM_DELETE_WINDOW", quit_app)
 
     top_button_frame = Frame(control_window)
-    top_button_frame.pack(pady=BUTTON_PADDING)
+    top_button_frame.pack(pady=2, padx=5, fill="x")
 
     button_style = {
         "font": ("Arial", 12, "bold"),
@@ -406,7 +474,6 @@ def create_control_window() -> Toplevel:
         "activeforeground": "white",
         "relief": RAISED,
         "bd": 3,
-        "width": 10,
         "height": 1,
     }
 
@@ -418,15 +485,13 @@ def create_control_window() -> Toplevel:
         activebackground=BUTTON_ENABLED_ACTIVE_COLOR if enabled else BUTTON_DISABLED_COLOR,
         **button_style,
     )
-    enable_disable_button.pack(side=LEFT, padx=BUTTON_PADDING)
+    enable_disable_button.pack(side=LEFT, fill="x", expand=True, padx=(0, 2))
 
     quit_button = Button(top_button_frame, text="Quit", command=quit_app, bg=BUTTON_QUIT_COLOR, activebackground=BUTTON_QUIT_ACTIVE_COLOR, **button_style)
-    quit_button.pack(side=LEFT, padx=BUTTON_PADDING)
+    quit_button.pack(side=LEFT, fill="x", expand=True, padx=(2, 0))
 
     bottom_button_frame = Frame(control_window)
-    bottom_button_frame.pack()
-
-    button_style["width"] = 22
+    bottom_button_frame.pack(pady=2, padx=5, fill="x")
 
     character_detection_button = Button(
         bottom_button_frame,
@@ -436,7 +501,7 @@ def create_control_window() -> Toplevel:
         activebackground=BUTTON_ENABLED_ACTIVE_COLOR if character_detection_enabled else BUTTON_DISABLED_COLOR,
         **button_style,
     )
-    character_detection_button.pack(side=TOP, pady=BUTTON_PADDING)
+    character_detection_button.pack(side=TOP, fill="x", expand=True, pady=2)
 
     advanced_mode_button = Button(
         bottom_button_frame,
@@ -446,7 +511,24 @@ def create_control_window() -> Toplevel:
         activebackground=BUTTON_ENABLED_ACTIVE_COLOR if advanced_mode_enabled else BUTTON_DISABLED_ACTIVE_COLOR,
         **button_style,
     )
-    advanced_mode_button.pack(side=TOP, pady=BUTTON_PADDING)
+    advanced_mode_button.pack(side=TOP, fill="x", expand=True, pady=2)
+    
+    extensions_text = "No extensions loaded."
+    if len(loaded_extensions) > 0:
+        extensions_text = "Loaded Extensions:\n"
+        for extension_name, module_names in loaded_extensions.items():
+            module_names_py = [f"{module_name}.py" for module_name in module_names]
+            extensions_text += f"- {extension_name} ({', '.join(module_names_py)})\n"
+    extensions_label = Label(
+        control_window,
+        text=extensions_text,
+        font=("Consolas", 8),
+        fg="white",
+        bg="black",
+        justify="left",
+        anchor="nw",
+    )
+    extensions_label.pack(side=TOP, fill="both", expand=True, padx=5, pady=5)
 
     version_label = Label(
         control_window,
@@ -455,7 +537,7 @@ def create_control_window() -> Toplevel:
         fg="gray",
         anchor="sw",
     )
-    version_label.place(relx=0.01, rely=1, anchor="sw")
+    version_label.place(relx=0.99, rely=1, anchor="se")
 
     return control_window
 
@@ -471,31 +553,21 @@ def find_button(img: Image.Image) -> bool:
             top, bottom, left, right = get_button_coordinates(img.width, img.height, geometry_type)
             comp_img_np = gray[top:bottom, left:right]
             dimensions = (comp_img_np.shape[1], comp_img_np.shape[0])
-            mask_path = path.join(RESOURCES_PATH, "buttons", resolution, f"{geometry_type}_mask.png")
-            if path.exists(mask_path):
-                mask_np = array(image_cache.get_image(mask_path))
-            else:
-                # Default to 4K resolution and rescale.
-                mask_path = path.join(RESOURCES_PATH, "buttons", "3840x2160", f"{geometry_type}_mask.png")
-                mask_np = array(image_cache.get_image(mask_path))
-                mask_np = resize(mask_np, dimensions, interpolation=INTER_AREA)
+            mask_path = path.join(RESOURCES_PATH, "buttons", f"{geometry_type}_mask.png")
+            mask_np = array(IMAGE_CACHE.get_image(mask_path))
+            mask_np = resize(mask_np, dimensions, interpolation=INTER_AREA)
 
             for controller_type in CONTROLLER_TYPES_BY_BUTTON_GEOMETRY[geometry_type]:
-                ref_img_path = path.join(RESOURCES_PATH, "buttons", resolution, f"{button_type}_{controller_type}.png")
-                if path.exists(ref_img_path):
-                    ref_img_np = array(image_cache.get_image(ref_img_path))
-                else:
-                    # Default to 4K resolution and rescale.
-                    ref_img_path = path.join(RESOURCES_PATH, "buttons", "3840x2160", f"{button_type}_{controller_type}.png")
-                    ref_img_np = array(image_cache.get_image(ref_img_path))
-                    ref_img_np = resize(ref_img_np, dimensions, interpolation=INTER_AREA)
+                ref_img_path = path.join(RESOURCES_PATH, "buttons", f"{button_type}_{controller_type}.png")
+                ref_img_np = array(IMAGE_CACHE.get_image(ref_img_path))
+                ref_img_np = resize(ref_img_np, dimensions, interpolation=INTER_AREA)
 
                 comp_img_np = bitwise_and(comp_img_np, mask_np)
                 ref_img_np = bitwise_and(ref_img_np, mask_np)
 
                 found: bool = not are_images_different(ref_img_np, comp_img_np, 11)
                 if found:
-                    debug_window.found_button(button_type, geometry_type, img.width, img.height)
+                    DEBUG_WINDOW.found_button(button_type, geometry_type, img.width, img.height)
                     return True
     return False
 
@@ -561,7 +633,7 @@ def get_cropped_area(box_identifier: str) -> ndarray | None:
 
 
 def detect_text(detection_id: str) -> tuple[int, str]:
-    global previous_armament_img, previous_armament_name, last_armament_pixel_set, last_replace_armament_pixel_set, previous_replace_armament_img, previous_replace_armament_name, current_menu_state, current_menu_state_lock, pixelset_cache, screen_width_real, screen_height_real, previous_imgs_lock, previous_matches_lock, last_pixelsets_lock, previous_imgs, previous_matches, last_pixelsets, debug_window
+    global previous_armament_img, previous_armament_name, last_armament_pixel_set, last_replace_armament_pixel_set, previous_replace_armament_img, previous_replace_armament_name, current_menu_state, current_menu_state_lock, pixelset_cache, screen_width_real, screen_height_real, previous_imgs_lock, previous_matches_lock, last_pixelsets_lock, previous_imgs, previous_matches, last_pixelsets, DEBUG_WINDOW
 
     # Get a more specific detection ID if necessary, for example, due to the current menu state.
     eff_detection_id = get_eff_detection_id(detection_id)
@@ -583,7 +655,7 @@ def detect_text(detection_id: str) -> tuple[int, str]:
     pixel_set: PixelSet = PixelSet(pixelset_cache, cropped, screen_width_real, screen_height_real, eff_detection_id)
     pixel_set_match = pixel_set.find_match(eff_detection_id)
     if pixel_set_match != "":
-        debug_window.matched_pixelset(eff_detection_id, pixel_set_match)
+        DEBUG_WINDOW.matched_pixelset(eff_detection_id, pixel_set_match)
         with previous_imgs_lock, previous_matches_lock, last_pixelsets_lock:
             previous_imgs[eff_detection_id] = img_for_ocr
             previous_matches[eff_detection_id] = (TEXT_ORIGIN_PIXELSET, pixel_set_match)
@@ -599,10 +671,10 @@ def detect_text(detection_id: str) -> tuple[int, str]:
         return (TEXT_ORIGIN_NONE, "")
 
     # Last resource: OCR
-    debug_window.begin_ocr(eff_detection_id, img_for_ocr)
+    DEBUG_WINDOW.begin_ocr(eff_detection_id, img_for_ocr)
     text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
     text = text.strip()
-    debug_window.end_ocr(eff_detection_id, text)
+    DEBUG_WINDOW.end_ocr(eff_detection_id, text)
 
     # Save all the relevant data for the next detection.
     with previous_imgs_lock, previous_matches_lock, last_pixelsets_lock:
@@ -623,7 +695,7 @@ class DetectionThread(Thread):
         self.function = function
 
     def run(self) -> None:
-        debug_window.thread_started(self.detection_id)
+        DEBUG_WINDOW.thread_started(self.detection_id)
         while not self.is_stopped():
             t0 = time()
             try:
@@ -633,7 +705,7 @@ class DetectionThread(Thread):
             t1 = time()
             sleep_time = max(0, DETECTION_LOOP_PERIODS[self.detection_id] - (t1 - t0))
             sleep(sleep_time)
-        debug_window.thread_stopped(self.detection_id)
+        DEBUG_WINDOW.thread_stopped(self.detection_id)
 
     def stop(self) -> None:
         self._stop_event.set()
@@ -668,47 +740,43 @@ def detect_menu(detection_id: str) -> None:
     with current_menu_state_lock:
         if match == current_menu_state:
             return
-        debug_window.found_match(detection_id, text_origin, text, match_result, match)
+        DEBUG_WINDOW.found_match(detection_id, text_origin, text, match_result, match)
         current_menu_state = match
         if match != MENU_STATE_DEFAULT:  # Do not learn pixelset for the default menu state (which represents the absence of a menu)
             learn_pixelset(detection_id, text_origin, match_result, match, lambda x: x)
 
 
 def detect_character(detection_id: str) -> None:
-    global current_character_name, current_character_name_lock, character_detection_enabled, character_detection_enabled_lock, debug_window
+    global current_character_name, current_character_name_lock, character_detection_enabled, character_detection_enabled_lock, DEBUG_WINDOW
     with character_detection_enabled_lock:
         if not character_detection_enabled:
             return
     text_origin, text = detect_text(detection_id)
-    match_result, match = find_match(detection_id, text_origin, text, CHARACTER_SPECS.values(), lambda character_spec: character_spec.name)
+    match_result, match = find_match(detection_id, text_origin, text, CHARACTER_SPECS, lambda character_spec: character_spec["name"])
     if match_result == NO_MATCH:
         return
     with current_character_name_lock:
-        if match.name != current_character_name:
-            debug_window.found_match(detection_id, text_origin, text, match_result, match.name)
-            current_character_name = match.name
-            update_current_character_dropdown(match.name)
-            learn_pixelset(detection_id, text_origin, match_result, match, lambda x: x.name)
+        if match["name"] != current_character_name:
+            DEBUG_WINDOW.found_match(detection_id, text_origin, text, match_result, match["name"])
+            current_character_name = match["name"]
+            update_current_character_dropdown(match["name"])
+            learn_pixelset(detection_id, text_origin, match_result, match, lambda x: x["name"])
 
 
 def detect_armament(detection_id: str) -> None:
-    with current_character_name_lock:
-        character_spec: CharacterSpec | None = CHARACTER_SPECS.get(current_character_name, None)
+    character_spec: dict | None = get_current_character_spec()
     if character_spec is None:
         return
     text_origin, text = detect_text(detection_id)
-    match_result, match = find_match(detection_id, text_origin, text, GRABBABLE_SPECS, lambda armament_spec: armament_spec.name)
+    match_result, match_spec = find_match(detection_id, text_origin, text, GRABBABLE_SPECS, lambda grabbable_spec: grabbable_spec["name"])
     if match_result == NO_MATCH:
         update_armament_feedback_labels_general(detection_id)
         return
-    debug_window.found_match(detection_id, text_origin, text, match_result, match.name)
-    if isinstance(match, ArmamentSpec):
-        update_armament_feedback_labels_general(detection_id, character_spec, match)
-    else:
-        update_armament_feedback_labels_general(detection_id)
+    DEBUG_WINDOW.found_match(detection_id, text_origin, text, match_result, match_spec["name"])
+    update_armament_feedback_labels_general(detection_id, character_spec, match_spec)
     eff_detection_id = get_eff_detection_id(detection_id)
     if eff_detection_id is not None:
-        learn_pixelset(eff_detection_id, text_origin, match_result, match, lambda x: x.id)
+        learn_pixelset(eff_detection_id, text_origin, match_result, match_spec, lambda x: x["id"])
 
 
 # -------------------------- Main ------------------------------#
@@ -718,6 +786,7 @@ if __name__ == "__main__":
     load_configs()
     makedirs(PROGRAM_DATA_PATH, exist_ok=True)
     makedirs(PIXEL_SETS_PATH, exist_ok=True)
+    makedirs(EXTENSIONS_PATH, exist_ok=True)
     if DEBUG:
         makedirs(DEBUG_PATH, exist_ok=True)
 
@@ -735,7 +804,6 @@ if __name__ == "__main__":
     screen_width_real = img.width
     screen_height_real = img.height
     del img
-    print(f"Screen dimensions: UI {screen_width_ui}x{screen_height_ui}, Real {screen_width_real}x{screen_height_real}")
 
     root.geometry(f"{screen_width_ui}x{screen_height_ui}+0+0")
     root.config(bg="black")
@@ -779,10 +847,15 @@ if __name__ == "__main__":
     menu_detection_thread = DetectionThread(detection_id=MENU_DETECTION, function=detect_menu, daemon=True)
     armament_detection_thread = DetectionThread(detection_id=ARMAMENT_DETECTION_DEFAULT, function=detect_armament, daemon=True)
     replace_armament_detection_thread = DetectionThread(detection_id=ARMAMENT_DETECTION_DEFAULT_REPLACE, function=detect_armament, daemon=True)
-    debug_window = DebugWindow(root, DEBUG, DEBUG_PATH)
+    DEBUG_WINDOW = DebugWindow(root, DEBUG, DEBUG_PATH)
 
+    extensible_function_specs = {
+        "get_basic_label_icons" : getfullargspec(get_basic_label_icons),
+        "get_advanced_label_text" : getfullargspec(get_advanced_label_text)
+    }
+    loaded_extensions = load_extensions(EXTENSIONS_PATH, extensible_function_specs)
+    load_all_character_specs(RESOURCES_PATH)
     load_all_grabbable_specs(RESOURCES_PATH)
-    calculate_all_armaments()
     pixelset_cache = PixelSetCache(PIXEL_SETS_PATH, DEBUG)
     update_armament_feedback_labels()
     update_current_character_dropdown(current_character_name)
@@ -797,7 +870,7 @@ if __name__ == "__main__":
         menu_detection_thread.start()
         armament_detection_thread.start()
         replace_armament_detection_thread.start()
-        print("Ready! Grabbables loaded: ", len(GRABBABLE_SPECS))
+        print("Ready!")
         root.mainloop()
     except Exception as e:
         log_error(e, True)

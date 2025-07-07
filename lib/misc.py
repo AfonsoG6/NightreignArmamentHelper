@@ -1,13 +1,95 @@
 from imagehash import average_hash, ImageHash
 from textdistance import jaccard
-from numpy import ndarray
+from numpy import ndarray, where, array
 from PIL import Image
 from os import path, makedirs, listdir
-from cv2 import threshold, THRESH_BINARY
+from cv2 import threshold, matchTemplate, resize, THRESH_BINARY, TM_CCOEFF_NORMED, INTER_AREA
 from lib.constants import *
 from lib.armaments import *
 from re import sub
 from typing import Iterable, Any, Callable
+from math import ceil
+import importlib.util
+from inspect import getfullargspec
+import sys
+
+
+def load_extensions(extensions_path: str, extensible_function_specs: dict[str, Any]) -> dict[str, list[str]]:
+    # Load all functions from the specified extensions path that match the extensible function specs.
+    loaded_extensions: dict[str, list[str]] = {}
+    for filename in listdir(extensions_path):
+        if not filename.endswith(".py"):
+            continue
+        module_name = filename[:-3]
+        module_path = path.join(extensions_path, filename)
+        spec = importlib.util.spec_from_file_location(module_name, module_path)
+        if spec is None or spec.loader is None:
+            continue
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        sys.modules[module_name] = module
+        # Check if module contains functions that match the extensible function specs
+        for func_name, func_spec in extensible_function_specs.items():
+            if not hasattr(module, func_name):
+                continue
+            # If the function matches, mark the module as loaded for that function
+            func = getattr(module, func_name)
+            argspec = getfullargspec(func)
+            if argspec != func_spec:
+                continue
+            if func_name not in loaded_extensions:
+                loaded_extensions[func_name] = []
+            loaded_extensions[func_name].append(module_name)
+    return loaded_extensions
+
+
+def convert_stat_to_rating(stat_name: str, stat_value: int) -> str:
+    if stat_value == 0:
+        return "-"
+    if stat_name in ["STR", "DEX"]:
+        if stat_value < 15:
+            return "E"
+        elif stat_value < 30:
+            return "D"
+        elif stat_value < 45:
+            return "C"
+        elif stat_value < 60:
+            return "B"
+        elif stat_value < 75:
+            return "A"
+        else:
+            return "S"
+    elif stat_name in ["INT", "FAI"]:
+        if stat_value < 20:
+            return "E"
+        elif stat_value < 30:
+            return "D"
+        elif stat_value < 40:
+            return "C"
+        elif stat_value < 50:
+            return "B"
+        elif stat_value < 60:
+            return "A"
+        else:
+            return "S"
+    elif stat_name == "ARC":
+        if stat_value < 10:
+            return "E"
+        elif stat_value < 20:
+            return "D"
+        elif stat_value < 40:
+            return "C"
+        elif stat_value < 60:
+            return "B"
+        elif stat_value < 80:
+            return "A"
+        else:
+            return "S"
+    return "-"
+
+
+def load_extension_functions(extensions_path: str) -> None:
+    global EXTENSIBLE_FUNCTION_SPECS
 
 
 def text_matches(rough_text: str, target_text: str, detection_id: str) -> tuple[int, float]:
@@ -52,7 +134,6 @@ def find_match(detection_id: str, text_origin: int, text: str, search_space: Ite
                     if similarity > best_match_similarity:
                         best_match = item
                         best_match_similarity = similarity
-                        print(f"Found good match: {item_text} (similarity: {similarity})")
                 else:
                     return (match_result, item)
     if exhaustive and best_match is not None:
@@ -60,9 +141,9 @@ def find_match(detection_id: str, text_origin: int, text: str, search_space: Ite
     return (NO_MATCH, None)
 
 
-def are_images_different(previous_img: ndarray | None, current_img: ndarray, cutoff: int = 1) -> bool:
+def get_image_difference(previous_img: ndarray | None, current_img: ndarray) -> float:
     if previous_img is None:
-        return True  # If no previous image, consider it a change
+        return 1.0  # If no previous image, consider it a full change
 
     pil_current_img: Image.Image = Image.fromarray(current_img)
     pil_previous_img: Image.Image = Image.fromarray(previous_img)
@@ -70,23 +151,27 @@ def are_images_different(previous_img: ndarray | None, current_img: ndarray, cut
     hash0: ImageHash = average_hash(pil_current_img)
     hash1: ImageHash = average_hash(pil_previous_img)
 
-    hashDiff = hash0 - hash1  # Finds the distance between the hashes of images
-    if cutoff == 11:
-        print(f"Hash difference: {hashDiff}")
-    return hashDiff >= cutoff
+    return hash0 - hash1  # Returns the distance between the hashes of images
+
+
+def are_images_different(previous_img: ndarray | None, current_img: ndarray, cutoff: int = 1) -> bool:
+    return get_image_difference(previous_img, current_img) >= cutoff
 
 
 class ImageCache:
     def __init__(self):
         self.cache: dict[str, Image.Image] = {}
 
-    def get_image(self, image_path: str) -> Image.Image:
+    def get_image(self, image_path: str, mode: str = "L") -> Image.Image:
         if image_path not in self.cache:
             if not path.exists(image_path):
                 raise FileNotFoundError(f"Image not found: {image_path}")
             with open(image_path, mode="rb") as file:
-                self.cache[image_path] = Image.open(file).convert("L")
+                self.cache[image_path] = Image.open(file).convert(mode)
         return self.cache[image_path]
+
+
+IMAGE_CACHE: ImageCache = ImageCache()
 
 
 class PixelSetCache:
@@ -278,21 +363,7 @@ def get_button_coordinates(width: int, height: int, control_type: str) -> tuple[
         black_bars_height = 0
         black_bars_width = 0
 
-    if black_bars_height == 0 and black_bars_width == 0:
-        return BUTTON_COORDINATES[f"{width}x{height}"][control_type]
-    elif black_bars_height == 0:  # Wider than 16:9
-        for res in BUTTON_COORDINATES:
-            w, h = map(int, res.split("x"))
-            if height == h:
-                coordinates = BUTTON_COORDINATES[res][control_type]
-                return (coordinates[0] + int(black_bars_width / 2), coordinates[1] + int(black_bars_width / 2), coordinates[2], coordinates[3])
-    elif black_bars_width == 0:  # Taller than 16:9
-        for res in BUTTON_COORDINATES:
-            w, h = map(int, res.split("x"))
-            if width == w:
-                coordinates = BUTTON_COORDINATES[res][control_type]
-                return (coordinates[0], coordinates[1], coordinates[2] + int(black_bars_height / 2), coordinates[3] + int(black_bars_height / 2))
-    coordinates_4k = BUTTON_COORDINATES["3840x2160"][control_type]
+    coordinates_4k = BUTTON_COORDINATES_4K[control_type]
     coordinates_rel = (coordinates_4k[0] / 2160, coordinates_4k[1] / 2160, coordinates_4k[2] / 3840, coordinates_4k[3] / 3840)
     return (
         int(((height - black_bars_height) * coordinates_rel[0]) + black_bars_height / 2),
@@ -350,4 +421,37 @@ def get_ui_element_coordinates_rel(identifier: str, screen_width: int, screen_he
     coordinates: tuple[float, float] = UI_ELEMENT_POSITIONS[identifier]
     x: float = (((screen_width - black_bars_width) * coordinates[0]) + black_bars_width / 2) / screen_width
     y: float = (((screen_height - black_bars_height) * coordinates[1]) + black_bars_height / 2) / screen_height
+    return x, y
+
+
+def find_template_in_image(template_path: str, img: ndarray, screen_width: int, screen_height: int, threshold: float = 0.5) -> tuple[int, int] | None:
+    template_img = array(IMAGE_CACHE.get_image(template_path, mode="RGB"))
+    dimensions = convert_4k_template_dimensions_to_target_res(template_img.shape[1], template_img.shape[0], screen_width, screen_height)
+    template_img = resize(template_img, dimensions, interpolation=INTER_AREA)
+    res = matchTemplate(img, template_img, TM_CCOEFF_NORMED)
+    pos = where(res >= threshold)
+    if pos[0].size > 0:
+        return (pos[1][0], pos[0][0])
+    return None
+
+
+def convert_4k_template_dimensions_to_target_res(template_x: int, template_y: int, screen_width: int, screen_height: int) -> tuple[int, int]:
+    # Check if the screen resolution is more wide than 16:9 or more tall than 16:9
+    if (screen_width / screen_height) > (16 / 9):  # Wider than 16:9
+        # Find width occupied by black bars
+        black_bars_height = 0
+        black_bars_width = screen_width - (screen_height * 16 / 9)
+    elif (screen_width / screen_height) < (16 / 9):  # Taller than 16:9
+        # Find height occupied by black bars
+        black_bars_height = screen_height - (screen_width * 9 / 16)
+        black_bars_width = 0
+    else:  # Exactly 16:9
+        black_bars_height = 0
+        black_bars_width = 0
+
+    true_height = screen_height - black_bars_height
+    true_width = screen_width - black_bars_width
+
+    x = ceil((template_x / 3840) * true_width)
+    y = ceil((template_y / 2160) * true_height)
     return x, y

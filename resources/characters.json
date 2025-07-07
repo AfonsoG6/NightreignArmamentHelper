@@ -1,0 +1,89 @@
+[
+    {
+        "name": "WYLDER",
+        "weapon_types": [
+            "Greatsword"
+        ],
+        "STR": "A",
+        "DEX": "B",
+        "INT": "C",
+        "FAI": "C",
+        "ARC": "C"
+    },
+    {
+        "name": "GUARDIAN",
+        "weapon_types": [
+            "Halberd",
+            "Greatshield"
+        ],
+        "STR": "B",
+        "DEX": "C",
+        "INT": "D",
+        "FAI": "C",
+        "ARC": "C"
+    },
+    {
+        "name": "IRONEYE",
+        "weapon_types": [
+            "Bow"
+        ],
+        "STR": "C",
+        "DEX": "A",
+        "INT": "D",
+        "FAI": "D",
+        "ARC": "B"
+    },
+    {
+        "name": "DUCHESS",
+        "weapon_types": [
+            "Dagger"
+        ],
+        "STR": "D",
+        "DEX": "A",
+        "INT": "A",
+        "FAI": "B",
+        "ARC": "D"
+    },
+    {
+        "name": "RAIDER",
+        "weapon_types": [
+            "Greataxe",
+            "Great Hammer",
+            "Colossal Weapon"
+        ],
+        "STR": "S",
+        "DEX": "C",
+        "INT": "D",
+        "FAI": "D",
+        "ARC": "C"
+    },
+    {
+        "name": "REVENANT",
+        "weapon_types": [],
+        "STR": "C",
+        "DEX": "C",
+        "INT": "B",
+        "FAI": "S",
+        "ARC": "B"
+    },
+    {
+        "name": "RECLUSE",
+        "weapon_types": [],
+        "STR": "D",
+        "DEX": "C",
+        "INT": "S",
+        "FAI": "S",
+        "ARC": "C"
+    },
+    {
+        "name": "EXECUTOR",
+        "weapon_types": [
+            "Katana"
+        ],
+        "STR": "C",
+        "DEX": "S",
+        "INT": "D",
+        "FAI": "D",
+        "ARC": "S"
+    }
+]

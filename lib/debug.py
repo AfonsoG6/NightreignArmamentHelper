@@ -4,6 +4,7 @@ from cv2 import imwrite
 from os import path, makedirs
 from datetime import datetime
 from lib.misc import *
+from lib.constants import *
 
 
 class DebugWindow:
@@ -100,3 +101,15 @@ class DebugWindow:
         if not self.debug:
             return
         print(f"Debug: Found button of type '{button_type}' with control type '{control_type}', width {width}, height {height}")
+    
+    def extension_function_signature_doesnt_match(self, module_name: str, function_name: str, expected_signature: str, actual_signature: str) -> None:
+        if not self.debug:
+            return
+        print(f"Debug: Extension function signature mismatch in module '{module_name}', function '{function_name}'. Expected: {expected_signature}, Actual: {actual_signature}")
+    
+    def extension_loaded(self, module_name: str, function_name: str) -> None:
+        if not self.debug:
+            return
+        print(f"Debug: Function '{function_name}' from module '{module_name}' loaded successfully.")
+
+DEBUG_WINDOW: DebugWindow

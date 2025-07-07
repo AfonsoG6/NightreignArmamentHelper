@@ -1,5 +1,5 @@
 PROGRAM_NAME = "Nightreign Armament Helper"
-VERSION = "2.1.1"
+VERSION = "2.2.0"
 SHOP_TITLE = "SHOP"
 BOSS_DROP_TITLE = "DORMANT POWER"
 
@@ -24,29 +24,25 @@ BUTTON_GEOMETRY_TYPES = [
     GAMEPAD_BUTTON_GEOMETRY := "gp",
 ]
 CONTROLLER_TYPES_BY_BUTTON_GEOMETRY = {
-    KEYBOARD_BUTTON_GEOMETRY : [
+    KEYBOARD_BUTTON_GEOMETRY: [
         KEYBOARD := "kb",
     ],
-    GAMEPAD_BUTTON_GEOMETRY : [
+    GAMEPAD_BUTTON_GEOMETRY: [
         GENERIC_GAMEPAD := "gp",
         DUALSHOCK4 := "ds4",
         DUALSENSE := "ds5",
-    ]
+    ],
 }
 
-BUTTON_COORDINATES = {
-    "3840x2160": {
-        KEYBOARD_BUTTON_GEOMETRY: (1997, 1997 + 64, 97, 97 + 64),
-        GAMEPAD_BUTTON_GEOMETRY: (2001, 2001 + 56, 101, 101 + 56),
-    },
-    "2560x1440": {
-        KEYBOARD_BUTTON_GEOMETRY: (1331, 1331 + 43, 65, 65 + 42),
-        GAMEPAD_BUTTON_GEOMETRY: (1334, 1334 + 37, 68, 68 + 36),
-    },
-    "1920x1080": {
-        KEYBOARD_BUTTON_GEOMETRY: (999, 999 + 31, 49, 49 + 31),
-        GAMEPAD_BUTTON_GEOMETRY: (1001, 1001 + 27, 51, 51 + 27),
-    },
+BUTTON_COORDINATES_4K = {  # Values for 4K resolution (3840x2160)
+    KEYBOARD_BUTTON_GEOMETRY: (1997, 1997 + 64, 97, 97 + 64),
+    GAMEPAD_BUTTON_GEOMETRY: (2001, 2001 + 56, 101, 101 + 56),
+}
+
+RECLUSE_ELEMENT_COORDINATES_4K = {  # Values for 4K resolution (3840x2160)
+    1: (1873, 1873 + 51, 1644, 1644 + 51),  # Element 1
+    2: (2035, 2035 + 52, 1725, 1725 + 52),  # Element 2
+    3: (2033, 2033 + 52, 1563, 1563 + 52),  # Element 3
 }
 
 UI_IDENTIFIERS = [
@@ -141,9 +137,9 @@ TESSERACT_CONFIG = f"--oem 3 --psm 7 -c language_model_penalty_non_freq_dict_wor
 TESSERACT_LANG = "eldenring"
 TESSERACT_TIMEOUT = 2  # seconds
 
-TYPE_MATCH_TEXT = "\U0001f9e4"
-GREAT_MATCH_TEXT = "\u2b50"
-DECENT_MATCH_TEXT = "\u2714"
+TYPE_MATCH_ICON = "\U0001f9e4"
+GREAT_MATCH_ICON = "\u2b50"
+DECENT_MATCH_ICON = "\u2714"
 NO_CHARACTER = "None"
 
 MENU_STATES: list[str] = [

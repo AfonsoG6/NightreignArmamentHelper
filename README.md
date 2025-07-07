@@ -20,7 +20,7 @@
     <img src="./images/two-matches.png" width="100" />
 </p>
 
-Additionally, as of version 1.1.0, the mod also provides an **Advanced Mode** that in addition to the simple recommendation icons, also displays an armament's type and stats.
+The mod also provides an **Advanced Mode** that in addition to the simple recommendation icons, also displays an armament's type and stats.
 
 <p align="center">
     <img src="./images/advanced-mode.png" width="420" />
@@ -29,6 +29,7 @@ Additionally, as of version 1.1.0, the mod also provides an **Advanced Mode** th
 *Note:* The **Advanced Mode** being enabled does not impact performance in any way, so feel free to enable it if you prefer.
 
 *Recommendations:*
+
 - The **basic mode is recommended for newer players**, as it is simpler and easier to understand at a glance.
 - The **advanced mode is recommended for experienced players** who want to see more information about the armament they are using, such as its type and stats.
 
@@ -67,7 +68,7 @@ It then uses this information to determine which weapon the player is currently 
 
 It is also important to note that the mod defines the categories "great" and "decent" based on a custom mathematical algorithm, which sometimes may not match the player's expectations. If you think that a weapon should be marked as "great" or "decent" but it is not, please open an issue on GitHub.
 
-As of version 1.2.0, the mod also implements an **eventual responsiveness** method that learns, through analysis of perfect OCR matches, a set of reference points to detect the same text in the future without having to call the OCR again. As these reference points are learned, they are stored in the user's %LOCALAPPDATA% folder, thus persisting across game sessions.
+The mod also implements an **eventual responsiveness** method that learns, through analysis of perfect OCR matches, a set of reference points to detect the same text in the future without having to call the OCR again. As these reference points are learned, they are stored in the user's %LOCALAPPDATA% folder, thus persisting across game sessions.
 
 *Note:* If the resolution of the screen is changed, the mod will have to relearn all the reference points for the new resolution. This is because the reference points are based on the position of the text on the screen, which may change with different resolutions.
 
@@ -81,7 +82,22 @@ As of version 1.2.0, the mod also implements an **eventual responsiveness** meth
 2. **Ground items**: Items found in the ground show their details in varying locations, making it difficult to detect them in a both efficient and accurate way. Therefore, the mod does not support the detection of items found on the ground. To circumvent this, you can simply pick up the item and then open the inventory to view its details.
 3. **Language**: The mod is designed to work with the English version of Elden Ring: Nightreign. It may not work correctly with other languages, as the OCR is trained on English text.
 4. **Responsiveness**: The mod is designed to be as efficient and responsive as possible, using multiple methods to avoid unnecessary OCR calls. However, it may sometimes take half a second to detect the armament and show the corresponding icons. This is due to the nature of OCR and the fact that it needs to analyze the screen in real-time.
-5. **Accuracy**: The mod uses OCR to detect text on the screen, which is not always 100% accurate. This means that it may sometimes fail to detect the armament or the character correctly. To mitigate this, we use the *Jaccard* similarity algorithm to account for small innacuracies in the OCR results. During our testing, we found that the mod seems to always be able to detect the armament and character correctly, but there may be some edge cases where this fails.
+5. **Accuracy**: The mod uses OCR to detect text on the screen, which is not always 100% accurate. This means that it may sometimes fail to detect the armament or the character correctly. To mitigate this, we use the *Jaccard* similarity algorithm to account for small inaccuracies in the OCR results. During our testing, we found that the mod seems to always be able to detect the armament and character correctly, but there may be some edge cases where this fails.
+
+## Extensions
+
+**As of version 2.2.0, Nightreign Armament Helper supports extensions** to customize the information provided for each armament. Extensions allow you to define custom logic for displaying icons or text based on the detected armament/item/talisman and character, in order to better suit your preferences. The following is an **example** of what an extension can do:
+
+<p align="center">
+    <img src="./images/extension-example.png" width="420" />
+
+Unfortunately, you will have to be somewhat familiar with programming to create extensions, as they must be written in Python. However, I urge anyone to try creating their own extension, as it may be easier than you think!
+
+### How Extensions Work
+
+Extensions are Python files placed in the `extensions` folder. The mod automatically loads these files and checks for specific functions that match predefined specifications. If your extension implements these functions correctly, they will be used by the mod.
+
+The necessary documentation to implement an extension can be found [here](./EXTENSIONS.md). Please read it carefully before attempting to create your own extension.
 
 ## Optional: Manual Compilation
 
