@@ -221,7 +221,8 @@ def call_get_basic_label_icons(character_spec: dict, grabbable_spec: dict) -> li
                 result = module.get_basic_label_icons(character_spec, grabbable_spec)
                 if isinstance(result, list):
                     icons.extend(result)
-        return icons
+        if extension_load_mode == LOAD_MODE_OVERRIDE:
+            return icons
     if extension_load_mode == LOAD_MODE_BEFORE or extension_load_mode == "":
         icons.extend(get_basic_label_icons(character_spec, grabbable_spec))
     return icons
