@@ -1,6 +1,6 @@
 # Extensions
 
-**As of version 2.2.0, Nightreign Armament Helper supports extensions** to customize the information provided for each armament. Extensions allow you to define custom logic for displaying icons or text based on the detected armament/item/talisman and character, in order to better suit your preferences. 
+**As of version 2.2.x, Nightreign Armament Helper supports extensions** to customize the information provided for each armament. Extensions allow you to define custom logic for displaying icons or text based on the detected armament/item/talisman and character, in order to better suit your preferences.
 
 Unfortunately, you will have to be somewhat familiar with programming to create extensions, as they must be written in Python. However, I urge anyone to try creating their own extension, as it may be easier than you think!
 
@@ -8,13 +8,58 @@ Unfortunately, you will have to be somewhat familiar with programming to create 
 
 Extensions are Python files placed in the `extensions` folder. The mod automatically loads these files and checks for specific functions that match predefined specifications. If your extension implements these functions correctly, they will be used by the mod.
 
+### Configuring Extensions with `extensions.json`
+
+The `extensions.json` file is located in the `extensions` folder and is used to configure how extensions are loaded. If the file does not exist, the mod will create a template for you. Below is an explanation of the fields in the `extensions.json` file:
+
+```json
+{
+    "mode_help": "Possible values: override/before/after - override means the extensions will replace the default functions, before means they will be called before the default functions, and after means they will be called after the default functions.",
+    "mode": "override",
+    "order_help": "Place the name of the extensions to load, in the order they should be loaded.",
+    "order": []
+}
+```
+
+#### Fields
+
+1. **`mode`**:
+   - Determines how the extensions interact with the default functions.
+   - Possible values:
+     - `"override"`: Extensions will replace the default functions entirely.
+     - `"before"`: Extensions will be called before the default functions.
+     - `"after"`: Extensions will be called after the default functions.
+   - Default value: `"override"`.
+
+2. **`order`**:
+   - A list of extension filenames (without the `.py` extension) to load, in the order they should be loaded.
+   - Example:
+
+     ```json
+     "order": ["my_extension", "another_extension"]
+     ```
+
+#### Example `extensions.json`
+
+```json
+{
+    "mode": "before",
+    "order": ["my_extension", "another_extension"]
+}
+```
+
+In this example:
+
+- The extensions `my_extension.py` and `another_extension.py` will be loaded in that order.
+- The extensions will be executed **before** the default functions.
+
 ## Available Functions for Extensions
 
 1. **`get_basic_label_icons(character_spec: dict, grabbable_spec: dict) -> list[str]`**
    - This function allows you to define custom icons to display for an armament based on the character and armament specifications.
    - **Return Value:** A list of strings representing the icons to display. Each string should correspond to an icon defined in the mod.
 
-1. **`get_advanced_label_text(character_spec: dict, grabbable_spec: dict) -> str`**
+2. **`get_advanced_label_text(character_spec: dict, grabbable_spec: dict) -> str`**
    - This function allows you to define custom text to display for an armament in advanced mode.
    - **Return Value:** A string representing the text to display.
 
@@ -84,7 +129,8 @@ def get_advanced_label_text(character_spec: dict, grabbable_spec: dict) -> str:
     ```
 
 2. Implement one or multiple of the functions described above.
-3. Restart the mod to load your extension.
+3. Add the filename (with or without `.py`) to the `order` field in the `extensions.json` file.
+4. Restart the mod to load your extension.
 
 ## Debugging Extensions
 

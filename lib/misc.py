@@ -14,15 +14,53 @@ from inspect import getfullargspec
 import sys
 
 
-def load_extensions(extensions_path: str, extensible_function_specs: dict[str, Any]) -> dict[str, list[str]]:
+def check_ext_config_format(ext_config) -> bool:
+    # Check if the extensions configuration has the required keys and types
+    if not isinstance(ext_config, dict):
+        return False
+    if "mode" not in ext_config or ext_config["mode"] not in EXTENSION_LOAD_MODES:
+        return False
+    if "order" not in ext_config or not isinstance(ext_config["order"], list):
+        return False
+    for item in ext_config["order"]:
+        if not isinstance(item, str):
+            return False
+    return True
+
+
+EXTENSION_LOAD_MODES = [
+    LOAD_MODE_OVERRIDE := "override",
+    LOAD_MODE_BEFORE := "before",
+    LOAD_MODE_AFTER := "after",
+]
+
+
+def load_extensions(extensions_path: str, extensible_function_specs: dict[str, Any]) -> tuple[str, dict[str, list[str]]]:
     # Load all functions from the specified extensions path that match the extensible function specs.
+    ext_config_path = path.join(extensions_path, "extensions.json")
+    if not path.exists(ext_config_path):
+        template = {
+            "mode_help": "Possible values: override/before/after - override means the extensions will replace the default functions, before means they will be called before the default functions, and after means they will be called after the default functions.",
+            "mode": "override",
+            "order_help": "Place the name of the extensions to load, in the order they should be loaded.",
+            "order": [],
+        }
+        with open(ext_config_path, "w") as file:
+            json.dump(template, file, indent=4)
+    # Load the extensions configuration
+    with open(ext_config_path, "r") as file:
+        ext_config = json.load(file)
+    if not check_ext_config_format(ext_config):
+        return ("", {})
     loaded_extensions: dict[str, list[str]] = {}
-    for filename in listdir(extensions_path):
-        if not filename.endswith(".py"):
+    for filename in ext_config["order"]:
+        if path.splitext(filename)[1] != ".py":
+            filename = filename + ".py"
+        filepath = path.join(extensions_path, filename)
+        if not path.exists(filepath) or not path.isfile(filepath):
             continue
-        module_name = filename[:-3]
-        module_path = path.join(extensions_path, filename)
-        spec = importlib.util.spec_from_file_location(module_name, module_path)
+        module_name = filename[: -len(".py")]
+        spec = importlib.util.spec_from_file_location(module_name, filepath)
         if spec is None or spec.loader is None:
             continue
         module = importlib.util.module_from_spec(spec)
@@ -40,56 +78,7 @@ def load_extensions(extensions_path: str, extensible_function_specs: dict[str, A
             if func_name not in loaded_extensions:
                 loaded_extensions[func_name] = []
             loaded_extensions[func_name].append(module_name)
-    return loaded_extensions
-
-
-def convert_stat_to_rating(stat_name: str, stat_value: int) -> str:
-    if stat_value == 0:
-        return "-"
-    if stat_name in ["STR", "DEX"]:
-        if stat_value < 15:
-            return "E"
-        elif stat_value < 30:
-            return "D"
-        elif stat_value < 45:
-            return "C"
-        elif stat_value < 60:
-            return "B"
-        elif stat_value < 75:
-            return "A"
-        else:
-            return "S"
-    elif stat_name in ["INT", "FAI"]:
-        if stat_value < 20:
-            return "E"
-        elif stat_value < 30:
-            return "D"
-        elif stat_value < 40:
-            return "C"
-        elif stat_value < 50:
-            return "B"
-        elif stat_value < 60:
-            return "A"
-        else:
-            return "S"
-    elif stat_name == "ARC":
-        if stat_value < 10:
-            return "E"
-        elif stat_value < 20:
-            return "D"
-        elif stat_value < 40:
-            return "C"
-        elif stat_value < 60:
-            return "B"
-        elif stat_value < 80:
-            return "A"
-        else:
-            return "S"
-    return "-"
-
-
-def load_extension_functions(extensions_path: str) -> None:
-    global EXTENSIBLE_FUNCTION_SPECS
+    return (ext_config["mode"], loaded_extensions)
 
 
 def text_matches(rough_text: str, target_text: str, detection_id: str) -> tuple[int, float]:
