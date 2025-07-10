@@ -539,10 +539,6 @@ def find_button(img: Image.Image) -> bool:
 
 
 def get_screen_grab() -> Image.Image:
-    """
-    Returns the most recent screen grab if it occurred within the minimum time threshold, otherwise takes a new screen grab.
-    Ensures thread safety using a lock.
-    """
     global last_screengrab, last_screengrab_time, screengrab_lock, screen_width_real, screen_height_real
     with screengrab_lock:
         current_time = time()
@@ -816,8 +812,8 @@ if __name__ == "__main__":
     DEBUG_WINDOW = DebugWindow(root, DEBUG, DEBUG_PATH)
 
     extensible_function_specs = {
-        "get_basic_label_icons" : getfullargspec(call_get_basic_label_icons),
-        "get_advanced_label_text" : getfullargspec(call_get_advanced_label_text)
+        "get_basic_label_icons" : getfullargspec(get_basic_label_icons),
+        "get_advanced_label_text" : getfullargspec(get_advanced_label_text)
     }
     extension_load_mode, loaded_extensions = load_extensions(EXTENSIONS_PATH, extensible_function_specs)
     load_all_character_specs(RESOURCES_PATH)

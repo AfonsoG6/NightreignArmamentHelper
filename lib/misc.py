@@ -41,7 +41,7 @@ def load_extensions(extensions_path: str, extensible_function_specs: dict[str, A
     if not path.exists(ext_config_path):
         template = {
             "mode_help": "Possible values: override/before/after - override means the extensions will replace the default functions, before means they will be called before the default functions, and after means they will be called after the default functions.",
-            "mode": "override",
+            "mode": "",
             "order_help": "Place the name of the extensions to load, in the order they should be loaded.",
             "order": [],
         }
@@ -78,6 +78,8 @@ def load_extensions(extensions_path: str, extensible_function_specs: dict[str, A
             if func_name not in loaded_extensions:
                 loaded_extensions[func_name] = []
             loaded_extensions[func_name].append(module_name)
+    if len(loaded_extensions) == 0:
+        return ("", {})
     return (ext_config["mode"], loaded_extensions)
 
 
