@@ -14,4 +14,4 @@ temp/
 
 # Tesseract-OCR
 Tesseract-OCR/*
-!Tesseract-OCR/tessdata
+Tesseract-OCR/tessdata

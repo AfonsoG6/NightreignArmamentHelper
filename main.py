@@ -223,7 +223,7 @@ def call_get_basic_label_icons(character_spec: dict, grabbable_spec: dict) -> li
                     icons.extend(result)
         if extension_load_mode == LOAD_MODE_OVERRIDE:
             return icons
-    if extension_load_mode == LOAD_MODE_BEFORE or extension_load_mode == "":
+    if extension_load_mode == LOAD_MODE_BEFORE or extension_load_mode == "" or len(loaded_extensions) == 0: #also check if loaded_extensions is empty
         icons.extend(get_basic_label_icons(character_spec, grabbable_spec))
     return icons
 
@@ -241,7 +241,7 @@ def call_get_advanced_label_text(character_spec: dict, grabbable_spec: dict) -> 
                 if isinstance(result, str):
                     text += result
         return text
-    if extension_load_mode == LOAD_MODE_BEFORE or extension_load_mode == "":
+    if extension_load_mode == LOAD_MODE_BEFORE or extension_load_mode == "" or len(loaded_extensions) == 0: #also check if loaded_extensions is empty
         text += get_advanced_label_text(character_spec, grabbable_spec)
     return text
 
