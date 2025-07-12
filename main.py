@@ -45,6 +45,8 @@ TESSERACT_PATH: str = path.join(RESOURCES_PATH, "Tesseract-OCR", "tesseract.exe"
 ICON_PATH: str = path.join(RESOURCES_PATH, "icon.png")
 
 pytesseract.tesseract_cmd = TESSERACT_PATH
+TESSDATA_PREFIX = path.join(RESOURCES_PATH, "Tesseract-OCR", "tessdata")
+pytesseract.environ["TESSDATA_PREFIX"] = TESSDATA_PREFIX
 
 DEBUG: bool = False
 if __name__ == "__main__":
