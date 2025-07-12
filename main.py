@@ -533,7 +533,7 @@ def find_button(img: Image.Image) -> bool:
                 comp_img_np = bitwise_and(comp_img_np, mask_np)
                 ref_img_np = bitwise_and(ref_img_np, mask_np)
 
-                found: bool = not are_images_different(ref_img_np, comp_img_np, 11)
+                found: bool = not are_images_different(ref_img_np, comp_img_np, 15)
                 if found:
                     DEBUG_WINDOW.found_button(button_type, geometry_type, img.width, img.height)
                     return True
