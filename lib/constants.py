@@ -1,5 +1,5 @@
 PROGRAM_NAME = "Nightreign Armament Helper"
-VERSION = "2.2.4"
+VERSION = "2.3.0"
 SHOP_TITLE = "SHOP"
 BOSS_DROP_TITLE = "DORMANT POWER"
 
@@ -134,7 +134,6 @@ OCR_THRESHOLDS = {
 }
 
 TESSERACT_CONFIG = f"--oem 3 --psm 7 -c language_model_penalty_non_freq_dict_word=1 -c language_model_penalty_non_dict_word=1 -c tessedit_do_invert=0"
-TESSERACT_LANG = "eldenring"
 TESSERACT_TIMEOUT = 2  # seconds
 
 NO_CHARACTER = "_____"

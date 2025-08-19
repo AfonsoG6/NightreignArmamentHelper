@@ -166,16 +166,20 @@ IMAGE_CACHE: ImageCache = ImageCache()
 
 
 class PixelSetCache:
-    def __init__(self, base_path: str, debug: bool = False):
+    def __init__(self, base_path: str, language: str, debug: bool = False):
         self.base_path: str = base_path
+        self.lang_path: str = path.join(base_path, language)
         self.debug: bool = debug
         self.cache: dict[str, dict[str, dict[str, set[tuple[int, int]]]]] = {}
-        if not path.exists(base_path):
+        if not path.exists(self.lang_path):
             return
+        self.init()
+    
+    def init(self):
         if self.debug:
             print("Loading pixel sets to cache...")
-        for resolution in listdir(base_path):
-            resolution_path = path.join(base_path, resolution)
+        for resolution in listdir(self.lang_path):
+            resolution_path = path.join(self.lang_path, resolution)
             if not path.isdir(resolution_path):
                 continue
             for detection_box_id in listdir(resolution_path):
@@ -194,6 +198,9 @@ class PixelSetCache:
                             print(f"Loaded pixel set: {resolution}/{detection_box_id}/{identifier}.pixelset")
         if self.debug:
             print("Finished loading pixel sets to cache.")
+    
+    def change_language(self, language: str) -> None:
+        self.lang_path = path.join(self.base_path, language)
 
     def get_pixelset(self, resolution: str, detection_box_id: str, identifier: str) -> set[tuple[int, int]] | None:
         if resolution in self.cache and detection_box_id in self.cache[resolution] and identifier in self.cache[resolution][detection_box_id]:
@@ -222,7 +229,7 @@ class PixelSetCache:
         self.cache[resolution][detection_box_id][identifier] = pixelset
 
         # Write-through to disk
-        tgt_path = path.join(self.base_path, resolution, detection_box_id)
+        tgt_path = path.join(self.lang_path, resolution, detection_box_id)
         makedirs(tgt_path, exist_ok=True)
         pixelset_path = path.join(tgt_path, f"{identifier}.pixelset")
         with open(pixelset_path, "w") as file:

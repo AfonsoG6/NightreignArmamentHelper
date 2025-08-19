@@ -6,7 +6,7 @@ from traceback import format_exc
 from numpy import ndarray, array
 from time import time, sleep
 from os import path, makedirs
-from shutil import rmtree
+from shutil import rmtree, move
 from datetime import datetime
 from PIL import ImageGrab
 from pytesseract import pytesseract
@@ -159,6 +159,13 @@ def load_configs() -> None:
                 data_version = config_data.get("version", "0.0.0")
                 if version_is_older(data_version, "2.0.1"):
                     rmtree(PIXEL_SETS_PATH, ignore_errors=True)
+                if version_is_older(data_version, "2.3.0"):
+                    ENGUS_PIXEL_SETS_PATH = path.join(PIXEL_SETS_PATH, "engus")
+                    makedirs(ENGUS_PIXEL_SETS_PATH, exist_ok=True)
+                    for dir in listdir(PIXEL_SETS_PATH):
+                        if dir == "engus":
+                            continue
+                        move(path.join(PIXEL_SETS_PATH, dir), ENGUS_PIXEL_SETS_PATH)
             if data_version != VERSION:
                 save_configs()
     except (FileNotFoundError, json.JSONDecodeError):
@@ -230,6 +237,7 @@ def on_language_selected(e) -> None:
     load_all_character_specs(RESOURCES_PATH, selected_language)
     load_all_grabbable_specs(RESOURCES_PATH, selected_language)
     create_character_dropdown()
+    pixelset_cache.change_language(selected_language)
     save_configs()
 
 
@@ -688,7 +696,7 @@ def detect_text(detection_id: str) -> tuple[int, str]:
 
     # Last resource: OCR
     DEBUG_WINDOW.begin_ocr(eff_detection_id, img_for_ocr)
-    text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=TESSERACT_LANG, timeout=TESSERACT_TIMEOUT)
+    text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=selected_language, timeout=TESSERACT_TIMEOUT)
     text = text.strip()
     DEBUG_WINDOW.end_ocr(eff_detection_id, text)
 
@@ -871,7 +879,7 @@ if __name__ == "__main__":
     current_character_var = StringVar(value=NO_CHARACTER)
     create_character_dropdown()
 
-    pixelset_cache = PixelSetCache(PIXEL_SETS_PATH, DEBUG)
+    pixelset_cache = PixelSetCache(PIXEL_SETS_PATH, selected_language, DEBUG)
     update_armament_feedback_labels()
     update_current_character_dropdown(None)
     control_window = create_control_window()
