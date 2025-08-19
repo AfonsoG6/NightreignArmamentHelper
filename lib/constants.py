@@ -137,7 +137,7 @@ TESSERACT_CONFIG = f"--oem 3 --psm 7 -c language_model_penalty_non_freq_dict_wor
 TESSERACT_LANG = "eldenring"
 TESSERACT_TIMEOUT = 2  # seconds
 
-NO_CHARACTER = "None"
+NO_CHARACTER = "_____"
 
 MENU_STATES: list[str] = [
     MENU_STATE_DEFAULT := "DEFAULT",
@@ -232,4 +232,24 @@ AFFINITIES = [
     FROSTBITE := "Frostbite",
     SLEEP := "Sleep",
     MADNESS := "Madness",
+]
+
+DEFAULT_LANGUAGE: str = 'engus'
+
+LANGUAGES: list[str] = [
+    'araae',
+    'deude',
+    'engus',
+    'frafr',
+    'itait',
+    'jpnjp',
+    'korkr',
+    'polpl',
+    'porbr',
+    'rusru',
+    'spaar',
+    'spaes',
+    'thath',
+    'zhocn',
+    'zhotw',
 ]

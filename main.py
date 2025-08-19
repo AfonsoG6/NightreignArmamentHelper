@@ -71,8 +71,8 @@ advanced_mode_button: Button
 
 current_menu_state: str = MENU_STATE_DEFAULT
 current_menu_state_lock: Lock = Lock()
-current_character_name: str = ""
-current_character_name_lock: Lock = Lock()
+current_character_id: int = 0
+current_character_id_lock: Lock = Lock()
 
 previous_imgs_lock: Lock = Lock()
 previous_imgs: dict[str, ndarray | None] = {
@@ -114,7 +114,7 @@ advanced_armament_feedback_label: Label
 replace_basic_armament_feedback_label: Label
 replace_advanced_armament_feedback_label: Label
 current_character_var: StringVar
-current_character_dropdown: OptionMenu
+current_character_dropdown: OptionMenu | None = None
 
 last_screengrab: Image.Image | None = None
 last_screengrab_time: float = 0.0
@@ -126,16 +126,21 @@ image_cache: ImageCache = ImageCache()
 extension_load_mode: str = ""
 loaded_extensions: dict[str, list[str]]
 
+selected_language: str = DEFAULT_LANGUAGE
+language_var: StringVar
+language_dropdown: OptionMenu
+
 # ---------------------- Functions -----------------------------#
 
 
 def save_configs() -> None:
-    global enabled, character_detection_enabled, advanced_mode_enabled, CONFIG_PATH, character_detection_enabled_lock, advanced_mode_enabled_lock
+    global enabled, character_detection_enabled, advanced_mode_enabled, CONFIG_PATH, character_detection_enabled_lock, advanced_mode_enabled_lock, selected_language
     with character_detection_enabled_lock, advanced_mode_enabled_lock:
         config_data = {
             "version": VERSION,
             "character_detection_enabled": character_detection_enabled,
             "advanced_mode_enabled": advanced_mode_enabled,
+            "language": selected_language,
         }
     makedirs(PROGRAM_DATA_PATH, exist_ok=True)
     with open(CONFIG_PATH, "w") as config_file:
@@ -143,13 +148,14 @@ def save_configs() -> None:
 
 
 def load_configs() -> None:
-    global enabled, character_detection_enabled, advanced_mode_enabled, CONFIG_PATH, character_detection_enabled_lock, advanced_mode_enabled_lock
+    global enabled, character_detection_enabled, advanced_mode_enabled, CONFIG_PATH, character_detection_enabled_lock, advanced_mode_enabled_lock, selected_language
     try:
         with open(CONFIG_PATH, "r") as config_file:
             config_data = json.load(config_file)
             with character_detection_enabled_lock, advanced_mode_enabled_lock:
                 character_detection_enabled = config_data.get("character_detection_enabled", True)
                 advanced_mode_enabled = config_data.get("advanced_mode_enabled", False)
+                selected_language = config_data.get("language", DEFAULT_LANGUAGE)
                 data_version = config_data.get("version", "0.0.0")
                 if version_is_older(data_version, "2.0.1"):
                     rmtree(PIXEL_SETS_PATH, ignore_errors=True)
@@ -159,6 +165,7 @@ def load_configs() -> None:
         with character_detection_enabled_lock, advanced_mode_enabled_lock:
             character_detection_enabled = True
             advanced_mode_enabled = False
+        selected_language = DEFAULT_LANGUAGE
         save_configs()
 
 
@@ -179,15 +186,51 @@ def log_error(e: Exception, fatal: bool = False) -> None:
 
 
 def on_character_selected(e) -> None:
-    global current_character_var, current_character_name, current_character_name_lock
-    selected_character = current_character_var.get()
-    if selected_character != NO_CHARACTER:
-        with current_character_name_lock:
-            current_character_name = selected_character
+    global current_character_var, current_character_id, current_character_id_lock
+    selected_character_name = current_character_var.get()
+    if selected_character_name != NO_CHARACTER:
+        selected_character = find_character_by_name(selected_character_name)
+        with current_character_id_lock:
+            if selected_character is None:
+                current_character_id = 0
+            else:
+                current_character_id = selected_character["id"]
         update_current_character_dropdown(selected_character)
     else:
-        with current_character_name_lock:
-            current_character_name = ""
+        with current_character_id_lock:
+            current_character_id = 0
+
+
+def create_character_dropdown() -> None:
+    global current_character_dropdown, current_character_var
+    
+    if current_character_dropdown:
+        current_character_dropdown.destroy()
+    
+    current_character: dict|None = get_current_character_spec()
+    current_character_var.set(current_character["name"] if current_character else NO_CHARACTER)
+    character_names: list[str] = [spec["name"] for spec in CHARACTER_SPECS]
+    current_character_dropdown = OptionMenu(root, current_character_var, NO_CHARACTER, *character_names, command=on_character_selected)
+    current_character_dropdown.config(bg="black", fg="white", font=("Arial", current_character_label_font_size), bd=0, highlightthickness=0)
+    current_character_dropdown["menu"].config(bg="black", fg="white", font=("Arial", current_character_label_font_size))
+    relx, rely = get_ui_element_coordinates_rel("character_dropdown", screen_width_ui, screen_height_ui)
+    current_character_dropdown.place(relx=relx, rely=rely, anchor="ne")
+    
+    root.update_idletasks()
+
+
+def on_language_selected(e) -> None:
+    global selected_language, language_var
+    selected = language_var.get()
+    if selected not in LANGUAGES:
+        return
+    if selected == selected_language:
+        return
+    selected_language = selected
+    load_all_character_specs(RESOURCES_PATH, selected_language)
+    load_all_grabbable_specs(RESOURCES_PATH, selected_language)
+    create_character_dropdown()
+    save_configs()
 
 
 def quit_app() -> None:
@@ -200,15 +243,12 @@ def quit_app() -> None:
 
 
 def get_current_character_spec() -> dict | None:
-    global current_character_name, current_character_name_lock
-    with current_character_name_lock:
-        character_name = current_character_name
-    if character_name == NO_CHARACTER or character_name == "":
+    global current_character_id, current_character_id_lock
+    with current_character_id_lock:
+        character_id = current_character_id
+    if character_id == 0:
         return None
-    for character_spec in CHARACTER_SPECS:
-        if character_spec["name"] == character_name:
-            return character_spec
-    return None
+    return find_character_by_id(character_id)
 
 
 def call_get_basic_label_icons(character_spec: dict, grabbable_spec: dict) -> list[str]:
@@ -340,11 +380,11 @@ def update_replace_armament_feedback_labels(character_spec: dict | None = None, 
     root.update_idletasks()
 
 
-def update_current_character_dropdown(character_name: str) -> None:
-    if character_name == "":
+def update_current_character_dropdown(character: dict | None) -> None:
+    if character is None:
         current_character_var.set(NO_CHARACTER)
     else:
-        current_character_var.set(character_name)
+        current_character_var.set(character["name"])
     root.update_idletasks()
 
 
@@ -420,8 +460,9 @@ def toggle_enabled() -> None:
 
 def create_control_window() -> Toplevel:
     global enable_disable_button, character_detection_button, advanced_mode_button, screen_height_ui, screen_width_ui, control_window
+    global language_var, language_dropdown, selected_language
     SIZE_X = 330
-    SIZE_Y = 160
+    SIZE_Y = 190
     if len(loaded_extensions) > 0:
         SIZE_Y += 40
     control_window = Toplevel()
@@ -480,7 +521,18 @@ def create_control_window() -> Toplevel:
         **button_style,
     )
     advanced_mode_button.pack(side=TOP, fill="x", expand=True, pady=2)
+
+    language_frame = Frame(control_window)
+    language_frame.pack(side=TOP, fill="x", expand=False, padx=5, pady=4)
     
+    language_label = Label(language_frame, text="Language:", font=("Arial", 10, "bold"))
+    language_label.pack(side=LEFT, padx=(10, 10))
+    
+    language_var = StringVar(value=selected_language)
+    language_dropdown = OptionMenu(language_frame, language_var, *LANGUAGES, command=on_language_selected)
+    language_dropdown.config(bg="lightgray", fg="black", font=("Arial", 10, "bold"), bd=0, highlightthickness=0)
+    language_dropdown.pack(side=LEFT, fill="x", expand=True, padx=(10, 0))
+
     extensions_text = "No extensions loaded."
     if len(loaded_extensions) > 0:
         extensions_text = f"Loaded Extensions (mode: {extension_load_mode}):\n"
@@ -711,7 +763,7 @@ def detect_menu(detection_id: str) -> None:
 
 
 def detect_character(detection_id: str) -> None:
-    global current_character_name, current_character_name_lock, character_detection_enabled, character_detection_enabled_lock, DEBUG_WINDOW
+    global current_character_id, current_character_id_lock, character_detection_enabled, character_detection_enabled_lock, DEBUG_WINDOW
     with character_detection_enabled_lock:
         if not character_detection_enabled:
             return
@@ -719,11 +771,11 @@ def detect_character(detection_id: str) -> None:
     match_result, match = find_match(detection_id, text_origin, text, CHARACTER_SPECS, lambda character_spec: character_spec["name"])
     if match_result == NO_MATCH:
         return
-    with current_character_name_lock:
-        if match["name"] != current_character_name:
+    with current_character_id_lock:
+        if match["id"] != current_character_id:
             DEBUG_WINDOW.found_match(detection_id, text_origin, text, match_result, match["name"])
-            current_character_name = match["name"]
-            update_current_character_dropdown(match["name"])
+            current_character_id = match["id"]
+            update_current_character_dropdown(match)
             learn_pixelset(detection_id, text_origin, match_result, match, lambda x: x["name"])
 
 
@@ -799,14 +851,6 @@ if __name__ == "__main__":
     relx += REPLACE_ARMAMENT_REL_POS_TO_NAME
     replace_advanced_armament_feedback_label.place(relx=relx, rely=rely, anchor="sw")
 
-    current_character_var = StringVar(value=NO_CHARACTER)
-
-    current_character_dropdown = OptionMenu(root, current_character_var, *CHARACTERS, command=on_character_selected)
-    current_character_dropdown.config(bg="black", fg="white", font=("Arial", current_character_label_font_size), bd=0, highlightthickness=0)
-    current_character_dropdown["menu"].config(bg="black", fg="white", font=("Arial", current_character_label_font_size))
-    relx, rely = get_ui_element_coordinates_rel("character_dropdown", screen_width_ui, screen_height_ui)
-    current_character_dropdown.place(relx=relx, rely=rely, anchor="ne")
-
     character_detection_thread = DetectionThread(detection_id=CHARACTER_DETECTION, function=detect_character, daemon=True)
     menu_detection_thread = DetectionThread(detection_id=MENU_DETECTION, function=detect_menu, daemon=True)
     armament_detection_thread = DetectionThread(detection_id=ARMAMENT_DETECTION_DEFAULT, function=detect_armament, daemon=True)
@@ -814,15 +858,22 @@ if __name__ == "__main__":
     DEBUG_WINDOW = DebugWindow(root, DEBUG, DEBUG_PATH)
 
     extensible_function_specs = {
-        "get_basic_label_icons" : getfullargspec(get_basic_label_icons),
-        "get_advanced_label_text" : getfullargspec(get_advanced_label_text)
+        "get_basic_label_icons": getfullargspec(get_basic_label_icons),
+        "get_advanced_label_text": getfullargspec(get_advanced_label_text),
     }
     extension_load_mode, loaded_extensions = load_extensions(EXTENSIONS_PATH, extensible_function_specs)
-    load_all_character_specs(RESOURCES_PATH)
-    load_all_grabbable_specs(RESOURCES_PATH)
+
+    if selected_language not in LANGUAGES:
+        selected_language = DEFAULT_LANGUAGE
+    load_all_character_specs(RESOURCES_PATH, selected_language)
+    load_all_grabbable_specs(RESOURCES_PATH, selected_language)
+
+    current_character_var = StringVar(value=NO_CHARACTER)
+    create_character_dropdown()
+
     pixelset_cache = PixelSetCache(PIXEL_SETS_PATH, DEBUG)
     update_armament_feedback_labels()
-    update_current_character_dropdown(current_character_name)
+    update_current_character_dropdown(None)
     control_window = create_control_window()
     try:
         root.deiconify()

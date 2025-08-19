@@ -1,24 +1,27 @@
 from os import path
+from lib.constants import *
 import json
 
 GRABBABLE_SPECS: list[dict] = []
 
-def load_all_grabbable_specs(resources_path: str) -> None:
+
+def load_all_grabbable_specs(resources_path: str, language: str = DEFAULT_LANGUAGE) -> None:
     global GRABBABLE_SPECS
+    GRABBABLE_SPECS.clear()
     with open(path.join(resources_path, "armaments.json"), "r", encoding="utf-8") as file:
         armament_data = json.load(file)
         for armament in armament_data:
             GRABBABLE_SPECS.append(
                 {
                     "id": armament["id"],
-                    "name": armament["name"],
+                    "name": armament["name"][language],
                     "type": "armament",
                     "armament_type": armament["type"],
                     "STR": armament["STR"],
                     "DEX": armament["DEX"],
                     "INT": armament["INT"],
                     "FAI": armament["FAI"],
-                    "ARC": armament["ARC"]
+                    "ARC": armament["ARC"],
                 }
             )
     with open(path.join(resources_path, "items.json"), "r", encoding="utf-8") as file:
@@ -27,7 +30,7 @@ def load_all_grabbable_specs(resources_path: str) -> None:
             GRABBABLE_SPECS.append(
                 {
                     "id": f"i{item['id']}",
-                    "name": item["name"],
+                    "name": item["name"][language],
                     "type": "item",
                 }
             )
@@ -37,7 +40,7 @@ def load_all_grabbable_specs(resources_path: str) -> None:
             GRABBABLE_SPECS.append(
                 {
                     "id": f"t{talisman['id']}",
-                    "name": talisman["name"],
+                    "name": talisman["name"][language],
                     "type": "talisman",
                 }
             )

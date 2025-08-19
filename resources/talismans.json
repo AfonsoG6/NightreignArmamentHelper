@@ -1,250 +1,1242 @@
 [
     {
         "id": 1000,
-        "name": "Crimson Amber Medallion"
+        "name": {
+            "araae": "ﻣﻳﺩاﻟﻳﺔ اﻟﻛﻬﺭﻣﺎن اﻟﻘﺭﻣﺯي",
+            "deude": "Purpurbernstein-Medaillon",
+            "engus": "Crimson Amber Medallion",
+            "frafr": "Médaillon d'ambre pourpre",
+            "itait": "Medaglione d'ambra cremisi",
+            "jpnjp": "緋琥珀のメダリオン",
+            "korkr": "붉은 호박 메달리온",
+            "polpl": "Medalion z bursztynem szkarłatnym",
+            "porbr": "Medalhão de Âmbar Carmesim",
+            "rusru": "Медальон с багровым янтарём",
+            "spaar": "Medallón de ámbar carmesí",
+            "spaes": "Medallón de ámbar carmesí",
+            "thath": "เหรียญ​อําพัน​สี​ชาด",
+            "zhocn": "红琥珀链坠",
+            "zhotw": "紅琥珀鍊墜"
+        }
     },
     {
         "id": 1010,
-        "name": "Cerulean Amber Medallion"
+        "name": {
+            "araae": "ﻣﻳﺩاﻟﻳﺔ اﻟﻛﻬﺭﻣﺎن اﻟﻼزوردي",
+            "deude": "Himmelsbernstein-Medaillon",
+            "engus": "Cerulean Amber Medallion",
+            "frafr": "Médaillon d'ambre céruléen",
+            "itait": "Medaglione d'ambra cerulea",
+            "jpnjp": "青琥珀のメダリオン",
+            "korkr": "푸른 호박 메달리온",
+            "polpl": "Medalion z bursztynem modrym",
+            "porbr": "Medalhão de Âmbar Cerúleo",
+            "rusru": "Медальон с лазурным янтарём",
+            "spaar": "Medallón de ámbar cerúleo",
+            "spaes": "Medallón de ámbar cerúleo",
+            "thath": "เหรียญ​อําพัน​สี​คราม",
+            "zhocn": "蓝琥珀链坠",
+            "zhotw": "藍琥珀鍊墜"
+        }
     },
     {
         "id": 1020,
-        "name": "Viridian Amber Medallion"
+        "name": {
+            "araae": "ﻣﻳﺩاﻟﻳﺔ اﻟﻛﻬﺭﻣﺎن اﻷﺧﺿﺭ",
+            "deude": "Smaragdbernstein-Medaillon",
+            "engus": "Viridian Amber Medallion",
+            "frafr": "Médaillon d'ambre vert émeraude",
+            "itait": "Medaglione d'ambra verde",
+            "jpnjp": "緑琥珀のメダリオン",
+            "korkr": "녹색 호박 메달리온",
+            "polpl": "Medalion z bursztynem malachitowym",
+            "porbr": "Medalhão de Âmbar Viridiano",
+            "rusru": "Медальон с зелёным янтарём",
+            "spaar": "Medallón de ámbar viridián",
+            "spaes": "Medallón de ámbar viridián",
+            "thath": "เหรียญ​อําพัน​สี​มรกต",
+            "zhocn": "绿琥珀链坠",
+            "zhotw": "綠琥珀鍊墜"
+        }
     },
     {
         "id": 1040,
-        "name": "Erdtree's Favor"
+        "name": {
+            "araae": "ﺻﻧﻳﻊ ﺷﺟﺭة إرد",
+            "deude": "Gunst des Erdenbaums",
+            "engus": "Erdtree's Favor",
+            "frafr": "Faveur de l'Arbre-Monde",
+            "itait": "Favore dell'Albero Madre",
+            "jpnjp": "黄金樹の恩寵",
+            "korkr": "황금 나무의 은총",
+            "polpl": "Łaska Złotego Drzewa",
+            "porbr": "Bênção da Térvore",
+            "rusru": "Милость Древа Эрд",
+            "spaar": "Favor de Terrárbol",
+            "spaes": "Favor del Árbol Áureo",
+            "thath": "พระ​กรุณา​พฤกษา​ทอง",
+            "zhocn": "黄金树的恩惠",
+            "zhotw": "黃金樹的恩惠"
+        }
     },
     {
         "id": 1100,
-        "name": "Silver Scarab"
+        "name": {
+            "araae": "اﻟﺧﻧﻔﺳﺎء اﻟﻔﺿﻳﺔ",
+            "deude": "Silberskarabäus",
+            "engus": "Silver Scarab",
+            "frafr": "Scarabée d'argent",
+            "itait": "Scarabeo d'argento",
+            "jpnjp": "銀のスカラベ",
+            "korkr": "은 스카라베",
+            "polpl": "Srebrny skarabeusz",
+            "porbr": "Escaravelho de Prata",
+            "rusru": "Серебряный скарабей",
+            "spaar": "Escarabajo de plata",
+            "spaes": "Escarabeo de plata",
+            "thath": "ส​คา​รับ​เงิน",
+            "zhocn": "银色粪金龟",
+            "zhotw": "銀色糞金龜"
+        }
     },
     {
         "id": 1110,
-        "name": "Gold Scarab"
+        "name": {
+            "araae": "اﻟﺧﻧﻔﺳﺎء اﻟﺫﻫﺑﻳﺔ",
+            "deude": "Goldskarabäus",
+            "engus": "Gold Scarab",
+            "frafr": "Scarabée d'or",
+            "itait": "Scarabeo d'oro",
+            "jpnjp": "金のスカラベ",
+            "korkr": "금 스카라베",
+            "polpl": "Złoty skarabeusz",
+            "porbr": "Escaravelho de Ouro",
+            "rusru": "Золотой скарабей",
+            "spaar": "Escarabajo de oro",
+            "spaes": "Escarabeo de oro",
+            "thath": "ส​คา​รับ​ทอง",
+            "zhocn": "金色粪金龟",
+            "zhotw": "金色糞金龜"
+        }
     },
     {
         "id": 1150,
-        "name": "Green Turtle Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺳﻠﺣﻔﺎة اﻟﺧﺿﺭاء",
+            "deude": "Grüner Schildkrötentalisman",
+            "engus": "Green Turtle Talisman",
+            "frafr": "Talisman de tortue verte",
+            "itait": "Talismano tartaruga verde",
+            "jpnjp": "緑亀のタリスマン",
+            "korkr": "녹색 거북 탈리스만",
+            "polpl": "Talizman zielonego żółwia",
+            "porbr": "Talismã de Tartaruga Verde",
+            "rusru": "Талисман с зелёной черепахой",
+            "spaar": "Talismán de tortuga verde",
+            "spaes": "Talismán de tortuga verde",
+            "thath": "เครืองราง​เต่า​เขียว",
+            "zhocn": "绿龟护符",
+            "zhotw": "綠龜護符"
+        }
     },
     {
         "id": 1160,
-        "name": "Stalwart Horn Charm"
+        "name": {
+            "araae": "ﺗﻣﻳﻣﺔ اﻟﻘﺭن اﻟﻘﻭي",
+            "deude": "Horntalisman der Tapferen",
+            "engus": "Stalwart Horn Charm",
+            "frafr": "Corne de robustesse",
+            "itait": "Corno portafortuna della forza",
+            "jpnjp": "頑健の角飾り",
+            "korkr": "강건의 뿔 장식",
+            "polpl": "Amulet niezłomnego rogu",
+            "porbr": "Amuleto de Chifre Robusto",
+            "rusru": "Амулет из крепкого рога",
+            "spaar": "Colgante de cuerno leal",
+            "spaes": "Amuleto córneo de fiel",
+            "thath": "เครือง​ประดับ​เขา​ความ​ถึก​ทน",
+            "zhocn": "健壮角饰品",
+            "zhotw": "健壯角飾品"
+        }
     },
     {
         "id": 1170,
-        "name": "Immunizing Horn Charm"
+        "name": {
+            "araae": "ﺗﻣﻳﻣﺔ اﻟﻘﺭن اﻟﻣﺣﺻّﻥ",
+            "deude": "Horntalisman der Immunität",
+            "engus": "Immunizing Horn Charm",
+            "frafr": "Corne d'immunité",
+            "itait": "Corno portafortuna dell'immunità",
+            "jpnjp": "免疫の角飾り",
+            "korkr": "면역의 뿔 장식",
+            "polpl": "Amulet uodparniającego rogu",
+            "porbr": "Amuleto de Chifre Imunizante",
+            "rusru": "Амулет из защитного рога",
+            "spaar": "Colgante de cuerno inmunizante",
+            "spaes": "Amuleto córneo inmunizante",
+            "thath": "เครือง​ประดับ​เขา​ภูมิคุ้มกัน",
+            "zhocn": "免疫角饰品",
+            "zhotw": "免疫角飾品"
+        }
     },
     {
         "id": 1180,
-        "name": "Clarifying Horn Charm"
+        "name": {
+            "araae": "ﺗﻣﻳﻣﺔ اﻟﻘﺭن اﻟﻣﻁﻬﺭ",
+            "deude": "Horntalisman der Klarheit",
+            "engus": "Clarifying Horn Charm",
+            "frafr": "Corne de focalisation",
+            "itait": "Corno portafortuna della chiarezza",
+            "jpnjp": "正気の角飾り",
+            "korkr": "이성의 뿔 장식",
+            "polpl": "Amulet rozjaśniającego umysł rogu",
+            "porbr": "Amuleto de Chifre de Clarificação",
+            "rusru": "Амулет из просветляющего рога",
+            "spaar": "Colgante de cuerno esclarecedor",
+            "spaes": "Amuleto córneo clarificador",
+            "thath": "เครือง​ประดับ​เขา​สมาธิ",
+            "zhocn": "理智角饰品",
+            "zhotw": "理智角飾品"
+        }
     },
     {
         "id": 1190,
-        "name": "Prince of Death's Pustule"
+        "name": {
+            "araae": "ﺑﺛﺭة أﻣﻳﺭ اﻟﻣﻭت",
+            "deude": "Geschwür des Todesprinzen",
+            "engus": "Prince of Death's Pustule",
+            "frafr": "Excroissance du Prince de la Mort",
+            "itait": "Pustola del Principe della morte",
+            "jpnjp": "死王子の瘡",
+            "korkr": "죽음의 왕자의 부스럼",
+            "polpl": "Pryszcz Księcia Śmierci",
+            "porbr": "Pústula do Príncipe da Morte",
+            "rusru": "Пустула принца Смерти",
+            "spaar": "Pústula del Príncipe de la Muerte",
+            "spaes": "Pústula del Príncipe de la Muerte",
+            "thath": "สะเก็ด​องค์​ชาย​มรณะ",
+            "zhocn": "死王子的脓疮",
+            "zhotw": "死王子的膿瘡"
+        }
     },
     {
         "id": 1200,
-        "name": "Mottled Necklace"
+        "name": {
+            "araae": "اﻟﻌﻘﺩ اﻟﻣﻠﻭن",
+            "deude": "Gesprenkelte Halskette",
+            "engus": "Mottled Necklace",
+            "frafr": "Pendentif bariolé",
+            "itait": "Corno portafortuna multicolore",
+            "jpnjp": "斑色の首飾り",
+            "korkr": "얼룩색 목걸이",
+            "polpl": "Nakrapiany naszyjnik",
+            "porbr": "Colar Manchado",
+            "rusru": "Пёстрое ожерелье",
+            "spaar": "Collar jaspeado",
+            "spaes": "Collar jaspeado",
+            "thath": "เครือง​ประดับ​คอ​สี​ด่าง",
+            "zhocn": "斑斓项链",
+            "zhotw": "斑斕項鍊"
+        }
     },
     {
         "id": 1210,
-        "name": "Bull-Goat's Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ ﻗﺭﻧﻲ ﻣﺎﻋﺯ",
+            "deude": "Talisman des Ziegenbocks",
+            "engus": "Bull-Goat's Talisman",
+            "frafr": "Talisman du mouflon",
+            "itait": "Talismano dell'ariete",
+            "jpnjp": "大山羊のタリスマン",
+            "korkr": "큰 산양 탈리스만",
+            "polpl": "Talizman kozobyka",
+            "porbr": "Talismã do Touro-Cabra",
+            "rusru": "Талисман овцебыка",
+            "spaar": "Talismán del toro-cabra",
+            "spaes": "Talismán de taurocabra",
+            "thath": "เครืองราง​แพะ​ยักษ์",
+            "zhocn": "大山羊护符",
+            "zhotw": "大山羊護符"
+        }
     },
     {
         "id": 1230,
-        "name": "Warrior Jar Shard"
+        "name": {
+            "araae": "ﺷﻅﻳﺔ اﻟﻣﺣﺎرب اﻟﺟﺭّة",
+            "deude": "Scherbe eines Kriegergefäßes",
+            "engus": "Warrior Jar Shard",
+            "frafr": "Fragment de guerrier-jarre",
+            "itait": "Scheggia di vaso guerriero",
+            "jpnjp": "戦士の壺の破片",
+            "korkr": "전사 항아리의 파편",
+            "polpl": "Odłamek słojownika",
+            "porbr": "Fragmento de Jarro Guerreiro",
+            "rusru": "Осколок воина-кувшина",
+            "spaar": "Fragmento de recipiente guerrero",
+            "spaes": "Fragmento de guerrero tarro",
+            "thath": "เศษ​ไห​นักรบ",
+            "zhocn": "战士壶碎片",
+            "zhotw": "戰士壺碎片"
+        }
     },
     {
         "id": 1250,
-        "name": "Millicent's Prosthesis"
+        "name": {
+            "araae": "ﻁﺭف ﻣﻳﻠﻳﺳﻧﺕ اﻻﺻﻁﻧﺎﻋﻲ",
+            "deude": "Millicents Prothese",
+            "engus": "Millicent's Prosthesis",
+            "frafr": "Prothèse de Millicent",
+            "itait": "Protesi di Millicent",
+            "jpnjp": "ミリセントの義手",
+            "korkr": "밀리센트의 의수",
+            "polpl": "Proteza Millicenty",
+            "porbr": "Prótese de Millicent",
+            "rusru": "Протез Миллисенты",
+            "spaar": "Prótesis de Millicent",
+            "spaes": "Prótesis de Millicent",
+            "thath": "มือ​เทียม​ของ​มิลลิ​เซนต์",
+            "zhocn": "米莉森的义手",
+            "zhotw": "米莉森的義手"
+        }
     },
     {
         "id": 2000,
-        "name": "Magic Scorpion Charm"
+        "name": {
+            "araae": "ﺗﻣﻳﻣﺔ ﻋﻘﺭب اﻟﺳﺣﺭ",
+            "deude": "Magischer Skorpionstalisman",
+            "engus": "Magic Scorpion Charm",
+            "frafr": "Talisman du scorpion magique",
+            "itait": "Amuleto scorpione della magia",
+            "jpnjp": "魔力の蠍",
+            "korkr": "마력 전갈",
+            "polpl": "Amulet magicznego skorpiona",
+            "porbr": "Talismã de Escorpião Mágico",
+            "rusru": "Амулет с волшебным скорпионом",
+            "spaar": "Colgante de escorpión mágico",
+            "spaes": "Amuleto de escorpión mágico",
+            "thath": "แมงปอง​พลัง​เวท",
+            "zhocn": "魔力对蝎",
+            "zhotw": "魔力對蠍"
+        }
     },
     {
         "id": 2010,
-        "name": "Lightning Scorpion Charm"
+        "name": {
+            "araae": "ﺗﻣﻳﻣﺔ ﻋﻘﺭب اﻟﺑﺭق",
+            "deude": "Blitzender Skorpionstalisman",
+            "engus": "Lightning Scorpion Charm",
+            "frafr": "Talisman du scorpion de foudre",
+            "itait": "Amuleto scorpione del fulmine",
+            "jpnjp": "雷の蠍",
+            "korkr": "벼락 전갈",
+            "polpl": "Amulet skorpiona błyskawic",
+            "porbr": "Talismã de Escorpião Elétrico",
+            "rusru": "Амулет с грозовым скорпионом",
+            "spaar": "Colgante de escorpión de rayo",
+            "spaes": "Amuleto de escorpión fulgurante",
+            "thath": "แมงปอง​สายฟา",
+            "zhocn": "雷对蝎",
+            "zhotw": "雷對蠍"
+        }
     },
     {
         "id": 2020,
-        "name": "Fire Scorpion Charm"
+        "name": {
+            "araae": "ﺗﻣﻳﻣﺔ ﻋﻘﺭب اﻟﻧﺎر",
+            "deude": "Feuriger Skorpionstalisman",
+            "engus": "Fire Scorpion Charm",
+            "frafr": "Talisman du scorpion de feu",
+            "itait": "Amuleto scorpione del fuoco",
+            "jpnjp": "炎の蠍",
+            "korkr": "화염 전갈",
+            "polpl": "Amulet ognistego skorpiona",
+            "porbr": "Talismã de Escorpião de Fogo",
+            "rusru": "Амулет с огненным скорпионом",
+            "spaar": "Colgante de escorpión de fuego",
+            "spaes": "Amuleto de escorpión ígneo",
+            "thath": "แมงปอง​เพลิง",
+            "zhocn": "火对蝎",
+            "zhotw": "火對蠍"
+        }
     },
     {
         "id": 2030,
-        "name": "Sacred Scorpion Charm"
+        "name": {
+            "araae": "ﺗﻣﻳﻣﺔ اﻟﻌﻘﺭب اﻟﻣﻘﺩس",
+            "deude": "Heiliger Skorpionstalisman",
+            "engus": "Sacred Scorpion Charm",
+            "frafr": "Talisman du scorpion sacré",
+            "itait": "Amuleto scorpione sacro",
+            "jpnjp": "聖なる蠍",
+            "korkr": "신성한 전갈",
+            "polpl": "Amulet świętego skorpiona",
+            "porbr": "Talismã de Escorpião Sagrado",
+            "rusru": "Амулет со священным скорпионом",
+            "spaar": "Colgante de escorpión sagrado",
+            "spaes": "Amuleto de escorpión sagrado",
+            "thath": "แมงปอง​ศักดิสิทธิ",
+            "zhocn": "圣对蝎",
+            "zhotw": "聖對蠍"
+        }
     },
     {
         "id": 2040,
-        "name": "Red-Feathered Branchsword"
+        "name": {
+            "araae": "اﻟﺳﻳﻑ اﻟﻣﺗﻔﺭع ذو اﻟﺭﻳﺵ اﻷﺣﻣﺭ",
+            "deude": "Rot gefiedertes Astschwert",
+            "engus": "Red-Feathered Branchsword",
+            "frafr": "Lame cornue aux plumes rouges",
+            "itait": "Spada ramificata dalla piuma rossa",
+            "jpnjp": "赤羽の七支刃",
+            "korkr": "붉은 날개 칠지인",
+            "polpl": "Drzewny miecz z czerwonymi piórami",
+            "porbr": "Espada de Ramo com Penas Vermelhas",
+            "rusru": "Меч с красными перьями",
+            "spaar": "Ramaespada de plumas rojas",
+            "spaes": "Espada ramificada con plumas rojas",
+            "thath": "ดาบ​เจ็ด​ง่าม​ขน​นก​แดง",
+            "zhocn": "红羽七刃剑",
+            "zhotw": "紅羽七刃劍"
+        }
     },
     {
         "id": 2050,
-        "name": "Ritual Sword Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ ﺳﻳﻑ اﻟﻁﻘﻭس",
+            "deude": "Ritualschwerttalisman",
+            "engus": "Ritual Sword Talisman",
+            "frafr": "Talisman d'épée rituelle",
+            "itait": "Talismano spada rituale",
+            "jpnjp": "捧闘の剣のタリスマン",
+            "korkr": "봉투검의 탈리스만",
+            "polpl": "Talizman rytualnego miecza",
+            "porbr": "Talismã de Espada de Ritual",
+            "rusru": "Талисман ритуального меча",
+            "spaar": "Talismán de espada de ritual",
+            "spaes": "Talismán de espada ritual",
+            "thath": "เครืองราง​ดาบ​สงคราม",
+            "zhocn": "献斗剑护符",
+            "zhotw": "獻鬥劍護符"
+        }
     },
     {
         "id": 2060,
-        "name": "Spear Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺭﻣﺢ",
+            "deude": "Speertalisman",
+            "engus": "Spear Talisman",
+            "frafr": "Talisman de la lance",
+            "itait": "Talismano lancia",
+            "jpnjp": "槍のタリスマン",
+            "korkr": "창의 탈리스만",
+            "polpl": "Talizman włóczni",
+            "porbr": "Talismã de Lança",
+            "rusru": "Талисман копья",
+            "spaar": "Talismán de lanza",
+            "spaes": "Talismán de lancero",
+            "thath": "เครืองราง​หอก",
+            "zhocn": "矛护符",
+            "zhotw": "矛護符"
+        }
     },
     {
         "id": 2070,
-        "name": "Hammer Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﻣﻁﺭﻗﺔ",
+            "deude": "Hammertalisman",
+            "engus": "Hammer Talisman",
+            "frafr": "Talisman du marteau",
+            "itait": "Talismano martello",
+            "jpnjp": "大槌のタリスマン",
+            "korkr": "망치의 탈리스만",
+            "polpl": "Talizman młota",
+            "porbr": "Talismã de Martelo",
+            "rusru": "Талисман молота",
+            "spaar": "Talismán de martillo",
+            "spaes": "Talismán con maza",
+            "thath": "เครืองราง​ค้อน​ใหญ่",
+            "zhocn": "大槌护符",
+            "zhotw": "大槌護符"
+        }
     },
     {
         "id": 2080,
-        "name": "Winged Sword Insignia"
+        "name": {
+            "araae": "ﺷﻌﺎر اﻟﺳﻳﻑ اﻟﻣﺟﻧﺢ",
+            "deude": "Geflügelte Schwertinsignie",
+            "engus": "Winged Sword Insignia",
+            "frafr": "Insigne d'épée ailée",
+            "itait": "Emblema della spada alata",
+            "jpnjp": "有翼剣の徽章",
+            "korkr": "유익검의 휘장",
+            "polpl": "Insygnia uskrzydlonego miecza",
+            "porbr": "Insígnia de Espada Alada",
+            "rusru": "Эмблема с крылатым мечом",
+            "spaar": "Insignia de espada alada",
+            "spaes": "Insignia con espada alada",
+            "thath": "ตรา​ดาบ​ติด​ปก",
+            "zhocn": "带翼剑徽章",
+            "zhotw": "帶翼劍徽章"
+        }
     },
     {
         "id": 2090,
-        "name": "Dagger Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺧﻧﺟﺭ",
+            "deude": "Dolchtalisman",
+            "engus": "Dagger Talisman",
+            "frafr": "Talisman de la dague",
+            "itait": "Talismano pugnale",
+            "jpnjp": "短剣のタリスマン",
+            "korkr": "단검의 탈리스만",
+            "polpl": "Talizman sztyletu",
+            "porbr": "Talismã de Adaga",
+            "rusru": "Талисман кинжала",
+            "spaar": "Talismán de daga",
+            "spaes": "Talismán con daga",
+            "thath": "เครืองราง​ดาบ​สัน",
+            "zhocn": "短剑护符",
+            "zhotw": "短劍護符"
+        }
     },
     {
         "id": 2100,
-        "name": "Arrow's Reach Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ ﻧﻁﺎق اﻟﺳﻬﻡ",
+            "deude": "Weitschuss-Talisman",
+            "engus": "Arrow's Reach Talisman",
+            "frafr": "Talisman des flèches filantes",
+            "itait": "Talismano della freccia implacabile",
+            "jpnjp": "遠矢のタリスマン",
+            "korkr": "먼 화살의 탈리스만",
+            "polpl": "Talizman dalekosiężnej strzały",
+            "porbr": "Talismã de Alcance de Flecha",
+            "rusru": "Талисман со стрелой",
+            "spaar": "Talismán de alcance de flecha",
+            "spaes": "Talismán de alcance de flecha",
+            "thath": "เครืองราง​ศร​ระยะ​ไกล",
+            "zhocn": "远箭护符",
+            "zhotw": "遠箭護符"
+        }
     },
     {
         "id": 2120,
-        "name": "Twinblade Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﻧﺻﻝ ذي اﻟﺣﺩﻳﻥ",
+            "deude": "Doppelklingentalisman",
+            "engus": "Twinblade Talisman",
+            "frafr": "Talisman de la lame double",
+            "itait": "Talismano lama gemella",
+            "jpnjp": "両刃のタリスマン",
+            "korkr": "쌍날검의 탈리스만",
+            "polpl": "Talizman podwójnego ostrza",
+            "porbr": "Talismã de Lâminas-Gêmeas",
+            "rusru": "Талисман парного клинка",
+            "spaar": "Talismán de hojas gemelas",
+            "spaes": "Talismán con hoja doble",
+            "thath": "เครืองราง​ดาบส​อง​ปลาย",
+            "zhocn": "双头剑护符",
+            "zhotw": "雙頭劍護符"
+        }
     },
     {
         "id": 2130,
-        "name": "Axe Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﻔﺄس",
+            "deude": "Axttalisman",
+            "engus": "Axe Talisman",
+            "frafr": "Talisman de la hache",
+            "itait": "Talismano ascia",
+            "jpnjp": "斧のタリスマン",
+            "korkr": "도끼의 탈리스만",
+            "polpl": "Talizman topora",
+            "porbr": "Talismã de Machado",
+            "rusru": "Талисман топора",
+            "spaar": "Talismán de hacha",
+            "spaes": "Talismán con hacha",
+            "thath": "เครืองราง​ขวาน",
+            "zhocn": "斧护符",
+            "zhotw": "斧護符"
+        }
     },
     {
         "id": 2150,
-        "name": "Arrow's Sting Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺳﻬﻡ اﻟﻭاﺧﺯ",
+            "deude": "Durchschuss-Talisman",
+            "engus": "Arrow's Sting Talisman",
+            "frafr": "Talisman des flèches mordantes",
+            "itait": "Talismano della freccia acuminata",
+            "jpnjp": "硬矢のタリスマン",
+            "korkr": "튼튼한 화살의 탈리스만",
+            "polpl": "Talizman żądlącej strzały",
+            "porbr": "Talismã do Pungir da Flecha",
+            "rusru": "Талисман с наконечником стрелы",
+            "spaar": "Talismán de pinchazo de flecha",
+            "spaes": "Talismán de punzada de flecha",
+            "thath": "เครืองราง​ศร​แข็ง",
+            "zhocn": "硬箭护符",
+            "zhotw": "硬箭護符"
+        }
     },
     {
         "id": 2160,
-        "name": "Lord of Blood's Exultation"
+        "name": {
+            "araae": "اﺑﺗﻬﺎج ﻟﻭرد اﻟﺩﻣﺎء",
+            "deude": "Jubel des Blutes",
+            "engus": "Lord of Blood's Exultation",
+            "frafr": "Exultation du seigneur du sang",
+            "itait": "Giubilo del Signore del sangue",
+            "jpnjp": "血の君主の歓喜",
+            "korkr": "피의 군주의 환희",
+            "polpl": "Radość Pana Krwi",
+            "porbr": "Exultação do Lorde do Sangue",
+            "rusru": "Торжество Повелителя Крови",
+            "spaar": "Júbilo del Señor de la Sangre",
+            "spaes": "Exaltación del Señor de la Sangre",
+            "thath": "ความ​รืนเริง​ของ​ราชา​โลหิต",
+            "zhocn": "鲜血君王的欢愉",
+            "zhotw": "鮮血君王的歡愉"
+        }
     },
     {
         "id": 2170,
-        "name": "Kindred of Rot's Exultation"
+        "name": {
+            "araae": "اﺑﺗﻬﺎج ﺷﻘﻳﻖ اﻟﻌﻔﻥ",
+            "deude": "Jubel des Sprosses der Fäulnis",
+            "engus": "Kindred of Rot's Exultation",
+            "frafr": "Exultation des adeptes de la putréfaction",
+            "itait": "Giubilo del seguace della marcescenza",
+            "jpnjp": "腐敗眷属の歓喜",
+            "korkr": "부패 권속의 환희",
+            "polpl": "Radość klanu zgnilizny",
+            "porbr": "Exultação do Companheiro da Podridão",
+            "rusru": "Торжество родича гнили",
+            "spaar": "Júbilo de la Parentela de la Podredumbre",
+            "spaes": "Exaltación de ancestro de la putrefacción",
+            "thath": "ความ​รืนเริง​ของ​วงศา​เสือม​สลาย",
+            "zhocn": "腐败眷属的欢愉",
+            "zhotw": "腐敗眷屬的歡愉"
+        }
     },
     {
         "id": 2180,
-        "name": "Claw Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﻣﺧﻠﺏ",
+            "deude": "Klauentalisman",
+            "engus": "Claw Talisman",
+            "frafr": "Talisman de la griffe",
+            "itait": "Talismano artiglio",
+            "jpnjp": "爪のタリスマン",
+            "korkr": "손톱의 탈리스만",
+            "polpl": "Talizman pazura",
+            "porbr": "Talismã de Garra",
+            "rusru": "Талисман когтя",
+            "spaar": "Talismán de garra",
+            "spaes": "Talismán con garra",
+            "thath": "เครืองราง​กรง​เล็บ",
+            "zhocn": "钩爪护符",
+            "zhotw": "鉤爪護符"
+        }
     },
     {
         "id": 2190,
-        "name": "Roar Medallion"
+        "name": {
+            "araae": "ﻣﻳﺩاﻟﻳﺔ اﻟﺯﺋﻳﺭ",
+            "deude": "Medaillon des Brüllens",
+            "engus": "Roar Medallion",
+            "frafr": "Médaillon de cri",
+            "itait": "Medaglione ruggente",
+            "jpnjp": "咆哮のメダリオン",
+            "korkr": "포효의 메달리온",
+            "polpl": "Medalion ryku",
+            "porbr": "Medalhão do Rugido",
+            "rusru": "Медальон рёва",
+            "spaar": "Medallón de rugido",
+            "spaes": "Medallón de rugido",
+            "thath": "เหรียญ​คําราม",
+            "zhocn": "咆哮链坠",
+            "zhotw": "咆哮鍊墜"
+        }
     },
     {
         "id": 2200,
-        "name": "Curved Sword Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺳﻳﻑ اﻟﻣﻘﻭس",
+            "deude": "Krummschwerttalisman",
+            "engus": "Curved Sword Talisman",
+            "frafr": "Talisman d'épée courbée",
+            "itait": "Talismano spada curva",
+            "jpnjp": "曲剣のタリスマン",
+            "korkr": "곡검의 탈리스만",
+            "polpl": "Talizman zakrzywionego miecza",
+            "porbr": "Talismã de Espada Curva",
+            "rusru": "Талисман изогнутого меча",
+            "spaar": "Talismán de espada curva",
+            "spaes": "Talismán con espada curva",
+            "thath": "เครืองราง​ดาบ​โค้ง",
+            "zhocn": "曲剑护符",
+            "zhotw": "曲劍護符"
+        }
     },
     {
         "id": 2210,
-        "name": "Companion Jar"
+        "name": {
+            "araae": "اﻟﺟﺭّة اﻟﻣﺭاﻓﻘﺔ",
+            "deude": "Begleitergefäß",
+            "engus": "Companion Jar",
+            "frafr": "Jarre de compagnie",
+            "itait": "Vaso compagno",
+            "jpnjp": "友なる壺",
+            "korkr": "벗 항아리",
+            "polpl": "Towarzyszące naczynie",
+            "porbr": "Jarro Companheiro",
+            "rusru": "Сосуд спутника",
+            "spaar": "Recipiente de compañía",
+            "spaes": "Tarrismán",
+            "thath": "ไห​สหาย",
+            "zhocn": "友好壶",
+            "zhotw": "友好壺"
+        }
     },
     {
         "id": 2220,
-        "name": "Perfumer's Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ ﺻﺎﻧﻊ اﻟﻌﻁﻭر",
+            "deude": "Parfümeurstalisman",
+            "engus": "Perfumer's Talisman",
+            "frafr": "Talisman de Parfumeur",
+            "itait": "Talismano del profumiere",
+            "jpnjp": "調香師のタリスマン",
+            "korkr": "조향사의 탈리스만",
+            "polpl": "Talizman perfumiarza",
+            "porbr": "Talismã do Perfumista",
+            "rusru": "Талисман парфюмера",
+            "spaar": "Talismán del perfumista",
+            "spaes": "Talismán de perfumista",
+            "thath": "เครืองราง​สุ​คนธ​จาร​ย์",
+            "zhocn": "调香师护符",
+            "zhotw": "調香師護符"
+        }
     },
     {
         "id": 3000,
-        "name": "Graven-School Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ ﻣﺩرﺳﺔ اﻟﻣﻧﺣﻭﺗﺎت",
+            "deude": "Götzenschule-Talisman",
+            "engus": "Graven-School Talisman",
+            "frafr": "Talisman de l'amalgame sculpté",
+            "itait": "Talismano della scuola di pietra",
+            "jpnjp": "魔術師球のタリスマン",
+            "korkr": "마술사 구 탈리스만",
+            "polpl": "Talizman kamiennej szkoły",
+            "porbr": "Talismã da Escola da Pedra",
+            "rusru": "Талисман могильной школы",
+            "spaar": "Talismán de la escuela de escultores",
+            "spaes": "Talismán de amalgama de magos",
+            "thath": "เครืองราง​จอม​เวท​แบบ​กลม",
+            "zhocn": "魔法师球护符",
+            "zhotw": "魔法師球護符"
+        }
     },
     {
         "id": 3040,
-        "name": "Faithful's Canvas Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ ﻟﻭﺣﺔ اﻹﻳﻣﺎن",
+            "deude": "Leinwandtalisman der Gläubigen",
+            "engus": "Faithful's Canvas Talisman",
+            "frafr": "Talisman en toile des fidèles",
+            "itait": "Talismano di tela dei fedeli",
+            "jpnjp": "信徒の誓布",
+            "korkr": "신도의 서포",
+            "polpl": "Płócienny talizman wiernych",
+            "porbr": "Talismã de Tela do Fiel",
+            "rusru": "Холщовый талисман верного",
+            "spaar": "Talismán de lienzo de fiel",
+            "spaes": "Talismán del lienzo de la fe",
+            "thath": "ผ้า​คํามัน​ผู้​ศรัทธา",
+            "zhocn": "信徒的立誓布",
+            "zhotw": "信徒的立誓布"
+        }
     },
     {
         "id": 3060,
-        "name": "Old Lord's Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﻠﻭرد اﻟﻘﺩﻳﻡ",
+            "deude": "Talisman des alten Fürsten",
+            "engus": "Old Lord's Talisman",
+            "frafr": "Talisman d'ancien seigneur",
+            "itait": "Talismano del vecchio signore",
+            "jpnjp": "古き王のタリスマン",
+            "korkr": "옛 왕의 탈리스만",
+            "polpl": "Talizman starego władcy",
+            "porbr": "Talismã do Velho Lorde",
+            "rusru": "Талисман старого лорда",
+            "spaar": "Talismán del Señor Antiguo",
+            "spaes": "Talismán del antiguo señor",
+            "thath": "เครืองราง​ราชา​โบราณ",
+            "zhocn": "古王护符",
+            "zhotw": "古王護符"
+        }
     },
     {
         "id": 3070,
-        "name": "Radagon Icon"
+        "name": {
+            "araae": "رﻣﺯ راداﻏﻭن",
+            "deude": "Radagons Ikone",
+            "engus": "Radagon Icon",
+            "frafr": "Icône de Radagon",
+            "itait": "Icona di Radagon",
+            "jpnjp": "ラダゴンの肖像",
+            "korkr": "라다곤의 초상",
+            "polpl": "Ikona Radagona",
+            "porbr": "Ícone de Radagon",
+            "rusru": "Знак Радагона",
+            "spaar": "Ícono de Rádagon",
+            "spaes": "Icono de Radagon",
+            "thath": "ภาพ​เหมือน​รา​ดา​กอน",
+            "zhocn": "拉达冈的肖像",
+            "zhotw": "拉達岡的肖像"
+        }
     },
     {
         "id": 3080,
-        "name": "Primal Glintstone Blade"
+        "name": {
+            "araae": "ﻧﺻﻝ اﻟﺣﺟﺭ اﻟﻼﻣﻊ اﻟﺑﺩاﺋﻲ",
+            "deude": "Urschimmersteinklinge",
+            "engus": "Primal Glintstone Blade",
+            "frafr": "Lame de pierre d'éclat primordiale",
+            "itait": "Lama di scintipietra primigenia",
+            "jpnjp": "原輝石の刃",
+            "korkr": "원휘석 칼날",
+            "polpl": "Ostrze pierwotnego błyskamienia",
+            "porbr": "Lâmina de Pedrilhante Primordial",
+            "rusru": "Клинок изначального блестящего камня",
+            "spaar": "Hoja de destellita primordial",
+            "spaes": "Hoja de piedra refulgente atávica",
+            "thath": "คม​ดาบ​หิน​จรัส​แรก​เริม",
+            "zhocn": "源辉石刀",
+            "zhotw": "源輝石刀"
+        }
     },
     {
         "id": 3090,
-        "name": "Godfrey Icon"
+        "name": {
+            "araae": "رﻣﺯ ﻏﻭدﻓﺭي",
+            "deude": "Godfreys Ikone",
+            "engus": "Godfrey Icon",
+            "frafr": "Icône de Godfrey",
+            "itait": "Icona di Godfrey",
+            "jpnjp": "ゴッドフレイの肖像",
+            "korkr": "고드프리의 초상",
+            "polpl": "Ikona Godfreya",
+            "porbr": "Ícone de Godfrey",
+            "rusru": "Знак Годфри",
+            "spaar": "Ícono de Godfrey",
+            "spaes": "Icono de Godfrey",
+            "thath": "ภาพ​เหมือน​ก็​อด​ฟรี​ย์",
+            "zhocn": "葛孚雷的肖像",
+            "zhotw": "葛孚雷的肖像"
+        }
     },
     {
         "id": 4000,
-        "name": "Dragoncrest Shield Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ درع اﻟﺗﻧﻳﻥ",
+            "deude": "Drachenschildtalisman",
+            "engus": "Dragoncrest Shield Talisman",
+            "frafr": "Talisman de bouclier draconique",
+            "itait": "Talismano scudo del drago",
+            "jpnjp": "竜印の盾のタリスマン",
+            "korkr": "용 표식 방패의 탈리스만",
+            "polpl": "Talizman starożytnego smoka",
+            "porbr": "Talismã de Escudo com Brasão de Dragão",
+            "rusru": "Талисман: щит с гербом дракона",
+            "spaar": "Talismán de escudo de emblema de dragón",
+            "spaes": "Tal. de escudo con blasón de dragón",
+            "thath": "เครืองราง​โล่​ตรา​มังกร",
+            "zhocn": "龙徽盾护符",
+            "zhotw": "龍徽盾護符"
+        }
     },
     {
         "id": 4010,
-        "name": "Spelldrake Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺗﻧﻳﻥ اﻟﺳﺣﺭي",
+            "deude": "Zauberdrachentalisman",
+            "engus": "Spelldrake Talisman",
+            "frafr": "Talisman de dragon magique",
+            "itait": "Talismano del drago magico",
+            "jpnjp": "魔力竜印のタリスマン",
+            "korkr": "마력 용 표식의 탈리스만",
+            "polpl": "Talizman niebieskiego smoka",
+            "porbr": "Talismã de Draco de Feitiço",
+            "rusru": "Талисман волшебного дракона",
+            "spaar": "Talismán de draco mágico",
+            "spaes": "Talismán con dragón hechicero",
+            "thath": "เครืองราง​ตรา​มังกร​พลัง​เวท",
+            "zhocn": "魔力龙徽护符",
+            "zhotw": "魔力龍徽護符"
+        }
     },
     {
         "id": 4020,
-        "name": "Flamedrake Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺗﻧﻳﻥ اﻟﻧﺎري",
+            "deude": "Flammendrachentalisman",
+            "engus": "Flamedrake Talisman",
+            "frafr": "Talisman de dragon de feu",
+            "itait": "Talismano del drago di fuoco",
+            "jpnjp": "炎竜印のタリスマン",
+            "korkr": "염룡 표식의 탈리스만",
+            "polpl": "Talizman czerwonego smoka",
+            "porbr": "Talismã de Draco de Fogo",
+            "rusru": "Талисман огненного дракона",
+            "spaar": "Talismán de draco de fuego",
+            "spaes": "Talismán con dragón ígneo",
+            "thath": "เครืองราง​ตรา​มังกร​เพลิง",
+            "zhocn": "火龙徽护符",
+            "zhotw": "火龍徽護符"
+        }
     },
     {
         "id": 4030,
-        "name": "Boltdrake Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ ﺗﻧﻳﻥ اﻟﺑﺭق",
+            "deude": "Blitzdrachentalisman",
+            "engus": "Boltdrake Talisman",
+            "frafr": "Talisman de dragon de foudre",
+            "itait": "Talismano del drago folgorante",
+            "jpnjp": "雷竜印のタリスマン",
+            "korkr": "뇌룡 표식의 탈리스만",
+            "polpl": "Talizman żółtego smoka",
+            "porbr": "Talismã de Draco Elétrico",
+            "rusru": "Талисман грозового дракона",
+            "spaar": "Talismán de draco de rayo",
+            "spaes": "Talismán con dragón fulgurante",
+            "thath": "เครืองราง​ตรา​มังกร​สายฟา",
+            "zhocn": "雷龙徽护符",
+            "zhotw": "雷龍徽護符"
+        }
     },
     {
         "id": 4040,
-        "name": "Haligdrake Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺗﻧﻳﻥ اﻟﺫﻫﺑﻲ",
+            "deude": "Haligdrachentalisman",
+            "engus": "Haligdrake Talisman",
+            "frafr": "Talisman de dragon sacré",
+            "itait": "Talismano del drago sacro",
+            "jpnjp": "聖竜印のタリスマン",
+            "korkr": "성룡 표식의 탈리스만",
+            "polpl": "Talizman świętego smoka",
+            "porbr": "Talismã de Draco Sagrado",
+            "rusru": "Талисман дракона Святого Древа",
+            "spaar": "Talismán de draco santo",
+            "spaes": "Talismán con dragón hierático",
+            "thath": "เครืองราง​ตรา​มังกร​ศักดิสิทธิ",
+            "zhocn": "圣龙徽护符",
+            "zhotw": "聖龍徽護符"
+        }
     },
     {
         "id": 4050,
-        "name": "Pearldrake Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺗﻧﻳﻥ اﻟﻠﺅﻟﺅي",
+            "deude": "Perldrachentalisman",
+            "engus": "Pearldrake Talisman",
+            "frafr": "Talisman de dragon de perle",
+            "itait": "Talismano del drago perlaceo",
+            "jpnjp": "真珠竜印のタリスマン",
+            "korkr": "진주룡 표식의 탈리스만",
+            "polpl": "Talizman perłowego smoka",
+            "porbr": "Talismã de Draco de Pérola",
+            "rusru": "Талисман жемчужного дракона",
+            "spaar": "Talismán de draco de perlas",
+            "spaes": "Talismán con dragón perlado",
+            "thath": "เครืองราง​ตรา​มังกร​ไข่มุก",
+            "zhocn": "珍珠龙徽护符",
+            "zhotw": "珍珠龍徽護符"
+        }
     },
     {
         "id": 4070,
-        "name": "Crucible Feather Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ رﻳﺵ اﻟﺑﻭﺗﻘﺔ",
+            "deude": "Federtalisman des Schmelztiegels",
+            "engus": "Crucible Feather Talisman",
+            "frafr": "Talisman à plume du Creuset",
+            "itait": "Talismano piuma del Crogiolo",
+            "jpnjp": "坩堝羽のタリスマン",
+            "korkr": "도가니 날개의 탈리스만",
+            "polpl": "Pierzasty talizman Tygla",
+            "porbr": "Talismã de Pena do Crisol",
+            "rusru": "Перьевой талисман",
+            "spaar": "Talismán de pluma del Crisol",
+            "spaes": "Talismán de plumas del crisol",
+            "thath": "เครืองราง​ขน​นก​พิมพ์​หลอม",
+            "zhocn": "熔炉羽护符",
+            "zhotw": "熔爐羽護符"
+        }
     },
     {
         "id": 4080,
-        "name": "Blue-Feathered Branchsword"
+        "name": {
+            "araae": "اﻟﺳﻳﻑ اﻟﻣﺗﻔﺭع ذو اﻟﺭﻳﺵ اﻷزرق",
+            "deude": "Blau gefiedertes Astschwert",
+            "engus": "Blue-Feathered Branchsword",
+            "frafr": "Lame cornue aux plumes bleues",
+            "itait": "Spada ramificata dalla piuma blu",
+            "jpnjp": "青羽の七支刃",
+            "korkr": "푸른 날개 칠지인",
+            "polpl": "Drzewny miecz z niebieskimi piórami",
+            "porbr": "Espada de Ramo com Penas Azuis",
+            "rusru": "Меч с синими перьями",
+            "spaar": "Ramaespada de plumas azules",
+            "spaes": "Espada ramificada con plumas azules",
+            "thath": "ดาบ​เจ็ด​ง่าม​ขน​นก​คราม",
+            "zhocn": "蓝羽七刃剑",
+            "zhotw": "藍羽七刃劍"
+        }
     },
     {
         "id": 4090,
-        "name": "Ritual Shield Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ درع اﻟﻁﻘﻭس",
+            "deude": "Ritualschildtalisman",
+            "engus": "Ritual Shield Talisman",
+            "frafr": "Talisman de bouclier rituel",
+            "itait": "Talismano scudo rituale",
+            "jpnjp": "捧闘の盾のタリスマン",
+            "korkr": "봉투방패의 탈리스만",
+            "polpl": "Talizman rytualnej tarczy",
+            "porbr": "Talismã de Escudo de Ritual",
+            "rusru": "Талисман ритуального щита",
+            "spaar": "Talismán de escudo de ritual",
+            "spaes": "Talismán de escudo ritual",
+            "thath": "เครืองราง​โล่​สงคราม",
+            "zhocn": "献斗盾护符",
+            "zhotw": "獻鬥盾護符"
+        }
     },
     {
         "id": 4100,
-        "name": "Greatshield Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺩرع اﻟﻌﻅﻳﻣﺔ",
+            "deude": "Großschildtalisman",
+            "engus": "Greatshield Talisman",
+            "frafr": "Talisman de pavois",
+            "itait": "Talismano granscudo",
+            "jpnjp": "大盾のタリスマン",
+            "korkr": "대형 방패의 탈리스만",
+            "polpl": "Talizman wielkiej tarczy",
+            "porbr": "Talismã de Escudo Grande",
+            "rusru": "Талисман большого щита",
+            "spaar": "Talismán de gran escudo",
+            "spaes": "Talismán con escudo grande",
+            "thath": "เครืองราง​โล่​ใหญ่",
+            "zhocn": "大盾护符",
+            "zhotw": "大盾護符"
+        }
     },
     {
         "id": 5000,
-        "name": "Crimson Seed Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺑﺫرة اﻟﻘﺭﻣﺯﻳﺔ",
+            "deude": "Purpursamentalisman",
+            "engus": "Crimson Seed Talisman",
+            "frafr": "Talisman de la graine pourpre",
+            "itait": "Talismano del seme cremisi",
+            "jpnjp": "緋色種子のタリスマン",
+            "korkr": "붉은 종자의 탈리스만",
+            "polpl": "Talizman szkarłatnego nasiona",
+            "porbr": "Talismã de Semente Carmesim",
+            "rusru": "Талисман с кровавыми семенами",
+            "spaar": "Talismán de semilla carmesí",
+            "spaes": "Talismán de semilla carmesí",
+            "thath": "เครืองราง​เมล็ด​สี​ชาด",
+            "zhocn": "红种子护符",
+            "zhotw": "紅種子護符"
+        }
     },
     {
         "id": 5020,
-        "name": "Blessed Dew Talisman"
+        "name": {
+            "araae": "ﻁﻠﺳﻡ اﻟﺩﻣﻌﺔ اﻟﻣﺑﺎرﻛﺔ",
+            "deude": "Gesegneter Tautalisman",
+            "engus": "Blessed Dew Talisman",
+            "frafr": "Talisman de la larme bénie",
+            "itait": "Talismano della rugiada benedetta",
+            "jpnjp": "恵みの雫のタリスマン",
+            "korkr": "은총의 물방울의 탈리스만",
+            "polpl": "Talizman błogosławionej rosy",
+            "porbr": "Talismã de Orvalho Abençoado",
+            "rusru": "Талисман с благословенной росой",
+            "spaar": "Talismán de rocío bendito",
+            "spaes": "Talismán de rocío bendito",
+            "thath": "เครืองราง​หยาด​พระพร",
+            "zhocn": "恩惠露滴护符",
+            "zhotw": "恩惠露滴護符"
+        }
     },
     {
         "id": 5030,
-        "name": "Taker's Cameo"
+        "name": {
+            "araae": "ﺟﻭﻫﺭ اﻟﻧﺎﻫﺏ",
+            "deude": "Kamee der Räuber",
+            "engus": "Taker's Cameo",
+            "frafr": "Camée de pillard",
+            "itait": "Cammeo del ghermitore",
+            "jpnjp": "略奪のカメオ",
+            "korkr": "약탈의 카메오",
+            "polpl": "Kamea szabrownika",
+            "porbr": "Camafeu do Saqueador",
+            "rusru": "Камея разбойника",
+            "spaar": "Camafeo de saqueo",
+            "spaes": "Camafeo del megalómano",
+            "thath": "จี​ประดับ​ช่วง​ชิง",
+            "zhocn": "掠夺浮雕坠饰",
+            "zhotw": "掠奪浮雕墜飾"
+        }
     },
     {
         "id": 5040,
-        "name": "Godskin Swaddling Cloth"
+        "name": {
+            "araae": "ﻧﺳﻳﺞ ﻟﻑ ﺟﻠﺩ اﻟﺣﻛﺎم",
+            "deude": "Tuch der Götterskalpe",
+            "engus": "Godskin Swaddling Cloth",
+            "frafr": "Lange sanctechair",
+            "itait": "Fascia per infanti di Sacriderma",
+            "jpnjp": "神肌のおくるみ",
+            "korkr": "신의 살갗의 강보",
+            "polpl": "Powijak boskiej skóry",
+            "porbr": "Bandagem da Pele Divina",
+            "rusru": "Плащаница из божественной кожи",
+            "spaar": "Envoltura de piel de dios",
+            "spaes": "Empañadura sacroderma",
+            "thath": "ผ้า​ห่อ​ร่าง​มังสา​เทพ",
+            "zhocn": "神皮襁褓",
+            "zhotw": "神皮襁褓"
+        }
     },
     {
         "id": 5050,
-        "name": "Assassin's Crimson Dagger"
+        "name": {
+            "araae": "ﺧﻧﺟﺭ اﻟﻘﺎﺗﻝ اﻟﻘﺭﻣﺯي",
+            "deude": "Assassinen-Purpurklinge",
+            "engus": "Assassin's Crimson Dagger",
+            "frafr": "Dague pourpre de l'assassin",
+            "itait": "Pugnale cremisi dell'assassino",
+            "jpnjp": "緋色の凶刃",
+            "korkr": "붉은 흉악한 칼날",
+            "polpl": "Szkarłatny sztylet skrytobójcy",
+            "porbr": "Adaga de Assassino Carmesim",
+            "rusru": "Багровый кинжал убийцы",
+            "spaar": "Daga carmesí de asesino",
+            "spaes": "Daga carmesí de asesino",
+            "thath": "มีด​สังหาร​สี​ชาด",
+            "zhocn": "染红凶刀",
+            "zhotw": "染紅凶刀"
+        }
     },
     {
         "id": 5060,
-        "name": "Assassin's Cerulean Dagger"
+        "name": {
+            "araae": "ﺧﻧﺟﺭ اﻟﻘﺎﺗﻝ اﻟﻼزوردي",
+            "deude": "Assassinen-Himmelsklinge",
+            "engus": "Assassin's Cerulean Dagger",
+            "frafr": "Dague céruléenne de l'assassin",
+            "itait": "Pugnale ceruleo dell'assassino",
+            "jpnjp": "青色の凶刃",
+            "korkr": "푸른 흉악한 칼날",
+            "polpl": "Modry sztylet skrytobójcy",
+            "porbr": "Adaga de Assassino Cerúlea",
+            "rusru": "Лазурный кинжал убийцы",
+            "spaar": "Daga cerúlea de asesino",
+            "spaes": "Daga cerúlea de asesino",
+            "thath": "มีด​สังหาร​สี​คราม",
+            "zhocn": "染蓝凶刀",
+            "zhotw": "染藍凶刀"
+        }
     },
     {
         "id": 6020,
-        "name": "Carian Filigreed Crest"
+        "name": {
+            "araae": "ﺷﻌﺎر ﻛﺎرﻳﺎ اﻟﻣﺯرﻛﺵ",
+            "deude": "Carianisches Filigranwappen",
+            "engus": "Carian Filigreed Crest",
+            "frafr": "Emblème de Caria à filigrane",
+            "itait": "Stemma cariano in filigrana",
+            "jpnjp": "カーリアの徽章",
+            "korkr": "카리아의 휘장",
+            "polpl": "Karyjski herb z aplikacją",
+            "porbr": "Brasão de Filigrana Cariano",
+            "rusru": "Карианский филигранный герб",
+            "spaar": "Emblema de filigrana de Caria",
+            "spaes": "Blasón cariano con filigrana",
+            "thath": "ตรา​คา​เรีย",
+            "zhocn": "卡利亚徽章",
+            "zhotw": "卡利亞徽章"
+        }
     },
     {
         "id": 6070,
-        "name": "Sacrificial Twig"
+        "name": {
+            "araae": "ﻏﺻﻥ اﻟﻘﺭﺑﺎن",
+            "deude": "Opferzweig",
+            "engus": "Sacrificial Twig",
+            "frafr": "Branche sacrificielle",
+            "itait": "Ramoscello sacrificale",
+            "jpnjp": "犠牲の細枝",
+            "korkr": "희생의 가는 가지",
+            "polpl": "Gałązka ofiarna",
+            "porbr": "Ramo do Sacrifício",
+            "rusru": "Жертвенная ветвь",
+            "spaar": "Ramita de sacrificio",
+            "spaes": "Vara sacrificial",
+            "thath": "กิง​เรียว​บูชายัญ",
+            "zhocn": "牺牲细枝",
+            "zhotw": "犧牲細枝"
+        }
     },
     {
         "id": 6110,
-        "name": "Ancestral Spirit's Horn"
+        "name": {
+            "araae": "ﻗﺭن روح اﻷﺳﻼف",
+            "deude": "Horn der Ahnengeister",
+            "engus": "Ancestral Spirit's Horn",
+            "frafr": "Corne de l'esprit ancestral",
+            "itait": "Corno dello spirito ancestrale",
+            "jpnjp": "祖霊の角",
+            "korkr": "선조령의 뿔",
+            "polpl": "Róg ducha przodków",
+            "porbr": "Chifre de Espírito Ancestral",
+            "rusru": "Рог духа предка",
+            "spaar": "Cuerno de espíritu ancestral",
+            "spaes": "Cuerno de espíritu ancestral",
+            "thath": "เขา​ภูต​บรรพบุรุษ",
+            "zhocn": "祖灵角",
+            "zhotw": "祖靈角"
+        }
     },
     {
         "id": 7000,
-        "name": "Symbol of Avarice"
+        "name": {
+            "araae": "رﻣﺯ اﻟﺟﺷﻊ",
+            "deude": "Symbol der Habsucht",
+            "engus": "Symbol of Avarice",
+            "frafr": "Symbole d'avarice",
+            "itait": "Simbolo dell'avarizia",
+            "jpnjp": "貪欲者の烙印",
+            "korkr": "탐욕자의 낙인",
+            "polpl": "Symbol chciwości",
+            "porbr": "Símbolo da Avareza",
+            "rusru": "Символ алчности",
+            "spaar": "Símbolo de avaricia",
+            "spaes": "Símbolo de la avaricia",
+            "thath": "ตรา​ประทับ​ตัว​ละโมบ",
+            "zhocn": "贪欲者的烙印",
+            "zhotw": "貪欲者的烙印"
+        }
     }
 ]

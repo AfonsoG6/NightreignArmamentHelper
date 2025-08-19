@@ -1,838 +1,4182 @@
 [
     {
         "id": 120300,
-        "name": "Sixth Sense"
+        "name": {
+            "araae": "اﻟﺣﺎﺳﺔ اﻟﺳﺎدﺳﺔ",
+            "deude": "Sechster Sinn",
+            "engus": "Sixth Sense",
+            "frafr": "Sixième sens",
+            "itait": "Sesto senso",
+            "jpnjp": "第六感",
+            "korkr": "육감",
+            "polpl": "Szósty zmysł",
+            "porbr": "Sexto Sentido",
+            "rusru": "Шестое чувство",
+            "spaar": "Sexto sentido",
+            "spaes": "Sexto sentido",
+            "thath": "สัมผัส​ที​หก",
+            "zhocn": "第六感",
+            "zhotw": "第六感"
+        }
     },
     {
         "id": 120301,
-        "name": "Sixth Sense"
+        "name": {
+            "araae": "اﻟﺣﺎﺳﺔ اﻟﺳﺎدﺳﺔ",
+            "deude": "Sechster Sinn",
+            "engus": "Sixth Sense",
+            "frafr": "Sixième sens",
+            "itait": "Sesto senso",
+            "jpnjp": "第六感",
+            "korkr": "육감",
+            "polpl": "Szósty zmysł",
+            "porbr": "Sexto Sentido",
+            "rusru": "Шестое чувство",
+            "spaar": "Sexto sentido",
+            "spaes": "Sexto sentido",
+            "thath": "สัมผัส​ที​หก",
+            "zhocn": "第六感",
+            "zhotw": "第六感"
+        }
     },
     {
         "id": 1000000,
-        "name": "Slate Whetstone"
+        "name": {
+            "araae": "ﻣﺷﺣﺫ أردوازي",
+            "deude": "Wetzstein aus Schiefer",
+            "engus": "Slate Whetstone",
+            "frafr": "Pierre à aiguiser en ardoise",
+            "itait": "Cote di ardesia",
+            "jpnjp": "にび色の砥石",
+            "korkr": "회색 숫돌",
+            "polpl": "Łupkowa osełka",
+            "porbr": "Pedra de Amolar de Ardósia",
+            "rusru": "Сланцевый точильный камень",
+            "spaar": "Piedra de afilar de pizarra",
+            "spaes": "Losa de afilar",
+            "thath": "หิน​เจียร​สี​เทา​เข้ม",
+            "zhocn": "深灰色砥石",
+            "zhotw": "深灰色砥石"
+        }
     },
     {
         "id": 1000001,
-        "name": "Silver Tear"
+        "name": {
+            "araae": "اﻟﺩﻣﻌﺔ اﻟﻔﺿﻳﺔ",
+            "deude": "Silberträne",
+            "engus": "Silver Tear",
+            "frafr": "Larme d'argent",
+            "itait": "Lacrima d'argento",
+            "jpnjp": "銀の雫",
+            "korkr": "은 물방울",
+            "polpl": "Srebrna łza",
+            "porbr": "Lágrima Prateada",
+            "rusru": "Серебряная слеза",
+            "spaar": "Lágrima plateada",
+            "spaes": "Lágrima plateada",
+            "thath": "หยาด​เงิน",
+            "zhocn": "银色泪滴",
+            "zhotw": "銀色淚滴"
+        }
     },
     {
         "id": 1000002,
-        "name": "Golden Dew"
+        "name": {
+            "araae": "اﻟﻧﺩى اﻟﺫﻫﺑﻲ",
+            "deude": "Goldtau",
+            "engus": "Golden Dew",
+            "frafr": "Rosée dorée",
+            "itait": "Lacrima d'oro",
+            "jpnjp": "金色の露",
+            "korkr": "금색 이슬",
+            "polpl": "Złota rosa",
+            "porbr": "Orvalho Dourado",
+            "rusru": "Золотая роса",
+            "spaar": "Rocío dorado",
+            "spaes": "Lágrima dorada",
+            "thath": "หยาด​สี​ทอง",
+            "zhocn": "金色露珠",
+            "zhotw": "金色露珠"
+        }
     },
     {
         "id": 1000003,
-        "name": "Weathervane's Words"
+        "name": {
+            "araae": "ﻛﻠﻣﺎت وﻳﺫرﻓﻳﻥ",
+            "deude": "Wetterhahns Worte",
+            "engus": "Weathervane's Words",
+            "frafr": "Mots de Girouette",
+            "itait": "Parole di Segnavento",
+            "jpnjp": "風見鶏の言葉",
+            "korkr": "풍향계의 말",
+            "polpl": "Słowa Wiatrołęki",
+            "porbr": "Palavras da Cata-Vento",
+            "rusru": "Слова Флюгер",
+            "spaar": "Palabras de Veleta",
+            "spaes": "Palabras de Veleta",
+            "thath": "คํา​กล่าว​จาก​ตัว​วัด​ทิศ​ลม",
+            "zhocn": "“风信鸡”的话",
+            "zhotw": "「風信雞」的話"
+        }
     },
     {
         "id": 1000004,
-        "name": "Blessed Flowers"
+        "name": {
+            "araae": "زﻫﺭة ﻣﺑﺎرﻛﺔ",
+            "deude": "Gesegnete Blume",
+            "engus": "Blessed Flowers",
+            "frafr": "Fleur bénie",
+            "itait": "Fiore benedetto",
+            "jpnjp": "祝福された花",
+            "korkr": "축복받은 꽃",
+            "polpl": "Błogosławiony kwiat",
+            "porbr": "Flor Abençoada",
+            "rusru": "Благословенный цветок",
+            "spaar": "Flor bendita",
+            "spaes": "Flor bendita",
+            "thath": "บุปผา​แห่ง​พร",
+            "zhocn": "受赐福的花",
+            "zhotw": "受賜福的花"
+        }
     },
     {
         "id": 1000005,
-        "name": "Golden Seed"
+        "name": {
+            "araae": "اﻟﺑﺫرة اﻟﺫﻫﺑﻳﺔ",
+            "deude": "Goldene Saat",
+            "engus": "Golden Seed",
+            "frafr": "Graine dorée",
+            "itait": "Seme d'oro",
+            "jpnjp": "黄金の種子",
+            "korkr": "황금 종자",
+            "polpl": "Złote nasiono",
+            "porbr": "Semente Dourada",
+            "rusru": "Золотое семечко",
+            "spaar": "Semilla dorada",
+            "spaes": "Semilla dorada",
+            "thath": "เมล็ด​สี​ทอง",
+            "zhocn": "黄金种子",
+            "zhotw": "黃金種子"
+        }
     },
     {
         "id": 1000006,
-        "name": "Golden Sprout"
+        "name": {
+            "araae": "ﺑﺭﻋﻡ ذﻫﺑﻲ",
+            "deude": "Goldener Sprössling",
+            "engus": "Golden Sprout",
+            "frafr": "Pousse dorée",
+            "itait": "Germoglio d'oro",
+            "jpnjp": "黄金の萌芽",
+            "korkr": "황금 싹",
+            "polpl": "Złoty pęd",
+            "porbr": "Broto Dourado",
+            "rusru": "Золотой росток",
+            "spaar": "Brote dorado",
+            "spaes": "Brote dorado",
+            "thath": "ต้น​อ่อน​ทองคํา",
+            "zhocn": "黄金嫩芽",
+            "zhotw": "黃金嫩芽"
+        }
     },
     {
         "id": 1000007,
-        "name": "Night Shard"
+        "name": {
+            "araae": "ﺷﻅﻳﺔ اﻟﻅﻼم",
+            "deude": "Nachtsplitter",
+            "engus": "Night Shard",
+            "frafr": "Éclat nocturne",
+            "itait": "Scheggia notturna",
+            "jpnjp": "夜の欠片",
+            "korkr": "밤의 조각",
+            "polpl": "Nocny odłamek",
+            "porbr": "Fragmento da Noite",
+            "rusru": "Осколок Ночи",
+            "spaar": "Fragmento de la Noche",
+            "spaes": "Esquirla nocturna",
+            "thath": "เศษ​รัตติกาล",
+            "zhocn": "黑夜碎片",
+            "zhotw": "黑夜碎片"
+        }
     },
     {
         "id": 1000008,
-        "name": "Vestige of Night"
+        "name": {
+            "araae": "أﺛﺭ اﻟﻅﻼم",
+            "deude": "Überbleibsel der Nacht",
+            "engus": "Vestige of Night",
+            "frafr": "Vestige de la Nuit",
+            "itait": "Vestigia della notte",
+            "jpnjp": "夜の痕跡",
+            "korkr": "밤의 흔적",
+            "polpl": "Ślad Nocy",
+            "porbr": "Vestígio da Noite",
+            "rusru": "Отголосок Ночи",
+            "spaar": "Vestigio de la Noche",
+            "spaes": "Vestigio de la Noche",
+            "thath": "ร่อง​รอย​แห่ง​รัตติกาล",
+            "zhocn": "黑夜痕迹",
+            "zhotw": "黑夜痕跡"
+        }
     },
     {
         "id": 1000009,
-        "name": "Fine Arrowhead"
+        "name": {
+            "araae": "رأس ﺳﻬﻡ ﻓﺎﺧﺭ",
+            "deude": "Edle Pfeilspitze",
+            "engus": "Fine Arrowhead",
+            "frafr": "Pointe de flèche fine",
+            "itait": "Punta di freccia sopraffina",
+            "jpnjp": "精巧な矢じり",
+            "korkr": "정교한 화살촉",
+            "polpl": "Precyzyjny grot",
+            "porbr": "Ponta de Flecha Fina",
+            "rusru": "Изысканный наконечник стрелы",
+            "spaar": "Punta de flecha fina",
+            "spaes": "Punta de flecha de calidad",
+            "thath": "ศร​ละเอียด​ลออ",
+            "zhocn": "作工精细的箭头",
+            "zhotw": "作工精細的箭頭"
+        }
     },
     {
         "id": 1000010,
-        "name": "Traitor's Letter"
+        "name": {
+            "araae": "ﺧﻁﺎب اﻟﺧﺎﺋﻥ",
+            "deude": "Brief des Verräters",
+            "engus": "Traitor's Letter",
+            "frafr": "Lettre du traître",
+            "itait": "Lettera del traditore",
+            "jpnjp": "裏切者の手紙",
+            "korkr": "배신자의 편지",
+            "polpl": "List zdrajcy",
+            "porbr": "Carta do Traidor",
+            "rusru": "Письмо предателя",
+            "spaar": "Carta de traidor",
+            "spaes": "Carta de traidor",
+            "thath": "จดหมาย​ของ​ผู้​ทรยศ",
+            "zhocn": "叛徒的信",
+            "zhotw": "叛徒的信"
+        }
     },
     {
         "id": 1000011,
-        "name": "Edge of Order"
+        "name": {
+            "araae": "ﺳﻛﻳﻥ ﺣﺎﻓﺔ اﻟﻧﻅﺎم",
+            "deude": "Klinge der Ordnung",
+            "engus": "Edge of Order",
+            "frafr": "Lame de l'Ordre",
+            "itait": "Lama dell'Ordine",
+            "jpnjp": "聖律の刃",
+            "korkr": "성률의 칼날",
+            "polpl": "Ostrze porządku",
+            "porbr": "Fio da Ordem",
+            "rusru": "Край порядка",
+            "spaar": "Filo del Orden",
+            "spaes": "Filo de la Orden",
+            "thath": "ดาบ​บัญญัติ​ศักดิสิทธิ",
+            "zhocn": "圣律刀",
+            "zhotw": "聖律刀"
+        }
     },
     {
         "id": 1000012,
-        "name": "Ragged Doll"
+        "name": {
+            "araae": "دﻣﻳﺔ رﺛﺔ",
+            "deude": "Zerlumpte Puppe",
+            "engus": "Ragged Doll",
+            "frafr": "Poupée élimée",
+            "itait": "Bambola rovinata",
+            "jpnjp": "ぼろの玩具",
+            "korkr": "낡은 장난감",
+            "polpl": "Obdarta lalka",
+            "porbr": "Boneca Esfarrapada",
+            "rusru": "Тряпичная кукла",
+            "spaar": "Muñeca andrajosa",
+            "spaes": "Muñeca raída",
+            "thath": "ของ​เล่น​เก่า​โทรม",
+            "zhocn": "破旧玩具",
+            "zhotw": "破舊玩具"
+        }
     },
     {
         "id": 1000013,
-        "name": "Stone Stake"
+        "name": {
+            "araae": "وﺗﺩ ﺣﺟﺭي",
+            "deude": "Steinpfahl",
+            "engus": "Stone Stake",
+            "frafr": "Poteau en pierre",
+            "itait": "Asta di pietra",
+            "jpnjp": "石の杭",
+            "korkr": "돌 말뚝",
+            "polpl": "Kamienny kołek",
+            "porbr": "Estaca de Pedra",
+            "rusru": "Каменный кол",
+            "spaar": "Estaca de piedra",
+            "spaes": "Estaca de piedra",
+            "thath": "ลิม​ศิลา",
+            "zhocn": "石桩",
+            "zhotw": "石樁"
+        }
     },
     {
         "id": 1000014,
-        "name": "Third Volume"
+        "name": {
+            "araae": "اﻟﻣﺟﻠﺩ اﻟﺛﺎﻟﺙ",
+            "deude": "Dritter Band",
+            "engus": "Third Volume",
+            "frafr": "Troisième volume",
+            "itait": "Terzo volume",
+            "jpnjp": "三冊目の本",
+            "korkr": "세 권째 책",
+            "polpl": "Tom trzeci",
+            "porbr": "Terceiro Volume",
+            "rusru": "Третий том",
+            "spaar": "Tercer Tomo",
+            "spaes": "Tercer volumen",
+            "thath": "หนังสือ​เล่ม​ที​สาม",
+            "zhocn": "套书的第三册",
+            "zhotw": "套書的第三冊"
+        }
     },
     {
         "id": 1000015,
-        "name": "Witch's Brooch"
+        "name": {
+            "araae": "دﺑﻭس اﻟﺳﺎﺣﺭة",
+            "deude": "Hexenbrosche",
+            "engus": "Witch's Brooch",
+            "frafr": "Broche d'enchanteresse",
+            "itait": "Fermaglio della strega",
+            "jpnjp": "魔女のブローチ",
+            "korkr": "마녀의 브로치",
+            "polpl": "Broszka wiedźmy",
+            "porbr": "Broche da Bruxa",
+            "rusru": "Ведьмина брошь",
+            "spaar": "Broche de bruja",
+            "spaes": "Broche de bruja",
+            "thath": "เข็ม​กลัด​แม่มด",
+            "zhocn": "魔女胸针",
+            "zhotw": "魔女胸針"
+        }
     },
     {
         "id": 1000016,
-        "name": "Blade of Night Fragment"
+        "name": {
+            "araae": "ﻗﻁﻌﺔ ﻣﻥ ﻧﺻﻝ اﻟﻅﻼم",
+            "deude": "Klinge aus Nachtfragment",
+            "engus": "Blade of Night Fragment",
+            "frafr": "Fragment de lame de la Nuit",
+            "itait": "Frammento di lama della notte",
+            "jpnjp": "夜の刃片",
+            "korkr": "밤의 칼날 파편",
+            "polpl": "Fragment Ostrza Nocy",
+            "porbr": "Fragmento de Lâmina da Noite",
+            "rusru": "Осколок клинка Ночи",
+            "spaar": "Fragmento de Hoja de la Noche",
+            "spaes": "Fragmento de Hoja de la Noche",
+            "thath": "เศษ​คม​ดาบ​รัตติกาล",
+            "zhocn": "黑夜刀片",
+            "zhotw": "黑夜刀片"
+        }
     },
     {
         "id": 1000017,
-        "name": "Dried Droplet"
+        "name": {
+            "araae": "ﻗﻁﺭة ﻣﺟﻔﻔﺔ",
+            "deude": "Getrockneter Tropfen",
+            "engus": "Dried Droplet",
+            "frafr": "Goutte séchée",
+            "itait": "Goccia essiccata",
+            "jpnjp": "干からびた水滴",
+            "korkr": "말라붙은 물방울",
+            "polpl": "Wyschnięta kropla",
+            "porbr": "Gota Seca",
+            "rusru": "Высохшая капля",
+            "spaar": "Gota seca",
+            "spaes": "Gota seca",
+            "thath": "หยาด​นํา​แห้ง​เหือด",
+            "zhocn": "干涸水滴",
+            "zhotw": "乾涸水滴"
+        }
     },
     {
         "id": 1000018,
-        "name": "Mended Earring"
+        "name": {
+            "araae": "ﻗﺭط ﻣُﺭﻣﻡ",
+            "deude": "Restaurierter Ohrring",
+            "engus": "Mended Earring",
+            "frafr": "Boucle d'oreille réparée",
+            "itait": "Orecchino riparato",
+            "jpnjp": "修繕された耳飾り",
+            "korkr": "수선된 귀고리",
+            "polpl": "Odnowiony kolczyk",
+            "porbr": "Brinco Consertado",
+            "rusru": "Залатанная серьга",
+            "spaar": "Arete reparado",
+            "spaes": "Pendiente reparado",
+            "thath": "ต่าง​หู​ที​ซ่อม​แล้ว",
+            "zhocn": "修理完毕的耳环",
+            "zhotw": "修理完畢的耳環"
+        }
     },
     {
         "id": 1000019,
-        "name": "Faded Iron Coins"
+        "name": {
+            "araae": "ﻋُﻣﻝ ﺣﺩﻳﺩﻳﺔ ﺑﺎﻫﺗﺔ",
+            "deude": "Verblasste Eisenmünzen",
+            "engus": "Faded Iron Coins",
+            "frafr": "Pièces en fer ternies",
+            "itait": "Monete di ferro consunte",
+            "jpnjp": "くすんだ鉄貨",
+            "korkr": "칙칙한 철전",
+            "polpl": "Spłowiałe żelazne monety",
+            "porbr": "Moeda de Ferro Desbotada",
+            "rusru": "Тусклые железные монеты",
+            "spaar": "Monedas de hierro descoloridas",
+            "spaes": "Monedas de hierro desgastadas",
+            "thath": "เหรียญ​โลหะ​มอซอ",
+            "zhocn": "灰暗铁币",
+            "zhotw": "灰暗鐵幣"
+        }
     },
     {
         "id": 1000020,
-        "name": "Eerie Charm"
+        "name": {
+            "araae": "اﻟﺗﻣﻳﻣﺔ اﻟﻣﺧﻳﻔﺔ",
+            "deude": "Unheimlicher Talisman",
+            "engus": "Eerie Charm",
+            "frafr": "Amulette étrange",
+            "itait": "Amuleto inquietante",
+            "jpnjp": "奇妙なお守り",
+            "korkr": "기묘한 부적",
+            "polpl": "Upiorny amulet",
+            "porbr": "Amuleto Sinistro",
+            "rusru": "Зловещий амулет",
+            "spaar": "Colgante espeluznante",
+            "spaes": "Amuleto aterrador",
+            "thath": "เครืองราง​แปลก​พิสดาร",
+            "zhocn": "诡异护身符",
+            "zhotw": "詭異護身符"
+        }
     },
     {
         "id": 1000021,
-        "name": "Merchant's Ledger"
+        "name": {
+            "araae": "دﻓﺗﺭ ﺣﺳﺎﺑﺎت اﻟﺗﺎﺟﺭ",
+            "deude": "Geschäftsbuch eines Händlers",
+            "engus": "Merchant's Ledger",
+            "frafr": "Livre de comptes de marchand",
+            "itait": "Libro mastro da mercante",
+            "jpnjp": "売人の帳簿",
+            "korkr": "장사꾼의 장부",
+            "polpl": "Księga rachunkowa kupca",
+            "porbr": "Livro de Contabilidade do Mercador",
+            "rusru": "Гроссбух торговца",
+            "spaar": "Libro mayor de mercader",
+            "spaes": "Libro de cuentas de comerciante",
+            "thath": "บัญชี​ของ​วาณิช",
+            "zhocn": "商人的记账簿",
+            "zhotw": "商人的記帳簿"
+        }
     },
     {
         "id": 1000022,
-        "name": "Torn Braided Cord"
+        "name": {
+            "araae": "ﺣﺑﻝ ﻣﺟﺩول ﻣﻣﺯق",
+            "deude": "Zerrissene geflochtene Kordel",
+            "engus": "Torn Braided Cord",
+            "frafr": "Corde tressée tordue",
+            "itait": "Corda intrecciata lacera",
+            "jpnjp": "ちぎれた組み紐",
+            "korkr": "끊어진 매듭끈",
+            "polpl": "Rozdarty pleciony sznurek",
+            "porbr": "Corda Trançada Rasgada",
+            "rusru": "Разорванный шнур",
+            "spaar": "Soga trenzada rota",
+            "spaes": "Cordón trenzado roto",
+            "thath": "เชือก​ถัก​รุ่ง​ริง",
+            "zhocn": "断裂编绳",
+            "zhotw": "斷裂編繩"
+        }
     },
     {
         "id": 1000024,
-        "name": "Black Claw Necklace"
+        "name": {
+            "araae": "ﻗﻼدة اﻟﻣﺧﻠﺏ اﻷﺳﻭد",
+            "deude": "Kette aus einer schwarzen Klaue",
+            "engus": "Black Claw Necklace",
+            "frafr": "Collier de Griffe Noire",
+            "itait": "Collana dell'Artiglio nero",
+            "jpnjp": "黒爪の首飾り",
+            "korkr": "검은 발톱의 목걸이",
+            "polpl": "Naszyjnik z czarnym szponem",
+            "porbr": "Colar de Garra Negra",
+            "rusru": "Ожерелье из чёрного когтя",
+            "spaar": "Collar de Garra Negra",
+            "spaes": "Collar de garra negra",
+            "thath": "สร้อย​คอก​รง​เล็บ​ทมิฬ",
+            "zhocn": "黑爪项链",
+            "zhotw": "黑爪項鍊"
+        }
     },
     {
         "id": 1000025,
-        "name": "Double Sided Coin"
+        "name": {
+            "araae": "ﻋﻣﻠﺔ ذات وﺟﻬﻳﻥ",
+            "deude": "Doppelseitige Münze",
+            "engus": "Double Sided Coin",
+            "frafr": "Pièce à deux faces",
+            "itait": "Moneta dalle due facce",
+            "jpnjp": "裏表のない硬貨",
+            "korkr": "양면이 똑같은 동전",
+            "polpl": "Dwustronna moneta",
+            "porbr": "Moeda de Dois Lados",
+            "rusru": "Двусторонняя монета",
+            "spaar": "Moneda con dos lados",
+            "spaes": "Moneda de dos caras",
+            "thath": "เหรียญ​ไร้​หัว​ก้อย",
+            "zhocn": "没有正反面的硬币",
+            "zhotw": "沒有正反面的硬幣"
+        }
     },
     {
         "id": 1000026,
-        "name": "Crown Medal"
+        "name": {
+            "araae": "ﻣﻳﺩاﻟﻳﺔ اﻟﺗﺎج",
+            "deude": "Kronenmedaillon",
+            "engus": "Crown Medal",
+            "frafr": "Médaillon couronne",
+            "itait": "Medaglia della corona",
+            "jpnjp": "頭冠のメダル",
+            "korkr": "머리관 메달",
+            "polpl": "Medal z koroną",
+            "porbr": "Medalha da Coroa",
+            "rusru": "Медаль с короной",
+            "spaar": "Medalla de corona",
+            "spaes": "Medalla de corona",
+            "thath": "เหรียญ​ตรา​มงกุฎ",
+            "zhocn": "头冠的徽章",
+            "zhotw": "頭冠的徽章"
+        }
     },
     {
         "id": 1000027,
-        "name": "Pita Bread"
+        "name": {
+            "araae": "ﺧﺑﺯ ﺑﻳﺗﺎ",
+            "deude": "Fladenbrot",
+            "engus": "Pita Bread",
+            "frafr": "Pain pita",
+            "itait": "Focaccia spianata",
+            "jpnjp": "ピタパン",
+            "korkr": "피타 빵",
+            "polpl": "Chlebek pita",
+            "porbr": "Pão Pita",
+            "rusru": "Лепёшка",
+            "spaar": "Pan de pita",
+            "spaes": "Pan pita",
+            "thath": "ขนม​ง​พิ​ตา",
+            "zhocn": "口袋面包",
+            "zhotw": "皮塔餅"
+        }
     },
     {
         "id": 1000028,
-        "name": "Second Volume"
+        "name": {
+            "araae": "اﻟﻣﺟﻠﺩ اﻟﺛﺎﻧﻲ",
+            "deude": "Zweiter Band",
+            "engus": "Second Volume",
+            "frafr": "Deuxième volume",
+            "itait": "Secondo volume",
+            "jpnjp": "二冊目の本",
+            "korkr": "두 권째 책",
+            "polpl": "Tom drugi",
+            "porbr": "Segundo Volume",
+            "rusru": "Второй том",
+            "spaar": "Segundo Tomo",
+            "spaes": "Segundo volumen",
+            "thath": "หนังสือ​เล่ม​ที​สอง",
+            "zhocn": "套书的第二册",
+            "zhotw": "套書的第二冊"
+        }
     },
     {
         "id": 1000030,
-        "name": "Iron Menial's Scrawl"
+        "name": {
+            "araae": "ﺧﺭﺑﺷﺔ اﻟﺧﺎدم اﻟﺣﺩﻳﺩي",
+            "deude": "Schrift vom Eisernen Handlanger",
+            "engus": "Iron Menial's Scrawl",
+            "frafr": "Gribouillis du majordome de fer",
+            "itait": "Brusca del servitore di ferro",
+            "jpnjp": "召使人形の走り書き",
+            "korkr": "하인 인형의 메모",
+            "polpl": "Bazgranina Żelaznego sługi",
+            "porbr": "Rabisco do Servo de Ferro",
+            "rusru": "Записка железного слуги",
+            "spaar": "Garabato del Sirviente de Hierro",
+            "spaes": "Garabato del siervo de acero",
+            "thath": "อักขระ​ที​หุ่น​เชิด​รับ​ใช้​เขียน​อย่าง​ลวก",
+            "zhocn": "差役人偶写下的笔记",
+            "zhotw": "差役人偶寫下的筆記"
+        }
     },
     {
         "id": 1000031,
-        "name": "Blessed Iron Coin"
+        "name": {
+            "araae": "ﻋﻣﻠﺔ ﻣﻌﺩﻧﻳﺔ ﻣﺑﺎرﻛﺔ",
+            "deude": "Gesegnete Eisenmünze",
+            "engus": "Blessed Iron Coin",
+            "frafr": "Pièce de fer bénie",
+            "itait": "Moneta di ferro benedetta",
+            "jpnjp": "祝福された鉄貨",
+            "korkr": "축복받은 철전",
+            "polpl": "Błogosławiona żelazna moneta",
+            "porbr": "Moeda de Ferro Abençoada",
+            "rusru": "Благословенная железная монета",
+            "spaar": "Moneda de hierro bendita",
+            "spaes": "Moneda de hierro bendita",
+            "thath": "เหรียญ​โลหะ​พร​สถิต",
+            "zhocn": "祝福铁币",
+            "zhotw": "祝福鐵幣"
+        }
     },
     {
         "id": 1000032,
-        "name": "Cracked Witch's Brooch"
+        "name": {
+            "araae": "دﺑﻭس اﻟﺳﺎﺣﺭة اﻟﻣﻛﺳﻭر",
+            "deude": "Gesprungene Hexenbrosche",
+            "engus": "Cracked Witch's Brooch",
+            "frafr": "Broche d'enchanteresse craquelée",
+            "itait": "Fermaglio della strega incrinato",
+            "jpnjp": "砕けた魔女のブローチ",
+            "korkr": "부서진 마녀의 브로치",
+            "polpl": "Pęknięta broszka wiedźmy",
+            "porbr": "Broche Rachado da Bruxa",
+            "rusru": "Треснувшая ведьмина брошь",
+            "spaar": "Broche de bruja roto",
+            "spaes": "Broche de bruja agrietado",
+            "thath": "เข็ม​กลัด​แม่มด​แตกหัก",
+            "zhocn": "碎裂的魔女胸针",
+            "zhotw": "碎裂的魔女胸針"
+        }
     },
     {
         "id": 1000033,
-        "name": "Virtuous Thief's Key"
+        "name": {
+            "araae": "ﻣﻔﺗﺎح اﻟﺳﺎرﻗﺔ اﻟﻔﺎﺿﻠﺔ",
+            "deude": "Schlüssel der tugendhaften Diebin",
+            "engus": "Virtuous Thief's Key",
+            "frafr": "Clé de la roublarde",
+            "itait": "Chiave della ladra virtuosa",
+            "jpnjp": "義賊の鍵",
+            "korkr": "의적의 열쇠",
+            "polpl": "Klucz cnotliwej złodziejki",
+            "porbr": "Chave da Ladra Virtuosa",
+            "rusru": "Ключ благородной воровки",
+            "spaar": "Llave de la ladrona virtuosa",
+            "spaes": "Llave de ladrona virtuosa",
+            "thath": "กุญแจ​จอม​โจร​คุณธรรม",
+            "zhocn": "义贼的钥匙",
+            "zhotw": "義賊的鑰匙"
+        }
     },
     {
         "id": 1000034,
-        "name": "Torn-Out Paper Scrap"
+        "name": {
+            "araae": "ﻗﻁﻌﺔ ورق ﻣُﻣﺯﻗﺔ",
+            "deude": "Rausgerissener Papierfetzen",
+            "engus": "Torn-Out Paper Scrap",
+            "frafr": "Bout de papier arraché",
+            "itait": "Frammento di carta strappato",
+            "jpnjp": "破り取られた古い紙片",
+            "korkr": "찢어진 낡은 종이 조각",
+            "polpl": "Wyrwany kawałek papieru",
+            "porbr": "Pedaço de Papel Rasgado",
+            "rusru": "Обрывок бумаги",
+            "spaar": "Pedazo de papel rasgado",
+            "spaes": "Trozo de papel desgarrado",
+            "thath": "เศษ​กระดาษ​เก่า​ที​ถูก​ฉีก​ออก​มา",
+            "zhocn": "被撕下的老旧纸条",
+            "zhotw": "被撕下的老舊紙條"
+        }
     },
     {
         "id": 1000035,
-        "name": "The Wylder's Earring"
+        "name": {
+            "araae": "ﻗﺭط اﻟﻣﻁﺎرد",
+            "deude": "Wylders Ohrring",
+            "engus": "The Wylder's Earring",
+            "frafr": "Boucle d'oreille du Rôdeur",
+            "itait": "Orecchino del Selvaggio",
+            "jpnjp": "追跡者の耳飾り",
+            "korkr": "추적자의 귀고리",
+            "polpl": "Kolczyk Wilczana",
+            "porbr": "O Brinco do Selvagem",
+            "rusru": "Серьга Уайлдера",
+            "spaar": "Arete del Salvaje",
+            "spaes": "Pendiente del Sylvestre",
+            "thath": "ต่าง​หู​ของ​ผู้​สะกด​รอย",
+            "zhocn": "追踪者的耳环",
+            "zhotw": "追蹤者的耳環"
+        }
     },
     {
         "id": 1000036,
-        "name": "Bone-Like Stone"
+        "name": {
+            "araae": "ﺣﺟﺭ ﻳﺷﺑﻪ اﻟﻌﻅﻡ",
+            "deude": "Knochenartiger Stein",
+            "engus": "Bone-Like Stone",
+            "frafr": "Pierre osseuse",
+            "itait": "Pietra ossea",
+            "jpnjp": "骨のような石",
+            "korkr": "뼈처럼 생긴 돌",
+            "polpl": "Kamień kościany",
+            "porbr": "Pedra com Aspecto de Osso",
+            "rusru": "Окаменевшая кость",
+            "spaar": "Piedra ósea",
+            "spaes": "Piedra de hueso",
+            "thath": "ศิลา​เสมือน​กระดูก",
+            "zhocn": "似骨石",
+            "zhotw": "似骨石"
+        }
     },
     {
         "id": 1000100,
-        "name": "Primordial Nightlord's Rune"
+        "name": {
+            "araae": "رون ﻟﻭرد اﻟﻅﻼم اﻷزﻟﻲ",
+            "deude": "Rune d. vorzeitlichen Nachtfürsten",
+            "engus": "Primordial Nightlord's Rune",
+            "frafr": "Rune du Seigneur nocturne primordial",
+            "itait": "Runa del Signore della notte",
+            "jpnjp": "原初の夜の王のルーン",
+            "korkr": "원초의 밤의 왕의 룬",
+            "polpl": "Run Pierwotnego Pana Nocy",
+            "porbr": "Runa do Lorde da Noite Primordial",
+            "rusru": "Руна первородного Ночного владыки",
+            "spaar": "Runa del Señor Nocturno primordial",
+            "spaes": "Runa del Señor de la Noche",
+            "thath": "รู​นรา​ชา​แห่ง​รัตติกาล​แรก​เริม",
+            "zhocn": "初始黑夜王的卢恩",
+            "zhotw": "初始黑夜王的盧恩"
+        }
     },
     {
         "id": 1000101,
-        "name": "Trace of Night"
+        "name": {
+            "araae": "ﺑﻘﺎﻳﺎ اﻟﻅﻼم",
+            "deude": "Spur der Nacht",
+            "engus": "Trace of Night",
+            "frafr": "Trace de la Nuit",
+            "itait": "Traccia notturna",
+            "jpnjp": "夜の気配",
+            "korkr": "밤의 기척",
+            "polpl": "Ślad Nocy",
+            "porbr": "Traços da Noite",
+            "rusru": "След Ночи",
+            "spaar": "Rastro de la Noche",
+            "spaes": "Rastro de la Noche",
+            "thath": "กลิน​อาย​แห่ง​รัตติกาล",
+            "zhocn": "黑夜气息",
+            "zhotw": "黑夜氣息"
+        }
     },
     {
         "id": 1000102,
-        "name": "Trace of Night"
+        "name": {
+            "araae": "ﺑﻘﺎﻳﺎ اﻟﻅﻼم",
+            "deude": "Spur der Nacht",
+            "engus": "Trace of Night",
+            "frafr": "Trace de la Nuit",
+            "itait": "Traccia notturna",
+            "jpnjp": "夜の気配",
+            "korkr": "밤의 기척",
+            "polpl": "Ślad Nocy",
+            "porbr": "Traços da Noite",
+            "rusru": "След Ночи",
+            "spaar": "Rastro de la Noche",
+            "spaes": "Rastro de la Noche",
+            "thath": "กลิน​อาย​แห่ง​รัตติกาล",
+            "zhocn": "黑夜气息",
+            "zhotw": "黑夜氣息"
+        }
     },
     {
         "id": 1000103,
-        "name": "Trace of Night"
+        "name": {
+            "araae": "ﺑﻘﺎﻳﺎ اﻟﻅﻼم",
+            "deude": "Spur der Nacht",
+            "engus": "Trace of Night",
+            "frafr": "Trace de la Nuit",
+            "itait": "Traccia notturna",
+            "jpnjp": "夜の気配",
+            "korkr": "밤의 기척",
+            "polpl": "Ślad Nocy",
+            "porbr": "Traços da Noite",
+            "rusru": "След Ночи",
+            "spaar": "Rastro de la Noche",
+            "spaes": "Rastro de la Noche",
+            "thath": "กลิน​อาย​แห่ง​รัตติกาล",
+            "zhocn": "黑夜气息",
+            "zhotw": "黑夜氣息"
+        }
     },
     {
         "id": 8000000,
-        "name": "Increased Maximum HP"
+        "name": {
+            "araae": "زﻳﺎدة اﻟﺣﺩ اﻷﻗﺻﻰ ﻣﻥ ﻧﻘﺎط اﻟﺻﺣﺔ",
+            "deude": "Erhöhte maximale LP",
+            "engus": "Increased Maximum HP",
+            "frafr": "PV maximums augmentés",
+            "itait": "PV massimi incrementati",
+            "jpnjp": "最大ＨＰ上昇",
+            "korkr": "최대 HP 상승",
+            "polpl": "Zwiększa maksymalne PŻ",
+            "porbr": "PV máximos aumentados",
+            "rusru": "Повышение макс. ОЗ",
+            "spaar": "PV máximos aumentados",
+            "spaes": "Aumentan los PS máximos",
+            "thath": "เพิม HP ​สูงสุด",
+            "zhocn": "提升血量上限",
+            "zhotw": "提升ＨＰ上限"
+        }
     },
     {
         "id": 8010000,
-        "name": "Increased Maximum FP"
+        "name": {
+            "araae": "زﻳﺎدة اﻟﺣﺩ اﻷﻗﺻﻰ ﻣﻥ ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ",
+            "deude": "Erhöhte maximale FP",
+            "engus": "Increased Maximum FP",
+            "frafr": "PC maximums augmentés",
+            "itait": "PA massimi incrementati",
+            "jpnjp": "最大ＦＰ上昇",
+            "korkr": "최대 FP 상승",
+            "polpl": "Zwiększa maksymalne PS",
+            "porbr": "PF máximos aumentados",
+            "rusru": "Повышение макс. ОК",
+            "spaar": "PC máximos aumentados",
+            "spaes": "Aumenta los PC máximos",
+            "thath": "เพิม FP ​สูงสุด",
+            "zhocn": "提升专注值上限",
+            "zhotw": "提升ＦＰ上限"
+        }
     },
     {
         "id": 8010100,
-        "name": "Reduced FP Consumption"
+        "name": {
+            "araae": "اﻧﺧﻔﺎض اﺳﺗﻬﻼك ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ",
+            "deude": "Verringerter FP-Verbrauch",
+            "engus": "Reduced FP Consumption",
+            "frafr": "Consommation de PC réduite",
+            "itait": "Consumo PA ridotto",
+            "jpnjp": "消費ＦＰ軽減",
+            "korkr": "소비 FP 경감",
+            "polpl": "Zmniejsza zużycie PS",
+            "porbr": "Consumo de PF reduzido",
+            "rusru": "Снижение затрат ОК",
+            "spaar": "Consumo de PC reducido",
+            "spaes": "Reduce el consumo de PC",
+            "thath": "ลด FP ​ที​ใช้",
+            "zhocn": "减少专注值消耗",
+            "zhotw": "減少ＦＰ消耗"
+        }
     },
     {
         "id": 8020000,
-        "name": "Increased Maximum Stamina"
+        "name": {
+            "araae": "زﻳﺎدة اﻟﺣﺩ اﻷﻗﺻﻰ ﻟﻘﻭة اﻟﺗﺣﻣﻝ",
+            "deude": "Erhöhte maximale Ausdauer",
+            "engus": "Increased Maximum Stamina",
+            "frafr": "Endurance maximum augmentée",
+            "itait": "Vigore massimo incrementato",
+            "jpnjp": "最大スタミナ上昇",
+            "korkr": "최대 스태미나 상승",
+            "polpl": "Zwiększa maksymalną energię",
+            "porbr": "Vigor máximo aumentado",
+            "rusru": "Повышение макс. выносливости",
+            "spaar": "Vigor máximo aumentado",
+            "spaes": "Aumenta la resistencia máxima",
+            "thath": "เพิม​พลัง​กาย​สูงสุด",
+            "zhocn": "提升精力上限",
+            "zhotw": "提升精力上限"
+        }
     },
     {
         "id": 8020100,
-        "name": "Reduced Stamina Consumption"
+        "name": {
+            "araae": "ﺗﻘﻠﻳﻝ اﺳﺗﻬﻼك ﻗﻭة اﻟﺗﺣﻣﻝ",
+            "deude": "Verringerter Ausdauer-Verbrauch",
+            "engus": "Reduced Stamina Consumption",
+            "frafr": "Consommation d'endurance réduite",
+            "itait": "Consumo vigore ridotto",
+            "jpnjp": "消費スタミナ軽減",
+            "korkr": "소비 스태미나 경감",
+            "polpl": "Zmniejsza zużycie energii",
+            "porbr": "Consumo de vigor reduzido",
+            "rusru": "Снижение затрат выносливости",
+            "spaar": "Consumo de vigor reducido",
+            "spaes": "Reduce el consumo de resistencia",
+            "thath": "ลด​พลัง​กาย​ที​ใช้",
+            "zhocn": "减少精力消耗",
+            "zhotw": "減少精力消耗"
+        }
     },
     {
         "id": 8020200,
-        "name": "Improved Stamina Recovery"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ اﺳﺗﻌﺎدة ﻗﻭة اﻟﺗﺣﻣﻝ",
+            "deude": "Verbesserte Ausdauerregeneration",
+            "engus": "Improved Stamina Recovery",
+            "frafr": "Récupération d'endurance augmentée",
+            "itait": "Recupero vigore migliorato",
+            "jpnjp": "スタミナ回復速度上昇",
+            "korkr": "스태미나 회복 속도 상승",
+            "polpl": "Zwiększa odzyskiwanie energii",
+            "porbr": "Recuperação de vigor melhorada",
+            "rusru": "Улучшение восстановления выносливости",
+            "spaar": "Recuperación de vigor aumentada",
+            "spaes": "Mejora la recuperación de resistencia",
+            "thath": "เพิม​ความเร็ว​ใน​การ​ฟนฟู​พลัง​กาย",
+            "zhocn": "提升精力恢复速度",
+            "zhotw": "提升精力恢復速度"
+        }
     },
     {
         "id": 8100000,
-        "name": "Improved Physical Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة اﻟﻬﺟﻭم اﻟﺑﺩﻧﻲ",
+            "deude": "Erhöhte körperliche Angriffskraft",
+            "engus": "Improved Physical Attack Power",
+            "frafr": "Puissance d'attaque physique augmentée",
+            "itait": "Potenza attacco fisico migliorata",
+            "jpnjp": "物理攻撃力上昇",
+            "korkr": "물리 공격력 상승",
+            "polpl": "Zwiększa siłę ataku fizycznego",
+            "porbr": "Poder de ataque físico melhorado",
+            "rusru": "Усиление физической атаки",
+            "spaar": "Poder de ataques físicos mejorado",
+            "spaes": "Mejora potencia de ataques físicos",
+            "thath": "เพิม​พลัง​โจมตี​กายภาพ",
+            "zhocn": "提升物理攻击力",
+            "zhotw": "提升物理攻擊力"
+        }
     },
     {
         "id": 8100500,
-        "name": "Improved Affinity Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺗﻧﺎﻏﻡ",
+            "deude": "Erhöhte Affinitäts-Angriffskraft",
+            "engus": "Improved Affinity Attack Power",
+            "frafr": "Puiss. d'att. de foudre augmentée",
+            "itait": "Potenza attacco affinità migliorata",
+            "jpnjp": "属性攻撃力上昇",
+            "korkr": "속성 공격력 상승",
+            "polpl": "Zwiększa siłę ataku właściwością",
+            "porbr": "Ataque de afinidade melhorado",
+            "rusru": "Усиление атаки с эффектами",
+            "spaar": "Poder de ataque de afinidades mejorado",
+            "spaes": "Mejora la potencia de los ataques de afinidad",
+            "thath": "เพิม​พลัง​โจมตี​ที​มี​คุณสมบัติ",
+            "zhocn": "提升属性攻击力",
+            "zhotw": "提升屬性攻擊力"
+        }
     },
     {
         "id": 8100600,
-        "name": "Improved Slash Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺗﻣﺯﻳﻖ",
+            "deude": "Erhöhte Schnitt-Angriffskraft",
+            "engus": "Improved Slash Attack Power",
+            "frafr": "Puissance des attaques tranchantes augmentée",
+            "itait": "Attacchi da taglio potenziati",
+            "jpnjp": "斬撃ダメージ上昇",
+            "korkr": "참격 대미지 상승",
+            "polpl": "Zwiększa siłę cięć",
+            "porbr": "Poder de ataque cortante melhorado",
+            "rusru": "Усиление атаки цепом",
+            "spaar": "Poder de ataque de corte mejorado",
+            "spaes": "Mejora la potencia ataque de tajo",
+            "thath": "เพิม​ความ​เสีย​หาย​จาก​การ​น",
+            "zhocn": "提升斩击属性伤害",
+            "zhotw": "提升斬擊屬性傷害"
+        }
     },
     {
         "id": 8100700,
-        "name": "Improved Strike Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺿﺭب",
+            "deude": "Erhöhte Schlag-Angriffskraft",
+            "engus": "Improved Strike Attack Power",
+            "frafr": "Puissance des attaques contondantes augmentée",
+            "itait": "Attacchi da impatto potenziati",
+            "jpnjp": "打撃ダメージ上昇",
+            "korkr": "타격 대미지 상승",
+            "polpl": "Zwiększa siłę uderzeń",
+            "porbr": "Poder de ataque esmagador melhorado",
+            "rusru": "Усиление атаки рогатиной",
+            "spaar": "Poder de ataque de golpe mejorado",
+            "spaes": "Mejora la potencia ataque de golpe",
+            "thath": "เพิม​ความ​เสีย​หาย​จาก​การ​ตี",
+            "zhocn": "提升打击属性伤害",
+            "zhotw": "提升打擊屬性傷害"
+        }
     },
     {
         "id": 8100800,
-        "name": "Improved Thrust Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﻁﻌﻥ",
+            "deude": "Erhöhte Stoß-Angriffskraft",
+            "engus": "Improved Thrust Attack Power",
+            "frafr": "Puissance des attaques perçantes augmentée",
+            "itait": "Affondi potenziati",
+            "jpnjp": "刺突ダメージ上昇",
+            "korkr": "관통 대미지 상승",
+            "polpl": "Zwiększa siłę pchnięć",
+            "porbr": "Poder de estocadas consecutivas melhorado",
+            "rusru": "Усиление атак колющим оружием",
+            "spaar": "Poder de ataque de embestida mejorado",
+            "spaes": "Mejora la potencia ataque de emb.",
+            "thath": "เพิม​ความ​เสีย​หาย​จาก​การ​แทง",
+            "zhocn": "提升突刺属性伤害",
+            "zhotw": "提升突刺屬性傷害"
+        }
     },
     {
         "id": 8100900,
-        "name": "Improved Standard Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة اﻟﻬﺟﻭم اﻟﻌﺎدي",
+            "deude": "Erhöhte Standard-Angriffskraft",
+            "engus": "Improved Standard Attack Power",
+            "frafr": "Puissance des attaques ordinaires augmentée",
+            "itait": "Attacchi standard potenziati",
+            "jpnjp": "標準ダメージ上昇",
+            "korkr": "표준 대미지 상승",
+            "polpl": "Zwiększa siłę zwykłych ataków",
+            "porbr": "Poder de ataque padrão melhorado",
+            "rusru": "Усиление обычной атаки",
+            "spaar": "Poder de ataque estándar mejorado",
+            "spaes": "Mejora la potencia ataque estándar",
+            "thath": "เพิม​ความ​เสีย​หาย​มาตรฐาน",
+            "zhocn": "提升普通属性伤害",
+            "zhotw": "提升普通屬性傷害"
+        }
     },
     {
         "id": 8120000,
-        "name": "Improved Stance-Breaking"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺧﺭق اﻟﻭﺿﻌﻳﺔ",
+            "deude": "Verbesserte Haltungsbrechung",
+            "engus": "Improved Stance-Breaking",
+            "frafr": "Capacité à briser posture améliorée",
+            "itait": "Sbilanciamento del nemico migliorato",
+            "jpnjp": "体勢を崩す力上昇",
+            "korkr": "자세를 무너뜨리는 힘 상승",
+            "polpl": "Zwiększa przełamywanie postawy",
+            "porbr": "Quebra de postura melhorada",
+            "rusru": "Улучшение выбивания из равновесия",
+            "spaar": "Desestabilización mejorada",
+            "spaes": "Mejora la ruptura de posición",
+            "thath": "เพิม​พลัง​โจมตี​ให้​เสีย​หลัก",
+            "zhocn": "提升让敌人失去平衡的能力",
+            "zhotw": "提升讓敵人失去平衡的能力"
+        }
     },
     {
         "id": 8150000,
-        "name": "Attack Boost [Lifeforms Born of Falling Stars]"
+        "name": {
+            "araae": "ﺗﻌﺯﻳﺯ اﻟﻬﺟﻭم [أﺷﻛﺎل اﻟﺣﻳﺎة اﻟﻧﺎﺷﺋﺔ ﻋﻥ اﻟﺷﻬﺏ]",
+            "deude": "Angriffsstärkung [Sternenfallwesen]",
+            "engus": "Attack Boost [Lifeforms Born of Falling Stars]",
+            "frafr": "Amélioration d'attaque [Formes de vie nées d'étoiles filantes]",
+            "itait": "Incremento attacco [forme di vita originarie delle stelle]",
+            "jpnjp": "",
+            "korkr": "특효[운석에서 태어난 자]",
+            "polpl": "Premia ataku [formy życia zrodzone ze spadających gwiazd]",
+            "porbr": "Bônus de ataque [vida de estrelas cadentes]",
+            "rusru": "Усиление атак по [рождённым из упавших звёзд]",
+            "spaar": "Aumento de ataque [organismos engendrados por estrellas fugaces].",
+            "spaes": "Mej. ataque [Formas de vida de estrellas].",
+            "thath": "คุณสมบัติ​พิเศษ​สําหรับ​ต่อกร \"ผู้​ถือ​กําเนิด​จาก​อุกกาบาต\"",
+            "zhocn": "增伤【从陨石诞生的生命】",
+            "zhotw": "增傷【從隕石誕生的生命】"
+        }
     },
     {
         "id": 8150100,
-        "name": "Attack Boost [Those Who Live in Death]"
+        "name": {
+            "araae": "ﺗﻌﺯﻳﺯ اﻟﻬﺟﻭم [ﻷوﻟﺋﻙ اﻟﺫﻳﻥ ﻳﻌﻳﺷﻭن وﺳﻁ اﻟﻣﻭت]",
+            "deude": "Angriffsstärkung [Jene, die im Tode leben]",
+            "engus": "Attack Boost [Those Who Live in Death]",
+            "frafr": "Amélioration d'attaque [Non-morts]",
+            "itait": "Incremento attacco [coloro che vivono nella morte]",
+            "jpnjp": "",
+            "korkr": "특효[죽음에 사는 자]",
+            "polpl": "Premia ataku [ci, którzy żyją w śmierci]",
+            "porbr": "Bônus de ataque [aqueles que vivem na morte]",
+            "rusru": "Усиление атак по [живым покойникам]",
+            "spaar": "Aumento de ataque [quienes viven en la muerte].",
+            "spaes": "Mej. ataque [Quienes viven en la muerte].",
+            "thath": "คุณสมบัติ​พิเศษ​สําหรับ​ต่อกร \"เหล่า​ผู้​มี​ชีวิต​ใน​ความ​ตาย\"",
+            "zhocn": "增伤【死诞者】",
+            "zhotw": "增傷【死誕者】"
+        }
     },
     {
         "id": 8150300,
-        "name": "Attack Boost [Dragons]"
+        "name": {
+            "araae": "ﺗﻌﺯﻳﺯ اﻟﻬﺟﻭم [اﻟﺗﻧﺎﻧﻳﻥ]",
+            "deude": "Angriffsstärkung [Drachen]",
+            "engus": "Attack Boost [Dragons]",
+            "frafr": "Amélioration d'attaque [Dragons]",
+            "itait": "Incremento attacco [draghi]",
+            "jpnjp": "",
+            "korkr": "특효[용]",
+            "polpl": "Premia ataku [smoki]",
+            "porbr": "Bônus de ataque [dragões]",
+            "rusru": "Усиление атак по [драконам]",
+            "spaar": "Aumento de ataque [dragones].",
+            "spaes": "Mejora de ataque [Dragones].",
+            "thath": "คุณสมบัติ​พิเศษ​สําหรับ​ต่อกร \"มังกร\"",
+            "zhocn": "增伤【龙】",
+            "zhotw": "增傷【龍】"
+        }
     },
     {
         "id": 8160000,
-        "name": "Improved Dagger Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺧﻧﺎﺟﺭ",
+            "deude": "Erhöhte Dolch-Angriffskraft",
+            "engus": "Improved Dagger Attack Power",
+            "frafr": "Puissance d'attaque des dagues augmentée",
+            "itait": "Potenza attacco pugnale migliorata",
+            "jpnjp": "短剣の攻撃力上昇",
+            "korkr": "단검 공격력 상승",
+            "polpl": "Zwiększa siłę ataku sztyletami",
+            "porbr": "Ataque de adaga melhorado",
+            "rusru": "Усиление атаки кинжалом",
+            "spaar": "Poder de ataque con daga mejorado",
+            "spaes": "Mejora la potencia de ataque con daga",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ดาบ​สัน",
+            "zhocn": "提升短剑攻击力",
+            "zhotw": "提升短劍攻擊力"
+        }
     },
     {
         "id": 8160100,
-        "name": "Improved Straight Sword Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺳﻳﻭف اﻟﻣﺳﺗﻘﻳﻣﺔ",
+            "deude": "Erh. Gerades-Schwert-Angriffskraft",
+            "engus": "Improved Straight Sword Attack Power",
+            "frafr": "Puiss. d'att. des épées droites augmentée",
+            "itait": "Potenza attacco spada dritta migliorata",
+            "jpnjp": "直剣の攻撃力上昇",
+            "korkr": "직검 공격력 상승",
+            "polpl": "Zwiększa siłę ataku prostymi mieczami",
+            "porbr": "Ataque de espada reta melhorado",
+            "rusru": "Усиление атаки прямым мечом",
+            "spaar": "Poder de ataque con espada recta mejorado",
+            "spaes": "Mejora la potencia de ataque con espada recta",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ดาบ​ตรง",
+            "zhocn": "提升直剑攻击力",
+            "zhotw": "提升直劍攻擊力"
+        }
     },
     {
         "id": 8160200,
-        "name": "Improved Greatsword Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺳﻳﻭف اﻟﻌﻅﻳﻣﺔ",
+            "deude": "Erhöhte Großschwert-Angriffskraft",
+            "engus": "Improved Greatsword Attack Power",
+            "frafr": "Puissance d'attaque des espadons augmentée",
+            "itait": "Potenza attacco spadone migliorata",
+            "jpnjp": "大剣の攻撃力上昇",
+            "korkr": "대검 공격력 상승",
+            "polpl": "Zwiększa siłę ataku wielkimi mieczami",
+            "porbr": "Ataque de espada grande melhorado",
+            "rusru": "Усиление атаки двуручным мечом",
+            "spaar": "Poder de ataque con espadón mejorado",
+            "spaes": "Mejora la potencia de ataque con espadón",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ดาบ​ใหญ่",
+            "zhocn": "提升大剑攻击力",
+            "zhotw": "提升大劍攻擊力"
+        }
     },
     {
         "id": 8160300,
-        "name": "Improved Colossal Sword Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺳﻳﻭف اﻟﺿﺧﻣﺔ",
+            "deude": "Erhöhte Riesenschwert-Angriffskraft",
+            "engus": "Improved Colossal Sword Attack Power",
+            "frafr": "Puiss. d'att. des épées colossales augmentée",
+            "itait": "Potenza attacco spada colossale migliorata",
+            "jpnjp": "特大剣の攻撃力上昇",
+            "korkr": "특대검 공격력 상승",
+            "polpl": "Zwiększa siłę ataku olbrzymimi mieczami",
+            "porbr": "Ataque de espada colossal melhorado",
+            "rusru": "Усиление атаки огромным мечом",
+            "spaar": "Poder de ataque con espada colosal mejorado",
+            "spaes": "Mejora la potencia de ataque con espada colosal",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ดาบ​ยักษ์",
+            "zhocn": "提升特大剑攻击力",
+            "zhotw": "提升特大劍攻擊力"
+        }
     },
     {
         "id": 8160400,
-        "name": "Improved Curved Sword Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺳﻳﻭف اﻟﻣﻘﻭﺳﺔ",
+            "deude": "Erhöhte Krummschwert-Angriffskraft",
+            "engus": "Improved Curved Sword Attack Power",
+            "frafr": "Puissance d'attaque des épées courbées augmentée",
+            "itait": "Potenza attacco spada curva migliorata",
+            "jpnjp": "曲剣の攻撃力上昇",
+            "korkr": "곡검 공격력 상승",
+            "polpl": "Zwiększa siłę ataku zakrzywionymi mieczami",
+            "porbr": "Ataque de espada curva melhorado",
+            "rusru": "Усиление атаки изогнутым мечом",
+            "spaar": "Poder de ataque con espada curva mejorado",
+            "spaes": "Mejora la potencia de ataque con espada curva",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ดาบ​โค้ง",
+            "zhocn": "提升曲剑攻击力",
+            "zhotw": "提升曲劍攻擊力"
+        }
     },
     {
         "id": 8160500,
-        "name": "Improved Curved Greatsword Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺳﻳﻭف اﻟﻌﻅﻳﻣﺔ اﻟﻣﻘﻭﺳﺔ",
+            "deude": "Erh. Kr.-Großschwert-Angriffskraft",
+            "engus": "Improved Curved Greatsword Attack Power",
+            "frafr": "Puiss. d'att. des espadons courbés augmentée",
+            "itait": "Potenza attacco spadone curvo migliorata",
+            "jpnjp": "大曲剣の攻撃力上昇",
+            "korkr": "대곡검 공격력 상승",
+            "polpl": "Zwięk. siłę ataku zakrzywionymi wielk. mieczami",
+            "porbr": "Ataque de espada grande curva melhorado",
+            "rusru": "Усиление атаки изогнутым двуручным мечом",
+            "spaar": "Poder de ataque con espadón curvo mejorado",
+            "spaes": "Mejora la potencia de ataque con espadón curvo",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ดาบ​โค้ง​ใหญ่",
+            "zhocn": "提升大曲剑攻击力",
+            "zhotw": "提升大曲劍攻擊力"
+        }
     },
     {
         "id": 8160600,
-        "name": "Improved Katana Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم ﺳﻳﻭف اﻟﻛﺎﺗﺎﻧﺎ",
+            "deude": "Erhöhte Katana-Angriffskraft",
+            "engus": "Improved Katana Attack Power",
+            "frafr": "Puissance d'attaque des katanas augmentée",
+            "itait": "Potenza attacco katana migliorata",
+            "jpnjp": "刀の攻撃力上昇",
+            "korkr": "도 공격력 상승",
+            "polpl": "Zwiększa siłę ataku katanami",
+            "porbr": "Ataque de katana melhorado",
+            "rusru": "Усиление атаки катаной",
+            "spaar": "Poder de ataque con katana mejorado",
+            "spaes": "Mejora la potencia de ataque con catana",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ดาบ​คา​ตา​นะ",
+            "zhocn": "提升刀攻击力",
+            "zhotw": "提升刀攻擊力"
+        }
     },
     {
         "id": 8160700,
-        "name": "Improved Twinblade Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﻧﺻﺎل ذات اﻟﺣﺩﻳﻥ",
+            "deude": "Erh. Doppelklingen-Angriffskraft",
+            "engus": "Improved Twinblade Attack Power",
+            "frafr": "Puissance d'attaque des lames doubles augmentée",
+            "itait": "Potenza attacco lama gemella migliorata",
+            "jpnjp": "両刃剣の攻撃力上昇",
+            "korkr": "쌍날검 공격력 상승",
+            "polpl": "Zwiększa siłę ataku podwójnymi ostrzami",
+            "porbr": "Ataque de lâminas-gêmeas melhorado",
+            "rusru": "Усиление атаки парными клинками",
+            "spaar": "Poder de ataque con hojas gemelas mejorado",
+            "spaes": "Mejora la potencia de ataque con hoja doble",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ดาบส​อง​ปลาย",
+            "zhocn": "提升双头剑攻击力",
+            "zhotw": "提升雙頭劍攻擊力"
+        }
     },
     {
         "id": 8160800,
-        "name": "Improved Thrusting Sword Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم ﺳﻳﻭف اﻟﻁﻌﻥ",
+            "deude": "Erhöhte Stoßschwert-Angriffskraft",
+            "engus": "Improved Thrusting Sword Attack Power",
+            "frafr": "Puissance d'attaque des épées d'estoc augmentée",
+            "itait": "Potenza attacco spada perforante migliorata",
+            "jpnjp": "刺剣の攻撃力上昇",
+            "korkr": "자검 공격력 상승",
+            "polpl": "Zwiększa siłę ataku mieczami do pchnięć",
+            "porbr": "Ataque de espada de fincada melhorado",
+            "rusru": "Усиление атаки колющим мечом",
+            "spaar": "Poder de  ataq. con espada de embestida mej.",
+            "spaes": "Mejora la pot. de atq. con espada de embestida",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ดาบ​แทง",
+            "zhocn": "提升刺剑攻击力",
+            "zhotw": "提升刺劍攻擊力"
+        }
     },
     {
         "id": 8160900,
-        "name": "Improved Heavy Thrusting Sword Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم ﺳﻳﻭف اﻟﻁﻌﻥ اﻟﺛﻘﻳﻠﺔ",
+            "deude": "Erh. Schw.-Stoßschw.-Angriffskraft",
+            "engus": "Improved Heavy Thrusting Sword Attack Power",
+            "frafr": "Puiss. d'att. des épées d'estoc lourdes augmentée",
+            "itait": "Pot. att. spada perforante pesante migliorata",
+            "jpnjp": "重刺剣の攻撃力上昇",
+            "korkr": "대자검 공격력 상승",
+            "polpl": "Zwiększa siłę ataku ciężkimi mieczami do pchnięć",
+            "porbr": "Ataque de espada pesada de fincada melhorado",
+            "rusru": "Усиление атаки тяжёлым колющим мечом",
+            "spaar": "Pod. ataq. con espada pesada de embestida mej.",
+            "spaes": "Mejora la pot. de atq. con espada de emb. pesada",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ดาบ​แทง​หนัก",
+            "zhocn": "提升重刺剑攻击力",
+            "zhotw": "提升重刺劍攻擊力"
+        }
     },
     {
         "id": 8161000,
-        "name": "Improved Axe Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﻔﺅوس",
+            "deude": "Erhöhte Axt-Angriffskraft",
+            "engus": "Improved Axe Attack Power",
+            "frafr": "Puissance d'attaque des haches augmentée",
+            "itait": "Potenza attacco ascia migliorata",
+            "jpnjp": "斧の攻撃力上昇",
+            "korkr": "도끼 공격력 상승",
+            "polpl": "Zwiększa siłę ataku toporami",
+            "porbr": "Ataque de machado melhorado",
+            "rusru": "Усиление атаки топором",
+            "spaar": "Poder de ataque con hacha mejorado",
+            "spaes": "Mejora la potencia de ataque con hacha",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ขวาน",
+            "zhocn": "提升斧攻击力",
+            "zhotw": "提升斧攻擊力"
+        }
     },
     {
         "id": 8161100,
-        "name": "Improved Greataxe Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﻔﺅوس اﻟﻌﻅﻳﻣﺔ",
+            "deude": "Erhöhte Großaxt-Angriffskraft",
+            "engus": "Improved Greataxe Attack Power",
+            "frafr": "Puissance d'attaque des grandes haches augmentée",
+            "itait": "Pot. attacco ascia pesante migliorata",
+            "jpnjp": "大斧の攻撃力上昇",
+            "korkr": "대형 도끼 공격력 상승",
+            "polpl": "Zwiększa siłę ataku wielkimi toporami",
+            "porbr": "Ataque de machado grande melhorado",
+            "rusru": "Усиление атаки большим топором",
+            "spaar": "Poder de ataque con gran hacha mejorado",
+            "spaes": "Mejora la potencia de ataque con gran hacha",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ขวาน​ใหญ่",
+            "zhocn": "提升大斧攻击力",
+            "zhotw": "提升大斧攻擊力"
+        }
     },
     {
         "id": 8161200,
-        "name": "Improved Hammer Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﻣﻁﺎرق",
+            "deude": "Erhöhte Hammer-Angriffskraft",
+            "engus": "Improved Hammer Attack Power",
+            "frafr": "Puissance d'attaque des marteaux augmentée",
+            "itait": "Potenza attacco martello migliorata",
+            "jpnjp": "槌の攻撃力上昇",
+            "korkr": "망치 공격력 상승",
+            "polpl": "Zwiększa siłę ataku młotami",
+            "porbr": "Ataque de martelo melhorado",
+            "rusru": "Усиление атаки молотом",
+            "spaar": "Poder de ataque con martillo mejorado",
+            "spaes": "Mejora la potencia de ataque con martillo",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ค้อน",
+            "zhocn": "提升槌攻击力",
+            "zhotw": "提升槌攻擊力"
+        }
     },
     {
         "id": 8161300,
-        "name": "Improved Great Hammer Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﻣﻁﺎرق اﻟﻌﻅﻳﻣﺔ",
+            "deude": "Erh. Kriegshammer-Angriffskraft",
+            "engus": "Improved Great Hammer Attack Power",
+            "frafr": "Puissance d'attaque des grands marteaux augm.",
+            "itait": "Potenza attacco martello pesante migliorata",
+            "jpnjp": "大槌の攻撃力上昇",
+            "korkr": "대형 망치 공격력 상승",
+            "polpl": "Zwiększa siłę ataku wielkimi młotami",
+            "porbr": "Ataque de martelo grande melhorado",
+            "rusru": "Усиление атаки большим молотом",
+            "spaar": "Poder de ataque con gran martillo mejorado",
+            "spaes": "Mejora la potencia de ataque con gran martillo",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ค้อน​ใหญ่",
+            "zhocn": "提升大槌攻击力",
+            "zhotw": "提升大槌攻擊力"
+        }
     },
     {
         "id": 8161400,
-        "name": "Improved Flail Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﻣﺧﺎﺑﻳﻁ",
+            "deude": "Erhöhte Flegel-Angriffskraft",
+            "engus": "Improved Flail Attack Power",
+            "frafr": "Puissance d'attaque des fléaux d'armes augmentée",
+            "itait": "Potenza attacco flagello migliorata",
+            "jpnjp": "フレイルの攻撃力上昇",
+            "korkr": "철퇴 공격력 상승",
+            "polpl": "Zwiększa siłę ataku korbaczami",
+            "porbr": "Ataque de mangual melhorado",
+            "rusru": "Усиление атаки цепом",
+            "spaar": "Poder de ataque con mangual mejorado",
+            "spaes": "Mejora la potencia de ataque con mayal",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ลูก​ตุ้ม",
+            "zhocn": "提升连枷攻击力",
+            "zhotw": "提升連枷攻擊力"
+        }
     },
     {
         "id": 8161500,
-        "name": "Improved Spear Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺭﻣﺎح",
+            "deude": "Erhöhte Speer-Angriffskraft",
+            "engus": "Improved Spear Attack Power",
+            "frafr": "Puissance d'attaque des lances augmentée",
+            "itait": "Potenza attacco lancia migliorata",
+            "jpnjp": "槍の攻撃力上昇",
+            "korkr": "창 공격력 상승",
+            "polpl": "Zwiększa siłę ataku włóczniami",
+            "porbr": "Ataque de lança melhorado",
+            "rusru": "Усиление атаки копьём",
+            "spaar": "Poder de ataque con lanza mejorado",
+            "spaes": "Mejora la potencia de ataque con lanza",
+            "thath": "เพิม​พลัง​โจมตี​ของ​หอก",
+            "zhocn": "提升矛攻击力",
+            "zhotw": "提升矛攻擊力"
+        }
     },
     {
         "id": 8161600,
-        "name": "Improved Pike Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺭﻣﺎح اﻟﻣﺩﺑﺑﺔ",
+            "deude": "Erhöhte Piken-Angriffskraft",
+            "engus": "Improved Pike Attack Power",
+            "frafr": "Puissance d'attaque des piques augmentée",
+            "itait": "Potenza attacco picca migliorata",
+            "jpnjp": "長槍の攻撃力上昇",
+            "korkr": "장창 공격력 상승",
+            "polpl": "Zwiększa siłę ataku pikami",
+            "porbr": "Ataque de pique melhorado",
+            "rusru": "Усиление атаки рогатиной",
+            "spaar": "Poder de ataque con pica mejorado",
+            "spaes": "Mejora la potencia de ataque con pica",
+            "thath": "เพิม​พลัง​โจมตี​ของ​หอก​ยาว",
+            "zhocn": "提升长矛攻击力",
+            "zhotw": "提升長矛攻擊力"
+        }
     },
     {
         "id": 8161700,
-        "name": "Improved Great Spear Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺭﻣﺎح اﻟﻌﻅﻳﻣﺔ",
+            "deude": "Erh. Großer-Speer-Angriffskraft",
+            "engus": "Improved Great Spear Attack Power",
+            "frafr": "Puissance d'attaque des grandes lances augmentée",
+            "itait": "Potenza attacco lancia pesante migliorata",
+            "jpnjp": "大槍の攻撃力上昇",
+            "korkr": "대형 창 공격력 상승",
+            "polpl": "Zwiększa siłę ataku wielkimi włóczniami",
+            "porbr": "Ataque de lança grande melhorado",
+            "rusru": "Усиление атаки большим копьём",
+            "spaar": "Poder de ataque con gran lanza mejorado",
+            "spaes": "Mejora la potencia de ataque con gran lanza",
+            "thath": "เพิม​พลัง​โจมตี​ของ​หอก​ใหญ่",
+            "zhocn": "提升大矛攻击力",
+            "zhotw": "提升大矛攻擊力"
+        }
     },
     {
         "id": 8161800,
-        "name": "Improved Halberd Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم رﻣﺎح اﻟﻣِﻁﺭَد",
+            "deude": "Erhöhte Hellebarden-Angriffskraft",
+            "engus": "Improved Halberd Attack Power",
+            "frafr": "Puissance d'attaque des hallebardes augmentée",
+            "itait": "Potenza attacco alabarda migliorata",
+            "jpnjp": "斧槍の攻撃力上昇",
+            "korkr": "도끼창 공격력 상승",
+            "polpl": "Zwiększa siłę ataku halabardami",
+            "porbr": "Ataque de alabarda melhorado",
+            "rusru": "Усиление атаки алебардой",
+            "spaar": "Poder de ataque con alabarda mejorado",
+            "spaes": "Mejora la potencia de ataque con alabarda",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ง้าว",
+            "zhocn": "提升戟攻击力",
+            "zhotw": "提升戟攻擊力"
+        }
     },
     {
         "id": 8161900,
-        "name": "Improved Reaper Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﺭﻣﺎح اﻟﺣﺎﺻﺩة",
+            "deude": "Erhöhte Schnitter-Angriffskraft",
+            "engus": "Improved Reaper Attack Power",
+            "frafr": "Puissance d'attaque des fauchards augmentée",
+            "itait": "Potenza attacco falce migliorata",
+            "jpnjp": "鎌の攻撃力上昇",
+            "korkr": "낫 공격력 상승",
+            "polpl": "Zwiększa siłę ataku kosami",
+            "porbr": "Ataque de ceifador melhorado",
+            "rusru": "Усиление атаки косой",
+            "spaar": "Poder de ataque con guadaña mejorado",
+            "spaes": "Mejora la potencia de ataque con guadaña",
+            "thath": "เพิม​พลัง​โจมตี​ของ​เคียว",
+            "zhocn": "提升镰刀攻击力",
+            "zhotw": "提升鐮刀攻擊力"
+        }
     },
     {
         "id": 8162000,
-        "name": "Improved Fist Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﻘﺑﺿﺎت",
+            "deude": "Erhöhte Faust-Angriffskraft",
+            "engus": "Improved Fist Attack Power",
+            "frafr": "Puissance d'attaque des poings augmentée",
+            "itait": "Potenza attacco pugno migliorata",
+            "jpnjp": "拳の攻撃力上昇",
+            "korkr": "주먹 공격력 상승",
+            "polpl": "Zwiększa siłę ataku pięściami",
+            "porbr": "Ataque de punho melhorado",
+            "rusru": "Усиление атаки кулаками",
+            "spaar": "Poder de ataque con puño mejorado",
+            "spaes": "Mejora la potencia de ataque con puño",
+            "thath": "เพิม​พลัง​โจมตี​ของ​หมัด",
+            "zhocn": "提升拳头攻击力",
+            "zhotw": "提升拳頭攻擊力"
+        }
     },
     {
         "id": 8162100,
-        "name": "Improved Claw Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻟﻣﺧﺎﻟﺏ",
+            "deude": "Erhöhte Klauen-Angriffskraft",
+            "engus": "Improved Claw Attack Power",
+            "frafr": "Puissance d'attaque des griffes augmentée",
+            "itait": "Potenza attacco artiglio migliorata",
+            "jpnjp": "爪の攻撃力上昇",
+            "korkr": "발톱 공격력 상승",
+            "polpl": "Zwiększa siłę ataku szponami",
+            "porbr": "Ataque de garra melhorado",
+            "rusru": "Усиление атаки когтями",
+            "spaar": "Poder de ataque con garra mejorado",
+            "spaes": "Mejora la potencia de ataque con garra",
+            "thath": "เพิม​พลัง​โจมตี​ของ​กรง​เล็บ",
+            "zhocn": "提升钩爪攻击力",
+            "zhotw": "提升鉤爪攻擊力"
+        }
     },
     {
         "id": 8162200,
-        "name": "Improved Whip Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻷﺳﻭاط",
+            "deude": "Erhöhte Peitschen-Angriffskraft",
+            "engus": "Improved Whip Attack Power",
+            "frafr": "Puissance d'attaque des fouets augmentée",
+            "itait": "Potenza attacco frusta migliorata",
+            "jpnjp": "鞭の攻撃力上昇",
+            "korkr": "채찍 공격력 상승",
+            "polpl": "Zwiększa siłę ataku biczami",
+            "porbr": "Ataque de chicote melhorado",
+            "rusru": "Усиление атаки кнутом",
+            "spaar": "Poder de ataque con látigo mejorado",
+            "spaes": "Mejora la potencia de ataque con látigo",
+            "thath": "เพิม​พลัง​โจมตี​ของ​แส้",
+            "zhocn": "提升软鞭攻击力",
+            "zhotw": "提升軟鞭攻擊力"
+        }
     },
     {
         "id": 8162300,
-        "name": "Improved Colossal Weapon Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻷﺳﻠﺣﺔ اﻟﺿﺧﻣﺔ",
+            "deude": "Erh. Gig.-Waffen-Angriffskraft",
+            "engus": "Improved Colossal Weapon Attack Power",
+            "frafr": "Puissance d'attaque des armes colossales augm.",
+            "itait": "Potenza attacco arma colossale migliorata",
+            "jpnjp": "特大武器の攻撃力上昇",
+            "korkr": "특대형 무기 공격력 상승",
+            "polpl": "Zwiększa siłę ataku olbrzymimi broniami",
+            "porbr": "Ataque de arma colossal melhorado",
+            "rusru": "Усиление атаки огромным оружием",
+            "spaar": "Poder de ataque con arma colosal mejorado",
+            "spaes": "Mejora la potencia de ataque con arma colosal",
+            "thath": "เพิม​พลัง​โจมตี​ของ​อาวุธ​ขนาด​ยักษ์",
+            "zhocn": "提升特大武器攻击力",
+            "zhotw": "提升特大武器攻擊力"
+        }
     },
     {
         "id": 8162400,
-        "name": "Improved Bow Attack Power"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﻭة ﻫﺟﻭم اﻷﻗﻭاس",
+            "deude": "Erhöhte Bogen-Angriffskraft",
+            "engus": "Improved Bow Attack Power",
+            "frafr": "Puissance d'attaque des arcs augmentée",
+            "itait": "Potenza attacco arco migliorata",
+            "jpnjp": "弓の攻撃力上昇",
+            "korkr": "활 공격력 상승",
+            "polpl": "Zwiększa siłę ataku łukami",
+            "porbr": "Ataque de arco melhorado",
+            "rusru": "Усиление стрельбы из лука",
+            "spaar": "Poder de ataque con arco mejorado",
+            "spaes": "Mejora la potencia de ataque con arco",
+            "thath": "เพิม​พลัง​โจมตี​ของ​ธนู",
+            "zhocn": "提升弓攻击力",
+            "zhotw": "提升弓攻擊力"
+        }
     },
     {
         "id": 8200000,
-        "name": "Improved Physical Damage Negation"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ إﻟﻐﺎء اﻟﺿﺭر اﻟﺑﺩﻧﻲ",
+            "deude": "Erh. körperliche Schadensresistenz",
+            "engus": "Improved Physical Damage Negation",
+            "frafr": "Résistance aux dégâts physiques augmentée",
+            "itait": "Resistenza danni fisici migliorata",
+            "jpnjp": "物理カット率上昇",
+            "korkr": "물리 경감률 상승",
+            "polpl": "Zwiększa negację obrażeń fizycznych",
+            "porbr": "Negação de dano físico aumentada",
+            "rusru": "Улучшение сопротивления физ. урону",
+            "spaar": "Neutralización de daño físico mejorada",
+            "spaes": "Mejora negación de daños físicos",
+            "thath": "เพิม​อัตรา​ลด​ความ​เสีย​หาย​กายภาพ",
+            "zhocn": "提升物理减伤率",
+            "zhotw": "提升物理減傷率"
+        }
     },
     {
         "id": 8200500,
-        "name": "Improved Affinity Damage Negation"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ إﻟﻐﺎء ﺿﺭر اﻟﺗﻧﺎﻏﻣﺎت",
+            "deude": "Erh. Affinitätsschadensresistenz",
+            "engus": "Improved Affinity Damage Negation",
+            "frafr": "Résist. aux dég. d'affinité augm.",
+            "itait": "Resistenza danni affinità migliorata",
+            "jpnjp": "属性カット率上昇",
+            "korkr": "속성 경감률 상승",
+            "polpl": "Zwiększa negację obrażeń od właściwości",
+            "porbr": "Negação de dano de afinidade aumentada",
+            "rusru": "Улучшение сопротивления урону с эффектами",
+            "spaar": "Neutralización de daño de afinidades mejorada",
+            "spaes": "Mejora negación de daños fulgurantes",
+            "thath": "เพิม​อัตรา​ลด​ความ​เสีย​หาย​ที​มี​คุณสมบัติ",
+            "zhocn": "提升属性减伤率",
+            "zhotw": "提升屬性減傷率"
+        }
     },
     {
         "id": 8210700,
-        "name": "All Resistances Up"
+        "name": {
+            "araae": "زﻳﺎدة ﺟﻣﻳﻊ أﻧﻭاع اﻟﻣﻘﺎوﻣﺔ",
+            "deude": "Alle Resistenzen erhöht",
+            "engus": "All Resistances Up",
+            "frafr": "Toutes les résist. augmentées",
+            "itait": "Tutte le resistenze migliorate",
+            "jpnjp": "全状態異常耐性を高める",
+            "korkr": "모든 상태 이상 내성 상승",
+            "polpl": "Zwiększenie wszystkich odporności",
+            "porbr": "Todas as resistências aumentadas",
+            "rusru": "Улучшение всех видов сопротивления",
+            "spaar": "Todas las resistencias aumentadas",
+            "spaes": "Aumentan todas las resistencias",
+            "thath": "เพิม​ความ​ต้านทาน​สถานะ​ผิด​ปกติ​ทุก​ประเภท",
+            "zhocn": "提升所有异常状态抵抗力",
+            "zhotw": "提升所有異常狀態抵抗力"
+        }
     },
     {
         "id": 8230000,
-        "name": "Improved Poise"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ اﻟﺛﺑﺎت",
+            "deude": "Verbessertes Gleichgewicht",
+            "engus": "Improved Poise",
+            "frafr": "Équilibre amélioré",
+            "itait": "Stabilità migliorata",
+            "jpnjp": "強靭度上昇",
+            "korkr": "강인도 상승",
+            "polpl": "Zwiększenie równowagi",
+            "porbr": "Equilíbrio melhorado",
+            "rusru": "Улучшение баланса",
+            "spaar": "Aplomo mejorado",
+            "spaes": "Mejora el aplomo",
+            "thath": "เพิม​ระดับ​ความ​มันคง",
+            "zhocn": "提升强韧度",
+            "zhotw": "提升強韌度"
+        }
     },
     {
         "id": 8330103,
-        "name": "Improved Sorceries & Incantations"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ اﻷﺳﺣﺎر واﻟﺗﻌﻭﻳﺫات",
+            "deude": "Verb. Zaubereien & Anrufungen",
+            "engus": "Improved Sorceries & Incantations",
+            "frafr": "Sorcell. et incant. améliorées",
+            "itait": "Stregonerie e incantesimi migliorati",
+            "jpnjp": "魔術／祈祷強化",
+            "korkr": "마술/기도 강화",
+            "polpl": "Wzmacnia czary i inkantacje",
+            "porbr": "Feitiços e encantamentos melhorados",
+            "rusru": "Усиление чар и молитв",
+            "spaar": "Hechicerías y encantamientos mejorados",
+            "spaes": "Mejoran las hechicerías y los encantamientos",
+            "thath": "เสริม​พลัง​คาถา/​มน​ตรา",
+            "zhocn": "强化魔法、祷告",
+            "zhotw": "強化魔法、禱告"
+        }
     },
     {
         "id": 8330500,
-        "name": "Increased Sorcery & Incantation Duration"
+        "name": {
+            "araae": "زﻳﺎدة ﻣﺩة اﻟﺳﺣﺭ واﻟﺗﻌﺎوﻳﺫ",
+            "deude": "Erh. Zaubereien- & Anrufungsdauer",
+            "engus": "Increased Sorcery & Incantation Duration",
+            "frafr": "Durée des sorcelleries et incantations augmentée",
+            "itait": "Durata stregonerie e incantesimi incrementata",
+            "jpnjp": "魔術／祈祷、効果時間延長",
+            "korkr": "마술/기도 효과 시간 연장",
+            "polpl": "Wydłuża działanie czarów i inkantacji",
+            "porbr": "Duração de feitiços e encantamentos aumentada",
+            "rusru": "Повышение длительности чар и молитв",
+            "spaar": "Duración de encant. y hech. aumentada",
+            "spaes": "Mejora la durac. de hechicerías y encantamientos",
+            "thath": "เพิม​เวลา​แสดง​ผล​ของ​คาถา/​มน​ตรา",
+            "zhocn": "延长魔法、祷告有效时间",
+            "zhotw": "延長魔法、禱告有效時間"
+        }
     },
     {
         "id": 8330700,
-        "name": "Dragonwound upon Dragon Communion"
+        "name": {
+            "araae": "إﺻﺎﺑﺔ اﻟﺗﻧﻳﻥ ﻋﻧﺩ اﺳﺗﺧﺩام ﻗﺭﺑﺎن اﻟﺗﻧﻳﻥ",
+            "deude": "Drachenwunde bei Drachenkommunion",
+            "engus": "Dragonwound upon Dragon Communion",
+            "frafr": "Plaie draconique lors de la Communion Drac.",
+            "itait": "Dracolacerazione con comunione draconica",
+            "jpnjp": "竜餐の祈祷で武器に竜傷を付加する",
+            "korkr": "용찬 기도로 무기에 용상 부여",
+            "polpl": "Smocza rana po smoczej komunii",
+            "porbr": "Ferida de Dragão na Comunhão do Dragão",
+            "rusru": "Ранение дракона при драконьем причастии",
+            "spaar": "Herida de dragón al usar Comunión del Dragón",
+            "spaes": "C. Dragontina causa heridas de dragón",
+            "thath": "ใส่​บาดแผล​มังกร​ให้​อาวุธ​ด้วย​มน​ตรา​ผู้​กลืน​กิน​มังกร",
+            "zhocn": "执行龙飨祷告附加伤龙",
+            "zhotw": "執行龍饗禱告附加傷龍"
+        }
     },
     {
         "id": 8330800,
-        "name": "Improved Stonedigger Sorcery"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺳﺣﺭ ﺣﺎر اﻟﺣﺟﺭ",
+            "deude": "Verb. Steingräberzauberei",
+            "engus": "Improved Stonedigger Sorcery",
+            "frafr": "Sorcellerie tellurique améliorée",
+            "itait": "Stregonerie scavapietra migliorate",
+            "jpnjp": "石掘りの魔術を強化",
+            "korkr": "채굴 마술 강화",
+            "polpl": "Wzmacnia górnicze czary",
+            "porbr": "Feitiços de escavador de pedras melhorados",
+            "rusru": "Усиление чар камнекопов",
+            "spaar": "Hechicería del cavarrocas mejorada",
+            "spaes": "Mejoran los hechizos excavapiedra",
+            "thath": "เสริม​พลัง​คาถา​ขุด​หิน",
+            "zhocn": "强化挖石的魔法",
+            "zhotw": "強化挖石的魔法"
+        }
     },
     {
         "id": 8330900,
-        "name": "Improved Carian Sword Sorcery"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺳﺣﺭ ﺳﻳﻑ ﻛﺎرﻳﺎ",
+            "deude": "Verbesserte Cariaschwertzauberei",
+            "engus": "Improved Carian Sword Sorcery",
+            "frafr": "Sorcellerie de Caria améliorée",
+            "itait": "Stregonerie della spada cariana migliorate",
+            "jpnjp": "カーリアの剣の魔術を強化",
+            "korkr": "카리아의 검 마술 강화",
+            "polpl": "Wzmacnia czary karyjskiego miecza",
+            "porbr": "Feitiços de espada cariana melhorados",
+            "rusru": "Усиление чар карианского меча",
+            "spaar": "Hechicería de la espada de Caria mejorada",
+            "spaes": "Mejoran los hechizos de espada cariana",
+            "thath": "เสริม​พลัง​คาถา​ดาบ​แห่ง​คา​เรีย",
+            "zhocn": "强化卡利亚剑的魔法",
+            "zhotw": "強化卡利亞劍的魔法"
+        }
     },
     {
         "id": 8331000,
-        "name": "Improved Glintblade Sorcery"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺳﺣﺭ اﻟﻧﺻﻝ اﻟﻼﻣﻊ",
+            "deude": "Verb. Schimmerklingenzauberei",
+            "engus": "Improved Glintblade Sorcery",
+            "frafr": "Sorcellerie de laméclat améliorée",
+            "itait": "Stregonerie scintilama migliorate",
+            "jpnjp": "輝剣の魔術を強化",
+            "korkr": "휘검 마술 강화",
+            "polpl": "Wzmacnia czary błyskostrzy",
+            "porbr": "Feitiços de laminante melhorados",
+            "rusru": "Усиление чар блестящих клинков",
+            "spaar": "Hechicería de destellojas mejorada",
+            "spaes": "Mejoran los hechizos de hoja refulgente",
+            "thath": "เสริม​พลัง​คาถา​ดาบ​จรัส",
+            "zhocn": "强化辉剑的魔法",
+            "zhotw": "強化輝劍的魔法"
+        }
     },
     {
         "id": 8331100,
-        "name": "Improved Invisibility Sorcery"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺳﺣﺭ اﻟﺗﺧﻔﻲ",
+            "deude": "Verbesserte Unsichtbarkeitszauberei",
+            "engus": "Improved Invisibility Sorcery",
+            "frafr": "Sorcellerie d'invisibilité améliorée",
+            "itait": "Stregonerie dell'invisibilità migliorate",
+            "jpnjp": "不可視の魔術を強化",
+            "korkr": "보이지 않는 마술 강화",
+            "polpl": "Wzmacnia czary niewidzialności",
+            "porbr": "Feitiços de invisibilidade melhorados",
+            "rusru": "Усиление чар невидимости",
+            "spaar": "Hechicería de invisibilidad mejorada",
+            "spaes": "Mejoran los hechizos de invisibilidad",
+            "thath": "เสริม​พลัง​คาถา​ล่องหน",
+            "zhocn": "强化隐形的魔法",
+            "zhotw": "強化隱形的魔法"
+        }
     },
     {
         "id": 8331200,
-        "name": "Improved Crystalian sorcery"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺳﺣﺭ اﻟﺣﺎرس اﻟﺑﻠﻭري",
+            "deude": "Verb. Kristallianerzauberei",
+            "engus": "Improved Crystalian sorcery",
+            "frafr": "Sorcellerie cristalienne améliorée",
+            "itait": "Stregonerie cristalliane migliorate",
+            "jpnjp": "結晶人の魔術を強化",
+            "korkr": "결정인의 마술 강화",
+            "polpl": "Wzmacnia czary kryształów",
+            "porbr": "Feitiços cristalianos melhorados",
+            "rusru": "Усиление чар кристалийцев",
+            "spaar": "Hechicería de los cristalinos mejorada",
+            "spaes": "Mejoran los hechizos cristalianos",
+            "thath": "เสริม​พลัง​คาถา​มนุษย์​ผลึก​แก้ว",
+            "zhocn": "强化结晶人的魔法",
+            "zhotw": "強化結晶人的魔法"
+        }
     },
     {
         "id": 8331300,
-        "name": "Improved Gravity Sorcery"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺳﺣﺭ اﻟﺟﺎذﺑﻳﺔ",
+            "deude": "Verb. Gravitationszauberei",
+            "engus": "Improved Gravity Sorcery",
+            "frafr": "Sorcellerie gravitationnelle améliorée",
+            "itait": "Stregonerie gravitazionali migliorate",
+            "jpnjp": "重力の魔術を強化",
+            "korkr": "중력 마술 강화",
+            "polpl": "Wzmacnienie czarów grawitacyjnych",
+            "porbr": "Feitiços de gravidade melhorados",
+            "rusru": "Усиление чар гравитации",
+            "spaar": "Hechicería de gravedad mejorada",
+            "spaes": "Mejoran los hechizos de tipo Gravitas",
+            "thath": "เสริม​พลัง​คาถา​แรง​โน้ม​ถ่วง",
+            "zhocn": "强化重力的魔法",
+            "zhotw": "強化重力的魔法"
+        }
     },
     {
         "id": 8331400,
-        "name": "Improved Thorn Sorcery"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺳﺣﺭ اﻷﺷﻭاك",
+            "deude": "Verb. Dornenzauberei",
+            "engus": "Improved Thorn Sorcery",
+            "frafr": "Sorcellerie d'épines améliorée",
+            "itait": "Stregonerie del rovo migliorate",
+            "jpnjp": "茨の魔術を強化",
+            "korkr": "가시 마술 강화",
+            "polpl": "Wzmacnia czary cierni",
+            "porbr": "Feitiços de espinhos melhorados",
+            "rusru": "Усиление чар шипов",
+            "spaar": "Hechicería de espinas mejorada",
+            "spaes": "Mejoran los hechizos con espinas",
+            "thath": "เสริม​พลัง​คาถา​หนาม",
+            "zhocn": "强化荆棘的魔法",
+            "zhotw": "強化荊棘的魔法"
+        }
     },
     {
         "id": 8331500,
-        "name": "Improved Night Sorcery"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺳﺣﺭ اﻟﻅﻼم",
+            "deude": "Verb. Nachtzauberei",
+            "engus": "Improved Night Sorcery",
+            "frafr": "Sorcellerie nocturne améliorée",
+            "itait": "Stregonerie notturne migliorate",
+            "jpnjp": "夜の魔術を強化",
+            "korkr": "밤의 마술 강화",
+            "polpl": "Wzmacnia czary nocy",
+            "porbr": "Feitiços da Noite melhorados",
+            "rusru": "Усиление чар Ночи",
+            "spaar": "Hechicería nocturna mejorada",
+            "spaes": "Mejoran las hechicerías nocturnas",
+            "thath": "เสริม​พลัง​คาถา​รัตติกาล",
+            "zhocn": "强化黑夜的魔法",
+            "zhotw": "強化黑夜的魔法"
+        }
     },
     {
         "id": 8331600,
-        "name": "Improved Fundamentalist Incantations"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺗﻌﻭﻳﺫات اﻷﺻﻭﻟﻳﻳﻥ",
+            "deude": "Verb. Anrufungen d. Fundamentalisten",
+            "engus": "Improved Fundamentalist Incantations",
+            "frafr": "Incantations de l'Ordre d'or améliorées",
+            "itait": "Incantesimi dei fondamentalisti migliorati",
+            "jpnjp": "黄金律原理主義の祈祷を強化",
+            "korkr": "황금률 원리주의 기도 강화",
+            "polpl": "Wzmacnia inkantacje fundamentalistów",
+            "porbr": "Encantamentos da Ordem Áurea melhorados",
+            "rusru": "Усиление молитв фанатиков Порядка",
+            "spaar": "Encantamientos de fundamentalistas mejorados",
+            "spaes": "Mejoran los enc. de fundamentalista",
+            "thath": "เสริม​พลัง​มน​ตรา​บัญญัติ​ทอง​สาย​ดังเดิม",
+            "zhocn": "强化黄金律法基本主义的祷告",
+            "zhotw": "強化黃金律法基本主義的禱告"
+        }
     },
     {
         "id": 8331700,
-        "name": "Improved Dragon Cult Incantations"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺗﻌﻭﻳﺫات ﻁﺎﺋﻔﺔ اﻟﺗﻧﻳﻥ",
+            "deude": "Verb. Anrufungen des Drachenkults",
+            "engus": "Improved Dragon Cult Incantations",
+            "frafr": "Incant. draconiques améliorées",
+            "itait": "Incantesimi del culto draconico migliorati",
+            "jpnjp": "王都古竜信仰の祈祷を強化",
+            "korkr": "도읍 고룡신앙 기도 강화",
+            "polpl": "Wzmacnia inkantacje kultu smoków",
+            "porbr": "Encantamentos do Culto do Dragão melhorados",
+            "rusru": "Усиление молитв почитателей драконов",
+            "spaar": "Encantamientos del Culto al Dragón mejorados",
+            "spaes": "Mejoran los encantamientos del culto dracónico",
+            "thath": "เสริม​พลัง​มน​ตรา​ลัทธิ​ศรัทธา​มังกร​โบราณ​แห่ง​นครหลวง",
+            "zhocn": "强化王城古龙信仰的祷告",
+            "zhotw": "強化王城古龍信仰的禱告"
+        }
     },
     {
         "id": 8331800,
-        "name": "Improved Giants' Flame Incantations"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺗﻌﻭﻳﺫات ﻟﻬﺏ اﻟﻌﻣﺎﻟﻘﺔ",
+            "deude": "Ver. Anrufungen d. Flamme der Riesen",
+            "engus": "Improved Giants' Flame Incantations",
+            "frafr": "Incant. de Flamme des Géants améliorées",
+            "itait": "Incantesimi della fiamma dei giganti migliorati",
+            "jpnjp": "巨人の火の祈祷を強化",
+            "korkr": "거인의 불 기도 강화",
+            "polpl": "Wzmacnia ogniste inkantacje olbrzymów",
+            "porbr": "Encantamentos de Chama dos Gigantes melhorados",
+            "rusru": "Усиление молитв великанского пламени",
+            "spaar": "Encantamientos de Llama de los Gigantes mejorados",
+            "spaes": "Mejoran los encant. de la llama de los gigantes",
+            "thath": "เสริม​พลัง​มน​ตรา​เพลิง​ยักษ์",
+            "zhocn": "强化巨人火焰的祷告",
+            "zhotw": "強化巨人火焰的禱告"
+        }
     },
     {
         "id": 8331900,
-        "name": "Improved Godslayer Incantations"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺗﻌﻭﻳﺫات ﻗﺎﺗﻝ اﻷﺳﻳﺎد",
+            "deude": "Verb. Anrufungen der Gottestöter",
+            "engus": "Improved Godslayer Incantations",
+            "frafr": "Incantations déicides améliorées",
+            "itait": "Incantesimi deicidi migliorati",
+            "jpnjp": "神狩りの祈祷を強化",
+            "korkr": "신 사냥 기도 강화",
+            "polpl": "Wzmacnia inkantacje zabójcy bogów",
+            "porbr": "Encantamentos matadores de deuses melhorados",
+            "rusru": "Усиление молитв богоубийцы",
+            "spaar": "Encantamientos del Matadioses mejorados",
+            "spaes": "Mejoran los enc. del exterminador de dioses",
+            "thath": "เสริม​พลัง​มน​ตรา​นัก​ล่า​เทพเจ้า",
+            "zhocn": "强化狩猎神祇的祷告",
+            "zhotw": "強化狩獵神祇的禱告"
+        }
     },
     {
         "id": 8332000,
-        "name": "Improved Bestial Incantations"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺗﻌﻭﻳﺫات اﻟﻭﺣﺷﻳﺔ",
+            "deude": "Verb. bestialische Anrufungen",
+            "engus": "Improved Bestial Incantations",
+            "frafr": "Incantations bestiales améliorées",
+            "itait": "Incantesimi bestiali migliorati",
+            "jpnjp": "獣の祈祷を強化",
+            "korkr": "짐승 기도 강화",
+            "polpl": "Wzmacnia inkantacje bestii",
+            "porbr": "Encantamentos bestiais melhorados",
+            "rusru": "Усиление звериных молитв",
+            "spaar": "Encantamientos bestiales mejorados",
+            "spaes": "Mejoran los hechizos bestiales",
+            "thath": "เสริม​พลัง​มน​ตรา​อสูร",
+            "zhocn": "强化野兽的祷告",
+            "zhotw": "強化野獸的禱告"
+        }
     },
     {
         "id": 8332100,
-        "name": "Improved Frenzied Flame Incantations"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺗﻌﻭﻳﺫات اﻟﻠﻬﺏ اﻟﻣﺳﺗﻌﺭ",
+            "deude": "Verb. Anrufungen d. Rasenden Flamme",
+            "engus": "Improved Frenzied Flame Incantations",
+            "frafr": "Incant. de Flamme exaltée améliorées",
+            "itait": "Incantesimi della Fiamma della frenesia miglior.",
+            "jpnjp": "狂い火の祈祷を強化",
+            "korkr": "미친 불 기도 강화",
+            "polpl": "Wzmacnia inkantacje oszalałego płomienia",
+            "porbr": "Encantamentos de Chama Frenética melhorados",
+            "rusru": "Усиление молитв яростного пламени",
+            "spaar": "Encantamientos de la llama frenética mejorados",
+            "spaes": "Mejoran los encantamientos de la llama frenética",
+            "thath": "เสริม​พลัง​มน​ตรา​เพลิง​คลัง",
+            "zhocn": "强化癫火的祷告",
+            "zhotw": "強化癲火的禱告"
+        }
     },
     {
         "id": 8332200,
-        "name": "Improved Dragon Communion Incantations"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺗﻌﻭﻳﺫات ﻗﺭﺑﺎن اﻟﺗﻧﻳﻥ",
+            "deude": "Verb. Drachenkommunionsanrufungen",
+            "engus": "Improved Dragon Communion Incantations",
+            "frafr": "Incant. de communion draconique améliorées",
+            "itait": "Incantesimi della comunione draconica miglior.",
+            "jpnjp": "竜餐の祈祷を強化",
+            "korkr": "용찬 기도 강화",
+            "polpl": "Wzmacnia inkantacje smoczej komunii",
+            "porbr": "Encantamentos da Comunhão do Dragão melhorados",
+            "rusru": "Усиление молитв драконьего причастия",
+            "spaar": "Encant. de la Comunión del Dragón mejorados",
+            "spaes": "Mejoran los encant. de la Comunión Dragontina",
+            "thath": "เสริม​พลัง​มน​ตรา​ผู้​กลืน​กิน​มังกร",
+            "zhocn": "强化龙飨的祷告",
+            "zhotw": "強化龍饗的禱告"
+        }
     },
     {
         "id": 8350100,
-        "name": "Improved Charged Skill"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ اﻟﻣﻬﺎرة اﻟﻣﺷﺣﻭﻧﺔ",
+            "deude": "Verbessertes aufgeladenes Talent",
+            "engus": "Improved Charged Skill",
+            "frafr": "Compétences chargées améliorées",
+            "itait": "Abilità caricata migliorata",
+            "jpnjp": "戦技のタメ使用を強化",
+            "korkr": "전투 기술 차지 사용 강화",
+            "polpl": "Wzmacnia ładowane umiejętności",
+            "porbr": "Habilidade carregada melhorada",
+            "rusru": "Усиление заряженных навыков",
+            "spaar": "Habilidad de carga mejorada",
+            "spaes": "Mejoran las habilidades cargadas",
+            "thath": "เสริม​พลัง​ทักษะ​ต่อสู้​เมือ​ชาร์จ",
+            "zhocn": "强化战技的蓄力发动",
+            "zhotw": "強化戰技的蓄力發動"
+        }
     },
     {
         "id": 8350400,
-        "name": "Successful Parries Activate Golden Retaliation"
+        "name": {
+            "araae": "اﻟﻣﺭاوﻏﺎت اﻟﻧﺎﺟﺣﺔ ﺗﻔﻌّﻝ اﻻﻧﺗﻘﺎم اﻟﺫﻫﺑﻲ",
+            "deude": "Erfolgr. Parieren aktiviert Goldene Vergeltung",
+            "engus": "Successful Parries Activate Golden Retaliation",
+            "frafr": "Réussir une parade déclenche Riposte dorée",
+            "itait": "Le parate efficaci attivano Contrappasso aureo",
+            "jpnjp": "パリィ成功時、黄金の返報",
+            "korkr": "패리 성공 시 황금의 보복",
+            "polpl": "Udane bloki aktywują złoty odwet",
+            "porbr": "Retaliação Dourada ativa ao Aparar",
+            "rusru": "Акт. «Золотого возмедия» усп. парированием",
+            "spaar": "Rechazos exitosos activan contraataques dorados",
+            "spaes": "Las elusiones con éxito activan Represalia dorada",
+            "thath": "สนอง​คุณ​ทอง​เมือ​ด​ปอง​สําเร็จ",
+            "zhocn": "格挡成功时，发动黄金式奉还",
+            "zhotw": "格擋成功時，發動黃金式奉還"
+        }
     },
     {
         "id": 8360000,
-        "name": "Improved Ultimate Art Gauge Charge Speed"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﺳﺭﻋﺔ ﺷﺣﻥ ﻣﻘﻳﺎس اﻷﺳﻠﻭب اﻷﺳﻣﻰ",
+            "deude": "Erhöhtes Ultimativkunst-Anzeige-Fülltempo",
+            "engus": "Improved Ultimate Art Gauge Charge Speed",
+            "frafr": "Chargement de la technique ultime",
+            "itait": "Velocità di carica ind. arte suprema migliorata",
+            "jpnjp": "アーツゲージ蓄積速度上昇",
+            "korkr": "아츠 게이지 축적 속도 상승",
+            "polpl": "Szybsze ładowanie wskaźnika zdol. ostatecznej",
+            "porbr": "Recarga do medidor de hab. suprema acelerada",
+            "rusru": "Улучш. скорости заполнения шкалы высш. искусства",
+            "spaar": "Aumen. vel. de carga del med. de arte supr.",
+            "spaes": "Más velocidad de carga de med. arte supr.",
+            "thath": "เพิม​ความเร็ว​ใน​การ​สะ​สม​เกจ​ศาสตร์",
+            "zhocn": "加快累积绝招量表",
+            "zhotw": "加快累積絕活量表"
+        }
     },
     {
         "id": 8370000,
-        "name": "Character Skill Cooldown Reduction"
+        "name": {
+            "araae": "اﻧﺧﻔﺎض ﻓﺗﺭة اﻧﺗﻅﺎر ﻣﻬﺎرة اﻟﺷﺧﺻﻳﺔ",
+            "deude": "Charaktertalent-Abklingzeitverringerung",
+            "engus": "Character Skill Cooldown Reduction",
+            "frafr": "Réduction du temps de recharge de comp. de perso.",
+            "itait": "Riduzione periodo ricarica abilità personaggio",
+            "jpnjp": "スキルクールタイム軽減",
+            "korkr": "스킬 쿨 타임 경감",
+            "polpl": "Skrócenie odnawiania umiejętności postaci",
+            "porbr": "Tempo de recarga da hab. de pers. reduzido",
+            "rusru": "Ускорение перезарядки навыка персонажа",
+            "spaar": "Reduc. tiempo de recarga de hab. de personaje",
+            "spaes": "Menos recarga de habilidad de pers.",
+            "thath": "ลด​เวลา​พัก​หลัง​ใช้​ทักษะ",
+            "zhocn": "缩短技艺的冷却时间",
+            "zhotw": "縮短技藝的冷卻時間"
+        }
     },
     {
         "id": 8380000,
-        "name": "Improved Roar & Breath Attacks"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ  ﻫﺟﻣﺎت اﻟﺯﺋﻳﺭ واﻟﻧﺱ",
+            "deude": "Verb. Brüllen- & Odem-Angriffe",
+            "engus": "Improved Roar & Breath Attacks",
+            "frafr": "Cris et souffles améliorés",
+            "itait": "Attacchi basati su ruggiti e soffi migliorati",
+            "jpnjp": "咆哮とブレス強化",
+            "korkr": "포효와 브레스 강화",
+            "polpl": "Wzmacnia ataki rykiem i zionięciem",
+            "porbr": "Ataques de rugido e sopro melhorados",
+            "rusru": "Усиление атаки с рёвом и дыханием",
+            "spaar": "Ataques de aliento y rugidos mejorados",
+            "spaes": "Mejoran los ataques de rugido y aliento",
+            "thath": "เสริม​พลัง​ปราณ​และ​การ​คําราม",
+            "zhocn": "强化咆哮与吐息",
+            "zhotw": "強化咆哮與吐息"
+        }
     },
     {
         "id": 8390000,
-        "name": "Improved Throwing Pots"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻗﺩرة اﻟﻘﺩور اﻟﻣُﻠﻘﺎة",
+            "deude": "Verbesserte Wurftöpfe",
+            "engus": "Improved Throwing Pots",
+            "frafr": "Pots à lancer améliorés",
+            "itait": "Vasi da lancio migliorati",
+            "jpnjp": "投擲壺強化",
+            "korkr": "투척 항아리 강화",
+            "polpl": "Wzmacnia garnki do rzucania",
+            "porbr": "Potes de arremesso melhorados",
+            "rusru": "Усиление метательных горшков",
+            "spaar": "Recipientes arrojadizos mejorados",
+            "spaes": "Mejoran las vasijas arrojadizas",
+            "thath": "เสริม​พลัง​ไห​ขว้าง",
+            "zhocn": "强化投掷壶",
+            "zhotw": "強化投擲壺"
+        }
     },
     {
         "id": 8400000,
-        "name": "Improved Perfuming Arts"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ اﻟﻔﻧﻭن اﻟﻌﻁﺭﻳﺔ",
+            "deude": "Verbesserte Parfümkunst",
+            "engus": "Improved Perfuming Arts",
+            "frafr": "Techniques de parfums améliorées",
+            "itait": "Tecniche di profumeria migliorate",
+            "jpnjp": "調香術強化",
+            "korkr": "조향술 강화",
+            "polpl": "Wzmacnia sztuki perfumiarstwa",
+            "porbr": "Habilidades de perfumaria melhoradas",
+            "rusru": "Усиление творений парфюмера",
+            "spaar": "Artes de perfume mejoradas",
+            "spaes": "Mejoran las artes de perfume",
+            "thath": "เสริม​พลัง​สุคนธ​ศาสตร์",
+            "zhocn": "强化调香术",
+            "zhotw": "強化調香術"
+        }
     },
     {
         "id": 8410000,
-        "name": "Improved Dodging"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ اﻟﺗﻔﺎدي",
+            "deude": "Verbessertes Ausweichen",
+            "engus": "Improved Dodging",
+            "frafr": "Esquive améliorée",
+            "itait": "Schivata migliorata",
+            "jpnjp": "回避強化",
+            "korkr": "회피 강화",
+            "polpl": "Wzmacnia uniki",
+            "porbr": "Esquiva melhorada",
+            "rusru": "Улучшение уворотов",
+            "spaar": "Evasión mejorada",
+            "spaes": "Mejoran las esquivas",
+            "thath": "เสริม​พลัง​หลบ​หลีก",
+            "zhocn": "强化闪避",
+            "zhotw": "強化閃避"
+        }
     },
     {
         "id": 8410100,
-        "name": "Lightning upon Dodging"
+        "name": {
+            "araae": "اﻟﺑﺭق ﻋﻧﺩ اﻟﺗﻔﺎدي",
+            "deude": "Blitz beim Ausweichen",
+            "engus": "Lightning upon Dodging",
+            "frafr": "Esquiver génère de la foudre",
+            "itait": "Le schivate generano fulmini",
+            "jpnjp": "回避時、周囲に落雷発生",
+            "korkr": "회피 시 주위에 낙뢰 발생",
+            "polpl": "Błyskawica po uniku",
+            "porbr": "Relâmpago ao esquivar",
+            "rusru": "Молния при увороте",
+            "spaar": "Cae un rayo al esquivar",
+            "spaes": "Rayo al esquivar",
+            "thath": "สร้าง​สายฟา​ฟาด​โดย​รอบ​เมือ​หลบ​หลีก",
+            "zhocn": "闪避时，在周围降下落雷",
+            "zhotw": "閃避時，在周圍降下落雷"
+        }
     },
     {
         "id": 8420100,
-        "name": "Guard Counters Activate Holy Attacks"
+        "name": {
+            "araae": "ﺗﻔﻌّﻝ اﻟﻭﻗﺎﻳﺔ اﻟﻣﺿﺎدة ﻫﺟﻣﺎت اﻟﺗﻘﺩﻳﺱ",
+            "deude": "Abwehrkonter aktiv. Heiligangriffe",
+            "engus": "Guard Counters Activate Holy Attacks",
+            "frafr": "Contre-attaquer déclenche une attaque sacrée",
+            "itait": "I contrattacchi in difesa attivano att. sacri",
+            "jpnjp": "ガードカウンター時、聖属性攻撃発動",
+            "korkr": "가드 카운터 시 신성 속성 공격 발동",
+            "polpl": "Kontry po zasłonie aktywują święte ataki",
+            "porbr": "Contra-atq. defensivos ativam atq. sagrados",
+            "rusru": "Контратаки из блока дают свят. атаки",
+            "spaar": "Contraataq. de defensa activan ataq. santos",
+            "spaes": "Las contraguardias activan ataques sagrados",
+            "thath": "ใช้​การ​โจมตี​ศักดิสิทธิ​เมือ​ปองกัน​และ​โต้​กลับ",
+            "zhocn": "防御反击时，触发圣属性攻击",
+            "zhotw": "防禦反擊時，觸發聖屬性攻擊"
+        }
     },
     {
         "id": 8420200,
-        "name": "Guard Counters Activate Summoning Attack"
+        "name": {
+            "araae": "اﻟﻭﻗﺎﻳﺔ اﻟﻣﺿﺎدة ﺗﻔﻌّﻝ اﺳﺗﺩﻋﺎء اﻟﻬﺟﻭم",
+            "deude": "Abwehrkonter aktiv. Beschw.-Angriff",
+            "engus": "Guard Counters Activate Summoning Attack",
+            "frafr": "Contre-attaquer déclenche Attaque invocatrice",
+            "itait": "I contrattacchi in dif. attivano att. evocazione",
+            "jpnjp": "ガードカウンター時、召喚攻撃発動",
+            "korkr": "가드 카운터 시 소환 공격 발동",
+            "polpl": "Kontry zasłon aktywują atak przyzwania",
+            "porbr": "Contra-atq. defensivos ativam Atq. de Invocação",
+            "rusru": "Акт. атак с приз. контратакой из блока",
+            "spaar": "Contraataq. de def. activan ataq. de invoc.",
+            "spaes": "Contraguardias activan Ataque invocación",
+            "thath": "ใช้​อัญเชิญ​มา​โจมตี​เมือ​ปองกัน​และ​โต้​กลับ",
+            "zhocn": "防御反击时，触发召唤攻击",
+            "zhotw": "防禦反擊時，觸發召喚攻擊"
+        }
     },
     {
         "id": 8430000,
-        "name": "Improved Thrusting Counterattack"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ اﻟﻬﺟﻭم اﻟﻣﺿﺎد ﺑﺎﻟﻁﻌﻥ",
+            "deude": "Verbesserter Stoß-Abwehrkonter",
+            "engus": "Improved Thrusting Counterattack",
+            "frafr": "Contre-attaques d'estoc améliorées",
+            "itait": "Contrattacco in affondo migliorato",
+            "jpnjp": "刺突カウンター強化",
+            "korkr": "관통 카운터 강화",
+            "polpl": "Zwiększa siłę kontrataku pchnięciem",
+            "porbr": "Contra-ataque de estocada melhorado",
+            "rusru": "Усиление контратак колющим оружием",
+            "spaar": "Contraataque con embestida mejorado",
+            "spaes": "Más potencia contraataque con emb.",
+            "thath": "เสริม​พลัง​แทง​โต้​กลับ",
+            "zhocn": "强化突刺反击",
+            "zhotw": "強化突刺反擊"
+        }
     },
     {
         "id": 8440000,
-        "name": "Improved Flask HP Restoration"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ اﺳﺗﻌﺎدة ﻧﻘﺎط ﺻﺣﺔ اﻟﻘﻧﻳﻧﺎت",
+            "deude": "Verbesserte Flaschen-LP-Reg.",
+            "engus": "Improved Flask HP Restoration",
+            "frafr": "PV rendus par la fiole augmentés",
+            "itait": "Ripristino PV da ampolla migliorato",
+            "jpnjp": "聖杯瓶の回復量上昇",
+            "korkr": "성배병 회복량 상승",
+            "polpl": "Zwiększa odnawianie PŻ butelki",
+            "porbr": "Restauração de PV com frascos melhorada",
+            "rusru": "Улучшение восполнения ОЗ флягой",
+            "spaar": "Restauración de PV de los frascos mejorada",
+            "spaes": "Más restauración de PS con vial",
+            "thath": "เพิม​ปริมาณ​การ​ฟนฟู​จอก​ศักดิสิทธิ",
+            "zhocn": "提升圣杯瓶恢复量",
+            "zhotw": "提升聖杯瓶恢復量"
+        }
     },
     {
         "id": 8440100,
-        "name": "Flask Also Heals Allies"
+        "name": {
+            "araae": "ﺗﺷﻔﻲ اﻟﻘﻧﻳﻧﺔ اﻟﺣﻠﻔﺎء أﻳﺿًﺎ",
+            "deude": "Flaschen heilen auch Verbündete",
+            "engus": "Flask Also Heals Allies",
+            "frafr": "La fiole soigne aussi les alliés",
+            "itait": "L'ampolla cura anche gli alleati",
+            "jpnjp": "聖杯瓶の回復を、周囲の味方に分配",
+            "korkr": "성배병 회복을 주위 아군에 분배",
+            "polpl": "Butelka leczy też sojuszników",
+            "porbr": "Frasco também cura aliados",
+            "rusru": "Фляга также лечит союзников",
+            "spaar": "El frasco también cura a aliados",
+            "spaes": "El vial también cura a los aliados",
+            "thath": "จอก​ศักดิสิทธิ​จะ​ฟนฟู​พันธมิตร​รอบ​ข้าง​ด้วย",
+            "zhocn": "使用圣杯瓶时，连同恢复周围我方人物",
+            "zhotw": "使用聖杯瓶時，連同恢復周圍我方人物"
+        }
     },
     {
         "id": 8440200,
-        "name": "Gradual Restoration by Flask"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﺗﺩرﻳﺟﻳﺔ ﺑﺎﻟﻘﻧﻳﻧﺔ",
+            "deude": "Langs. Regeneration durch Flasche",
+            "engus": "Gradual Restoration by Flask",
+            "frafr": "La fiole rend des PV sur la durée.",
+            "itait": "Ripristino graduale con ampolla",
+            "jpnjp": "聖杯瓶の回復が、ゆっくりになる",
+            "korkr": "성배병 회복이 서서히 진행",
+            "polpl": "Stopniowa odnowa z butelki",
+            "porbr": "Restauração gradual com frascos",
+            "rusru": "Постепенное восстановление флягой",
+            "spaar": "Los frascos curan gradualmente",
+            "spaes": "El vial restaura gradualmente",
+            "thath": "จอก​ศักดิสิทธิ​จะ​ฟนฟู​ที​ละ​น้อย",
+            "zhocn": "使用圣杯瓶时，改为缓慢恢复",
+            "zhotw": "使用聖杯瓶時，改為緩慢恢復"
+        }
     },
     {
         "id": 8450100,
-        "name": "Ice Storm Surge Sprint"
+        "name": {
+            "araae": "رﻛﺽ اﻧﺩﻓﺎﻋﻲ ﻓﻲ اﻟﻌﺎﺻﻔﺔ اﻟﺟﻠﻳﺩﻳﺔ",
+            "deude": "Eissturm-Ausbruchsprint",
+            "engus": "Ice Storm Surge Sprint",
+            "frafr": "Ruée offensive : tempête de givre",
+            "itait": "Scatto della tormenta potenziato",
+            "jpnjp": "疾走で、氷嵐が発生",
+            "korkr": "질주로 얼음 폭풍 발생",
+            "polpl": "Nagły bieg lodowej burzy",
+            "porbr": "Disparada com Tempestade de Gelo",
+            "rusru": "Ледяная буря при резком рывке",
+            "spaar": "Aceleración recargada de tormenta de hielo",
+            "spaes": "Esprint cargado tormenta de hielo",
+            "thath": "สร้าง​พายุ​นํา​แข็ง​เมือ​วิง​พุ่ง",
+            "zhocn": "急速冲刺时，刮起冰风暴",
+            "zhotw": "急速衝刺時，颳起冰風暴"
+        }
     },
     {
         "id": 8460000,
-        "name": "Area of Darkness Conceals Caster While Walking"
+        "name": {
+            "araae": "دﺧﺎن ﻣﻅﻠﻡ ﻳُﺧﻔﻲ ﻣﻠﻘﻲ اﻟﺗﻌﻭﻳﺫة ﻓﻲ أﺛﻧﺎء اﻟﺳﻳﺭ",
+            "deude": "Dunkler Bereich verbirgt Wirker beim Gehen",
+            "engus": "Area of Darkness Conceals Caster While Walking",
+            "frafr": "Créez zone de ténèbres occultante",
+            "itait": "Camminare ti occulta in un'area di tenebre",
+            "jpnjp": "歩きで、暗闇を生み自身の存在を消す",
+            "korkr": "걷기로 어둠을 만들어 자신의 존재를 지움",
+            "polpl": "Obszar ciemności kryje użytkownika podczas chodu",
+            "porbr": "Escuridão que esconde o usuário ao andar",
+            "rusru": "Скрывающая область тьмы на ходу",
+            "spaar": "Zona de oscuridad esconde al invoc. al caminar",
+            "spaes": "Oscuridad oculta al lanzador al andar",
+            "thath": "เสก​ความ​มืด​และ​ลบ​เลือน​ตัว​ตน​เมือ​ย่าง​กราย",
+            "zhocn": "慢步移动时，形成黑暗消除自身存在",
+            "zhotw": "慢步移動時，形成黑暗消除自身存在"
+        }
     },
     {
         "id": 8460200,
-        "name": "Flame of Frenzy While Walking"
+        "name": {
+            "araae": "ﻟﻬﻳﺏ ﺟﻧﻭن ﻓﻲ أﺛﻧﺎء اﻟﺳﻳﺭ",
+            "deude": "Rasende Flamme beim Gehen",
+            "engus": "Flame of Frenzy While Walking",
+            "frafr": "Vous répandez de la Flamme exaltée en marchant",
+            "itait": "Camminare sprigiona la Fiamma della frenesia",
+            "jpnjp": "歩きで、狂い火を激しく迸らせる",
+            "korkr": "걷기로 미친 불을 격렬히 내뿜음",
+            "polpl": "Płomień szału podczas marszu",
+            "porbr": "Chama do frenesi ao andar",
+            "rusru": "Пламя безумия на ходу",
+            "spaar": "Llama del frenesí al caminar",
+            "spaes": "Llama frenética al andar",
+            "thath": "ทําให้​เพลิง​คลัง​พุ่ง​อย่าง​แรง​เมือ​ย่าง​กราย",
+            "zhocn": "慢步移动时，迸发剧烈癫火",
+            "zhotw": "慢步移動時，迸發劇烈癲火"
+        }
     },
     {
         "id": 8460400,
-        "name": "Violent Deluge of Star Rain While Walking"
+        "name": {
+            "araae": "ﺳﻳﻝ أﻣﻁﺎر ﻧﺟﻭم ﻗﻭي ﻓﻲ أﺛﻧﺎء اﻟﺳﻳﺭ",
+            "deude": "Brutaler Sternregen beim Gehen",
+            "engus": "Violent Deluge of Star Rain While Walking",
+            "frafr": "Génération de violentes pluies d'étoiles",
+            "itait": "Camminare scatena un violento diluvio astrale",
+            "jpnjp": "歩きで、凄まじい星雨を降らせる",
+            "korkr": "걷기로 엄청난 별의 비를 내림",
+            "polpl": "Gwałtowny gwiezdny deszcz podczas marszu",
+            "porbr": "Violenta chuva de estrelas ao andar",
+            "rusru": "Звёздный ливень на ходу",
+            "spaar": "Diluvio violento de lluvia estelar al caminar",
+            "spaes": "Violenta lluvia de estrellas al andar",
+            "thath": "เสก​ฝน​ดาวตก​ให้​กระหนํา​ลง​มา​เมือ​ย่าง​กราย",
+            "zhocn": "慢步移动时，降下磅礡的星雨",
+            "zhotw": "慢步移動時，降下磅礡的星雨"
+        }
     },
     {
         "id": 8500000,
-        "name": "More Runes From Defeated Enemies"
+        "name": {
+            "araae": "ﻛﺳﺏ رون أﻛﺛﺭ ﻣﻥ اﻷﻋﺩاء اﻟﻣﻬﺯوﻣﻳﻥ",
+            "deude": "Mehr Runen aus besiegten Gegnern",
+            "engus": "More Runes From Defeated Enemies",
+            "frafr": "Plus de runes par ennemi vaincu",
+            "itait": "Incremento rune dai nemici sconfitti",
+            "jpnjp": "敵撃破時、取得ルーン増加",
+            "korkr": "적 격파 시 획득 룬 증가",
+            "polpl": "Więcej runów z pokonanych wrogów",
+            "porbr": "Mais runas ao derrotar inimigos",
+            "rusru": "Больше рун после убийства врагов",
+            "spaar": "Más runas de enemigos derrotados",
+            "spaes": "Aumenta las runas obtenidas de los enemigos",
+            "thath": "เพิม​รู​นที​ได้​รับ​เมือ​พิชิต​ศัตรู",
+            "zhocn": "打倒敌人时，增加获得的卢恩",
+            "zhotw": "打倒敵人時，增加獲得的盧恩"
+        }
     },
     {
         "id": 8500100,
-        "name": "Rune of the Strong"
+        "name": {
+            "araae": "رون اﻷﻗﻭﻳﺎء",
+            "deude": "Rune der Starken",
+            "engus": "Rune of the Strong",
+            "frafr": "Rune de force",
+            "itait": "Runa del potente",
+            "jpnjp": "強者のルーン",
+            "korkr": "강자의 룬",
+            "polpl": "Run siłaczy",
+            "porbr": "Runa dos Fortes",
+            "rusru": "Руна силача",
+            "spaar": "Runa de Fuerza",
+            "spaes": "Runa del poder",
+            "thath": "รูน​ผู้​แกร่ง​กล้า",
+            "zhocn": "强人卢恩",
+            "zhotw": "強人盧恩"
+        }
     },
     {
         "id": 8500101,
-        "name": "Rune of the Strong"
+        "name": {
+            "araae": "رون اﻷﻗﻭﻳﺎء",
+            "deude": "Rune der Starken",
+            "engus": "Rune of the Strong",
+            "frafr": "Rune de force",
+            "itait": "Runa del potente",
+            "jpnjp": "強者のルーン",
+            "korkr": "강자의 룬",
+            "polpl": "Run siłaczy",
+            "porbr": "Runa dos Fortes",
+            "rusru": "Руна силача",
+            "spaar": "Runa de Fuerza",
+            "spaes": "Runa del poder",
+            "thath": "รูน​ผู้​แกร่ง​กล้า",
+            "zhocn": "强人卢恩",
+            "zhotw": "強人盧恩"
+        }
     },
     {
         "id": 8500102,
-        "name": "Rune of the Strong"
+        "name": {
+            "araae": "رون اﻷﻗﻭﻳﺎء",
+            "deude": "Rune der Starken",
+            "engus": "Rune of the Strong",
+            "frafr": "Rune de force",
+            "itait": "Runa del potente",
+            "jpnjp": "強者のルーン",
+            "korkr": "강자의 룬",
+            "polpl": "Run siłaczy",
+            "porbr": "Runa dos Fortes",
+            "rusru": "Руна силача",
+            "spaar": "Runa de Fuerza",
+            "spaes": "Runa del poder",
+            "thath": "รูน​ผู้​แกร่ง​กล้า",
+            "zhocn": "强人卢恩",
+            "zhotw": "強人盧恩"
+        }
     },
     {
         "id": 8530200,
-        "name": "Periodical Giant Glintblade"
+        "name": {
+            "araae": "ﻧﺻﻝ ﻻﻣﻊ ﻋﻣﻼق دوري",
+            "deude": "Regelmäßige große Schimmerklinge",
+            "engus": "Periodical Giant Glintblade",
+            "frafr": "Laméclat géante régulièrement",
+            "itait": "Scintilama gigante cadenzata",
+            "jpnjp": "一定間隔で巨大な輝剣を発生",
+            "korkr": "일정 간격으로 거대 휘검 생성",
+            "polpl": "Olbrzymie błyskostrze tymczasowe",
+            "porbr": "Laminante gigante periódica",
+            "rusru": "Возвращающийся блестящий клинок",
+            "spaar": "Una destelloja gigante de forma periódica",
+            "spaes": "Hojas refulgentes periódicas",
+            "thath": "สร้าง​ดาบ​จรัส​ยักษ์​โดย​เว้น​ระยะ​เวลา",
+            "zhocn": "一定时间间隔内，形成巨大辉剑",
+            "zhotw": "一定時間間隔內，形成巨大輝劍"
+        }
     },
     {
         "id": 8600101,
-        "name": "HP Restoration upon Dagger Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺧﻧﺟﺭ",
+            "deude": "LP-Reg. durch Dolchangriffe",
+            "engus": "HP Restoration upon Dagger Attacks",
+            "frafr": "Attaquer à la dague rend des PV",
+            "itait": "Ripristino PV con attacchi di pugnale",
+            "jpnjp": "短剣の攻撃でＨＰ回復",
+            "korkr": "단검 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach sztyletami",
+            "porbr": "Recupera PV com ataques de adaga",
+            "rusru": "Восполнение ОЗ при атаке кинжалом",
+            "spaar": "Recuperación de PV tras ataques de daga",
+            "spaes": "Restauración de PS al atacar con daga",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ดาบ​สัน",
+            "zhocn": "短剑攻击恢复血量",
+            "zhotw": "短劍攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600102,
-        "name": "HP Restoration upon Straight Sword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻣﺳﺗﻘﻳﻡ",
+            "deude": "LP-Reg. durch Gerades-Schwert-Angriffe",
+            "engus": "HP Restoration upon Straight Sword Attacks",
+            "frafr": "Attaquer à l'épée droite rend des PV",
+            "itait": "Ripristino PV con attacchi di spada dritta",
+            "jpnjp": "直剣の攻撃でＨＰ回復",
+            "korkr": "직검 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach prostymi mieczami",
+            "porbr": "Recupera PV com ataques de espada reta",
+            "rusru": "Восполнение ОЗ при атаке прямым мечом",
+            "spaar": "Recuperación de PV tras ataques de espada recta",
+            "spaes": "Restauración de PS al atacar con espada recta",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ดาบ​ตรง",
+            "zhocn": "直剑攻击恢复血量",
+            "zhotw": "直劍攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600103,
-        "name": "HP Restoration upon Greatsword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻋﻅﻳﻡ",
+            "deude": "LP-Reg. durch Großschwertangriffe",
+            "engus": "HP Restoration upon Greatsword Attacks",
+            "frafr": "Attaquer à l'espadon rend des PV",
+            "itait": "Ripristino PV con attacchi di spadone",
+            "jpnjp": "大剣の攻撃でＨＰ回復",
+            "korkr": "대검 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach wielkimi mieczami",
+            "porbr": "Recupera PV com ataques de espada grande",
+            "rusru": "Восполнение ОЗ при атаке двуручным мечом",
+            "spaar": "Recuperación de PV tras ataques de espadón",
+            "spaes": "Restauración de PS al atacar con espadón",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ดาบ​ใหญ่",
+            "zhocn": "大剑攻击恢复血量",
+            "zhotw": "大劍攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600104,
-        "name": "HP Restoration upon Colossal Sword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﺿﺧﻡ",
+            "deude": "LP-Reg. durch Riesenschwertangriffe",
+            "engus": "HP Restoration upon Colossal Sword Attacks",
+            "frafr": "Attaquer à l'épée colossale rend des PV",
+            "itait": "Ripristino PV con attacchi di spada colossale",
+            "jpnjp": "特大剣の攻撃でＨＰ回復",
+            "korkr": "특대검 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach olbrzymimi mieczami",
+            "porbr": "Recupera PV com ataques de espada colossal",
+            "rusru": "Восполнение ОЗ при атаке огромным мечом",
+            "spaar": "Recuperación de PV tras ataq. de espada colosal",
+            "spaes": "Restauración de PS al atacar con espada colosal",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ดาบ​ยักษ์",
+            "zhocn": "特大剑攻击恢复血量",
+            "zhotw": "特大劍攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600105,
-        "name": "HP Restoration upon Curved Sword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻣﻘﻭس",
+            "deude": "LP-Reg. durch Krummschwertangriffe",
+            "engus": "HP Restoration upon Curved Sword Attacks",
+            "frafr": "Attaquer à l'épée courbée rend des PV",
+            "itait": "Ripristino PV con attacchi di spada curva",
+            "jpnjp": "曲剣の攻撃でＨＰ回復",
+            "korkr": "곡검 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach zakrzywionymi mieczami",
+            "porbr": "Recupera PV com ataques de espada curva",
+            "rusru": "Восполнение ОЗ при атаке изогнутым мечом",
+            "spaar": "Recuperación de PV tras ataques de espada curva",
+            "spaes": "Restauración de PS al atacar con espada curva",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ดาบ​โค้ง",
+            "zhocn": "曲剑攻击恢复血量",
+            "zhotw": "曲劍攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600106,
-        "name": "HP Restoration upon Curved Greatsword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻋﻅﻳﻡ ﻣﻘﻭس",
+            "deude": "LP-Reg. durch Krummes-Großschwertangriffe",
+            "engus": "HP Restoration upon Curved Greatsword Attacks",
+            "frafr": "Attaquer à l'espadon courbé rend des PV",
+            "itait": "Ripristino PV con attacchi di spadone curvo",
+            "jpnjp": "大曲剣の攻撃でＨＰ回復",
+            "korkr": "대곡검 공격으로 HP 회복",
+            "polpl": "Odnawia PŻ po atakach zakrzyw. wielk. mieczami",
+            "porbr": "Recupera PV com ataques espada grande curva",
+            "rusru": "Восполн. ОЗ при атаке изогнутым двуручным мечом",
+            "spaar": "Recuperación de PV tras ataq. de espadón curvo",
+            "spaes": "Restauración de PS al atacar con espadón curvo",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ดาบ​โค้ง​ใหญ่",
+            "zhocn": "大曲剑攻击恢复血量",
+            "zhotw": "大曲劍攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600107,
-        "name": "HP Restoration upon Katana Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻛﺎﺗﺎﻧﺎ",
+            "deude": "LP-Reg. durch Katana-Angriffe",
+            "engus": "HP Restoration upon Katana Attacks",
+            "frafr": "Attaquer au katana rend des PV",
+            "itait": "Ripristino PV con attacchi di katana",
+            "jpnjp": "刀の攻撃でＨＰ回復",
+            "korkr": "도 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach katanami",
+            "porbr": "Recupera PV com ataques de katana",
+            "rusru": "Восполнение ОЗ при атаке катаной",
+            "spaar": "Recuperación de PV tras ataques de katana",
+            "spaes": "Restauración de PS al atacar con catana",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ดาบ​คา​ตา​นะ",
+            "zhocn": "刀攻击恢复血量",
+            "zhotw": "刀攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600108,
-        "name": "HP Restoration upon Twinblade Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻧﺻﻝ ذي ﺣﺩﻳﻥ",
+            "deude": "LP-Reg. durch Doppelkl.-Angriffe",
+            "engus": "HP Restoration upon Twinblade Attacks",
+            "frafr": "Attaquer à la lame double rend des PV",
+            "itait": "Ripristino PV con attacchi di lama gemella",
+            "jpnjp": "両刃剣の攻撃でＨＰ回復",
+            "korkr": "쌍날검 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach podwójnymi ostrzami",
+            "porbr": "Recupera PV com ataques de lâminas-gêmeas",
+            "rusru": "Восполнение ОЗ при атаке парными клинками",
+            "spaar": "Recuperación de PV tras ataq. de hojas gemelas",
+            "spaes": "Restauración de PS al atacar con hoja doble",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ดาบส​อง​ปลาย",
+            "zhocn": "双头剑攻击恢复血量",
+            "zhotw": "雙頭劍攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600109,
-        "name": "HP Restoration upon Thrusting Sword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻁﻌﻥ",
+            "deude": "LP-Reg. durch Stoßschwertangriffe",
+            "engus": "HP Restoration upon Thrusting Sword Attacks",
+            "frafr": "Attaquer à l'épée d'estoc rend des PV",
+            "itait": "Ripristino PV con attacchi di spada perforante",
+            "jpnjp": "刺剣の攻撃でＨＰ回復",
+            "korkr": "자검 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach mieczami do pchnięć",
+            "porbr": "Recupera PV com ataques de espada de fincada",
+            "rusru": "Восполнение ОЗ при атаке колющим мечом",
+            "spaar": "Recup. de PV tras ataq. de espada de embestida",
+            "spaes": "Rest. de PS al atacar con espada de embestida",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ดาบ​แทง",
+            "zhocn": "刺剑攻击恢复血量",
+            "zhotw": "刺劍攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600110,
-        "name": "HP Restoration upon Heavy Thrusting Sword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻁﻌﻥ ﺛﻘﻳﻝ",
+            "deude": "LP-Reg. durch Schweres-Stoßschwertangriffe",
+            "engus": "HP Restoration upon Heavy Thrusting Sword Attacks",
+            "frafr": "Attaquer à l'épée d'estoc lourde rend des PV",
+            "itait": "Riprist. PV con att. di spada perforante pesante",
+            "jpnjp": "重刺剣の攻撃でＨＰ回復",
+            "korkr": "대자검 공격으로 HP 회복",
+            "polpl": "Odnawia PŻ po atakach cięż. mieczami do pchnięć",
+            "porbr": "Recupera PV com atq. de espada pesada perfurante",
+            "rusru": "Восполнение ОЗ при атаке тяжёлым колющим мечом",
+            "spaar": "Recup. PV tras ataq. espada pesada de embestida",
+            "spaes": "Rest. de PS al atacar con espada emb. pesada",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ดาบ​แทง​หนัก",
+            "zhocn": "重刺剑攻击恢复血量",
+            "zhotw": "重刺劍攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600111,
-        "name": "HP Restoration upon Axe Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻔﺄس",
+            "deude": "LP-Reg. durch Axtangriffe",
+            "engus": "HP Restoration upon Axe Attacks",
+            "frafr": "Attaquer à la hache rend des PV",
+            "itait": "Ripristino PV con attacchi di ascia",
+            "jpnjp": "斧の攻撃でＨＰ回復",
+            "korkr": "도끼 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach toporami",
+            "porbr": "Recupera PV com ataques de machado",
+            "rusru": "Восполнение ОЗ при атаке топором",
+            "spaar": "Recuperación de PV tras ataques de hacha",
+            "spaes": "Restauración de PS al atacar con hacha",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ขวาน",
+            "zhocn": "斧攻击恢复血量",
+            "zhotw": "斧攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600112,
-        "name": "HP Restoration upon Greataxe Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻔﺄس ﻋﻅﻳﻣﺔ",
+            "deude": "LP-Reg. durch Großaxtangriffe",
+            "engus": "HP Restoration upon Greataxe Attacks",
+            "frafr": "Attaquer à la grande hache rend des PV",
+            "itait": "Ripristino PV con attacchi di ascia pesante",
+            "jpnjp": "大斧の攻撃でＨＰ回復",
+            "korkr": "대형 도끼 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach wielkimi toporami",
+            "porbr": "Recupera PV com ataques de machado grande",
+            "rusru": "Восполнение ОЗ при атаке большим топором",
+            "spaar": "Recuperación de PV tras ataques de gran hacha",
+            "spaes": "Restauración de PS al atacar con gran hacha",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ขวาน​ใหญ่",
+            "zhocn": "大斧攻击恢复血量",
+            "zhotw": "大斧攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600113,
-        "name": "HP Restoration upon Hammer Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻣﻁﺭﻗﺔ",
+            "deude": "LP-Reg. durch Hammerangriffe",
+            "engus": "HP Restoration upon Hammer Attacks",
+            "frafr": "Attaquer au marteau rend des PV",
+            "itait": "Ripristino PV con attacchi di martello",
+            "jpnjp": "槌の攻撃でＨＰ回復",
+            "korkr": "망치 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach młotami",
+            "porbr": "Recupera PV com ataques de martelo",
+            "rusru": "Восполнение ОЗ при атаке молотом",
+            "spaar": "Recuperación de PV tras ataques de martillo",
+            "spaes": "Restauración de PS al atacar con martillo",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ค้อน",
+            "zhocn": "槌攻击恢复血量",
+            "zhotw": "槌攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600114,
-        "name": "HP Restoration upon Great Hammer Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻣﻁﺭﻗﺔ ﻋﻅﻳﻣﺔ",
+            "deude": "LP-Reg. durch Kriegshammerangriffe",
+            "engus": "HP Restoration upon Great Hammer Attacks",
+            "frafr": "Attaquer au grand marteau rend des PV",
+            "itait": "Ripristino PV con attacchi di martello pesante",
+            "jpnjp": "大槌の攻撃でＨＰ回復",
+            "korkr": "대형 망치 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach wielkimi młotami",
+            "porbr": "Recupera PV com ataques de martelo grande",
+            "rusru": "Восполнение ОЗ при атаке большим молотом",
+            "spaar": "Recuperación de PV tras ataq. de gran martillo",
+            "spaes": "Restauración de PS al atacar con gran martillo",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ค้อน​ใหญ่",
+            "zhocn": "大槌攻击恢复血量",
+            "zhotw": "大槌攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600115,
-        "name": "HP Restoration upon Flail Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻣﺧﺑﺎط",
+            "deude": "LP-Reg. durch Flegelangriffe",
+            "engus": "HP Restoration upon Flail Attacks",
+            "frafr": "Attaquer au fléau d'armes rend des PV",
+            "itait": "Ripristino PV con attacchi di flagello",
+            "jpnjp": "フレイルの攻撃でＨＰ回復",
+            "korkr": "철퇴 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach korbaczami",
+            "porbr": "Recupera PV com ataques de mangual",
+            "rusru": "Восполнение ОЗ при атаке цепом",
+            "spaar": "Recuperación de PV tras ataques de mangual",
+            "spaes": "Restauración de PS al atacar con mayal",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ลูก​ตุ้ม",
+            "zhocn": "连枷攻击恢复血量",
+            "zhotw": "連枷攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600116,
-        "name": "HP Restoration upon Spear Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺭﻣﺢ",
+            "deude": "LP-Reg. durch Speerangriffe",
+            "engus": "HP Restoration upon Spear Attacks",
+            "frafr": "Attaquer à la lance rend des PV",
+            "itait": "Ripristino PV con attacchi di lancia",
+            "jpnjp": "槍の攻撃でＨＰ回復",
+            "korkr": "창 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach włóczniami",
+            "porbr": "Recupera PV com ataques de lança",
+            "rusru": "Восполнение ОЗ при атаке копьём",
+            "spaar": "Recuperación de PV tras ataques de lanza",
+            "spaes": "Restauración de PS al atacar con lanza",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​หอก",
+            "zhocn": "矛攻击恢复血量",
+            "zhotw": "矛攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600117,
-        "name": "HP Restoration upon Pike Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺭﻣﺢ ﻣﺩﺑﺏ",
+            "deude": "LP-Reg. durch Pikenangriffe",
+            "engus": "HP Restoration upon Pike Attacks",
+            "frafr": "Attaquer à la pique rend des PV",
+            "itait": "Ripristino PV con attacchi di picca",
+            "jpnjp": "長槍の攻撃でＨＰ回復",
+            "korkr": "장창 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach pikami",
+            "porbr": "Recupera PV com ataques de pique",
+            "rusru": "Восполнение ОЗ при атаке рогатиной",
+            "spaar": "Recuperación de PV tras ataques de pica",
+            "spaes": "Restauración de PS al atacar con pica",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​หอก​ยาว",
+            "zhocn": "长矛攻击恢复血量",
+            "zhotw": "長矛攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600118,
-        "name": "HP Restoration upon Great Spear Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺭﻣﺢ ﻋﻅﻳﻡ",
+            "deude": "LP-Reg. durch Großer-Speerangriffe",
+            "engus": "HP Restoration upon Great Spear Attacks",
+            "frafr": "Attaquer à la grande lance rend des PV",
+            "itait": "Ripristino PV con attacchi di lancia pesante",
+            "jpnjp": "大槍の攻撃でＨＰ回復",
+            "korkr": "대형 창 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach wielkimi włóczniami",
+            "porbr": "Recupera PV com ataques de lança grande",
+            "rusru": "Восполнение ОЗ при атаке большим копьём",
+            "spaar": "Recuperación de PV tras ataques de gran lanza",
+            "spaes": "Restauración de PS al atacar con gran lanza",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​หอก​ใหญ่",
+            "zhocn": "大矛攻击恢复血量",
+            "zhotw": "大矛攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600119,
-        "name": "HP Restoration upon Halberd Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺭﻣﺢ اﻟﻣِﻁﺭَد",
+            "deude": "LP-Reg. durch Hellebardenangriffe",
+            "engus": "HP Restoration upon Halberd Attacks",
+            "frafr": "Attaquer à la hallebarde rend des PV",
+            "itait": "Ripristino PV con attacchi di alabarda",
+            "jpnjp": "斧槍の攻撃でＨＰ回復",
+            "korkr": "도끼창 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach halabardami",
+            "porbr": "Recupera PV com ataques de alabarda",
+            "rusru": "Восполнение ОЗ при атаке алебардой",
+            "spaar": "Recuperación de PV tras ataques de alabarda",
+            "spaes": "Restauración de PS al atacar con alabarda",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ง้าว",
+            "zhocn": "戟攻击恢复血量",
+            "zhotw": "戟攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600120,
-        "name": "HP Restoration upon Reaper Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺭﻣﺢ ﺣﺎﺻﺩ",
+            "deude": "LP-Reg. durch Schnitterangriffe",
+            "engus": "HP Restoration upon Reaper Attacks",
+            "frafr": "Attaquer au fauchard rend des PV",
+            "itait": "Ripristino PV con attacchi di falce",
+            "jpnjp": "鎌の攻撃でＨＰ回復",
+            "korkr": "낫 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach kosami",
+            "porbr": "Recupera PV com ataques de ceifador",
+            "rusru": "Восполнение ОЗ при атаке косой",
+            "spaar": "Recuperación de PV tras ataques de guadaña",
+            "spaes": "Restauración de PS al atacar con guadaña",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​เคียว",
+            "zhocn": "镰刀攻击恢复血量",
+            "zhotw": "鐮刀攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600121,
-        "name": "HP Restoration upon Fist Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻘﺑﺿﺔ",
+            "deude": "LP-Reg. durch Faustangriffe",
+            "engus": "HP Restoration upon Fist Attacks",
+            "frafr": "Attaquer au poing rend des PV",
+            "itait": "Ripristino PV con attacchi di pugno",
+            "jpnjp": "拳の攻撃でＨＰ回復",
+            "korkr": "주먹 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach pięściami",
+            "porbr": "Recupera PV com ataques de punho",
+            "rusru": "Восполнение ОЗ при атаке кулаками",
+            "spaar": "Recuperación de PV tras ataques de puño",
+            "spaes": "Restauración de PS al atacar con puño",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​หมัด",
+            "zhocn": "拳头攻击恢复血量",
+            "zhotw": "拳頭攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600122,
-        "name": "HP Restoration upon Claw Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻣﺧﻠﺏ",
+            "deude": "LP-Reg. durch Klauenangriffe",
+            "engus": "HP Restoration upon Claw Attacks",
+            "frafr": "Attaquer à la griffe rend des PV",
+            "itait": "Ripristino PV con attacchi di artiglio",
+            "jpnjp": "爪の攻撃でＨＰ回復",
+            "korkr": "발톱 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach szponami",
+            "porbr": "Recupera PV com ataques de garra",
+            "rusru": "Восполнение ОЗ при атаке когтями",
+            "spaar": "Recuperación de PV tras ataques de garra",
+            "spaes": "Restauración de PS al atacar con garra",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​กรง​เล็บ",
+            "zhocn": "钩爪攻击恢复血量",
+            "zhotw": "鉤爪攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600123,
-        "name": "HP Restoration upon Whip Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻭط",
+            "deude": "LP-Reg. durch Peitschenangriffe",
+            "engus": "HP Restoration upon Whip Attacks",
+            "frafr": "Attaquer au fouet rend des PV",
+            "itait": "Ripristino PV con attacchi di frusta",
+            "jpnjp": "鞭の攻撃でＨＰ回復",
+            "korkr": "채찍 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach biczami",
+            "porbr": "Recupera PV com ataques de chicote",
+            "rusru": "Восполнение ОЗ при атаке кнутом",
+            "spaar": "Recuperación de PV tras ataques de látigo",
+            "spaes": "Restauración de PS al atacar con látigo",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​แส้",
+            "zhocn": "软鞭攻击恢复血量",
+            "zhotw": "軟鞭攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600124,
-        "name": "HP Restoration upon Colossal Weapon Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻼح ﺿﺧﻡ",
+            "deude": "LP-Reg. durch Gig.-Waffen-Angriffe",
+            "engus": "HP Restoration upon Colossal Weapon Attacks",
+            "frafr": "Attaquer à l'arme colossale rend des PV",
+            "itait": "Ripristino PV con attacchi di arma colossale",
+            "jpnjp": "特大武器の攻撃でＨＰ回復",
+            "korkr": "특대형 무기 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach olbrzymią bronią",
+            "porbr": "Recupera PV com ataques de arma colossal",
+            "rusru": "Восполнение ОЗ при атаке огромным оружием",
+            "spaar": "Recuperación de PV tras ataques de arma colosal",
+            "spaes": "Restauración de PS al atacar con arma colosal",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​อาวุธ​ขนาด​ยักษ์",
+            "zhocn": "特大武器攻击恢复血量",
+            "zhotw": "特大武器攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600125,
-        "name": "HP Restoration upon Bow Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻘﻭس",
+            "deude": "LP-Reg. durch Bogenangriffe",
+            "engus": "HP Restoration upon Bow Attacks",
+            "frafr": "Attaquer à l'arc rend des PV",
+            "itait": "Ripristino PV con attacchi di arco",
+            "jpnjp": "弓の攻撃でＨＰ回復",
+            "korkr": "활 공격으로 HP 회복",
+            "polpl": "Odnowienie PŻ po atakach łukiem",
+            "porbr": "Recupera PV com ataques de arco",
+            "rusru": "Восполнение ОЗ при стрельбе из лука",
+            "spaar": "Recuperación de PV tras ataques de arco",
+            "spaes": "Restauración de PS al atacar con arco",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ด้วย​ธนู",
+            "zhocn": "弓攻击恢复血量",
+            "zhotw": "弓攻擊恢復ＨＰ"
+        }
     },
     {
         "id": 8600201,
-        "name": "FP Restoration upon Dagger Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺧﻧﺟﺭ",
+            "deude": "FP-Reg. durch Dolchangriffe",
+            "engus": "FP Restoration upon Dagger Attacks",
+            "frafr": "Attaquer à la dague rend des PC",
+            "itait": "Ripristino PA con attacchi di pugnale",
+            "jpnjp": "短剣の攻撃でＦＰ回復",
+            "korkr": "단검 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach sztyletem",
+            "porbr": "Recupera PF com ataques de adaga",
+            "rusru": "Восполнение ОК при атаке кинжалом",
+            "spaar": "Recuperación de PC tras ataques de daga",
+            "spaes": "Restauración de PC al atacar con daga",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ดาบ​สัน",
+            "zhocn": "短剑攻击恢复专注值",
+            "zhotw": "短劍攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600202,
-        "name": "FP Restoration upon Straight Sword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻣﺳﺗﻘﻳﻡ",
+            "deude": "FP-Reg. durch Gerades-Schwert-Angriffe",
+            "engus": "FP Restoration upon Straight Sword Attacks",
+            "frafr": "Attaquer à l'épée droite rend des PC",
+            "itait": "Ripristino PA con attacchi di spada dritta",
+            "jpnjp": "直剣の攻撃でＦＰ回復",
+            "korkr": "직검 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach prostymi mieczami",
+            "porbr": "Recupera PF com ataques de espada reta",
+            "rusru": "Восполнение ОК при атаке прямым мечом",
+            "spaar": "Recuperación de PC tras ataques de espada recta",
+            "spaes": "Restauración de PC al atacar con espada recta",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ดาบ​ตรง",
+            "zhocn": "直剑攻击恢复专注值",
+            "zhotw": "直劍攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600203,
-        "name": "FP Restoration upon Greatsword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻋﻅﻳﻡ",
+            "deude": "FP-Reg. durch Großschwertangriffe",
+            "engus": "FP Restoration upon Greatsword Attacks",
+            "frafr": "Attaquer à l'espadon rend des PC",
+            "itait": "Ripristino PA con attacchi di spadone",
+            "jpnjp": "大剣の攻撃でＦＰ回復",
+            "korkr": "대검 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach wielkimi mieczami",
+            "porbr": "Recupera PF com ataques de espada grande",
+            "rusru": "Восполнение ОК при атаке двуручным мечом",
+            "spaar": "Recuperación de PC tras ataques de espadón",
+            "spaes": "Restauración de PC al atacar con espadón",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ดาบ​ใหญ่",
+            "zhocn": "大剑攻击恢复专注值",
+            "zhotw": "大劍攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600204,
-        "name": "FP Restoration upon Colossal Sword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﺿﺧﻡ",
+            "deude": "FP-Reg. durch Riesenschwertangriffe",
+            "engus": "FP Restoration upon Colossal Sword Attacks",
+            "frafr": "Attaquer à l'épée colossale rend des PC",
+            "itait": "Ripristino PA con attacchi di spada colossale",
+            "jpnjp": "特大剣の攻撃でＦＰ回復",
+            "korkr": "특대검 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach olbrzymimi mieczami",
+            "porbr": "Recupera PF com ataques de espada colossal",
+            "rusru": "Восполнение ОК при атаке огромным мечом",
+            "spaar": "Recuperación de PC tras ataq. de espada colosal",
+            "spaes": "Restauración de PC al atacar con espada colosal",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ดาบ​ยักษ์",
+            "zhocn": "特大剑攻击恢复专注值",
+            "zhotw": "特大劍攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600205,
-        "name": "FP Restoration upon Curved Sword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻣﻘﻭس",
+            "deude": "FP-Reg. durch Krummschwertangriffe",
+            "engus": "FP Restoration upon Curved Sword Attacks",
+            "frafr": "Attaquer à l'épée courbée rend des PC",
+            "itait": "Ripristino PA con attacchi di spada curva",
+            "jpnjp": "曲剣の攻撃でＦＰ回復",
+            "korkr": "곡검 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach zakrzywionymi mieczami",
+            "porbr": "Recupera PF com ataques de espada curva",
+            "rusru": "Восполнение ОК при атаке изогнутым мечом",
+            "spaar": "Recuperación de PC tras ataques de espada curva",
+            "spaes": "Restauración de PC al atacar con espada curva",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ดาบ​โค้ง",
+            "zhocn": "曲剑攻击恢复专注值",
+            "zhotw": "曲劍攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600206,
-        "name": "FP Restoration upon Curved Greatsword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻋﻅﻳﻡ ﻣﻘﻭس",
+            "deude": "FP-Reg. durch Krummes-Großschwertangriffe",
+            "engus": "FP Restoration upon Curved Greatsword Attacks",
+            "frafr": "Attaquer à l'espadon courbé rend des PC",
+            "itait": "Ripristino PA con attacchi di spadone curvo",
+            "jpnjp": "大曲剣の攻撃でＦＰ回復",
+            "korkr": "대곡검 공격으로 FP 회복",
+            "polpl": "Odnawia PS po atakach zakrzyw. wielk. mieczami",
+            "porbr": "Recupera PF com ataques de espada grande curva",
+            "rusru": "Восполн. ОК при атаке изогнутым двуручным мечом",
+            "spaar": "Recuperación de PC tras ataq. de espadón curvo",
+            "spaes": "Restauración de PC al atacar con espadón curvo",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ดาบ​โค้ง​ใหญ่",
+            "zhocn": "大曲剑攻击恢复专注值",
+            "zhotw": "大曲劍攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600207,
-        "name": "FP Restoration upon Katana Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻛﺎﺗﺎﻧﺎ",
+            "deude": "FP-Reg. durch Katana-Angriffe",
+            "engus": "FP Restoration upon Katana Attacks",
+            "frafr": "Attaquer au katana rend des PC",
+            "itait": "Ripristino PA con attacchi di katana",
+            "jpnjp": "刀の攻撃でＦＰ回復",
+            "korkr": "도 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach katanami",
+            "porbr": "Recupera PF com ataques de katana",
+            "rusru": "Восполнение ОК при атаке катаной",
+            "spaar": "Recuperación de PC tras ataques de katana",
+            "spaes": "Restauración de PC al atacar con catana",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ดาบ​คา​ตา​นะ",
+            "zhocn": "刀攻击恢复专注值",
+            "zhotw": "刀攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600208,
-        "name": "FP Restoration upon Twinblade Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻧﺻﻝ ذي ﺣﺩﻳﻥ",
+            "deude": "FP-Reg. durch Doppelkl.-Angriffe",
+            "engus": "FP Restoration upon Twinblade Attacks",
+            "frafr": "Attaquer à la lame double rend des PC",
+            "itait": "Ripristino PA con attacchi di lama gemella",
+            "jpnjp": "両刃剣の攻撃でＦＰ回復",
+            "korkr": "쌍날검 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach podwójnymi ostrzami",
+            "porbr": "Recupera PF com ataques de lâminas-gêmeas",
+            "rusru": "Восполнение ОК при атаке парными клинками",
+            "spaar": "Recuperación de PC tras ataq. de hojas gemelas",
+            "spaes": "Restauración de PC al atacar con hoja doble",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ดาบส​อง​ปลาย",
+            "zhocn": "双头剑攻击恢复专注值",
+            "zhotw": "雙頭劍攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600209,
-        "name": "FP Restoration upon Thrusting Sword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻁﻌﻥ",
+            "deude": "FP-Reg. durch Stoßschwertangriffe",
+            "engus": "FP Restoration upon Thrusting Sword Attacks",
+            "frafr": "Attaquer à l'épée d'estoc rend des PC",
+            "itait": "Ripristino PA con attacchi di spada perforante",
+            "jpnjp": "刺剣の攻撃でＦＰ回復",
+            "korkr": "자검 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach mieczami do pchnięć",
+            "porbr": "Recupera PF com ataques de espada de fincada",
+            "rusru": "Восполнение ОК при атаке колющим мечом",
+            "spaar": "Recup. de PC tras ataq. de espada de embestida",
+            "spaes": "Rest. de PC al atacar con espada de embestida",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ดาบ​แทง",
+            "zhocn": "刺剑攻击恢复专注值",
+            "zhotw": "刺劍攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600210,
-        "name": "FP Restoration upon Heavy Thrusting Sword Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻳﻑ ﻁﻌﻥ ﺛﻘﻳﻝ",
+            "deude": "FP-Reg. durch Schweres-Stoßschwertangriffe",
+            "engus": "FP Restoration upon Heavy Thrusting Sword Attacks",
+            "frafr": "Attaquer à l'épée d'estoc lourde rend des PC",
+            "itait": "Riprist. PA con att. di spada perforante pesante",
+            "jpnjp": "重刺剣の攻撃でＦＰ回復",
+            "korkr": "대자검 공격으로 FP 회복",
+            "polpl": "Odnawia PS po atakach cięż. mieczami do pchnięć",
+            "porbr": "Recupera PF com atq. de espada pesada perf.",
+            "rusru": "Восполнение ОК при атаке тяжёлым колющим мечом",
+            "spaar": "Recup. PC tras ataq. espada pesada de embestida",
+            "spaes": "Rest.de PC al atacar con espada emb. pesada",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ดาบ​แทง​หนัก",
+            "zhocn": "重刺剑攻击恢复专注值",
+            "zhotw": "重刺劍攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600211,
-        "name": "FP Restoration upon Axe Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻔﺄس",
+            "deude": "FP-Reg. durch Axtangriffe",
+            "engus": "FP Restoration upon Axe Attacks",
+            "frafr": "Attaquer à la hache rend des PC",
+            "itait": "Ripristino PA con attacchi di ascia",
+            "jpnjp": "斧の攻撃でＦＰ回復",
+            "korkr": "도끼 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach toporami",
+            "porbr": "Recupera PF com ataques de machado",
+            "rusru": "Восполнение ОК при атаке топором",
+            "spaar": "Recuperación de PC tras ataques de hacha",
+            "spaes": "Restauración de PC al atacar con hacha",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ขวาน",
+            "zhocn": "斧攻击恢复专注值",
+            "zhotw": "斧攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600212,
-        "name": "FP Restoration upon Greataxe Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻔﺄس ﻋﻅﻳﻣﺔ",
+            "deude": "FP-Reg. durch Großaxtangriffe",
+            "engus": "FP Restoration upon Greataxe Attacks",
+            "frafr": "Attaquer à la grande hache rend des PC",
+            "itait": "Ripri. PA con attacchi di ascia pesante",
+            "jpnjp": "大斧の攻撃でＦＰ回復",
+            "korkr": "대형 도끼 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach wielkimi toporami",
+            "porbr": "Recupera PF com ataques de machado grande",
+            "rusru": "Восполнение ОК при атаке большим топором",
+            "spaar": "Recuperación de PC tras ataques de gran hacha",
+            "spaes": "Restauración de PC al atacar con gran hacha",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ขวาน​ใหญ่",
+            "zhocn": "大斧攻击恢复专注值",
+            "zhotw": "大斧攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600213,
-        "name": "FP Restoration upon Hammer Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻣﻁﺭﻗﺔ",
+            "deude": "FP-Reg. durch Hammerangriffe",
+            "engus": "FP Restoration upon Hammer Attacks",
+            "frafr": "Attaquer au marteau rend des PC",
+            "itait": "Ripristino PA con attacchi di martello",
+            "jpnjp": "槌の攻撃でＦＰ回復",
+            "korkr": "망치 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach młotami",
+            "porbr": "Recupera PF com ataques de martelo",
+            "rusru": "Восполнение ОК при атаке молотом",
+            "spaar": "Recuperación de PC tras ataques de martillo",
+            "spaes": "Restauración de PC al atacar con martillo",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ค้อน",
+            "zhocn": "槌攻击恢复专注值",
+            "zhotw": "槌攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600214,
-        "name": "FP Restoration upon Great Hammer Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻣﻁﺭﻗﺔ ﻋﻅﻳﻣﺔ",
+            "deude": "FP-Reg. durch Kriegshammerangriffe",
+            "engus": "FP Restoration upon Great Hammer Attacks",
+            "frafr": "Attaquer au grand marteau rend des PC",
+            "itait": "Ripristino PA con attacchi di martello pesante",
+            "jpnjp": "大槌の攻撃でＦＰ回復",
+            "korkr": "대형 망치 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach wielkimi młotami",
+            "porbr": "Recupera PF com ataques de martelo grande",
+            "rusru": "Восполнение ОК при атаке большим молотом",
+            "spaar": "Recuperación de PC tras ataq. de gran martillo",
+            "spaes": "Restauración de PC al atacar con gran martillo",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ค้อน​ใหญ่",
+            "zhocn": "大槌攻击恢复专注值",
+            "zhotw": "大槌攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600215,
-        "name": "FP Restoration upon Flail Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻣﺧﺑﺎط",
+            "deude": "FP-Reg. durch Flegelangriffe",
+            "engus": "FP Restoration upon Flail Attacks",
+            "frafr": "Attaquer au fléau d'armes rend des PC",
+            "itait": "Ripristino PA con attacchi di flagello",
+            "jpnjp": "フレイルの攻撃でＦＰ回復",
+            "korkr": "철퇴 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach korbaczami",
+            "porbr": "Recupera PF com ataques de mangual",
+            "rusru": "Восполнение ОК при атаке цепом",
+            "spaar": "Recuperación de PC tras ataques de mangual",
+            "spaes": "Restauración de PC al atacar con mayal",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ลูก​ตุ้ม",
+            "zhocn": "连枷攻击恢复专注值",
+            "zhotw": "連枷攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600216,
-        "name": "FP Restoration upon Spear Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺭﻣﺢ",
+            "deude": "FP-Reg. durch Speerangriffe",
+            "engus": "FP Restoration upon Spear Attacks",
+            "frafr": "Attaquer à la lance rend des PC",
+            "itait": "Ripristino PA con attacchi di lancia",
+            "jpnjp": "槍の攻撃でＦＰ回復",
+            "korkr": "창 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach włóczniami",
+            "porbr": "Recupera PF com ataques de lança",
+            "rusru": "Восполнение ОК при атаке копьём",
+            "spaar": "Recuperación de PC tras ataques de lanza",
+            "spaes": "Restauración de PC al atacar con lanza",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​หอก",
+            "zhocn": "矛攻击恢复专注值",
+            "zhotw": "矛攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600217,
-        "name": "FP Restoration upon Pike Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺭﻣﺢ ﻣﺩﺑﺏ",
+            "deude": "FP-Reg. durch Pikenangriffe",
+            "engus": "FP Restoration upon Pike Attacks",
+            "frafr": "Attaquer à la pique rend des PC",
+            "itait": "Ripristino PA con attacchi di picca",
+            "jpnjp": "長槍の攻撃でＦＰ回復",
+            "korkr": "장창 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach pikami",
+            "porbr": "Recupera PF com ataques de pique",
+            "rusru": "Восполнение ОК при атаке рогатиной",
+            "spaar": "Recuperación de PC tras ataques de pica",
+            "spaes": "Restauración de PC al atacar con pica",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​หอก​ยาว",
+            "zhocn": "长矛攻击恢复专注值",
+            "zhotw": "長矛攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600218,
-        "name": "FP Restoration upon Great Spear Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺭﻣﺢ ﻋﻅﻳﻡ",
+            "deude": "FP-Reg. durch Großer-Speerangriffe",
+            "engus": "FP Restoration upon Great Spear Attacks",
+            "frafr": "Attaquer à la grande lance rend des PC",
+            "itait": "Ripristino PA con attacchi di lancia pesante",
+            "jpnjp": "大槍の攻撃でＦＰ回復",
+            "korkr": "대형 창 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach wielkimi włóczniami",
+            "porbr": "Recupera PF com ataques de lança grande",
+            "rusru": "Восполнение ОК при атаке большим копьём",
+            "spaar": "Recuperación de PC tras ataques de gran lanza",
+            "spaes": "Restauración de PC al atacar con lanza larga",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​หอก​ใหญ่",
+            "zhocn": "大矛攻击恢复专注值",
+            "zhotw": "大矛攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600219,
-        "name": "FP Restoration upon Halberd Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻣﺎت ﺑﺭﻣﺢ اﻟﻣِﻁﺭَد",
+            "deude": "FP-Reg. durch Hellebardenangriffe",
+            "engus": "FP Restoration upon Halberd Attacks",
+            "frafr": "Attaquer à la hallebarde rend des PC",
+            "itait": "Ripristino PA con attacchi di alabarda",
+            "jpnjp": "斧槍の攻撃でＦＰ回復",
+            "korkr": "도끼창 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach halabardami",
+            "porbr": "Recupera PF com ataques de alabarda",
+            "rusru": "Восполнение ОК при атаке алебардой",
+            "spaar": "Recuperación de PC tras ataques de alabarda",
+            "spaes": "Restauración de PC al atacar con alabarda",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ง้าว",
+            "zhocn": "戟攻击恢复专注值",
+            "zhotw": "戟攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600220,
-        "name": "FP Restoration upon Reaper Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺭﻣﺢ ﺣﺎﺻﺩ",
+            "deude": "FP-Reg. durch Schnitterangriffe",
+            "engus": "FP Restoration upon Reaper Attacks",
+            "frafr": "Attaquer au fauchard rend des PC",
+            "itait": "Ripristino PA con attacchi di falce",
+            "jpnjp": "鎌の攻撃でＦＰ回復",
+            "korkr": "낫 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach kosami",
+            "porbr": "Recupera PF com ataques de ceifador",
+            "rusru": "Восполнение ОК при атаке косой",
+            "spaar": "Recuperación de PC tras ataques de guadaña",
+            "spaes": "Restauración de PC al atacar con guadaña",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​เคียว",
+            "zhocn": "镰刀攻击恢复专注值",
+            "zhotw": "鐮刀攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600221,
-        "name": "FP Restoration upon Fist Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻘﺑﺿﺔ",
+            "deude": "FP-Reg. durch Faustangriffe",
+            "engus": "FP Restoration upon Fist Attacks",
+            "frafr": "Attaquer au poing rend des PC",
+            "itait": "Ripristino PA con attacchi di pugno",
+            "jpnjp": "拳の攻撃でＦＰ回復",
+            "korkr": "주먹 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach pięściami",
+            "porbr": "Recupera PF com ataques de punho",
+            "rusru": "Восполнение ОК при атаке кулаками",
+            "spaar": "Recuperación de PC tras ataques de puño",
+            "spaes": "Restauración de PC al atacar con puño",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​หมัด",
+            "zhocn": "拳头攻击恢复专注值",
+            "zhotw": "拳頭攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600222,
-        "name": "FP Restoration upon Claw Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻣﺧﻠﺏ",
+            "deude": "FP-Reg. durch Klauenangriffe",
+            "engus": "FP Restoration upon Claw Attacks",
+            "frafr": "Attaquer à la griffe rend des PC",
+            "itait": "Ripristino PA con attacchi di artiglio",
+            "jpnjp": "爪の攻撃でＦＰ回復",
+            "korkr": "발톱 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach szponami",
+            "porbr": "Recupera PF com ataques de garra",
+            "rusru": "Восполнение ОК при атаке когтями",
+            "spaar": "Recuperación de PC tras ataques de garra",
+            "spaes": "Restauración de PC al atacar con garra",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​กรง​เล็บ",
+            "zhocn": "钩爪攻击恢复专注值",
+            "zhotw": "鉤爪攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600223,
-        "name": "FP Restoration upon Whip Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻭط",
+            "deude": "FP-Reg. durch Peitschenangriffe",
+            "engus": "FP Restoration upon Whip Attacks",
+            "frafr": "Attaquer au fouet rend des PC",
+            "itait": "Ripristino PA con attacchi di frusta",
+            "jpnjp": "鞭の攻撃でＦＰ回復",
+            "korkr": "채찍 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach biczami",
+            "porbr": "Recupera PF com ataques de chicote",
+            "rusru": "Восполнение ОК при атаке кнутом",
+            "spaar": "Recuperación de PC tras ataques de látigo",
+            "spaes": "Restauración de PC al atacar con látigo",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​แส้",
+            "zhocn": "软鞭攻击恢复专注值",
+            "zhotw": "軟鞭攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600224,
-        "name": "FP Restoration upon Colossal Weapon Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﺳﻼح ﺿﺧﻡ",
+            "deude": "FP-Reg. durch Gig.-Waffen-Angriffe",
+            "engus": "FP Restoration upon Colossal Weapon Attacks",
+            "frafr": "Attaquer à l'arme colossale rend des PC",
+            "itait": "Ripristino PA con attacchi di arma colossale",
+            "jpnjp": "特大武器の攻撃でＦＰ回復",
+            "korkr": "특대형 무기 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach olbrzymią bronią",
+            "porbr": "Recupera PF com ataques de arma colossal",
+            "rusru": "Восполнение ОК при атаке огромным оружием",
+            "spaar": "Recuperación de PC tras ataques de arma colosal",
+            "spaes": "Restauración de PC al atacar con arma colosal",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​อาวุธ​ขนาด​ยักษ์",
+            "zhocn": "特大武器攻击恢复专注值",
+            "zhotw": "特大武器攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600225,
-        "name": "FP Restoration upon Bow Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻭم ﺑﻘﻭس",
+            "deude": "FP-Reg. durch Bogenangriffe",
+            "engus": "FP Restoration upon Bow Attacks",
+            "frafr": "Attaquer à l'arc rend des PC",
+            "itait": "Ripristino PA con attacchi di arco",
+            "jpnjp": "弓の攻撃でＦＰ回復",
+            "korkr": "활 공격으로 FP 회복",
+            "polpl": "Odnowienie PS po atakach łukiem",
+            "porbr": "Recupera PF com ataques de arco",
+            "rusru": "Восполнение ОК при стрельбе из лука",
+            "spaar": "Recuperación de PC tras ataques de arco",
+            "spaes": "Restauración de PC al atacar con arco",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ด้วย​ธนู",
+            "zhocn": "弓攻击恢复专注值",
+            "zhotw": "弓攻擊恢復ＦＰ"
+        }
     },
     {
         "id": 8600300,
-        "name": "Sudden Enemy Death upon Attacks"
+        "name": {
+            "araae": "ﻣﻭت اﻟﻌﺩو اﻟﻣﻔﺎﺟﺊ ﻋﻧﺩ اﻟﻬﺟﻣﺎت",
+            "deude": "Plötzlicher Gegnertod bei Ang.",
+            "engus": "Sudden Enemy Death upon Attacks",
+            "frafr": "Attaquer tue les enn. subitement",
+            "itait": "Morte improvvisa del nemico attaccando",
+            "jpnjp": "攻撃時、敵が稀に死ぬ",
+            "korkr": "공격 시 드물게 적 사망",
+            "polpl": "Nagła śmierć wroga po atakach",
+            "porbr": "Morte súbita de inimigos com ataques",
+            "rusru": "Внезапная смерть врага при атаке",
+            "spaar": "Muerte súbita de los enemigos tras los ataques",
+            "spaes": "Muerte súbita del enemigo al atacar",
+            "thath": "นานๆ ​ครัง ​ศัตรู​จะ​สินชีพ​เมือ​โจมตี",
+            "zhocn": "攻击时，敌人偶尔会骤死",
+            "zhotw": "攻擊時，敵人偶爾會驟死"
+        }
     },
     {
         "id": 8610000,
-        "name": "HP Restoration upon Successive Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ اﻟﻬﺟﻣﺎت اﻟﻣﺗﻼﺣﻘﺔ",
+            "deude": "LP-Reg. bei aufeinanderf. Angriffen",
+            "engus": "HP Restoration upon Successive Attacks",
+            "frafr": "Les att. success. rendent des PV",
+            "itait": "Ripristino PV con attacchi consecutivi",
+            "jpnjp": "攻撃連続時、ＨＰ回復",
+            "korkr": "공격 연속 시 HP 회복",
+            "polpl": "Odnowienie PŻ po kolejnych atakach",
+            "porbr": "Recuperação de PV com ataques sucessivos",
+            "rusru": "Восполнение ОЗ серией ударов",
+            "spaar": "Recuperación de PV después de ataques sucesivos",
+            "spaes": "Restaura PS en ataques sucesivos",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ต่อ​เนือง",
+            "zhocn": "连续攻击时，恢复血量",
+            "zhotw": "連續攻擊時，恢復ＨＰ"
+        }
     },
     {
         "id": 8610100,
-        "name": "FP Restoration upon Successive Attacks"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ اﻟﻬﺟﻣﺎت اﻟﻣﺗﻼﺣﻘﺔ",
+            "deude": "FP-Reg. bei aufeinanderf. Angriffen",
+            "engus": "FP Restoration upon Successive Attacks",
+            "frafr": "Les att. success. rendent des PC",
+            "itait": "Ripristino PA con attacchi consecutivi",
+            "jpnjp": "攻撃連続時、ＦＰ回復",
+            "korkr": "공격 연속 시 FP 회복",
+            "polpl": "Odnowienie PS po kolejnych atakach",
+            "porbr": "Recuperação de PF com ataques sucessivos",
+            "rusru": "Восполнение ОК серией ударов",
+            "spaar": "Recuperación de PC después de ataques sucesivos",
+            "spaes": "Restaura PC en ataques sucesivos",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ต่อ​เนือง",
+            "zhocn": "连续攻击时，恢复专注值",
+            "zhotw": "連續攻擊時，恢復ＦＰ"
+        }
     },
     {
         "id": 8610200,
-        "name": "Successive Attacks Boost Attack Power"
+        "name": {
+            "araae": "اﻟﻬﺟﻣﺎت اﻟﻣﺗﻼﺣﻘﺔ ﺗﻌﺯز ﻗﻭة اﻟﻬﺟﻭم",
+            "deude": "Aufeinanderf. Angr. erh. Angriffsk.",
+            "engus": "Successive Attacks Boost Attack Power",
+            "frafr": "Att. successives augm. la puissance d'attaque",
+            "itait": "Attacchi consecutivi aumentano potenza d'attacco",
+            "jpnjp": "攻撃連続時、攻撃力上昇",
+            "korkr": "공격 연속 시 공격력 상승",
+            "polpl": "Kolejne ataki zwiększają siłę ataku",
+            "porbr": "Ataques sucessivos aumentam o poder de ataque",
+            "rusru": "Серии ударов усиливают атаку",
+            "spaar": "Los ataques sucesivos aumentan el poder de ataque.",
+            "spaes": "Ataques sucesivos mejoran el ataque",
+            "thath": "เพิม​พลัง​โจมตี​เมือ​โจมตี​ต่อ​เนือง",
+            "zhocn": "连续攻击时，提升攻击力",
+            "zhotw": "連續攻擊時，提升攻擊力"
+        }
     },
     {
         "id": 8640000,
-        "name": "Critical Hit HP Restoration"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﺑﺿﺭﺑﺔ ﺣﺎﺳﻣﺔ",
+            "deude": "Krit.-Treffer-LP-Regeneration",
+            "engus": "Critical Hit HP Restoration",
+            "frafr": "PV récupérés lors des coups crit.",
+            "itait": "Ripristino PV con colpi critici",
+            "jpnjp": "致命の一撃で、ＨＰ回復",
+            "korkr": "치명적인 일격으로 HP 회복",
+            "polpl": "Przywracanie PŻ traf. krytycznymi",
+            "porbr": "Restauração de PV com acerto crítico",
+            "rusru": "Крит. удары восстанавливают ОЗ",
+            "spaar": "Restaura PV con los golpes críticos",
+            "spaes": "Los golpes críticos restauran PS",
+            "thath": "ฟนฟู HP ​เมือ​โจมตี​ถึง​ตาย",
+            "zhocn": "致命一击时，恢复血量",
+            "zhotw": "致命一擊時，恢復ＨＰ"
+        }
     },
     {
         "id": 8640100,
-        "name": "Critical Hit FP Restoration"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﺑﺿﺭﺑﺔ ﺣﺎﺳﻣﺔ",
+            "deude": "Krit.-Treffer-FP-Regeneration",
+            "engus": "Critical Hit FP Restoration",
+            "frafr": "PC récupérés lors des coups crit.",
+            "itait": "Ripristino PA con colpi critici",
+            "jpnjp": "致命の一撃で、ＦＰ回復",
+            "korkr": "치명적인 일격으로 FP 회복",
+            "polpl": "Przywracanie PS traf. krytycznymi",
+            "porbr": "Restauração de PF com acerto crítico",
+            "rusru": "Крит. удары восстанавливают ОК",
+            "spaar": "Restauración de PC con los golpes críticos",
+            "spaes": "Los golpes críticos restauran PC",
+            "thath": "ฟนฟู FP ​เมือ​โจมตี​ถึง​ตาย",
+            "zhocn": "致命一击时，恢复专注值",
+            "zhotw": "致命一擊時，恢復ＦＰ"
+        }
     },
     {
         "id": 8640200,
-        "name": "Increased Enemy Damage after Critical Hit"
+        "name": {
+            "araae": "زﻳﺎدة ﺿﺭر اﻟﻌﺩو ﺑﻌﺩ ﺿﺭب ﺿﺭﺑﺔ ﺣﺎﺳﻣﺔ",
+            "deude": "Erh. erl. Gegner-Sch. nach Krit. Treffer",
+            "engus": "Increased Enemy Damage after Critical Hit",
+            "frafr": "Dégâts aux ennemis augm. après coups crit.",
+            "itait": "Danni incrementati con colpo critico",
+            "jpnjp": "致命の一撃で、敵の被ダメージ増加",
+            "korkr": "치명적인 일격으로 적의 받는 대미지 증가",
+            "polpl": "Zwiększa obrażenia po traf. krytycznym",
+            "porbr": "Dano a inimigos aumentado após acerto crítico",
+            "rusru": "Повышение урона врагам после крит. удара",
+            "spaar": "Más daño a los enemigos tras golpe crítico",
+            "spaes": "Más daño a enemigos tras golpe crítico",
+            "thath": "เพิม​ความ​เสีย​หาย​ที​ศัตรู​ได้​รับ​เมือ​โจมตี​ถึง​ตาย",
+            "zhocn": "致命一击时，增加对敌人的伤害",
+            "zhotw": "致命一擊時，增加對敵人的傷害"
+        }
     },
     {
         "id": 8650000,
-        "name": "HP Recovery upon Successful Guards"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﻋﻧﺩ ﺗﻧﻔﻳﺫ واﻗﻳﺎت ﻧﺎﺟﺣﺔ",
+            "deude": "LP-Erholung d. erfolgr. Abwehr",
+            "engus": "HP Recovery upon Successful Guards",
+            "frafr": "Réussir une garde rend des PV",
+            "itait": "Recupero PV con difese efficaci",
+            "jpnjp": "ガードに成功時、ＨＰ回復",
+            "korkr": "가드 성공 시 HP 회복",
+            "polpl": "Przywracanie PŻ po udanych zasłonach",
+            "porbr": "Recuperação de PV após defesa",
+            "rusru": "Восполнение ОЗ при успешном блоке",
+            "spaar": "Recupera PV al defender con éxito",
+            "spaes": "La guardia con éxito recupera PS",
+            "thath": "ฟนฟู HP ​เมือ​ปองกัน​สําเร็จ",
+            "zhocn": "防御成功时，恢复血量",
+            "zhotw": "防禦成功時，恢復ＨＰ"
+        }
     },
     {
         "id": 8650100,
-        "name": "FP Recovery upon Successful Guards"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺗﺭﻛﻳﺯ ﻋﻧﺩ ﺗﻧﻔﻳﺫ واﻗﻳﺎت ﻧﺎﺟﺣﺔ",
+            "deude": "FP-Erholung d. erfolgr. Abwehr",
+            "engus": "FP Recovery upon Successful Guards",
+            "frafr": "Réussir une garde rend des PC",
+            "itait": "Recupero PA con difese efficaci",
+            "jpnjp": "ガードに成功時、ＦＰ回復",
+            "korkr": "가드 성공 시 FP 회복",
+            "polpl": "Przywracanie PS po udanych zasłonach",
+            "porbr": "Recuperação de PF após defesa",
+            "rusru": "Восполнение ОК при успешном блоке",
+            "spaar": "Recupera PC al defender con éxito",
+            "spaes": "La guardia con éxito recupera PC",
+            "thath": "ฟนฟู FP ​เมือ​ปองกัน​สําเร็จ",
+            "zhocn": "防御成功时，恢复专注值",
+            "zhotw": "防禦成功時，恢復ＦＰ"
+        }
     },
     {
         "id": 8660200,
-        "name": "Inflict Blood Loss at Low HP"
+        "name": {
+            "araae": "ﺗﺻﻳﺏ ﺑﺎﻟﻧﺯﻳﻑ ﻋﻧﺩ اﻧﺧﻔﺎض ﻧﻘﺎط اﻟﺻﺣﺔ",
+            "deude": "Verurs. Blutverlust bei niedr. LP",
+            "engus": "Inflict Blood Loss at Low HP",
+            "frafr": "Si PV faibles, inflige saignement",
+            "itait": "Infliggi sanguinamento con PV ridotti",
+            "jpnjp": "致命の一撃で、出血の状態異常を付加",
+            "korkr": "HP 저하 시 출혈 상태 이상 부여",
+            "polpl": "Wywołuje krwawienie, gdy masz mało PŻ",
+            "porbr": "Inflige hemorragia com PV baixos",
+            "rusru": "Кровавый урон при низком здоровье",
+            "spaar": "Infliges hemorragia al tener pocos PV",
+            "spaes": "Con pocos PS, infliges hemorragia",
+            "thath": "ใส่​สถานะ​เลือด​ออก​เมือ HP ​ลด",
+            "zhocn": "血量偏低时，附加异常状态出血",
+            "zhotw": "ＨＰ偏低時，附加異常狀態出血"
+        }
     },
     {
         "id": 8660300,
-        "name": "Create Holy Ground at Low HP"
+        "name": {
+            "araae": "ﺗﻛﻭّن أرﺿًﺎ ﻣﻘﺩﺳﺔ ﻋﻧﺩ اﻧﺧﻔﺎض ﻧﻘﺎط اﻟﺻﺣﺔ",
+            "deude": "Erz. Hlg. Boden bei niedr. LP",
+            "engus": "Create Holy Ground at Low HP",
+            "frafr": "Si PV faibles, consacre une zone",
+            "itait": "Consacra la terra con PV ridotti",
+            "jpnjp": "ＨＰ低下時、聖域が発生",
+            "korkr": "HP 저하 시 성역 발생",
+            "polpl": "Tworzy uświęconą ziemię, gdy masz mało PŻ",
+            "porbr": "Cria Solo Sagrado com PV baixos",
+            "rusru": "Святые земли при низком здоровье",
+            "spaar": "Creas una zona santa al tener pocos PV",
+            "spaes": "Con pocos PS, creas suelo sagrado",
+            "thath": "สร้าง​เขต​ศักดิสิทธิ​เมือ HP ​ลด",
+            "zhocn": "血量偏低时，展开圣域",
+            "zhotw": "ＨＰ偏低時，展開聖域"
+        }
     },
     {
         "id": 8660400,
-        "name": "Full HP Restoration upon Critical Hit at Low HP"
+        "name": {
+            "araae": "اﺳﺗﻌﺎدة اﻟﺻﺣﺔ ﻋﻧﺩ اﻧﺧﻔﺎﺿﻬﺎ ﺧﻼل ﺿﺭﺑﺔ ﺣﺎﺳﻣﺔ",
+            "deude": "Vollst. LP-Wiederh. bei Krit. Tr. u. niedr. LP",
+            "engus": "Full HP Restoration upon Critical Hit at Low HP",
+            "frafr": "Si PV bas, les coups critiques rendent des PV",
+            "itait": "Pieno ripristino PV con colpo critico e PV ridotti",
+            "jpnjp": "ＨＰ低下時、致命の一撃で全回復",
+            "korkr": "HP 저하 시 치명적인 일격으로 회복",
+            "polpl": "W pełni odnawia PŻ po traf. kryt. przy niskim PŻ",
+            "porbr": "Restaura todos os PV em dano crít. com PV baixos",
+            "rusru": "Полное ОЗ от крит. удара при низком здоровье",
+            "spaar": "Restau. tot. PV tras asest. gol. crít. pocos PV",
+            "spaes": "Con pocos PS, un golpe crít. rest. todos los PS",
+            "thath": "เมือ HP ​ลด​จะ​ฟนฟู​จน​เต็ม​ด้วย​การ​โจมตี​ถึง​ตาย",
+            "zhocn": "血量偏低时，致命一击全恢复血量",
+            "zhotw": "ＨＰ偏低時，致命一擊全恢復ＨＰ"
+        }
     },
     {
         "id": 8680000,
-        "name": "Holy-Affinity Guards Activate Golden Vow"
+        "name": {
+            "araae": "ﺗُﻔﻌِﻝ واﻗﻳﺎت ﺗﻧﺎﻏﻡ اﻟﺗﻘﺩﻳﺱ اﻟﻌﻬﺩ اﻟﺫﻫﺑﻲ",
+            "deude": "Heiligaff.-Abw. aktiv. Goldener Schwur",
+            "engus": "Holy-Affinity Guards Activate Golden Vow",
+            "frafr": "Serment doré après une garde (sacrée)",
+            "itait": "Le dif. con affin. sacra attivano Voto aureo",
+            "jpnjp": "聖属性ガード蓄積で黄金樹に誓ってが発動",
+            "korkr": "신성 공격 가드 축적으로 황금 나무에 맹세코 발동",
+            "polpl": "Święte zasłony aktywują Złotą przysięgę",
+            "porbr": "Defesa de afinidade sagrada ativa Voto Dourado",
+            "rusru": "Блок святого урона активирует «Золотой обет»",
+            "spaar": "Defend. con afinidad a lo san. act. Voto dorado",
+            "spaes": "Guardias af. «Sagrado» activan Juramento dorado",
+            "thath": "ใช้ \"สาบาน​ต่อ​พฤกษา​ทอง\" ​เมือ​ปองกัน​การ​โจมตี​ศักดิสิทธิ​สะสม",
+            "zhocn": "防御圣攻击，累积后触发黄金树立誓",
+            "zhotw": "防禦聖攻擊，累積後觸發黃金樹立誓"
+        }
     },
     {
         "id": 8680100,
-        "name": "Fire-Affinity Guards Activate Flame, Grant Me Strength"
+        "name": {
+            "araae": "ﺗُﻔﻌِﻝ واﻗﻳﺎت ﺗﻧﺎﻏﻡ اﻟﻧﺎر، ﺗﻣﻧﺣﻧﻲ اﻟﻘﻭة",
+            "deude": "Feueraff.-Abw. aktiv. Flamme, gib mir Kraft!",
+            "engus": "Fire-Affinity Guards Activate Flame, Grant Me Strength",
+            "frafr": "Flamme, renforce-moi après une garde (feu)",
+            "itait": "Dif. affin. fuoco attivano Fiamma, donami forza",
+            "jpnjp": "炎攻撃ガード蓄積で火よ、力を！が発動",
+            "korkr": "화염 공격 가드 축적으로 불이여, 힘을! 발동",
+            "polpl": "Ogniste zasłony aktywują „Ogniu, daj mi siłę”",
+            "porbr": "Defesa de fogo ativa Chama, Conceda-me Força",
+            "rusru": "Блок урона огнём актив. «Пламя, даруй мне силу»",
+            "spaar": "Def. afin. fuego act. Llama, concédeme fuerza",
+            "spaes": "Guardias af. «Ígnea» activan Llama, dame fuerza",
+            "thath": "ใช้ \"ไฟ​เอ๋ย ​จง​มอบ​พลัง​แก่​ข้า!\" ​เมือ​ปองกัน​การ​โจมตี​เพลิง​สะสม",
+            "zhocn": "防御火攻击，累积后触发火焰啊，赐予我力量！",
+            "zhotw": "防禦火攻擊，累積後觸發火焰啊，賜予我力量！"
+        }
     },
     {
         "id": 8680200,
-        "name": "Lightning-Affinity Guards Activate Dragonbolt Blessing"
+        "name": {
+            "araae": "ﺗُﻔﻌِﻝ واﻗﻳﺎت ﺗﻧﺎﻏﻡ اﻟﺑﺭق ﻣﺑﺎرﻛﺔ ﺻﺎﻋﻘﺔ اﻟﺗﻧﻳﻥ",
+            "deude": "Blitzaff.-Abw. aktiv. Segen des Drachenblitzes",
+            "engus": "Lightning-Affinity Guards Activate Dragonbolt Blessing",
+            "frafr": "Béné. élec. du dragon après une garde (foudre)",
+            "itait": "Dif. affin. fulmine: Bened. del fulmine draconico",
+            "jpnjp": "雷攻撃ガード蓄積で竜雷の加護が発動",
+            "korkr": "벼락 공격 가드 축적으로 용뢰의 가호 발동",
+            "polpl": "Zasłony błyskawicy aktywują błog. smocz. pioruna",
+            "porbr": "Defesa elétrica ativa Bênção de Raio de Dragão",
+            "rusru": "«Благословение драконьей молнией»",
+            "spaar": "Def. afin. rayo act. Bendición de rayo de dragón",
+            "spaes": "Guardias af. «Fulgurante» act. Bend. dracorrayo",
+            "thath": "ใช้ \"ความ​คุ้มครอง​แห่ง​สายฟา​มังกร\" ​เมือ​ปองกัน​การ​โจมตี​สายฟา​สะสม",
+            "zhocn": "防御雷攻击，累积后触发龙雷庇佑",
+            "zhotw": "防禦雷攻擊，累積後觸發龍雷庇佑"
+        }
     },
     {
         "id": 8680300,
-        "name": "Magic-Affinity Guards Activate Terra Magica"
+        "name": {
+            "araae": "ﺗُﻔﻌِﻝ واﻗﻳﺎت ﺗﻧﺎﻏﻡ اﻟﺳﺣﺭ ﺳﺣﺭ اﻷرض",
+            "deude": "Magieaff.-Abw. aktiv. Terra Magica",
+            "engus": "Magic-Affinity Guards Activate Terra Magica",
+            "frafr": "Domaine magique après une garde (magique)",
+            "itait": "Le dif. con affin. magia attivano Terra Magica",
+            "jpnjp": "魔力攻撃ガード蓄積で魔術の地が発動",
+            "korkr": "마력 공격 가드 축적으로 마술의 땅 발동",
+            "polpl": "Magiczne zasłony aktywują Terra Magica",
+            "porbr": "Defesa de afinidade mágica ativa Terra Mágica",
+            "rusru": "Блок урона магией активирует «Волшебные земли»",
+            "spaar": "Def. afinidad a la magia act. Tierra mágica",
+            "spaes": "Guardias af. «Mágico» activan Terra Magica",
+            "thath": "ใช้ \"ดิน​แดน​คาถา\" ​เมือ​ปองกัน​การ​โจมตี​พลัง​เวท​สะสม",
+            "zhocn": "防御魔力攻击，累积后触发魔法之境",
+            "zhotw": "防禦魔力攻擊，累積後觸發魔法之境"
+        }
     },
     {
         "id": 8700000,
-        "name": "Poison & Rot Trigger Continuous HP Recovery"
+        "name": {
+            "araae": "ﻳﺣﻔﺯ اﻟﺳﻡ واﻟﻌﻔﻥ اﺳﺗﻌﺎدة ﻧﻘﺎط اﻟﺻﺣﺔ ﺑﺎﺳﺗﻣﺭار",
+            "deude": "Gift & Fäule akt. laufende LP-Reg.",
+            "engus": "Poison & Rot Trigger Continuous HP Recovery",
+            "frafr": "Le poison et la putréfaction rendent des PV",
+            "itait": "Veleno e marce. attiv. recupero PV nel tempo",
+            "jpnjp": "毒／腐敗状態発生時、ＨＰ持続回復",
+            "korkr": "독/부패 발생 시 HP 지속 회복",
+            "polpl": "Trucizna i zgnilizna aktywują ciągłą odnowę PŻ",
+            "porbr": "Veneno e podridão ativam recuperação de PV",
+            "rusru": "Постеп. восп. ОЗ при отравлении и гнили",
+            "spaar": "El ven. y la podred. act. la recup. continua PV",
+            "spaes": "Recup. de PS continua con veneno y putrefacción",
+            "thath": "ฟนฟู HP ​ต่อ​เนือง​เมือ​ติด​สถานะ​ติด​พิษ/​เสือม​สลาย",
+            "zhocn": "周围陷入中毒、腐败时，持续恢复血量",
+            "zhotw": "周圍陷入中毒、腐敗時，持續恢復ＨＰ"
+        }
     },
     {
         "id": 8710000,
-        "name": "Blood Loss in Vicinity Increases Attack Power"
+        "name": {
+            "araae": "ﺗﺯﻳﺩ ﻗﻭة اﻟﻬﺟﻭم ﻋﻧﺩ ﺣﺩوث ﻧﺯﻳﻑ ﻓﻲ ﻣﻛﺎن ﻗﺭﻳﺏ",
+            "deude": "Blutverlust in der Nähe erhöht die Angriffskraft",
+            "engus": "Blood Loss in Vicinity Increases Attack Power",
+            "frafr": "Augmente la puissance d'att. en cas de saignement",
+            "itait": "Incrementa pot. att. in prossimità di sanguin.",
+            "jpnjp": "周囲で出血状態の発生時、攻撃力上昇",
+            "korkr": "주위에서 출혈 발생 시 공격력 상승",
+            "polpl": "Zwiększa siłę ataku, jeśli w pobliżu ktoś krwawi",
+            "porbr": "Hemorragia nas proximidades eleva o ataque",
+            "rusru": "Кровотечение вблизи усиливает атаку",
+            "spaar": "Hemorragia en cercanías aumen. el pod. de ataq.",
+            "spaes": "Hemo. en las inmediaciones aumenta el ataque",
+            "thath": "เพิม​พลัง​โจมตี​เมือ​รอบ​ข้าง​ติด​สถานะ​เลือด​ออก",
+            "zhocn": "周围陷入出血时，提升攻击力",
+            "zhotw": "周圍陷入出血時，提升攻擊力"
+        }
     },
     {
         "id": 8970000,
-        "name": "Traces of Grace-Given Lord"
+        "name": {
+            "araae": "آﺛﺎر اﻟﻠﻭرد ﻣﺎﻧﺢ اﻟﻧﻌﻡ",
+            "deude": "Spuren des Gnadenbeschenkten Fürsten",
+            "engus": "Traces of Grace-Given Lord",
+            "frafr": "Traces du Seigneur touché par la grâce",
+            "itait": "Tracce di lord benedetto dalla grazia",
+            "jpnjp": "祝福王の余光",
+            "korkr": "축복왕의 여광",
+            "polpl": "Ślady lorda obdarzonego łaską",
+            "porbr": "Traços do Lorde Agraciado",
+            "rusru": "Следы божества, дарующего благодать",
+            "spaar": "Remanentes del Señor Agraciado",
+            "spaes": "Rastros del Señor agraciado",
+            "thath": "แสง​สายัณห์​ของ​ราชา​แห่ง​พร",
+            "zhocn": "赐福王的余威",
+            "zhotw": "賜福王的餘威"
+        }
     },
     {
         "id": 8970010,
-        "name": "Integration of Intelligence"
+        "name": {
+            "araae": "دﻣﺞ اﻟﺫﻛﺎء",
+            "deude": "Integration der Weisheit",
+            "engus": "Integration of Intelligence",
+            "frafr": "Intégration intelligente",
+            "itait": "Integrazione dell'intelletto",
+            "jpnjp": "知の集約",
+            "korkr": "지의 집약",
+            "polpl": "Integracja inteligencji",
+            "porbr": "Integração de Inteligência",
+            "rusru": "Слияние мудрости",
+            "spaar": "Integración de inteligencia",
+            "spaes": "Integración de la inteligencia",
+            "thath": "แหล่ง​รวม​ญญา",
+            "zhocn": "智慧的汇集",
+            "zhotw": "智慧的匯集"
+        }
     },
     {
         "id": 8970020,
-        "name": "Unifying Fate"
+        "name": {
+            "araae": "ﺗﻭﺣﻳﺩ اﻟﻣﺻﻳﺭ",
+            "deude": "Vereinigendes Schicksal",
+            "engus": "Unifying Fate",
+            "frafr": "Destin fédérateur",
+            "itait": "Destino congiunto",
+            "jpnjp": "融合する命",
+            "korkr": "융합하는 생명",
+            "polpl": "Jednoczący los",
+            "porbr": "Destino Unificador",
+            "rusru": "Общая судьба",
+            "spaar": "Destino unificador",
+            "spaes": "Unificación del destino",
+            "thath": "ชีวิน​ผสาน",
+            "zhocn": "融合的生命",
+            "zhotw": "融合的生命"
+        }
     },
     {
         "id": 8970030,
-        "name": "Demon's Plating"
+        "name": {
+            "araae": "ﺗﺩرﻳﻊ اﻟﺷﻳﻁﺎن",
+            "deude": "Dämonenplatten",
+            "engus": "Demon's Plating",
+            "frafr": "Plaque démoniaque",
+            "itait": "Piastre demoniache",
+            "jpnjp": "悪魔の鍍金",
+            "korkr": "악마의 도금",
+            "polpl": "Demoniczne płyty",
+            "porbr": "Revestimento do Demônio",
+            "rusru": "Демоническая оболочка",
+            "spaar": "Revestimiento demoníaco",
+            "spaes": "Baño demoníaco",
+            "thath": "ชุบ​ทอง​ปศาจ",
+            "zhocn": "恶魔的添翼",
+            "zhotw": "惡魔的添翼"
+        }
     },
     {
         "id": 9990000,
-        "name": "Favor of the Night"
+        "name": {
+            "araae": "ﺻﻧﻳﻊ اﻟﻅﻼم",
+            "deude": "Gunst der Nacht",
+            "engus": "Favor of the Night",
+            "frafr": "Faveur nocturne",
+            "itait": "Favore della notte",
+            "jpnjp": "夜の恩寵",
+            "korkr": "밤의 은총",
+            "polpl": "Przychylność nocy",
+            "porbr": "Bênção da Noite",
+            "rusru": "Милость ночи",
+            "spaar": "Favor de la Noche",
+            "spaes": "Favor de la Noche",
+            "thath": "ความ​กรุณา​แห่ง​รัตติกาล",
+            "zhocn": "黑夜的恩惠",
+            "zhotw": "黑夜的恩惠"
+        }
     },
     {
         "id": 9990010,
-        "name": "Favor of Noklateo, the Shrouded City"
+        "name": {
+            "araae": "ﺻﻧﻳﻊ ﻧﻭﻛﻼﺗﻳﻭ، اﻟﻣﺩﻳﻧﺔ اﻟﻣﺧﻔﻳﺔ",
+            "deude": "Gunst der Verhüllten Stadt Noklateo",
+            "engus": "Favor of Noklateo, the Shrouded City",
+            "frafr": "Faveur de Noklateo, la ville nimbée",
+            "itait": "Favore di Noklateo, la Città Ammantata",
+            "jpnjp": "隠れ都ノクラテオの恩寵",
+            "korkr": "숨겨진 도읍 노크라테오의 은총",
+            "polpl": "Przychylność Noklateo, Zasłoniętego Miasta",
+            "porbr": "Bênção de Noklateo, Cidade Encoberta",
+            "rusru": "Благословение морочного города Ноклатео",
+            "spaar": "Favor de Noklateo, la Ciudad Velada",
+            "spaes": "Favor de Noklateo, la Ciudad Velada",
+            "thath": "ความ​กรุณา​แห่ง​น็อค​ลา​เต​โอ ​นคร​ซ่อน​เร้น",
+            "zhocn": "“隐城”诺克拉缇欧的恩惠",
+            "zhotw": "「隱城」諾克拉緹歐的恩惠"
+        }
     },
     {
         "id": 9990020,
-        "name": "Favor of the Rotted Woods"
+        "name": {
+            "araae": "ﺻﻧﻳﻊ اﻟﻐﺎﺑﺔ اﻟﻣﺗﻌﻔﻧﺔ",
+            "deude": "Gunst der verfaulten Wälder",
+            "engus": "Favor of the Rotted Woods",
+            "frafr": "Faveur des Bois putréfiés",
+            "itait": "Favore del bosco marcescente",
+            "jpnjp": "腐れ森の恩寵",
+            "korkr": "부패숲의 은총",
+            "polpl": "Przychylność Zbutwiałego lasu",
+            "porbr": "Bênção da Floresta Apodrecida",
+            "rusru": "Благословение Сгнивших лесов",
+            "spaar": "Favor del bosque putrefacto",
+            "spaes": "Favor del Bosque Putrefacto",
+            "thath": "ความ​กรุณา​แห่ง​ปา​เสือม​สลาย",
+            "zhocn": "腐败森林的恩惠",
+            "zhotw": "腐敗森林的恩惠"
+        }
     },
     {
         "id": 9990030,
-        "name": "Favor of the Mountaintop"
+        "name": {
+            "araae": "ﺻﻧﻳﻊ ﻗﻣﺔ اﻟﺟﺑﻝ",
+            "deude": "Gunst des Berggipfels",
+            "engus": "Favor of the Mountaintop",
+            "frafr": "Faveur de la Cime",
+            "itait": "Favore della vetta",
+            "jpnjp": "山嶺の恩寵",
+            "korkr": "산령의 은총",
+            "polpl": "Przychylność Szczytu góry",
+            "porbr": "Bênção do Topo da Montanha",
+            "rusru": "Благословение горной вершины",
+            "spaar": "Favor de la cumbre",
+            "spaes": "Favor del pico",
+            "thath": "ความ​กรุณา​แห่ง​ยอด​เขา",
+            "zhocn": "山顶的恩惠",
+            "zhotw": "山頂的恩惠"
+        }
     },
     {
         "id": 9990031,
-        "name": "Improved Frost Resistance"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻣﻘﺎوﻣﺔ اﻟﺻﻘﻳﻊ",
+            "deude": "Erhöhte Resistenz gegen Frostleiden",
+            "engus": "Improved Frost Resistance",
+            "frafr": "Augmente la résistance à la congélation",
+            "itait": "Resistenza all'assideramento migliorata",
+            "jpnjp": "冷気の状態異常耐性上昇",
+            "korkr": "동상 상태 이상 내성 상승",
+            "polpl": "Zwiększa odporność na mróz",
+            "porbr": "Eleva resistência à congelamento",
+            "rusru": "Повышение устойчивости к обморожению",
+            "spaar": "Aumenta la resistencia a la congelación",
+            "spaes": "Mejora la resistencia a la congelación",
+            "thath": "เพิม​ความ​ต้านทาน​สถานะ​เยือก​แข็ง",
+            "zhocn": "提升对异常状态冻伤的抵抗力",
+            "zhotw": "提升對異常狀態凍傷的抵抗力"
+        }
     },
     {
         "id": 9990032,
-        "name": "Attack Boost [Dragons]"
+        "name": {
+            "araae": "ﺗﻌﺯﻳﺯ اﻟﻬﺟﻭم [اﻟﺗﻧﺎﻧﻳﻥ]",
+            "deude": "Angriffsstärkung [Drachen]",
+            "engus": "Attack Boost [Dragons]",
+            "frafr": "Amélioration d'attaque [Dragons]",
+            "itait": "Incremento attacco [draghi]",
+            "jpnjp": "特効【竜】",
+            "korkr": "특효[용]",
+            "polpl": "Premia ataku [smoki]",
+            "porbr": "Bônus de ataque [dragões]",
+            "rusru": "Усиление атак по драконам",
+            "spaar": "Aumento de ataque [dragones]",
+            "spaes": "Mejora de ataque [Dragones]",
+            "thath": "คุณสมบัติ​พิเศษ \"มังกร\"",
+            "zhocn": "增伤【龙】",
+            "zhotw": "增傷【龍】"
+        }
     },
     {
         "id": 9990033,
-        "name": "Favor of the Mountaintop"
+        "name": {
+            "araae": "ﺻﻧﻳﻊ ﻗﻣﺔ اﻟﺟﺑﻝ",
+            "deude": "Gunst des Berggipfels",
+            "engus": "Favor of the Mountaintop",
+            "frafr": "Faveur de la Cime",
+            "itait": "Favore della vetta",
+            "jpnjp": "山嶺の恩寵",
+            "korkr": "산령의 은총",
+            "polpl": "Przychylność szczytu góry",
+            "porbr": "Bênção do Topo da Montanha",
+            "rusru": "Благословение горной вершины",
+            "spaar": "Favor de la cumbre",
+            "spaes": "Favor del pico",
+            "thath": "ความ​กรุณา​แห่ง​ยอด​เขา",
+            "zhocn": "山顶的恩惠",
+            "zhotw": "山頂的恩惠"
+        }
     },
     {
         "id": 9990034,
-        "name": "Improves resistance to frost ailment"
+        "name": {
+            "araae": "ﺗﺣﺳﻳﻥ ﻣﻘﺎوﻣﺔ اﺿﻁﺭاب اﻟﺻﻘﻳﻊ",
+            "deude": "Erhöht Resistenz gegen Frostleiden",
+            "engus": "Improves resistance to frost ailment",
+            "frafr": "Augmente la résistance à la congélation",
+            "itait": "Aumenta la resistenza all'assideramento",
+            "jpnjp": "冷気の状態異常耐性上昇",
+            "korkr": "동상 상태 이상 내성 상승",
+            "polpl": "Zwiększa odporność na mróz",
+            "porbr": "Aumenta a resistência à condição congelamento",
+            "rusru": "Повышает устойчивость к обморожению",
+            "spaar": "Aumen. la resist. efecto de estado congelación",
+            "spaes": "Mejora la resistencia a la congelación",
+            "thath": "เพิม​ความ​ต้านทาน​สถานะ​เยือก​แข็ง",
+            "zhocn": "提升对异常状态冻伤的抵抗力",
+            "zhotw": "提升對異常狀態凍傷的抵抗力"
+        }
     },
     {
         "id": 9990040,
-        "name": "Unhealed Wound Carved by the Night"
+        "name": {
+            "araae": "ﺟﺭح ﻟﻡ ﻳﻠﺗﺋﻡ ﺗﺳﺑﺏ ﻓﻳﻪ اﻟﻅﻼم",
+            "deude": "Ungeheilte, Wunde von der Nacht",
+            "engus": "Unhealed Wound Carved by the Night",
+            "frafr": "Plaie ouverte infligée par la Nuit",
+            "itait": "Piaga aperta dalla notte",
+            "jpnjp": "夜に刻まれし癒えぬ傷",
+            "korkr": "밤에 새겨진 불치의 상처",
+            "polpl": "Niezagojona rana wyryta przez noc",
+            "porbr": "Ferimento não curado entalhado pela Noite",
+            "rusru": "Незаживающая метка ночи",
+            "spaar": "Herida abierta producida por la Noche",
+            "spaes": "Herida sin cicatrizar infligida por la Noche",
+            "thath": "แผล​รัตติกาล​สลัก​ที​ไม่มี​วัน​หาย",
+            "zhocn": "受黑夜所伤，永不愈合的伤痕",
+            "zhotw": "受黑夜所傷，永不癒合的傷痕"
+        }
     }
 ]

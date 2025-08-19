@@ -1,6 +1,23 @@
 [
     {
-        "name": "WYLDER",
+        "id": 100000,
+        "name": {
+            "araae": "اﻟﻣﻁﺎرد",
+            "deude": "Wylder",
+            "engus": "Wylder",
+            "frafr": "Rôdeur",
+            "itait": "Selvaggio",
+            "jpnjp": "追跡者",
+            "korkr": "추적자",
+            "polpl": "Wilczan",
+            "porbr": "Selvagem",
+            "rusru": "Уайлдер",
+            "spaar": "El Salvaje",
+            "spaes": "Sylvestre",
+            "thath": "ผู้​สะกด​รอย",
+            "zhocn": "追踪者",
+            "zhotw": "追蹤者"
+        },
         "armament_types": [
             "Greatsword"
         ],
@@ -11,7 +28,24 @@
         "ARC": "C"
     },
     {
-        "name": "GUARDIAN",
+        "id": 100030,
+        "name": {
+            "araae": "اﻟﺣﺎرس",
+            "deude": "Wächter",
+            "engus": "Guardian",
+            "frafr": "Gardien",
+            "itait": "Guardiano",
+            "jpnjp": "守護者",
+            "korkr": "수호자",
+            "polpl": "Strażnik",
+            "porbr": "Guardião",
+            "rusru": "Страж",
+            "spaar": "Guardián",
+            "spaes": "Guardián",
+            "thath": "ผู้​พิทักษ์",
+            "zhocn": "守护者",
+            "zhotw": "守護者"
+        },
         "armament_types": [
             "Halberd",
             "Greatshield"
@@ -23,7 +57,24 @@
         "ARC": "C"
     },
     {
-        "name": "IRONEYE",
+        "id": 100050,
+        "name": {
+            "araae": "اﻟﻌﻳﻥ اﻟﺣﺩﻳﺩﻳﺔ",
+            "deude": "Eisenauge",
+            "engus": "Ironeye",
+            "frafr": "Œil perçant",
+            "itait": "Occhio di ferro",
+            "jpnjp": "鉄の目",
+            "korkr": "철의 눈",
+            "polpl": "Żelazne Oko",
+            "porbr": "Olho-de-Ferro",
+            "rusru": "Железный Глаз",
+            "spaar": "Ojo de Hierro",
+            "spaes": "Ojos de Acero",
+            "thath": "เนตร​เหล็ก",
+            "zhocn": "铁之眼",
+            "zhotw": "鐵之眼"
+        },
         "armament_types": [
             "Bow"
         ],
@@ -34,7 +85,24 @@
         "ARC": "B"
     },
     {
-        "name": "DUCHESS",
+        "id": 100010,
+        "name": {
+            "araae": "اﻟﺩوﻗﺔ",
+            "deude": "Gräfin",
+            "engus": "Duchess",
+            "frafr": "Duchesse",
+            "itait": "Duchessa",
+            "jpnjp": "レディ",
+            "korkr": "레이디",
+            "polpl": "Księżna",
+            "porbr": "Duquesa",
+            "rusru": "Герцогиня",
+            "spaar": "Duquesa",
+            "spaes": "Duquesa",
+            "thath": "ท่าน​หญิง",
+            "zhocn": "女爵",
+            "zhotw": "女爵"
+        },
         "armament_types": [
             "Dagger"
         ],
@@ -45,7 +113,24 @@
         "ARC": "D"
     },
     {
-        "name": "RAIDER",
+        "id": 100040,
+        "name": {
+            "araae": "اﻟﻣُﻐﻳﺭ",
+            "deude": "Räuber",
+            "engus": "Raider",
+            "frafr": "Forban",
+            "itait": "Predone",
+            "jpnjp": "無頼漢",
+            "korkr": "무뢰한",
+            "polpl": "Najeźdźca",
+            "porbr": "Corsário",
+            "rusru": "Налётчик",
+            "spaar": "Pirata",
+            "spaes": "Saqueador",
+            "thath": "ทรชน",
+            "zhocn": "无赖",
+            "zhotw": "無賴"
+        },
         "armament_types": [
             "Greataxe",
             "Great Hammer",
@@ -58,7 +143,24 @@
         "ARC": "C"
     },
     {
-        "name": "REVENANT",
+        "id": 100090,
+        "name": {
+            "araae": "اﻟﻧﺎﻫﺿﺔ",
+            "deude": "Gespenst",
+            "engus": "Revenant",
+            "frafr": "Revenante",
+            "itait": "Rediviva",
+            "jpnjp": "復讐者",
+            "korkr": "복수자",
+            "polpl": "Zjawa",
+            "porbr": "Espectro",
+            "rusru": "Призрак",
+            "spaar": "Retornada",
+            "spaes": "Renacida",
+            "thath": "ผู้​ล้าง​แค้น",
+            "zhocn": "复仇者",
+            "zhotw": "復仇者"
+        },
         "armament_types": [],
         "STR": "C",
         "DEX": "C",
@@ -67,7 +169,24 @@
         "ARC": "B"
     },
     {
-        "name": "RECLUSE",
+        "id": 100070,
+        "name": {
+            "araae": "اﻟﻧﺎﺳﻛﺔ",
+            "deude": "Einsiedlerin",
+            "engus": "Recluse",
+            "frafr": "Anachorète",
+            "itait": "Reclusa",
+            "jpnjp": "隠者",
+            "korkr": "은둔자",
+            "polpl": "Rekluza",
+            "porbr": "Reclusa",
+            "rusru": "Отшельница",
+            "spaar": "Ermitaña",
+            "spaes": "Reclusa",
+            "thath": "ผู้​บําเพ็ญ​เพียร",
+            "zhocn": "隐士",
+            "zhotw": "隱士"
+        },
         "armament_types": [],
         "STR": "D",
         "DEX": "C",
@@ -76,7 +195,24 @@
         "ARC": "C"
     },
     {
-        "name": "EXECUTOR",
+        "id": 100060,
+        "name": {
+            "araae": "اﻟﺳﻳﱠﺎف",
+            "deude": "Exekutor",
+            "engus": "Executor",
+            "frafr": "Exécuteur",
+            "itait": "Giustiziere",
+            "jpnjp": "執行者",
+            "korkr": "집행자",
+            "polpl": "Egzekutor",
+            "porbr": "Executor",
+            "rusru": "Палач",
+            "spaar": "Verdugo",
+            "spaes": "Ejecutor",
+            "thath": "เพชฌฆาต",
+            "zhocn": "执行者",
+            "zhotw": "執行者"
+        },
         "armament_types": [
             "Katana"
         ],
