@@ -164,9 +164,22 @@ def load_configs() -> None:
                     ENGUS_PIXEL_SETS_PATH = path.join(PIXEL_SETS_PATH, "engus")
                     makedirs(ENGUS_PIXEL_SETS_PATH, exist_ok=True)
                     for dir in listdir(PIXEL_SETS_PATH):
-                        if dir == "engus":
+                        # Check that dir has format <number>x<number>
+                        if len(dir.split("x")) != 2 or not all(part.isnumeric() for part in dir.split("x")):
                             continue
                         move(path.join(PIXEL_SETS_PATH, dir), ENGUS_PIXEL_SETS_PATH)
+                    for dir in listdir(ENGUS_PIXEL_SETS_PATH):
+                        if len(dir.split("x")) != 2 or not all(part.isnumeric() for part in dir.split("x")):
+                            continue
+                        # Rename all character_detection pixelsets to the correct casing (ex: "GUARDIAN" -> "Guardian")
+                        characters_path = path.join(ENGUS_PIXEL_SETS_PATH, dir, CHARACTER_DETECTION)
+                        if not path.exists(characters_path):
+                            continue
+                        for file in listdir(characters_path):
+                            name, extension = path.splitext(file)
+                            if name.isupper():
+                                name = name.capitalize()
+                                move(path.join(characters_path, file), path.join(characters_path, name + extension))
             if data_version != VERSION:
                 save_configs()
     except (FileNotFoundError, json.JSONDecodeError):

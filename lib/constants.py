@@ -171,65 +171,6 @@ BUTTON_DISABLED_ACTIVE_COLOR = "#D32F2F"  # Darker red
 BUTTON_QUIT_COLOR = "#40627C"  # Moonlight blue
 BUTTON_QUIT_ACTIVE_COLOR = "#304A5C"  # Darker blue
 
-CHARACTERS = [
-    WYLDER := "WYLDER",
-    GUARDIAN := "GUARDIAN",
-    IRONEYE := "IRONEYE",
-    DUCHESS := "DUCHESS",
-    RAIDER := "RAIDER",
-    REVENANT := "REVENANT",
-    RECLUSE := "RECLUSE",
-    EXECUTOR := "EXECUTOR",
-]
-
-WEAPON_TYPES = [
-    DAGGER := "Dagger",
-    STRAIGHT_SWORD := "Straight Sword",
-    GREATSWORD := "Greatsword",
-    COLOSSAL_SWORD := "Colossal Sword",
-    THRUSTING_SWORD := "Thrusting Sword",
-    HEAVY_THRUSTING_SWORD := "Heavy Thrusting Sword",
-    CURVED_SWORD := "Curved Sword",
-    CURVED_GREATSWORD := "Curved Greatsword",
-    KATANA := "Katana",
-    TWINBLADE := "Twinblade",
-    AXE := "Axe",
-    GREATAXE := "Greataxe",
-    HAMMER := "Hammer",
-    FLAILS := "Flails",
-    GREAT_HAMMER := "Great Hammer",
-    COLOSSAL_WEAPON := "Colossal Weapon",
-    SPEAR := "Spear",
-    GREAT_SPEAR := "Great Spear",
-    HALBERD := "Halberd",
-    REAPER := "Reaper",
-    WHIP := "Whip",
-    FIST := "Fist",
-    CLAWS := "Claws",
-    BOW := "Bow",
-    GREATBOW := "Great Bow",
-    CROSSBOW := "Crossbow",
-    BALLISTA := "Ballista",
-    TORCH := "Torch",
-    SMALL_SHIELD := "Small Shield",
-    MEDIUM_SHIELD := "Medium Shield",
-    GREATSHIELD := "Greatshield",
-    GLINTSTONE_STAFF := "Glintstone Staff",
-    SACRED_SEAL := "Sacred Seal",
-]
-
-AFFINITIES = [
-    FIRE := "Fire",
-    MAGIC := "Magic",
-    HOLY := "Holy",
-    LIGHTNING := "Lightning",
-    BLEED := "Bleed",
-    POISON := "Poison",
-    SCARLET_ROT := "Scarlet Rot",
-    FROSTBITE := "Frostbite",
-    SLEEP := "Sleep",
-    MADNESS := "Madness",
-]
 
 DEFAULT_LANGUAGE: str = "engus"
 

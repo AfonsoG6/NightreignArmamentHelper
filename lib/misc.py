@@ -4,6 +4,7 @@ from numpy import ndarray, where, array
 from PIL import Image
 from os import path, makedirs, listdir
 from cv2 import threshold, matchTemplate, resize, THRESH_BINARY, TM_CCOEFF_NORMED, INTER_AREA
+from lib.characters import get_all_character_names
 from lib.constants import *
 from lib.armaments import *
 from re import sub
@@ -133,8 +134,8 @@ def find_match(
                         best_match_similarity = similarity
                 else:
                     return (match_result, item)
-    if exhaustive and best_match is not None:
-        return (GOOD_MATCH, best_match)
+        if exhaustive and best_match is not None:
+            return (GOOD_MATCH, best_match)
     return (NO_MATCH, None)
 
 
@@ -265,7 +266,7 @@ class PixelSetCache:
         resolution = f"{screen_width}x{screen_height}"
         detection_box_id = MENU_DETECTION
         pixelset_characters: list[str] = list(self.get_pixelsets(resolution, detection_box_id).keys())
-        return all(character in pixelset_characters for character in CHARACTERS)
+        return all(character in pixelset_characters for character in get_all_character_names())
 
 
 class PixelSet:
