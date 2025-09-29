@@ -34,6 +34,7 @@ else:
     PROGRAM_DATA_PATH: str = path.join(BASE_PATH, "temp")
 
 PIXEL_SETS_PATH: str = path.join(PROGRAM_DATA_PATH, "pixel_sets")
+TESSDATA_PATH: str = path.join(PROGRAM_DATA_PATH, "languages")
 DEBUG_PATH: str = path.join(PROGRAM_DATA_PATH, "debug")
 RESOURCES_PATH: str = path.join(BASE_PATH, "resources")
 
@@ -45,8 +46,7 @@ TESSERACT_PATH: str = path.join(RESOURCES_PATH, "Tesseract-OCR", "tesseract.exe"
 ICON_PATH: str = path.join(RESOURCES_PATH, "icon.png")
 
 pytesseract.tesseract_cmd = TESSERACT_PATH
-TESSDATA_PREFIX = path.join(RESOURCES_PATH, "Tesseract-OCR", "tessdata")
-pytesseract.environ["TESSDATA_PREFIX"] = TESSDATA_PREFIX
+pytesseract.environ["TESSDATA_PREFIX"] = TESSDATA_PATH
 
 DEBUG: bool = False
 if __name__ == "__main__":
@@ -126,6 +126,7 @@ image_cache: ImageCache = ImageCache()
 extension_load_mode: str = ""
 loaded_extensions: dict[str, list[str]]
 
+selected_language_lock: Lock = Lock()
 selected_language: str = DEFAULT_LANGUAGE
 language_var: StringVar
 language_dropdown: OptionMenu
@@ -210,35 +211,34 @@ def on_character_selected(e) -> None:
 
 def create_character_dropdown() -> None:
     global current_character_dropdown, current_character_var
-    
+
     if current_character_dropdown:
         current_character_dropdown.destroy()
-    
-    current_character: dict|None = get_current_character_spec()
+
+    current_character: dict | None = get_current_character_spec()
     current_character_var.set(current_character["name"] if current_character else NO_CHARACTER)
-    character_names: list[str] = [spec["name"] for spec in CHARACTER_SPECS]
-    current_character_dropdown = OptionMenu(root, current_character_var, NO_CHARACTER, *character_names, command=on_character_selected)
+    current_character_dropdown = OptionMenu(root, current_character_var, NO_CHARACTER, *get_all_character_names(), command=on_character_selected)
     current_character_dropdown.config(bg="black", fg="white", font=("Arial", current_character_label_font_size), bd=0, highlightthickness=0)
     current_character_dropdown["menu"].config(bg="black", fg="white", font=("Arial", current_character_label_font_size))
     relx, rely = get_ui_element_coordinates_rel("character_dropdown", screen_width_ui, screen_height_ui)
     current_character_dropdown.place(relx=relx, rely=rely, anchor="ne")
-    
+
     root.update_idletasks()
 
 
 def on_language_selected(e) -> None:
     global selected_language, language_var
-    selected = language_var.get()
-    if selected not in LANGUAGES:
-        return
-    if selected == selected_language:
-        return
-    selected_language = selected
-    load_all_character_specs(RESOURCES_PATH, selected_language)
-    load_all_grabbable_specs(RESOURCES_PATH, selected_language)
-    create_character_dropdown()
-    pixelset_cache.change_language(selected_language)
-    save_configs()
+    with selected_language_lock:
+        selected = language_var.get()
+        if selected not in LANGUAGES or selected == selected_language:
+            return
+        selected_language = selected
+        load_all_character_specs(RESOURCES_PATH, selected_language)
+        load_all_grabbable_specs(RESOURCES_PATH, selected_language)
+        create_character_dropdown()
+        pixelset_cache.change_language(selected_language)
+        download_tessdata(selected_language, TESSDATA_PATH)
+        save_configs()
 
 
 def quit_app() -> None:
@@ -329,7 +329,7 @@ def update_armament_feedback_labels(character_spec: dict | None = None, grabbabl
         if current_menu_state == MENU_STATE_SHOP:
             basic_relx, basic_rely = get_ui_element_coordinates_rel(ARMAMENT_DETECTION_SHOP, screen_width_ui, screen_height_ui)
             advanced_rely, _, advanced_relx, _ = get_detection_box_coordinates_rel(ARMAMENT_DETECTION_SHOP, screen_width_ui, screen_height_ui)
-        elif current_menu_state == MENU_STATE_BOSS_DROP:
+        elif current_menu_state == MENU_STATE_DORMANT_POWER:
             basic_relx, basic_rely = get_ui_element_coordinates_rel(ARMAMENT_DETECTION_BOSS_DROP, screen_width_ui, screen_height_ui)
             advanced_rely, _, advanced_relx, _ = get_detection_box_coordinates_rel(ARMAMENT_DETECTION_BOSS_DROP, screen_width_ui, screen_height_ui)
         else:
@@ -532,10 +532,10 @@ def create_control_window() -> Toplevel:
 
     language_frame = Frame(control_window)
     language_frame.pack(side=TOP, fill="x", expand=False, padx=5, pady=4)
-    
+
     language_label = Label(language_frame, text="Language:", font=("Arial", 10, "bold"))
     language_label.pack(side=LEFT, padx=(10, 10))
-    
+
     language_var = StringVar(value=selected_language)
     language_dropdown = OptionMenu(language_frame, language_var, *LANGUAGES, command=on_language_selected)
     language_dropdown.config(bg="lightgray", fg="black", font=("Arial", 10, "bold"), bd=0, highlightthickness=0)
@@ -628,7 +628,7 @@ def get_eff_detection_id(detection_id: str) -> str | None:
                 return ARMAMENT_DETECTION_DEFAULT
             elif current_menu_state == MENU_STATE_SHOP:
                 return ARMAMENT_DETECTION_SHOP
-            elif current_menu_state == MENU_STATE_BOSS_DROP:
+            elif current_menu_state == MENU_STATE_DORMANT_POWER:
                 return ARMAMENT_DETECTION_BOSS_DROP
     return detection_id
 
@@ -696,7 +696,8 @@ def detect_text(detection_id: str) -> tuple[int, str]:
 
     # Last resource: OCR
     DEBUG_WINDOW.begin_ocr(eff_detection_id, img_for_ocr)
-    text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=selected_language, timeout=TESSERACT_TIMEOUT)
+    tessdata_lang = TESSERACT_LANGUAGES[selected_language]
+    text = pytesseract.image_to_string(img_for_ocr, config=TESSERACT_CONFIG, lang=tessdata_lang, timeout=TESSERACT_TIMEOUT)
     text = text.strip()
     DEBUG_WINDOW.end_ocr(eff_detection_id, text)
 
@@ -739,10 +740,10 @@ class DetectionThread(Thread):
 
 
 def convert_menu_title_to_state(title: str) -> str:
-    if title == SHOP_TITLE:
+    if title in SHOP_LANGUAGES.values():
         return MENU_STATE_SHOP
-    elif title == BOSS_DROP_TITLE:
-        return MENU_STATE_BOSS_DROP
+    elif title in DORMANT_POWER_LANGUAGES.values():
+        return MENU_STATE_DORMANT_POWER
     return MENU_STATE_DEFAULT
 
 
@@ -757,8 +758,11 @@ def learn_pixelset(detection_id: str, text_origin: int, match_result: int, match
 
 def detect_menu(detection_id: str) -> None:
     global current_menu_state, current_menu_state_lock
-    text_origin, text = detect_text(MENU_DETECTION)
-    match_result, match = find_match(detection_id, text_origin, text, [BOSS_DROP_TITLE, SHOP_TITLE], convert_menu_title_to_state)
+    with selected_language_lock:
+        text_origin, text = detect_text(MENU_DETECTION)
+        dormant_power_title = DORMANT_POWER_LANGUAGES[selected_language]
+        shop_title = SHOP_LANGUAGES[selected_language]
+        match_result, match = find_match(detection_id, selected_language, text_origin, text, [dormant_power_title, shop_title], convert_menu_title_to_state)
     if match_result == NO_MATCH:
         match = MENU_STATE_DEFAULT
     with current_menu_state_lock:
@@ -775,8 +779,11 @@ def detect_character(detection_id: str) -> None:
     with character_detection_enabled_lock:
         if not character_detection_enabled:
             return
-    text_origin, text = detect_text(detection_id)
-    match_result, match = find_match(detection_id, text_origin, text, CHARACTER_SPECS, lambda character_spec: character_spec["name"])
+    with selected_language_lock:
+        text_origin, text = detect_text(detection_id)
+        match_result, match = find_match(
+            detection_id, selected_language, text_origin, text, get_all_character_specs(), lambda character_spec: character_spec["name"]
+        )
     if match_result == NO_MATCH:
         return
     with current_character_id_lock:
@@ -791,8 +798,11 @@ def detect_armament(detection_id: str) -> None:
     character_spec: dict | None = get_current_character_spec()
     if character_spec is None:
         return
-    text_origin, text = detect_text(detection_id)
-    match_result, match_spec = find_match(detection_id, text_origin, text, GRABBABLE_SPECS, lambda grabbable_spec: grabbable_spec["name"])
+    with selected_language_lock:
+        text_origin, text = detect_text(detection_id)
+        match_result, match_spec = find_match(
+            detection_id, selected_language, text_origin, text, get_all_grabbable_specs(), lambda grabbable_spec: grabbable_spec["name"]
+        )
     if match_result == NO_MATCH:
         update_armament_feedback_labels_general(detection_id)
         return
@@ -809,6 +819,7 @@ def detect_armament(detection_id: str) -> None:
 if __name__ == "__main__":
     load_configs()
     makedirs(PROGRAM_DATA_PATH, exist_ok=True)
+    makedirs(TESSDATA_PATH, exist_ok=True)
     makedirs(PIXEL_SETS_PATH, exist_ok=True)
     makedirs(EXTENSIONS_PATH, exist_ok=True)
     if DEBUG:
@@ -873,6 +884,7 @@ if __name__ == "__main__":
 
     if selected_language not in LANGUAGES:
         selected_language = DEFAULT_LANGUAGE
+    download_tessdata(selected_language, TESSDATA_PATH)
     load_all_character_specs(RESOURCES_PATH, selected_language)
     load_all_grabbable_specs(RESOURCES_PATH, selected_language)
 

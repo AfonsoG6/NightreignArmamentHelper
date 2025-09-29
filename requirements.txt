@@ -5,3 +5,4 @@ numpy
 textdistance
 ImageHash
 pyinstaller
+requests

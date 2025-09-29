@@ -12,6 +12,8 @@ from math import ceil
 import importlib.util
 from inspect import getfullargspec
 import sys
+import requests
+from lib.constants import *
 
 
 def check_ext_config_format(ext_config) -> bool:
@@ -83,17 +85,19 @@ def load_extensions(extensions_path: str, extensible_function_specs: dict[str, A
     return (ext_config["mode"], loaded_extensions)
 
 
-def text_matches(rough_text: str, target_text: str, detection_id: str) -> tuple[int, float]:
+def text_matches(rough_text: str, target_text: str, detection_id: str, language: str) -> tuple[int, float]:
     threshold: float = TEXT_SIMILARITY_THRESHOLDS[detection_id]
     clean_target_text: str = target_text.strip().upper()
-    clean_target_text = clean_target_text.replace("É", "E").replace("é", "E")
-    clean_target_text = sub(r"[^a-zA-Z\s\'\-\.]", "", clean_target_text)  # Will mainly remove: []0-9
+    if language == "engus":  # Optimizations for the default language (English)
+        clean_target_text = clean_target_text.replace("É", "E").replace("é", "E")
+        clean_target_text = sub(r"[^a-zA-Z\s\'\-\.]", "", clean_target_text)  # Will mainly remove: []0-9
 
     clean_rough_text: str = rough_text.strip().upper()
-    clean_rough_text = clean_rough_text.replace("’", "'").replace("‘", "'")
-    clean_rough_text = clean_rough_text.replace("!", "L").replace("+", "T")
-    clean_rough_text = clean_rough_text.replace("É", "E").replace("é", "E")
-    clean_rough_text = sub(r"[^a-zA-Z\s\'\-\.]", "", clean_rough_text)
+    if language == "engus":  # Optimizations for the default language (English)
+        clean_rough_text = clean_rough_text.replace("’", "'").replace("‘", "'")
+        clean_rough_text = clean_rough_text.replace("!", "L").replace("+", "T")
+        clean_rough_text = clean_rough_text.replace("É", "E").replace("é", "E")
+        clean_rough_text = sub(r"[^a-zA-Z\s\'\-\.]", "", clean_rough_text)
     clean_rough_text = sub(r"\s+", " ", clean_rough_text)
 
     similarity = jaccard.normalized_similarity(clean_rough_text, clean_target_text)
@@ -104,7 +108,9 @@ def text_matches(rough_text: str, target_text: str, detection_id: str) -> tuple[
     return (NO_MATCH, 0)
 
 
-def find_match(detection_id: str, text_origin: int, text: str, search_space: Iterable, get_text: Callable, exhaustive: bool = True) -> tuple[int, Any]:
+def find_match(
+    detection_id: str, language: str, text_origin: int, text: str, search_space: Iterable, get_text: Callable, exhaustive: bool = True
+) -> tuple[int, Any]:
     if text_origin == TEXT_ORIGIN_NONE or text == "":
         return (NO_MATCH, None)
     if text_origin == TEXT_ORIGIN_PIXELSET:
@@ -117,7 +123,7 @@ def find_match(detection_id: str, text_origin: int, text: str, search_space: Ite
         best_match_similarity: float = 0.0
         for item in search_space:
             item_text: str = get_text(item)
-            match_result, similarity = text_matches(text, item_text, detection_id)
+            match_result, similarity = text_matches(text, item_text, detection_id, language)
             if match_result == PERFECT_MATCH:
                 return (PERFECT_MATCH, item)
             elif match_result == GOOD_MATCH:
@@ -174,10 +180,12 @@ class PixelSetCache:
         if not path.exists(self.lang_path):
             return
         self.init()
-    
+
     def init(self):
         if self.debug:
             print("Loading pixel sets to cache...")
+        self.cache.clear()
+        makedirs(self.lang_path, exist_ok=True)
         for resolution in listdir(self.lang_path):
             resolution_path = path.join(self.lang_path, resolution)
             if not path.isdir(resolution_path):
@@ -198,9 +206,10 @@ class PixelSetCache:
                             print(f"Loaded pixel set: {resolution}/{detection_box_id}/{identifier}.pixelset")
         if self.debug:
             print("Finished loading pixel sets to cache.")
-    
+
     def change_language(self, language: str) -> None:
         self.lang_path = path.join(self.base_path, language)
+        self.init()
 
     def get_pixelset(self, resolution: str, detection_box_id: str, identifier: str) -> set[tuple[int, int]] | None:
         if resolution in self.cache and detection_box_id in self.cache[resolution] and identifier in self.cache[resolution][detection_box_id]:
@@ -453,3 +462,20 @@ def convert_4k_template_dimensions_to_target_res(template_x: int, template_y: in
     x = ceil((template_x / 3840) * true_width)
     y = ceil((template_y / 2160) * true_height)
     return x, y
+
+
+def download_tessdata(language: str, languages_path: str) -> bool:
+    if language not in TESSERACT_LANGUAGES.keys():
+        return False
+    tessdata_lang = TESSERACT_LANGUAGES[language]
+    url = TESSDATA_DOWNLOAD_BASE_URL.format(language=tessdata_lang)
+    tgt_path = path.join(languages_path, f"{tessdata_lang}.traineddata")
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        with open(tgt_path, "wb") as file:
+            file.write(response.content)
+        return True
+    except Exception as e:
+        print(f"Failed to download tessdata for language '{language}': {e}")
+        return False

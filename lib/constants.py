@@ -1,7 +1,5 @@
 PROGRAM_NAME = "Nightreign Armament Helper"
 VERSION = "2.3.0"
-SHOP_TITLE = "SHOP"
-BOSS_DROP_TITLE = "DORMANT POWER"
 
 TEXT_ORIGINS: list[int] = [
     TEXT_ORIGIN_NONE := 0,
@@ -140,8 +138,8 @@ NO_CHARACTER = "_____"
 
 MENU_STATES: list[str] = [
     MENU_STATE_DEFAULT := "DEFAULT",
-    MENU_STATE_SHOP := SHOP_TITLE,
-    MENU_STATE_BOSS_DROP := BOSS_DROP_TITLE,
+    MENU_STATE_SHOP := "SHOP",
+    MENU_STATE_DORMANT_POWER := "DORMANT_POWER",
 ]
 
 REPLACE_ARMAMENT_REL_POS_TO_NAME = 0.3281
@@ -233,22 +231,78 @@ AFFINITIES = [
     MADNESS := "Madness",
 ]
 
-DEFAULT_LANGUAGE: str = 'engus'
+DEFAULT_LANGUAGE: str = "engus"
 
 LANGUAGES: list[str] = [
-    'araae',
-    'deude',
-    'engus',
-    'frafr',
-    'itait',
-    'jpnjp',
-    'korkr',
-    'polpl',
-    'porbr',
-    'rusru',
-    'spaar',
-    'spaes',
-    'thath',
-    'zhocn',
-    'zhotw',
+    "araae",
+    "deude",
+    "engus",
+    "frafr",
+    "itait",
+    "jpnjp",
+    "korkr",
+    "polpl",
+    "porbr",
+    "rusru",
+    "spaar",
+    "spaes",
+    "thath",
+    "zhocn",
+    "zhotw",
 ]
+
+TESSDATA_DOWNLOAD_BASE_URL = "https://raw.githubusercontent.com/tesseract-ocr/tessdata/refs/heads/main/{language}.traineddata"
+
+TESSERACT_LANGUAGES: dict[str, str] = {
+    "araae": "ara",
+    "deude": "deu",
+    "engus": "eng",
+    "frafr": "fra",
+    "itait": "ita",
+    "jpnjp": "jpn",
+    "korkr": "kor",
+    "polpl": "pol",
+    "porbr": "por",
+    "rusru": "rus",
+    "spaar": "spa",
+    "spaes": "spa",
+    "thath": "tha",
+    "zhocn": "chi_sim",
+    "zhotw": "chi_tra",
+}
+
+DORMANT_POWER_LANGUAGES: dict[str, str] = {
+    "araae": "ﻗﻭة اﻟﺧﻣﻭد",
+    "deude": "Schlummernde Kraft",
+    "engus": "Dormant Power",
+    "frafr": "Puissance cachée",
+    "itait": "Potere dormiente",
+    "jpnjp": "潜在する力",
+    "korkr": "잠재한 힘",
+    "polpl": "Drzemiąca siła",
+    "porbr": "Poder adormecido",
+    "rusru": "Скрытая мощь",
+    "spaar": "Poder latente",
+    "spaes": "Poder latente",
+    "thath": "พลัง​แฝง",
+    "zhocn": "潜在能力",
+    "zhtw": "潛在能力",
+}
+
+SHOP_LANGUAGES: dict[str, str] = {
+    "araae": "اﻟﻣﺗﺟﺭ",
+    "deude": "Laden",
+    "engus": "Shop",
+    "frafr": "Boutique",
+    "itait": "Negozio",
+    "jpnjp": "ショップ",
+    "korkr": "상점",
+    "polpl": "Sklep",
+    "porbr": "Loja",
+    "rusru": "Магазин",
+    "spaar": "Tienda",
+    "spaes": "Tienda",
+    "thath": "ร้าน​ค้า",
+    "zhocn": "商店",
+    "zhtw": "商店",
+}
