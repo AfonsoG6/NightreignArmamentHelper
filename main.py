@@ -180,6 +180,18 @@ def load_configs() -> None:
                             if name.isupper():
                                 name = name.capitalize()
                                 move(path.join(characters_path, file), path.join(characters_path, name + extension))
+                        # Rename menu_detection pixelsets "DORMANT POWER" and "SHOP" to the correct language and casing
+                        menu_detection_path = path.join(ENGUS_PIXEL_SETS_PATH, dir, MENU_DETECTION)
+                        if not path.exists(menu_detection_path):
+                            continue
+                        for file in listdir(menu_detection_path):
+                            name, extension = path.splitext(file)
+                            if name == "DORMANT POWER":
+                                name = DORMANT_POWER_LANGUAGES["engus"]
+                                move(path.join(menu_detection_path, file), path.join(menu_detection_path, name + extension))
+                            elif name == "SHOP":
+                                name = SHOP_LANGUAGES["engus"]
+                                move(path.join(menu_detection_path, file), path.join(menu_detection_path, name + extension))
             if data_version != VERSION:
                 save_configs()
     except (FileNotFoundError, json.JSONDecodeError):
