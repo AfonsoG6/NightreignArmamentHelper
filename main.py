@@ -775,9 +775,8 @@ def detect_menu(detection_id: str) -> None:
         text_origin, text = detect_text(MENU_DETECTION)
         dormant_power_title = DORMANT_POWER_LANGUAGES[selected_language]
         shop_title = SHOP_LANGUAGES[selected_language]
-        match_result, match = find_match(detection_id, selected_language, text_origin, text, [dormant_power_title, shop_title], convert_menu_title_to_state)
-    if match_result == NO_MATCH:
-        match = MENU_STATE_DEFAULT
+        match_result, match = find_match(detection_id, selected_language, text_origin, text, [dormant_power_title, shop_title], lambda x: x)
+        match = convert_menu_title_to_state(match) if match_result != NO_MATCH else MENU_STATE_DEFAULT
     with current_menu_state_lock:
         if match == current_menu_state:
             return
