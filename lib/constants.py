@@ -1,5 +1,5 @@
 PROGRAM_NAME = "Nightreign Armament Helper"
-VERSION = "2.3.0"
+VERSION = "2.4.0"
 
 TEXT_ORIGINS: list[int] = [
     TEXT_ORIGIN_NONE := 0,

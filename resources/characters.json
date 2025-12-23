@@ -221,5 +221,61 @@
         "INT": "D",
         "FAI": "D",
         "ARC": "S"
+    },
+    {
+        "id": 110000,
+        "name": {
+            "araae": "اﻟﺩارس",
+            "deude": "Gelehrter",
+            "engus": "Scholar",
+            "frafr": "Érudit",
+            "itait": "Erudito",
+            "jpnjp": "学者",
+            "korkr": "학자",
+            "polpl": "Uczony",
+            "porbr": "Estudioso",
+            "rusru": "Учёный",
+            "spaar": "Erudito",
+            "spaes": "Erudito",
+            "thath": "นัก​วิชาการ",
+            "zhocn": "学者",
+            "zhotw": "學者"
+        },
+        "armament_types": [
+            "Thrusting Sword"
+        ],
+        "STR": "D",
+        "DEX": "C",
+        "INT": "C",
+        "FAI": "C",
+        "ARC": "S"
+    },
+    {
+        "id": 110010,
+        "name": {
+            "araae": "ﺣﺎﻓﺭة اﻟﻘﺑﻭر",
+            "deude": "Totengräberin",
+            "engus": "Undertaker",
+            "frafr": "Fossoyeuse",
+            "itait": "Becchina",
+            "jpnjp": "葬儀屋",
+            "korkr": "장의사",
+            "polpl": "Grabarka",
+            "porbr": "Sepultadora",
+            "rusru": "Могильщица",
+            "spaar": "Funebrera",
+            "spaes": "Sepulturera",
+            "thath": "สัปเหร่อ",
+            "zhocn": "送葬者",
+            "zhotw": "送葬者"
+        },
+        "armament_types": [
+            "Hammer"
+        ],
+        "STR": "A",
+        "DEX": "D",
+        "INT": "D",
+        "FAI": "A",
+        "ARC": "C"
     }
 ]

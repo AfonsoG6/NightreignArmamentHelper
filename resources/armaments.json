@@ -46434,5 +46434,57 @@
         "INT": 0,
         "FAI": 0,
         "ARC": 0
+    },
+    {
+        "id": 5750000,
+        "name": {
+            "araae": "ﺳﻳﻑ ﻁﻌﻥ اﻟﺩارس",
+            "deude": "Stoßschwert des Gelehrten",
+            "engus": "Scholar's Thrusting Sword",
+            "frafr": "Épée d'estoc de l'Érudit",
+            "itait": "Spada perforante dell'Erudito",
+            "jpnjp": "学者の刺剣",
+            "korkr": "학자의 자검",
+            "polpl": "Miecz do pchnięć Uczonego",
+            "porbr": "Espada de Fincada do Estudioso",
+            "rusru": "Колющий меч Учёного",
+            "spaar": "Espada de embestida del Erudito",
+            "spaes": "Espada de embestida del Erudito",
+            "thath": "ดาบ​แทง​ของ​นัก​วิชาการ",
+            "zhocn": "学者的刺剑",
+            "zhotw": "學者的刺劍"
+        },
+        "type": "Thrusting Sword",
+        "STR": 8,
+        "DEX": 76,
+        "INT": 0,
+        "FAI": 0,
+        "ARC": 0
+    },
+    {
+        "id": 11750000,
+        "name": {
+            "araae": "ﻣﻁﺭﻗﺔ ﺣﺎﻓﺭة اﻟﻘﺑﻭر",
+            "deude": "Hammer der Totengräberin",
+            "engus": "Undertaker's Hammer",
+            "frafr": "Marteau de la Fossoyeuse",
+            "itait": "Martello della Becchina",
+            "jpnjp": "葬儀屋の槌",
+            "korkr": "장의사의 망치",
+            "polpl": "Młot Grabarki",
+            "porbr": "Martelo da Sepultadora",
+            "rusru": "Молот Могильщицы",
+            "spaar": "Martillo de la Funebrera",
+            "spaes": "Martillo de la Sepulturera",
+            "thath": "โลง​ศพ​ของ​สัปเหร่อ",
+            "zhocn": "送葬者的铁锤",
+            "zhotw": "送葬者的鐵鎚"
+        },
+        "type": "Hammer",
+        "STR": 64,
+        "DEX": 28,
+        "INT": 0,
+        "FAI": 0,
+        "ARC": 0
     }
 ]
