@@ -1,4 +1,5 @@
 from os import path
+from copy import copy
 from lib.constants import *
 from threading import Lock
 import json
@@ -14,19 +15,11 @@ def load_all_grabbable_specs(resources_path: str, language: str = DEFAULT_LANGUA
         with open(path.join(resources_path, "armaments.json"), "r", encoding="utf-8") as file:
             armament_data = json.load(file)
             for armament in armament_data:
-                GRABBABLE_SPECS.append(
-                    {
-                        "id": armament["id"],
-                        "name": armament["name"][language],
-                        "type": "armament",
-                        "armament_type": armament["type"],
-                        "STR": armament["STR"],
-                        "DEX": armament["DEX"],
-                        "INT": armament["INT"],
-                        "FAI": armament["FAI"],
-                        "ARC": armament["ARC"],
-                    }
-                )
+                grabbable_spec = copy(armament)
+                grabbable_spec["name"] = armament["name"][language]
+                grabbable_spec["type"] = "armament"
+                grabbable_spec["armament_type"] = armament["type"]
+                GRABBABLE_SPECS.append(grabbable_spec)
         with open(path.join(resources_path, "items.json"), "r", encoding="utf-8") as file:
             item_data = json.load(file)
             for item in item_data:
