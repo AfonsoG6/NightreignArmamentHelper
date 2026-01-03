@@ -314,7 +314,7 @@ def call_get_advanced_label_text(character_spec: dict, grabbable_spec: dict) -> 
             if module and hasattr(module, "get_advanced_label_text"):
                 result = module.get_advanced_label_text(character_spec, grabbable_spec)
                 if isinstance(result, str):
-                    if extension_load_mode == LOAD_MODE_AFTER and len(result) > 0 and len(text) > 0:
+                    if len(result) > 0 and len(text) > 0:
                         text += "\n"
                     text += result
                     if extension_load_mode == LOAD_MODE_BEFORE and len(result) > 0 and len(text) > 0:
